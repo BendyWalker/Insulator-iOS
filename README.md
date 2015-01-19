@@ -1,2 +1,2 @@
-# insulator-ios
-A simple iOS application to help Type 1 Diabetics calculate insulin doses.
+# Insulator for iPhone
+A simple iPhone application to help Type 1 Diabetics calculate insulin doses.
