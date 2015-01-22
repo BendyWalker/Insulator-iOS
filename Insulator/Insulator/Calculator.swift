@@ -15,8 +15,11 @@ class Calculator {
         self.carbohydrateFactor = 9.0
         self.correctiveFactor = 2.0
         self.desiredBloodGlucoseLevel = 7.0
-        self.isMmolSelected = true
-        self.isHalfUnitsEnabled = true
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let bloodGlucoseUnit = userDefaults.valueForKey("blood_glucose_units_preference") as String
+        self.isMmolSelected = bloodGlucoseUnit.isEqual("mmol")
+        self.isHalfUnitsEnabled = userDefaults.valueForKey("half_units_preference") as Bool
     }
     
     func convertBloodGlucose(bloodGlucose : Double, isMmolSelected : Bool) -> Double {

@@ -16,7 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        setUserDefaults()
         return true
+    }
+    
+    func setUserDefaults() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        if userDefaults.valueForKey("half_units_preference") == nil {
+            userDefaults.setValue(false, forKey: "half_units_preference")
+        }
+        
+        if userDefaults.valueForKey("blood_glucose_units_preference") == nil {
+            userDefaults.setValue("mmol", forKey: "blood_glucose_units_preference")
+        }
+        
+        if userDefaults.valueForKey("carbohydrates_decimal_preference") == nil {
+            userDefaults.setValue(false, forKey: "carbohydrates_decimal_preference")
+        }
+        
+        userDefaults.synchronize()
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -30,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.        
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
