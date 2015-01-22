@@ -22,8 +22,8 @@ class Calculator {
         self.isHalfUnitsEnabled = userDefaults.valueForKey("half_units_preference") as Bool
     }
     
-    func convertBloodGlucose(bloodGlucose : Double, isMmolSelected : Bool) -> Double {
-        if isMmolSelected {
+    func convertBloodGlucose(bloodGlucose : Double) -> Double {
+        if !isMmolSelected {
             return bloodGlucose / 18
         } else {
             return bloodGlucose
@@ -44,7 +44,7 @@ class Calculator {
         var correctiveDose = 0.0
         
         if currentBloodGlucoseLevel != 0 {
-            correctiveDose = (currentBloodGlucoseLevel - desiredBloodGlucoseLevel) / correctiveFactor
+            correctiveDose = (convertBloodGlucose(currentBloodGlucoseLevel) - convertBloodGlucose(desiredBloodGlucoseLevel)) / correctiveFactor
         }
         
         if isRounded {

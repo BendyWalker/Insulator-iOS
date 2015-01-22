@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var suggestedDoseLabel: UILabel!
     
     @IBAction func calculateDose(sender: AnyObject) {
-        let currentBloodGlucoseLevel : Double = (currentBloodGlucoseLevelTextField.text as NSString).doubleValue
+        let currentBloodGlucoseLevel = (currentBloodGlucoseLevelTextField.text as NSString).doubleValue
         let carbohydratesInMeal = (carbohydratesInMealTextField.text as NSString).doubleValue
         
         let calculator = Calculator(currentBloodGlucoseLevel: currentBloodGlucoseLevel, carbohydratesInMeal: carbohydratesInMeal)
@@ -30,17 +30,42 @@ class ViewController: UIViewController {
         correctiveDoseLabel.text = correctiveDose
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        updateBloodGlucoseUnitPlaceholder()
     }
-
+    
+    override func viewWillAppear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "defaultsDidChange:", name: NSUserDefaultsDidChangeNotification, object: nil)
+    }
+    
+    func defaultsDidChange(notification : NSNotification) {
+        updateBloodGlucoseUnitPlaceholder()
+    }
+    
+    func updateBloodGlucoseUnitPlaceholder() {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let bloodGlucoseUnit = userDefaults.valueForKey("blood_glucose_units_preference") as String
+        let isMmolSelected = bloodGlucoseUnit.isEqual("mmol")
+        
+        var placeholder : String
+        
+        if isMmolSelected {
+            placeholder = "mmol/L"
+        } else {
+            placeholder = "mg/dL"
+        }
+        
+        currentBloodGlucoseLevelTextField.placeholder = placeholder
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
