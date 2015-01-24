@@ -313,10 +313,8 @@
                     <navigationItem key="navigationItem" title="Insulator" id="AL9-Dn-1my"/>
                     <connections>
                         <outlet property="carbohydrateDoseLabel" destination="edU-IA-wHo" id="SEA-By-uNS"/>
-                        <outlet property="carbohydratesInMealDescriptionLabel" destination="isK-rV-sIz" id="Ah7-1Z-x4i"/>
                         <outlet property="carbohydratesInMealTextField" destination="HwM-l5-TSf" id="dhL-pl-NWs"/>
                         <outlet property="correctiveDoseLabel" destination="srZ-Zd-ZgR" id="FqT-X7-LOa"/>
-                        <outlet property="currentBloodGlucoseLevelDescriptionLabel" destination="A6A-S2-PYa" id="SWS-Qh-Qll"/>
                         <outlet property="currentBloodGlucoseLevelTextField" destination="nKX-1K-DmC" id="a0r-gx-Wga"/>
                         <outlet property="suggestedDoseLabel" destination="0jf-TD-59L" id="hnP-es-WhN"/>
                     </connections>
