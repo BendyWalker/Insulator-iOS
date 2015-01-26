@@ -8,12 +8,12 @@
         <!--Insulator-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController storyboardIdentifier="Main" id="vXZ-lx-hvc" customClass="VariablesViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" id="vXZ-lx-hvc" customClass="VariablesViewController" customModule="Insulator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" customClass="VariablesViewController">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -353,7 +353,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udR-fq-tVC">
                                 <rect key="frame" x="0.0" y="100" width="600" height="53.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbohydrate Dose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTz-E3-Seb">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbohydrate Factor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTz-E3-Seb">
                                         <rect key="frame" x="16" y="8" width="482" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -363,7 +363,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter how many carbohydrates 1 unit of fast-acting insulin covers" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqd-eZ-Fls">
-                                        <rect key="frame" x="16" y="28.5" width="482" height="17"/>
+                                        <rect key="frame" x="16" y="28" width="482" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -372,7 +372,7 @@
                                         </variation>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="grams" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lla-D0-0VF">
-                                        <rect key="frame" x="514" y="16.5" width="70" height="21"/>
+                                        <rect key="frame" x="514" y="16" width="70" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="qCh-F4-Tn9"/>
                                         </constraints>
@@ -421,9 +421,9 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5x1-GZ-eQL">
-                                <rect key="frame" x="0.0" y="185.5" width="600" height="71"/>
+                                <rect key="frame" x="0.0" y="185" width="600" height="71"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corrective Dose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQa-5n-DUR">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corrective Factor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQa-5n-DUR">
                                         <rect key="frame" x="16" y="8" width="481.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -442,7 +442,7 @@
                                         </variation>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mFZ-Y8-src">
-                                        <rect key="frame" x="513.5" y="25.5" width="70.5" height="21"/>
+                                        <rect key="frame" x="513" y="25" width="70.5" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="mgk-I0-QXL"/>
                                         </constraints>
@@ -491,7 +491,7 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2d-4T-OCv">
-                                <rect key="frame" x="0.0" y="289" width="600" height="53.5"/>
+                                <rect key="frame" x="0.0" y="288" width="600" height="53.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desired Blood Glucose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQv-At-peN">
                                         <rect key="frame" x="16" y="8" width="482" height="20.5"/>
@@ -503,7 +503,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your desired blood glucose level" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFt-pD-BtG">
-                                        <rect key="frame" x="16" y="28.5" width="482" height="17"/>
+                                        <rect key="frame" x="16" y="28" width="482" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -512,7 +512,7 @@
                                         </variation>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="diG-j1-YgP">
-                                        <rect key="frame" x="514" y="16.5" width="70" height="21"/>
+                                        <rect key="frame" x="514" y="16" width="70" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="5HP-cZ-uEG"/>
                                         </constraints>
@@ -577,8 +577,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Constants" id="Db6-XM-bPk">
-                        <barButtonItem key="leftBarButtonItem" title="Done" id="SHk-pH-CUS"/>
+                        <barButtonItem key="leftBarButtonItem" title="Done" id="SHk-pH-CUS">
+                            <connections>
+                                <action selector="closeModal:" destination="J8V-OX-qR8" id="zxx-qw-eny"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="carbohydrateFactorTextField" destination="Lla-D0-0VF" id="Du3-1e-yQI"/>
+                        <outlet property="correctiveFactorTextField" destination="mFZ-Y8-src" id="j5y-50-jte"/>
+                        <outlet property="desiredBloodGlucoseTextField" destination="diG-j1-YgP" id="v1m-0V-y3q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKD-4c-WWi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
