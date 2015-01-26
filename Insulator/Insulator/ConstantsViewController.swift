@@ -14,9 +14,21 @@ class ConstantsViewController: UIViewController {
     @IBOutlet weak var correctiveFactorTextField: UITextField!
     @IBOutlet weak var desiredBloodGlucoseTextField: UITextField!
     
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
     @IBAction func closeModal(sender: AnyObject) {
+        let carbohydrateFactor = (carbohydrateFactorTextField.text as NSString).doubleValue
+        let correctiveFactor = (correctiveFactorTextField.text as NSString).doubleValue
+        let desiredBloodGlucose = (desiredBloodGlucoseTextField.text as NSString).doubleValue
+        
+        userDefaults.setValue(carbohydrateFactor, forKey: "carbohydrate_factor_preference")
+        userDefaults.setValue(correctiveFactor, forKey: "corrective_factor_preference")
+        userDefaults.setValue(desiredBloodGlucose, forKey: "desired_blood_glucose_preference")
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateDynamicViewElements()
@@ -24,7 +36,6 @@ class ConstantsViewController: UIViewController {
     
     func updateDynamicViewElements() {
         // Update placeholder on glucose-related text fields
-        let userDefaults = NSUserDefaults.standardUserDefaults()
         let bloodGlucoseUnit = userDefaults.valueForKey("blood_glucose_units_preference") as String
         let isMmolSelected = bloodGlucoseUnit.isEqual("mmol")
         
