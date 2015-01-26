@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setUserDefaults() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
+        
         if userDefaults.valueForKey("half_units_preference") == nil {
             userDefaults.setValue(false, forKey: "half_units_preference")
         }
@@ -34,6 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if userDefaults.valueForKey("carbohydrates_decimal_preference") == nil {
             userDefaults.setValue(false, forKey: "carbohydrates_decimal_preference")
         }
+        
+        userDefaults.setValue(0.0, forKey: "carbohydrate_factor_preference")
+        userDefaults.setValue(0.0, forKey: "corrective_factor_preference")
+        userDefaults.setValue(0.0, forKey: "desired_blood_glucose_preference")
         
         userDefaults.synchronize()
     }
