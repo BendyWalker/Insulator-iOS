@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class VariablesViewController: UIViewController {
 
     @IBOutlet weak var correctiveDoseLabel: UILabel!
     @IBOutlet weak var carbohydrateDoseLabel: UILabel!
