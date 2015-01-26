@@ -299,6 +299,18 @@
                                     <rect key="frame" x="0.0" y="195" width="600" height="94"/>
                                 </variation>
                             </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZDD-VQ-aml">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Constants" id="o4E-rK-9gf">
+                                        <connections>
+                                            <segue destination="J8V-OX-qR8" kind="presentation" id="UUR-9n-DWv"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="JyK-8G-x9g"/>
+                                    <barButtonItem title="Suggestions" id="gRb-IN-Z86"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -306,11 +318,14 @@
                             <constraint firstItem="pbo-SJ-2ta" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="1rc-ED-siP"/>
                             <constraint firstItem="IWM-12-K6P" firstAttribute="top" secondItem="PQ8-VB-m2S" secondAttribute="bottom" constant="64" id="26l-67-n9N"/>
                             <constraint firstItem="pbo-SJ-2ta" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="32" id="416-kH-TeG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZDD-VQ-aml" secondAttribute="trailing" constant="-16" id="JPf-si-oPZ"/>
                             <constraint firstItem="PQ8-VB-m2S" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="KGE-Si-wau"/>
                             <constraint firstItem="IWM-12-K6P" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Tfj-Kb-vyR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IWM-12-K6P" secondAttribute="trailing" constant="-16" id="UbK-bd-fHe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PQ8-VB-m2S" secondAttribute="trailing" constant="-16" id="ZVQ-za-3sg"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="IWM-12-K6P" secondAttribute="bottom" constant="227.5" id="aiy-53-Uel"/>
+                            <constraint firstItem="ZDD-VQ-aml" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="c5M-tY-bdd"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ZDD-VQ-aml" secondAttribute="bottom" id="ovq-cg-3in"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pbo-SJ-2ta" secondAttribute="trailing" constant="-16" id="r2v-qU-cjd"/>
                         </constraints>
                         <variation key="default">
@@ -320,11 +335,8 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Insulator" id="AL9-Dn-1my">
-                        <barButtonItem key="leftBarButtonItem" title="Constants" id="Kbb-qQ-iky">
-                            <connections>
-                                <segue destination="Lrq-Zj-Nv8" kind="presentation" id="0IG-vw-BBN"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="5xY-VS-6gR"/>
+                        <barButtonItem key="rightBarButtonItem" title="Clear" id="J62-p8-XrQ"/>
                     </navigationItem>
                     <connections>
                         <outlet property="carbohydrateDoseLabel" destination="edU-IA-wHo" id="SEA-By-uNS"/>
@@ -630,5 +642,8 @@
             <point key="canvasLocation" x="532" y="-980"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="UUR-9n-DWv"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.31945131965918705" blue="0.23116686813235043" alpha="1" colorSpace="calibratedRGB"/>
 </document>
