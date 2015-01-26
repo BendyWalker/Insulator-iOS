@@ -16,6 +16,14 @@ class VariablesViewController: UIViewController {
     @IBOutlet weak var carbohydratesInMealTextField: UITextField!
     @IBOutlet weak var suggestedDoseLabel: UILabel!
     
+    @IBAction func clearFields(sender: AnyObject) {
+        currentBloodGlucoseLevelTextField.text = ""
+        carbohydratesInMealTextField.text = ""
+        suggestedDoseLabel.text = "0.0"
+        carbohydrateDoseLabel.text = "0.0"
+        correctiveDoseLabel.text = "0.0"
+    }
+    
     @IBAction func calculateDose(sender: AnyObject) {
         let currentBloodGlucoseLevel = (currentBloodGlucoseLevelTextField.text as NSString).doubleValue
         let carbohydratesInMeal = (carbohydratesInMealTextField.text as NSString).doubleValue

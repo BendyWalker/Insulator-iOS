@@ -304,7 +304,7 @@
                                 <items>
                                     <barButtonItem title="Constants" id="o4E-rK-9gf">
                                         <connections>
-                                            <segue destination="J8V-OX-qR8" kind="presentation" id="UUR-9n-DWv"/>
+                                            <segue destination="Lrq-Zj-Nv8" kind="presentation" id="jZ7-CG-gYv"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="JyK-8G-x9g"/>
@@ -336,7 +336,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Insulator" id="AL9-Dn-1my">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="5xY-VS-6gR"/>
-                        <barButtonItem key="rightBarButtonItem" title="Clear" id="J62-p8-XrQ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Clear" id="J62-p8-XrQ">
+                            <connections>
+                                <action selector="clearFields:" destination="vXZ-lx-hvc" id="mMR-LE-DAP"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="carbohydrateDoseLabel" destination="edU-IA-wHo" id="SEA-By-uNS"/>
@@ -642,8 +646,5 @@
             <point key="canvasLocation" x="532" y="-980"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="UUR-9n-DWv"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.31945131965918705" blue="0.23116686813235043" alpha="1" colorSpace="calibratedRGB"/>
 </document>
