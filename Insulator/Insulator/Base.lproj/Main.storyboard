@@ -341,7 +341,7 @@
         <!--Constants-->
         <scene sceneID="cne-t9-DtP">
             <objects>
-                <viewController id="J8V-OX-qR8" sceneMemberID="viewController">
+                <viewController id="J8V-OX-qR8" customClass="ConstantsViewController" customModule="Insulator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K5h-c0-ndf"/>
                         <viewControllerLayoutGuide type="bottom" id="4dp-Gc-J7D"/>
