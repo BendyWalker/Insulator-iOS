@@ -19,8 +19,34 @@ class ConstantsViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        updateDynamicViewElements()
+    }
+    
+    func updateDynamicViewElements() {
+        // Update placeholder on glucose-related text fields
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let bloodGlucoseUnit = userDefaults.valueForKey("blood_glucose_units_preference") as String
+        let isMmolSelected = bloodGlucoseUnit.isEqual("mmol")
+        
+        var placeholder : String
+        
+        if isMmolSelected {
+            placeholder = "mmol/L"
+        } else {
+            placeholder = "mg/dL"
+        }
+        
+        correctiveFactorTextField.placeholder = placeholder
+        desiredBloodGlucoseTextField.placeholder = placeholder
+        
+        // Update actual values with those saved in userDefaults
+        let carbohydrateFactor = userDefaults.valueForKey("carbohydrate_factor_preference") as Double
+        let correctiveFactor = userDefaults.valueForKey("corrective_factor_preference") as Double
+        let desiredBloodGlucose = userDefaults.valueForKey("desired_blood_glucose_preference") as Double
+        
+        carbohydrateFactorTextField.text = "\(carbohydrateFactor)"
+        correctiveFactorTextField.text = "\(correctiveFactor)"
+        desiredBloodGlucoseTextField.text = "\(desiredBloodGlucose)"
     }
 
     override func didReceiveMemoryWarning() {
