@@ -16,6 +16,11 @@ class VariablesViewController: UIViewController {
     @IBOutlet weak var carbohydratesInMealTextField: UITextField!
     @IBOutlet weak var suggestedDoseLabel: UILabel!
     
+    @IBAction func openSettings(sender: AnyObject) {
+        var settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString, relativeToURL: nil)
+        UIApplication.sharedApplication().openURL(settingsUrl!)
+    }
+    
     @IBAction func clearFields(sender: AnyObject) {
         currentBloodGlucoseLevelTextField.text = ""
         carbohydratesInMealTextField.text = ""

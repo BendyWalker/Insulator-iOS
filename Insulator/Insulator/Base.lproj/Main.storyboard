@@ -335,7 +335,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Insulator" id="AL9-Dn-1my">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="5xY-VS-6gR"/>
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="5xY-VS-6gR">
+                            <connections>
+                                <action selector="openSettings:" destination="vXZ-lx-hvc" id="NHF-1M-9Zw"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Clear" id="J62-p8-XrQ">
                             <connections>
                                 <action selector="clearFields:" destination="vXZ-lx-hvc" id="mMR-LE-DAP"/>
