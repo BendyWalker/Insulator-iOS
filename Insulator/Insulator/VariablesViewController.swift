@@ -8,12 +8,12 @@
 
 import UIKit
 
-class VariablesViewController: UIViewController {
+class VariablesTableViewController: UITableViewController, UITableViewDelegate {
 
-    @IBOutlet weak var correctiveDoseLabel: UILabel!
-    @IBOutlet weak var carbohydrateDoseLabel: UILabel!
     @IBOutlet weak var currentBloodGlucoseLevelTextField: UITextField!
     @IBOutlet weak var carbohydratesInMealTextField: UITextField!
+    @IBOutlet weak var correctiveDoseLabel: UILabel!
+    @IBOutlet weak var carbohydrateDoseLabel: UILabel!
     @IBOutlet weak var suggestedDoseLabel: UILabel!
     
     @IBAction func openSettings(sender: AnyObject) {
@@ -37,6 +37,8 @@ class VariablesViewController: UIViewController {
         
         currentBloodGlucoseLevelTextField.addTarget(self, action: "calculateDose:", forControlEvents: UIControlEvents.EditingChanged)
         carbohydratesInMealTextField.addTarget(self, action: "calculateDose:", forControlEvents: UIControlEvents.EditingChanged)
+        
+        self.navigationController?.toolbarHidden = false
     }
     
     func calculateDose(sender: UITextField) {
@@ -55,6 +57,9 @@ class VariablesViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "defaultsDidChange:", name: NSUserDefaultsDidChangeNotification, object: nil)
+        
+        self.tableView.estimatedRowHeight = 44
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func defaultsDidChange(notification: NSNotification) {
