@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iYV-8q-AgL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iYV-8q-AgL">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -63,29 +63,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="A6A-S2-PYa" secondAttribute="trailing" constant="16" id="5jn-4e-u1T"/>
                                     <constraint firstAttribute="centerY" secondItem="nKX-1K-DmC" secondAttribute="centerY" constant="-0.25" id="71e-xb-OuH"/>
                                     <constraint firstAttribute="trailing" secondItem="nKX-1K-DmC" secondAttribute="trailing" constant="16" id="Clm-rj-FGy"/>
                                     <constraint firstItem="A6A-S2-PYa" firstAttribute="top" secondItem="cZv-LD-oUO" secondAttribute="bottom" id="Fbq-p7-Yy7"/>
                                     <constraint firstAttribute="bottom" secondItem="A6A-S2-PYa" secondAttribute="bottom" constant="8" id="Fcd-Wx-hOj"/>
-                                    <constraint firstItem="nKX-1K-DmC" firstAttribute="top" secondItem="pbo-SJ-2ta" secondAttribute="top" constant="8" id="Kj8-Vn-DDG"/>
-                                    <constraint firstItem="nKX-1K-DmC" firstAttribute="leading" secondItem="cZv-LD-oUO" secondAttribute="trailing" constant="24" id="PJO-Iq-RsA"/>
-                                    <constraint firstItem="nKX-1K-DmC" firstAttribute="leading" secondItem="cZv-LD-oUO" secondAttribute="trailing" constant="24" id="PzH-Y1-MzH"/>
                                     <constraint firstItem="A6A-S2-PYa" firstAttribute="leading" secondItem="pbo-SJ-2ta" secondAttribute="leading" constant="16" id="UPH-21-dIG"/>
                                     <constraint firstItem="cZv-LD-oUO" firstAttribute="leading" secondItem="pbo-SJ-2ta" secondAttribute="leading" constant="16" id="lqv-I7-I6I"/>
                                     <constraint firstItem="nKX-1K-DmC" firstAttribute="leading" secondItem="A6A-S2-PYa" secondAttribute="trailing" constant="16" id="pdU-Dd-X9d"/>
-                                    <constraint firstAttribute="centerY" secondItem="nKX-1K-DmC" secondAttribute="centerY" constant="9" id="q5H-oo-3Fe"/>
                                     <constraint firstItem="cZv-LD-oUO" firstAttribute="top" secondItem="pbo-SJ-2ta" secondAttribute="top" constant="8" id="qzV-EL-ps6"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="5jn-4e-u1T"/>
-                                        <exclude reference="Kj8-Vn-DDG"/>
-                                        <exclude reference="PJO-Iq-RsA"/>
-                                        <exclude reference="PzH-Y1-MzH"/>
-                                        <exclude reference="q5H-oo-3Fe"/>
-                                    </mask>
-                                </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="96" width="400" height="42.5"/>
                                 </variation>
@@ -178,41 +164,23 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="XWU-NL-xeV" firstAttribute="leading" secondItem="0jf-TD-59L" secondAttribute="trailing" constant="16" id="13K-hx-LZ5"/>
                                     <constraint firstItem="Y4B-cS-acf" firstAttribute="leading" secondItem="IWM-12-K6P" secondAttribute="leading" constant="16" id="19k-Op-hlJ"/>
                                     <constraint firstItem="edU-IA-wHo" firstAttribute="top" secondItem="0jf-TD-59L" secondAttribute="bottom" constant="8" id="1BU-hJ-3vp"/>
                                     <constraint firstAttribute="bottom" secondItem="srZ-Zd-ZgR" secondAttribute="bottom" constant="8" id="21z-dN-4s0"/>
                                     <constraint firstAttribute="bottom" secondItem="Xkt-4U-W1G" secondAttribute="bottom" constant="8" id="8Yo-vm-na1"/>
                                     <constraint firstAttribute="trailing" secondItem="XWU-NL-xeV" secondAttribute="trailing" constant="16" id="8sR-O5-QHT"/>
                                     <constraint firstItem="Xkt-4U-W1G" firstAttribute="top" secondItem="1OP-IJ-ylV" secondAttribute="bottom" id="Bbu-Yq-Itg"/>
-                                    <constraint firstAttribute="bottom" secondItem="XWU-NL-xeV" secondAttribute="bottom" constant="8" id="FhT-6g-5Cv"/>
                                     <constraint firstItem="0jf-TD-59L" firstAttribute="top" secondItem="IWM-12-K6P" secondAttribute="top" constant="8" id="LEH-yX-SZO"/>
                                     <constraint firstItem="XWU-NL-xeV" firstAttribute="baseline" secondItem="srZ-Zd-ZgR" secondAttribute="baseline" id="Mqa-rV-Zja"/>
-                                    <constraint firstAttribute="centerY" secondItem="XWU-NL-xeV" secondAttribute="centerY" constant="0.75" id="Rpo-kT-lKz"/>
                                     <constraint firstItem="1OP-IJ-ylV" firstAttribute="leading" secondItem="IWM-12-K6P" secondAttribute="leading" constant="16" id="cek-1l-iSz"/>
-                                    <constraint firstItem="0jf-TD-59L" firstAttribute="top" secondItem="edU-IA-wHo" secondAttribute="bottom" constant="288" id="f9a-XI-6Mf"/>
                                     <constraint firstItem="edU-IA-wHo" firstAttribute="leading" secondItem="1OP-IJ-ylV" secondAttribute="trailing" constant="24" id="fIy-ch-57N"/>
                                     <constraint firstItem="srZ-Zd-ZgR" firstAttribute="top" secondItem="edU-IA-wHo" secondAttribute="bottom" id="fLo-Ll-Ld9"/>
                                     <constraint firstItem="srZ-Zd-ZgR" firstAttribute="leading" secondItem="1OP-IJ-ylV" secondAttribute="trailing" constant="24" id="fMh-Zr-yhJ"/>
                                     <constraint firstItem="1OP-IJ-ylV" firstAttribute="top" secondItem="Y4B-cS-acf" secondAttribute="bottom" constant="8" id="fhX-7n-Z8F"/>
-                                    <constraint firstItem="XWU-NL-xeV" firstAttribute="top" secondItem="IWM-12-K6P" secondAttribute="top" constant="8" id="hLB-R6-nLg"/>
                                     <constraint firstItem="0jf-TD-59L" firstAttribute="leading" secondItem="1OP-IJ-ylV" secondAttribute="trailing" constant="24" id="koW-L7-kbh"/>
                                     <constraint firstItem="Y4B-cS-acf" firstAttribute="top" secondItem="IWM-12-K6P" secondAttribute="top" constant="8" id="lEW-h3-tAs"/>
-                                    <constraint firstItem="1OP-IJ-ylV" firstAttribute="leading" secondItem="Xkt-4U-W1G" secondAttribute="trailing" constant="-123.5" id="nie-hq-Yku"/>
-                                    <constraint firstItem="1OP-IJ-ylV" firstAttribute="leading" secondItem="Xkt-4U-W1G" secondAttribute="trailing" constant="-123.5" id="wDY-JT-RHq"/>
                                     <constraint firstItem="Xkt-4U-W1G" firstAttribute="leading" secondItem="IWM-12-K6P" secondAttribute="leading" constant="16" id="zcY-42-qSI"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="nie-hq-Yku"/>
-                                        <exclude reference="wDY-JT-RHq"/>
-                                        <exclude reference="f9a-XI-6Mf"/>
-                                        <exclude reference="13K-hx-LZ5"/>
-                                        <exclude reference="FhT-6g-5Cv"/>
-                                        <exclude reference="Rpo-kT-lKz"/>
-                                        <exclude reference="hLB-R6-nLg"/>
-                                    </mask>
-                                </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="49" y="49" width="90" height="57"/>
                                 </variation>
@@ -323,16 +291,10 @@
                             <constraint firstItem="IWM-12-K6P" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Tfj-Kb-vyR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IWM-12-K6P" secondAttribute="trailing" constant="-16" id="UbK-bd-fHe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PQ8-VB-m2S" secondAttribute="trailing" constant="-16" id="ZVQ-za-3sg"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="IWM-12-K6P" secondAttribute="bottom" constant="227.5" id="aiy-53-Uel"/>
                             <constraint firstItem="ZDD-VQ-aml" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="c5M-tY-bdd"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ZDD-VQ-aml" secondAttribute="bottom" id="ovq-cg-3in"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pbo-SJ-2ta" secondAttribute="trailing" constant="-16" id="r2v-qU-cjd"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="aiy-53-Uel"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Insulator" id="AL9-Dn-1my">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="5xY-VS-6gR">
@@ -411,28 +373,14 @@
                                 <constraints>
                                     <constraint firstItem="lTz-E3-Seb" firstAttribute="leading" secondItem="udR-fq-tVC" secondAttribute="leading" constant="16" id="9QA-X6-xhi"/>
                                     <constraint firstItem="Lla-D0-0VF" firstAttribute="leading" secondItem="lTz-E3-Seb" secondAttribute="trailing" constant="16" id="HHk-QC-ZtJ"/>
-                                    <constraint firstItem="Lla-D0-0VF" firstAttribute="leading" secondItem="lTz-E3-Seb" secondAttribute="trailing" constant="24" id="HWK-Dn-9xC"/>
-                                    <constraint firstItem="Lla-D0-0VF" firstAttribute="top" secondItem="udR-fq-tVC" secondAttribute="top" constant="8" id="JMk-Ca-aPl"/>
                                     <constraint firstAttribute="bottom" secondItem="oqd-eZ-Fls" secondAttribute="bottom" constant="8" id="Lbn-3s-Llc"/>
                                     <constraint firstItem="Lla-D0-0VF" firstAttribute="leading" secondItem="oqd-eZ-Fls" secondAttribute="trailing" constant="16" id="Mbm-2s-yq5"/>
                                     <constraint firstAttribute="trailing" secondItem="Lla-D0-0VF" secondAttribute="trailing" constant="16" id="QJj-jv-Eql"/>
                                     <constraint firstItem="oqd-eZ-Fls" firstAttribute="leading" secondItem="udR-fq-tVC" secondAttribute="leading" constant="16" id="Uzo-Ah-4Om"/>
-                                    <constraint firstItem="Lla-D0-0VF" firstAttribute="leading" secondItem="lTz-E3-Seb" secondAttribute="trailing" constant="24" id="f0n-aw-OBQ"/>
-                                    <constraint firstAttribute="centerY" secondItem="Lla-D0-0VF" secondAttribute="centerY" constant="9" id="g4a-hz-TnY"/>
-                                    <constraint firstAttribute="trailing" secondItem="oqd-eZ-Fls" secondAttribute="trailing" constant="16" id="nXg-1p-d5y"/>
                                     <constraint firstAttribute="centerY" secondItem="Lla-D0-0VF" secondAttribute="centerY" constant="-0.25" id="uJb-3s-RRI"/>
                                     <constraint firstItem="oqd-eZ-Fls" firstAttribute="top" secondItem="lTz-E3-Seb" secondAttribute="bottom" id="x62-R5-b6L"/>
                                     <constraint firstItem="lTz-E3-Seb" firstAttribute="top" secondItem="udR-fq-tVC" secondAttribute="top" constant="8" id="xyM-aS-UTZ"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="nXg-1p-d5y"/>
-                                        <exclude reference="HWK-Dn-9xC"/>
-                                        <exclude reference="JMk-Ca-aPl"/>
-                                        <exclude reference="f0n-aw-OBQ"/>
-                                        <exclude reference="g4a-hz-TnY"/>
-                                    </mask>
-                                </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="96" width="400" height="42.5"/>
                                 </variation>
@@ -480,29 +428,15 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="WQa-5n-DUR" firstAttribute="leading" secondItem="5x1-GZ-eQL" secondAttribute="leading" constant="16" id="8MW-BK-DOq"/>
-                                    <constraint firstAttribute="centerY" secondItem="mFZ-Y8-src" secondAttribute="centerY" constant="9" id="9by-v9-RdV"/>
                                     <constraint firstItem="mFZ-Y8-src" firstAttribute="leading" secondItem="04w-yl-Aoa" secondAttribute="trailing" constant="16" id="9y4-25-bgZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="04w-yl-Aoa" secondAttribute="trailing" constant="16" id="Ewo-21-8i2"/>
-                                    <constraint firstItem="mFZ-Y8-src" firstAttribute="leading" secondItem="WQa-5n-DUR" secondAttribute="trailing" constant="24" id="FjQ-rg-BWF"/>
-                                    <constraint firstItem="mFZ-Y8-src" firstAttribute="top" secondItem="5x1-GZ-eQL" secondAttribute="top" constant="8" id="Tt9-TB-EzB"/>
                                     <constraint firstAttribute="trailing" secondItem="mFZ-Y8-src" secondAttribute="trailing" constant="16" id="VTM-OY-eld"/>
                                     <constraint firstAttribute="centerY" secondItem="mFZ-Y8-src" secondAttribute="centerY" constant="-0.25" id="Z6f-Ie-PTD"/>
                                     <constraint firstItem="04w-yl-Aoa" firstAttribute="leading" secondItem="5x1-GZ-eQL" secondAttribute="leading" constant="16" id="k9u-CQ-iFI"/>
                                     <constraint firstItem="WQa-5n-DUR" firstAttribute="top" secondItem="5x1-GZ-eQL" secondAttribute="top" constant="8" id="kQ2-iQ-cfq"/>
                                     <constraint firstAttribute="bottom" secondItem="04w-yl-Aoa" secondAttribute="bottom" constant="8" id="mC5-1f-fZs"/>
                                     <constraint firstItem="mFZ-Y8-src" firstAttribute="leading" secondItem="WQa-5n-DUR" secondAttribute="trailing" constant="16" id="nt1-0W-2IX"/>
-                                    <constraint firstItem="mFZ-Y8-src" firstAttribute="leading" secondItem="WQa-5n-DUR" secondAttribute="trailing" constant="24" id="ow1-yI-VXH"/>
                                     <constraint firstItem="04w-yl-Aoa" firstAttribute="top" secondItem="WQa-5n-DUR" secondAttribute="bottom" id="qsz-0O-j96"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Ewo-21-8i2"/>
-                                        <exclude reference="9by-v9-RdV"/>
-                                        <exclude reference="FjQ-rg-BWF"/>
-                                        <exclude reference="Tt9-TB-EzB"/>
-                                        <exclude reference="ow1-yI-VXH"/>
-                                    </mask>
-                                </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="96" width="400" height="42.5"/>
                                 </variation>
@@ -549,32 +483,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="diG-j1-YgP" firstAttribute="leading" secondItem="AFt-pD-BtG" secondAttribute="trailing" constant="16" id="F0f-X1-aQs"/>
-                                    <constraint firstItem="diG-j1-YgP" firstAttribute="top" secondItem="f2d-4T-OCv" secondAttribute="top" constant="8" id="JBb-uy-teR"/>
                                     <constraint firstAttribute="bottom" secondItem="AFt-pD-BtG" secondAttribute="bottom" constant="8" id="JxV-Ee-D9G"/>
                                     <constraint firstAttribute="trailing" secondItem="diG-j1-YgP" secondAttribute="trailing" constant="16" id="LW9-MR-dRW"/>
-                                    <constraint firstAttribute="centerY" secondItem="diG-j1-YgP" secondAttribute="centerY" constant="9" id="PVC-fF-Anu"/>
-                                    <constraint firstAttribute="trailing" secondItem="AFt-pD-BtG" secondAttribute="trailing" constant="16" id="SiG-4A-arv"/>
                                     <constraint firstItem="AFt-pD-BtG" firstAttribute="leading" secondItem="f2d-4T-OCv" secondAttribute="leading" constant="16" id="YNZ-Zw-o4q"/>
                                     <constraint firstItem="diG-j1-YgP" firstAttribute="leading" secondItem="AFt-pD-BtG" secondAttribute="trailing" constant="16" id="afS-Md-38T"/>
                                     <constraint firstItem="AFt-pD-BtG" firstAttribute="top" secondItem="GQv-At-peN" secondAttribute="bottom" id="c1f-1g-sgi"/>
-                                    <constraint firstItem="diG-j1-YgP" firstAttribute="leading" secondItem="GQv-At-peN" secondAttribute="trailing" constant="24" id="kMf-hs-ZVj"/>
                                     <constraint firstItem="GQv-At-peN" firstAttribute="top" secondItem="f2d-4T-OCv" secondAttribute="top" constant="8" id="oXS-Fe-Pkz"/>
                                     <constraint firstItem="diG-j1-YgP" firstAttribute="leading" secondItem="GQv-At-peN" secondAttribute="trailing" constant="16" id="paP-xo-DIM"/>
                                     <constraint firstItem="GQv-At-peN" firstAttribute="leading" secondItem="f2d-4T-OCv" secondAttribute="leading" constant="16" id="vOG-Or-Uvy"/>
                                     <constraint firstAttribute="centerY" secondItem="diG-j1-YgP" secondAttribute="centerY" constant="-0.25" id="vl4-bX-lY9"/>
-                                    <constraint firstItem="diG-j1-YgP" firstAttribute="leading" secondItem="GQv-At-peN" secondAttribute="trailing" constant="24" id="vtU-ic-Dnp"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="SiG-4A-arv"/>
-                                        <exclude reference="F0f-X1-aQs"/>
-                                        <exclude reference="JBb-uy-teR"/>
-                                        <exclude reference="PVC-fF-Anu"/>
-                                        <exclude reference="kMf-hs-ZVj"/>
-                                        <exclude reference="vtU-ic-Dnp"/>
-                                    </mask>
-                                </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="96" width="400" height="42.5"/>
                                 </variation>
