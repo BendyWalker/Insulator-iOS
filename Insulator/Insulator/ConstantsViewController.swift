@@ -39,7 +39,7 @@ class ConstantsViewController: UIViewController {
         let bloodGlucoseUnit = userDefaults.valueForKey("blood_glucose_units_preference") as String
         let isMmolSelected = bloodGlucoseUnit.isEqual("mmol")
         
-        var placeholder : String
+        var placeholder: String
         
         if isMmolSelected {
             placeholder = "mmol/L"
