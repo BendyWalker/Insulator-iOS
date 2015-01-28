@@ -41,6 +41,8 @@ class VariablesViewController: UIViewController {
         suggestedDoseLabel.text = "0.0"
         carbohydrateDoseLabel.text = "0.0"
         correctiveDoseLabel.text = "0.0"
+        
+        self.view.endEditing(true)
     }
     
     override func viewDidLoad() {
