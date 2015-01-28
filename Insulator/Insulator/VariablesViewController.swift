@@ -16,20 +16,6 @@ class VariablesViewController: UIViewController {
     @IBOutlet weak var carbohydratesInMealTextField: UITextField!
     @IBOutlet weak var suggestedDoseLabel: UILabel!
     
-    @IBAction func calculateDose(sender: AnyObject) {
-        let currentBloodGlucoseLevel = (currentBloodGlucoseLevelTextField.text as NSString).doubleValue
-        let carbohydratesInMeal = (carbohydratesInMealTextField.text as NSString).doubleValue
-        
-        let calculator = Calculator(currentBloodGlucoseLevel: currentBloodGlucoseLevel, carbohydratesInMeal: carbohydratesInMeal)
-        let suggestedDose: String = "\(calculator.getSuggestedDose(true))"
-        let carbohydrateDose: String = "\(calculator.getCarbohydrateDose(true))"
-        let correctiveDose: String = "\(calculator.getCorrectiveDose(true))"
-        
-        suggestedDoseLabel.text = suggestedDose
-        carbohydrateDoseLabel.text = carbohydrateDose
-        correctiveDoseLabel.text = correctiveDose
-    }
-    
     @IBAction func openSettings(sender: AnyObject) {
         var settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString, relativeToURL: nil)
         UIApplication.sharedApplication().openURL(settingsUrl!)
@@ -48,13 +34,30 @@ class VariablesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateBloodGlucoseUnitPlaceholder()
+        
+        currentBloodGlucoseLevelTextField.addTarget(self, action: "calculateDose:", forControlEvents: UIControlEvents.EditingChanged)
+        carbohydratesInMealTextField.addTarget(self, action: "calculateDose:", forControlEvents: UIControlEvents.EditingChanged)
+    }
+    
+    func calculateDose(sender: UITextField) {
+        let currentBloodGlucoseLevel = (currentBloodGlucoseLevelTextField.text as NSString).doubleValue
+        let carbohydratesInMeal = (carbohydratesInMealTextField.text as NSString).doubleValue
+        
+        let calculator = Calculator(currentBloodGlucoseLevel: currentBloodGlucoseLevel, carbohydratesInMeal: carbohydratesInMeal)
+        let suggestedDose: String = "\(calculator.getSuggestedDose(true))"
+        let carbohydrateDose: String = "\(calculator.getCarbohydrateDose(true))"
+        let correctiveDose: String = "\(calculator.getCorrectiveDose(true))"
+        
+        suggestedDoseLabel.text = suggestedDose
+        carbohydrateDoseLabel.text = carbohydrateDose
+        correctiveDoseLabel.text = correctiveDose
     }
     
     override func viewWillAppear(animated: Bool) {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "defaultsDidChange:", name: NSUserDefaultsDidChangeNotification, object: nil)
     }
     
-    func defaultsDidChange(notification : NSNotification) {
+    func defaultsDidChange(notification: NSNotification) {
         updateBloodGlucoseUnitPlaceholder()
     }
     

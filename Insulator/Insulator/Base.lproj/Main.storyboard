@@ -59,9 +59,6 @@
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="290" y="6" width="97" height="30"/>
                                         </variation>
-                                        <connections>
-                                            <action selector="calculateDose:" destination="kh9-bI-dsS" eventType="editingChanged" id="NXK-Kp-iYo"/>
-                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -103,7 +100,7 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jf-TD-59L">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jf-TD-59L">
                                         <rect key="frame" x="189" y="8" width="24" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="AAu-b3-A0l"/>
@@ -115,7 +112,7 @@
                                             <rect key="frame" x="189" y="8" width="24" height="20.5"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srZ-Zd-ZgR">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srZ-Zd-ZgR">
                                         <rect key="frame" x="189" y="57" width="24" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="AyU-TJ-fwe"/>
@@ -139,7 +136,7 @@
                                             <rect key="frame" x="16" y="36" width="149.5" height="20.5"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edU-IA-wHo">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edU-IA-wHo">
                                         <rect key="frame" x="189" y="36" width="24" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="XDu-gr-xcg"/>
@@ -218,9 +215,6 @@
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="290" y="6" width="97" height="30"/>
                                         </variation>
-                                        <connections>
-                                            <action selector="calculateDose:" destination="kh9-bI-dsS" eventType="editingChanged" id="Qzu-mQ-onl"/>
-                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
