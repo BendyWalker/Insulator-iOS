@@ -16,6 +16,20 @@ class VariablesViewController: UIViewController {
     @IBOutlet weak var carbohydratesInMealTextField: UITextField!
     @IBOutlet weak var suggestedDoseLabel: UILabel!
     
+    @IBAction func calculateDose(sender: AnyObject) {
+        let currentBloodGlucoseLevel = (currentBloodGlucoseLevelTextField.text as NSString).doubleValue
+        let carbohydratesInMeal = (carbohydratesInMealTextField.text as NSString).doubleValue
+        
+        let calculator = Calculator(currentBloodGlucoseLevel: currentBloodGlucoseLevel, carbohydratesInMeal: carbohydratesInMeal)
+        let suggestedDose: String = "\(calculator.getSuggestedDose(true))"
+        let carbohydrateDose: String = "\(calculator.getCarbohydrateDose(true))"
+        let correctiveDose: String = "\(calculator.getCorrectiveDose(true))"
+        
+        suggestedDoseLabel.text = suggestedDose
+        carbohydrateDoseLabel.text = carbohydrateDose
+        correctiveDoseLabel.text = correctiveDose
+    }
+    
     @IBAction func openSettings(sender: AnyObject) {
         var settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString, relativeToURL: nil)
         UIApplication.sharedApplication().openURL(settingsUrl!)
@@ -27,20 +41,6 @@ class VariablesViewController: UIViewController {
         suggestedDoseLabel.text = "0.0"
         carbohydrateDoseLabel.text = "0.0"
         correctiveDoseLabel.text = "0.0"
-    }
-    
-    @IBAction func calculateDose(sender: AnyObject) {
-        let currentBloodGlucoseLevel = (currentBloodGlucoseLevelTextField.text as NSString).doubleValue
-        let carbohydratesInMeal = (carbohydratesInMealTextField.text as NSString).doubleValue
-        
-        let calculator = Calculator(currentBloodGlucoseLevel: currentBloodGlucoseLevel, carbohydratesInMeal: carbohydratesInMeal)
-        let suggestedDose : String = "\(calculator.getSuggestedDose(true))"
-        let carbohydrateDose : String = "\(calculator.getCarbohydrateDose(true))"
-        let correctiveDose : String = "\(calculator.getCorrectiveDose(true))"
-        
-        suggestedDoseLabel.text = suggestedDose
-        carbohydrateDoseLabel.text = carbohydrateDose
-        correctiveDoseLabel.text = correctiveDose
     }
     
     override func viewDidLoad() {

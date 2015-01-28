@@ -59,6 +59,9 @@
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="290" y="6" width="97" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="calculateDose:" destination="kh9-bI-dsS" eventType="editingChanged" id="NXK-Kp-iYo"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -148,19 +151,6 @@
                                             <rect key="frame" x="189" y="36" width="24" height="20.5"/>
                                         </variation>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWU-NL-xeV">
-                                        <rect key="frame" x="512" y="51" width="72" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Calculate">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="237" y="27" width="65" height="30"/>
-                                        </variation>
-                                        <connections>
-                                            <action selector="calculateDose:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Oyk-HH-3N1"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -168,10 +158,8 @@
                                     <constraint firstItem="edU-IA-wHo" firstAttribute="top" secondItem="0jf-TD-59L" secondAttribute="bottom" constant="8" id="1BU-hJ-3vp"/>
                                     <constraint firstAttribute="bottom" secondItem="srZ-Zd-ZgR" secondAttribute="bottom" constant="8" id="21z-dN-4s0"/>
                                     <constraint firstAttribute="bottom" secondItem="Xkt-4U-W1G" secondAttribute="bottom" constant="8" id="8Yo-vm-na1"/>
-                                    <constraint firstAttribute="trailing" secondItem="XWU-NL-xeV" secondAttribute="trailing" constant="16" id="8sR-O5-QHT"/>
                                     <constraint firstItem="Xkt-4U-W1G" firstAttribute="top" secondItem="1OP-IJ-ylV" secondAttribute="bottom" id="Bbu-Yq-Itg"/>
                                     <constraint firstItem="0jf-TD-59L" firstAttribute="top" secondItem="IWM-12-K6P" secondAttribute="top" constant="8" id="LEH-yX-SZO"/>
-                                    <constraint firstItem="XWU-NL-xeV" firstAttribute="baseline" secondItem="srZ-Zd-ZgR" secondAttribute="baseline" id="Mqa-rV-Zja"/>
                                     <constraint firstItem="1OP-IJ-ylV" firstAttribute="leading" secondItem="IWM-12-K6P" secondAttribute="leading" constant="16" id="cek-1l-iSz"/>
                                     <constraint firstItem="edU-IA-wHo" firstAttribute="leading" secondItem="1OP-IJ-ylV" secondAttribute="trailing" constant="24" id="fIy-ch-57N"/>
                                     <constraint firstItem="srZ-Zd-ZgR" firstAttribute="top" secondItem="edU-IA-wHo" secondAttribute="bottom" id="fLo-Ll-Ld9"/>
@@ -230,6 +218,9 @@
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="290" y="6" width="97" height="30"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="calculateDose:" destination="kh9-bI-dsS" eventType="editingChanged" id="Qzu-mQ-onl"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -299,7 +290,7 @@
                     <navigationItem key="navigationItem" title="Insulator" id="AL9-Dn-1my">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="5xY-VS-6gR">
                             <connections>
-                                <action selector="openSettings:" destination="vXZ-lx-hvc" id="NHF-1M-9Zw"/>
+                                <action selector="openSettings:" destination="vXZ-lx-hvc" id="dRM-9H-M8p"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Clear" id="J62-p8-XrQ">
