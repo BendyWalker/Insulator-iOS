@@ -228,7 +228,7 @@
                         <barButtonItem title="Constants" id="Ei3-kw-Vvk">
                             <color key="tintColor" red="1" green="0.31945131970000001" blue="0.23116686810000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="Lrq-Zj-Nv8" kind="presentation" id="PIn-AM-LjC"/>
+                                <segue destination="j9z-3P-Jdf" kind="presentation" id="7Ym-J6-63W"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="3Md-G2-hNw"/>
@@ -262,254 +262,219 @@
             <point key="canvasLocation" x="-429" y="-96"/>
         </scene>
         <!--Constants-->
-        <scene sceneID="cne-t9-DtP">
+        <scene sceneID="CbZ-kS-grc">
             <objects>
-                <viewController id="J8V-OX-qR8" customClass="ConstantsViewController" customModule="Insulator" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="K5h-c0-ndf"/>
-                        <viewControllerLayoutGuide type="bottom" id="4dp-Gc-J7D"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9Jx-f9-bSY">
+                <tableViewController id="19E-xp-IfS" customClass="ConstantsTableViewController" customModule="Insulator" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="iyR-cA-KzZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="udR-fq-tVC">
-                                <rect key="frame" x="0.0" y="100" width="600" height="53"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbohydrate Factor" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTz-E3-Seb">
-                                        <rect key="frame" x="16" y="8" width="482" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" ambiguous="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="175.5" height="20.5"/>
-                                        </variation>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqd-eZ-Fls">
-                                        <rect key="frame" x="16" y="28" width="482" height="16.5"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Enter how many carbohydrates 1 unit of fast-acting insulin covers">
-                                                <attributes>
-                                                    <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="16" y="17.5" width="44.5" height="17"/>
-                                        </variation>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="grams" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lla-D0-0VF">
-                                        <rect key="frame" x="514" y="16" width="70" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="qCh-F4-Tn9"/>
-                                        </constraints>
-                                        <color key="textColor" red="1" green="0.31945131970000001" blue="0.23116686810000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                        <variation key="widthClass=compact" ambiguous="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="62.5" height="21"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="290" y="6" width="97" height="30"/>
-                                        </variation>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="lTz-E3-Seb" firstAttribute="leading" secondItem="udR-fq-tVC" secondAttribute="leading" constant="16" id="9QA-X6-xhi"/>
-                                    <constraint firstItem="Lla-D0-0VF" firstAttribute="leading" secondItem="lTz-E3-Seb" secondAttribute="trailing" constant="16" id="HHk-QC-ZtJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="oqd-eZ-Fls" secondAttribute="bottom" constant="8" id="Lbn-3s-Llc"/>
-                                    <constraint firstItem="Lla-D0-0VF" firstAttribute="leading" secondItem="oqd-eZ-Fls" secondAttribute="trailing" constant="16" id="Mbm-2s-yq5"/>
-                                    <constraint firstAttribute="trailing" secondItem="Lla-D0-0VF" secondAttribute="trailing" constant="16" id="QJj-jv-Eql"/>
-                                    <constraint firstItem="oqd-eZ-Fls" firstAttribute="leading" secondItem="udR-fq-tVC" secondAttribute="leading" constant="16" id="Uzo-Ah-4Om"/>
-                                    <constraint firstAttribute="centerY" secondItem="Lla-D0-0VF" secondAttribute="centerY" constant="-0.25" id="uJb-3s-RRI"/>
-                                    <constraint firstItem="oqd-eZ-Fls" firstAttribute="top" secondItem="lTz-E3-Seb" secondAttribute="bottom" id="x62-R5-b6L"/>
-                                    <constraint firstItem="lTz-E3-Seb" firstAttribute="top" secondItem="udR-fq-tVC" secondAttribute="top" constant="8" id="xyM-aS-UTZ"/>
-                                </constraints>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="96" width="400" height="42.5"/>
-                                </variation>
-                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="96" width="400" height="54"/>
-                                </variation>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5x1-GZ-eQL">
-                                <rect key="frame" x="0.0" y="185" width="600" height="53.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corrective Factor" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQa-5n-DUR">
-                                        <rect key="frame" x="16" y="8" width="481.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" ambiguous="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="175.5" height="20.5"/>
-                                        </variation>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04w-yl-Aoa">
-                                        <rect key="frame" x="16" y="29" width="481.5" height="16.5"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Enter how much 1 unit of fast-acting insulin lowers your blood glucose level">
-                                                <attributes>
-                                                    <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="16" y="17.5" width="44.5" height="17"/>
-                                        </variation>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mFZ-Y8-src">
-                                        <rect key="frame" x="513" y="16" width="70.5" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="mgk-I0-QXL"/>
-                                        </constraints>
-                                        <color key="textColor" red="1" green="0.31945131970000001" blue="0.23116686810000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                        <variation key="widthClass=compact" ambiguous="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="62.5" height="21"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="290" y="6" width="97" height="30"/>
-                                        </variation>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="WQa-5n-DUR" firstAttribute="leading" secondItem="5x1-GZ-eQL" secondAttribute="leading" constant="16" id="8MW-BK-DOq"/>
-                                    <constraint firstItem="mFZ-Y8-src" firstAttribute="leading" secondItem="04w-yl-Aoa" secondAttribute="trailing" constant="16" id="9y4-25-bgZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="mFZ-Y8-src" secondAttribute="trailing" constant="16" id="VTM-OY-eld"/>
-                                    <constraint firstAttribute="centerY" secondItem="mFZ-Y8-src" secondAttribute="centerY" constant="-0.25" id="Z6f-Ie-PTD"/>
-                                    <constraint firstItem="04w-yl-Aoa" firstAttribute="leading" secondItem="5x1-GZ-eQL" secondAttribute="leading" constant="16" id="k9u-CQ-iFI"/>
-                                    <constraint firstItem="WQa-5n-DUR" firstAttribute="top" secondItem="5x1-GZ-eQL" secondAttribute="top" constant="8" id="kQ2-iQ-cfq"/>
-                                    <constraint firstAttribute="bottom" secondItem="04w-yl-Aoa" secondAttribute="bottom" constant="8" id="mC5-1f-fZs"/>
-                                    <constraint firstItem="mFZ-Y8-src" firstAttribute="leading" secondItem="WQa-5n-DUR" secondAttribute="trailing" constant="16" id="nt1-0W-2IX"/>
-                                    <constraint firstItem="04w-yl-Aoa" firstAttribute="top" secondItem="WQa-5n-DUR" secondAttribute="bottom" id="qsz-0O-j96"/>
-                                </constraints>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="96" width="400" height="42.5"/>
-                                </variation>
-                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="96" width="400" height="54"/>
-                                </variation>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2d-4T-OCv">
-                                <rect key="frame" x="0.0" y="270" width="600" height="53"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desired Blood Glucose" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQv-At-peN">
-                                        <rect key="frame" x="16" y="8" width="482" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" ambiguous="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="175.5" height="20.5"/>
-                                        </variation>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFt-pD-BtG">
-                                        <rect key="frame" x="16" y="28" width="482" height="16.5"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Enter your desired blood glucose level">
-                                                <attributes>
-                                                    <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="16" y="17.5" width="44.5" height="17"/>
-                                        </variation>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="diG-j1-YgP">
-                                        <rect key="frame" x="514" y="16" width="70" height="21"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="5HP-cZ-uEG"/>
-                                        </constraints>
-                                        <color key="textColor" red="1" green="0.31945131970000001" blue="0.23116686810000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                        <variation key="widthClass=compact" ambiguous="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="62.5" height="21"/>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="290" y="6" width="97" height="30"/>
-                                        </variation>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="AFt-pD-BtG" secondAttribute="bottom" constant="8" id="JxV-Ee-D9G"/>
-                                    <constraint firstAttribute="trailing" secondItem="diG-j1-YgP" secondAttribute="trailing" constant="16" id="LW9-MR-dRW"/>
-                                    <constraint firstItem="AFt-pD-BtG" firstAttribute="leading" secondItem="f2d-4T-OCv" secondAttribute="leading" constant="16" id="YNZ-Zw-o4q"/>
-                                    <constraint firstItem="diG-j1-YgP" firstAttribute="leading" secondItem="AFt-pD-BtG" secondAttribute="trailing" constant="16" id="afS-Md-38T"/>
-                                    <constraint firstItem="AFt-pD-BtG" firstAttribute="top" secondItem="GQv-At-peN" secondAttribute="bottom" id="c1f-1g-sgi"/>
-                                    <constraint firstItem="GQv-At-peN" firstAttribute="top" secondItem="f2d-4T-OCv" secondAttribute="top" constant="8" id="oXS-Fe-Pkz"/>
-                                    <constraint firstItem="diG-j1-YgP" firstAttribute="leading" secondItem="GQv-At-peN" secondAttribute="trailing" constant="16" id="paP-xo-DIM"/>
-                                    <constraint firstItem="GQv-At-peN" firstAttribute="leading" secondItem="f2d-4T-OCv" secondAttribute="leading" constant="16" id="vOG-Or-Uvy"/>
-                                    <constraint firstAttribute="centerY" secondItem="diG-j1-YgP" secondAttribute="centerY" constant="-0.25" id="vl4-bX-lY9"/>
-                                </constraints>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="96" width="400" height="42.5"/>
-                                </variation>
-                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="96" width="400" height="54"/>
-                                </variation>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="udR-fq-tVC" secondAttribute="trailing" constant="-16" id="AC8-pc-h4v"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="f2d-4T-OCv" secondAttribute="trailing" constant="-16" id="DjR-ph-qUy"/>
-                            <constraint firstItem="f2d-4T-OCv" firstAttribute="top" secondItem="5x1-GZ-eQL" secondAttribute="bottom" constant="32" id="HbC-UL-2w6"/>
-                            <constraint firstItem="udR-fq-tVC" firstAttribute="top" secondItem="K5h-c0-ndf" secondAttribute="bottom" constant="36" id="Qgh-DT-CLN"/>
-                            <constraint firstItem="5x1-GZ-eQL" firstAttribute="leading" secondItem="9Jx-f9-bSY" secondAttribute="leadingMargin" constant="-16" id="WrC-8e-0O5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5x1-GZ-eQL" secondAttribute="trailing" constant="-16" id="aTD-mq-Ba1"/>
-                            <constraint firstItem="udR-fq-tVC" firstAttribute="leading" secondItem="9Jx-f9-bSY" secondAttribute="leadingMargin" constant="-16" id="g5h-eY-FrD"/>
-                            <constraint firstItem="5x1-GZ-eQL" firstAttribute="top" secondItem="udR-fq-tVC" secondAttribute="bottom" constant="32" id="kSM-ua-im5"/>
-                            <constraint firstItem="f2d-4T-OCv" firstAttribute="leading" secondItem="9Jx-f9-bSY" secondAttribute="leadingMargin" constant="-16" id="sHK-fR-Dy9"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Constants" id="Db6-XM-bPk">
-                        <barButtonItem key="leftBarButtonItem" title="Done" id="SHk-pH-CUS">
+                        <sections>
+                            <tableViewSection id="Ecd-Sh-nHl">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Rhn-Mb-HZu">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rhn-Mb-HZu" id="N1Z-DB-saL">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbohydrate Factor" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pj-kC-Itf">
+                                                    <rect key="frame" x="16" y="8" width="482" height="11"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" ambiguous="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="175.5" height="20.5"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9P-L9-bk1">
+                                                    <rect key="frame" x="16" y="19" width="482" height="16.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Enter how many carbohydrates 1 unit of fast-acting insulin covers">
+                                                            <attributes>
+                                                                <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="16" y="17.5" width="44.5" height="17"/>
+                                                    </variation>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="grams" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Qi-qn-SeI">
+                                                    <rect key="frame" x="514" y="12" width="70" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="GSh-1t-m9U"/>
+                                                        <constraint firstAttribute="height" constant="21" id="vac-o1-7tq"/>
+                                                    </constraints>
+                                                    <color key="textColor" red="1" green="0.31945131970000001" blue="0.23116686810000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <variation key="widthClass=compact" ambiguous="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="62.5" height="21"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="290" y="6" width="97" height="30"/>
+                                                    </variation>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="8Qi-qn-SeI" secondAttribute="trailing" constant="8" id="Io9-S7-FvB"/>
+                                                <constraint firstItem="8Qi-qn-SeI" firstAttribute="leading" secondItem="X9P-L9-bk1" secondAttribute="trailing" constant="16" id="KBN-0r-jzX"/>
+                                                <constraint firstItem="3Pj-kC-Itf" firstAttribute="top" secondItem="N1Z-DB-saL" secondAttribute="topMargin" id="Xb9-0t-oso"/>
+                                                <constraint firstItem="3Pj-kC-Itf" firstAttribute="leading" secondItem="N1Z-DB-saL" secondAttribute="leadingMargin" constant="8" id="cGf-r2-6r6"/>
+                                                <constraint firstItem="X9P-L9-bk1" firstAttribute="leading" secondItem="N1Z-DB-saL" secondAttribute="leadingMargin" constant="8" id="iVr-76-kmm"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="X9P-L9-bk1" secondAttribute="bottom" id="jR7-kz-Afq"/>
+                                                <constraint firstItem="8Qi-qn-SeI" firstAttribute="leading" secondItem="3Pj-kC-Itf" secondAttribute="trailing" constant="16" id="l0I-1J-w62"/>
+                                                <constraint firstItem="X9P-L9-bk1" firstAttribute="top" secondItem="3Pj-kC-Itf" secondAttribute="bottom" id="lCq-48-wUk"/>
+                                                <constraint firstAttribute="centerY" secondItem="8Qi-qn-SeI" secondAttribute="centerY" id="o9c-DD-FIC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kkt-N1-mT0">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kkt-N1-mT0" id="oBi-H0-vZZ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corrective Factor" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzD-uF-uwQ">
+                                                    <rect key="frame" x="16" y="8" width="481.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" ambiguous="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="175.5" height="20.5"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGF-CA-12S">
+                                                    <rect key="frame" x="16" y="28.5" width="481.5" height="7"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Enter how much 1 unit of fast-acting insulin lowers your blood glucose level">
+                                                            <attributes>
+                                                                <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="16" y="17.5" width="44.5" height="17"/>
+                                                    </variation>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZd-aO-Q5F">
+                                                    <rect key="frame" x="513.5" y="11.5" width="70.5" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="XT3-eV-csp"/>
+                                                        <constraint firstAttribute="width" constant="70" id="YnW-l2-paS"/>
+                                                    </constraints>
+                                                    <color key="textColor" red="1" green="0.31945131970000001" blue="0.23116686810000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <variation key="widthClass=compact" ambiguous="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="62.5" height="21"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="290" y="6" width="97" height="30"/>
+                                                    </variation>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="TGF-CA-12S" secondAttribute="bottom" id="15g-R5-dYV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="YZd-aO-Q5F" secondAttribute="trailing" constant="8" id="5BW-cb-hMQ"/>
+                                                <constraint firstItem="HzD-uF-uwQ" firstAttribute="leading" secondItem="oBi-H0-vZZ" secondAttribute="leadingMargin" constant="8" id="C9n-AP-g7k"/>
+                                                <constraint firstItem="YZd-aO-Q5F" firstAttribute="leading" secondItem="TGF-CA-12S" secondAttribute="trailing" constant="16" id="CAd-k9-EuI"/>
+                                                <constraint firstItem="TGF-CA-12S" firstAttribute="top" secondItem="HzD-uF-uwQ" secondAttribute="bottom" id="GIJ-5f-Q9Y"/>
+                                                <constraint firstItem="HzD-uF-uwQ" firstAttribute="top" secondItem="oBi-H0-vZZ" secondAttribute="topMargin" id="Y8G-FJ-jZn"/>
+                                                <constraint firstItem="YZd-aO-Q5F" firstAttribute="leading" secondItem="HzD-uF-uwQ" secondAttribute="trailing" constant="16" id="YUx-wT-su8"/>
+                                                <constraint firstItem="TGF-CA-12S" firstAttribute="leading" secondItem="oBi-H0-vZZ" secondAttribute="leadingMargin" constant="8" id="bsq-re-9zr"/>
+                                                <constraint firstAttribute="centerY" secondItem="YZd-aO-Q5F" secondAttribute="centerY" id="vHX-yq-jIL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gSB-qZ-MY1">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gSB-qZ-MY1" id="Qw1-sN-gax">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desired Blood Glucose" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDw-u5-pU3">
+                                                    <rect key="frame" x="16" y="8" width="482" height="11"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" ambiguous="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="175.5" height="20.5"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdM-WO-1ae">
+                                                    <rect key="frame" x="16" y="19" width="482" height="16.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Enter your desired blood glucose level">
+                                                            <attributes>
+                                                                <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="16" y="17.5" width="44.5" height="17"/>
+                                                    </variation>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gcb-Wv-7at">
+                                                    <rect key="frame" x="514" y="11.5" width="70" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="Uu3-6W-HpU"/>
+                                                    </constraints>
+                                                    <color key="textColor" red="1" green="0.31945131970000001" blue="0.23116686810000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <variation key="widthClass=compact" ambiguous="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="62.5" height="21"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="290" y="6" width="97" height="30"/>
+                                                    </variation>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gcb-Wv-7at" firstAttribute="leading" secondItem="jDw-u5-pU3" secondAttribute="trailing" constant="16" id="0x3-oA-Te4"/>
+                                                <constraint firstItem="gcb-Wv-7at" firstAttribute="leading" secondItem="hdM-WO-1ae" secondAttribute="trailing" constant="16" id="BQI-aw-gla"/>
+                                                <constraint firstItem="jDw-u5-pU3" firstAttribute="top" secondItem="Qw1-sN-gax" secondAttribute="topMargin" id="GRy-zW-VSr"/>
+                                                <constraint firstItem="jDw-u5-pU3" firstAttribute="leading" secondItem="Qw1-sN-gax" secondAttribute="leadingMargin" constant="8" id="P7P-wr-dJY"/>
+                                                <constraint firstAttribute="centerY" secondItem="gcb-Wv-7at" secondAttribute="centerY" id="UMc-cz-0a7"/>
+                                                <constraint firstItem="hdM-WO-1ae" firstAttribute="top" secondItem="jDw-u5-pU3" secondAttribute="bottom" id="Vtb-NT-e0O"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gcb-Wv-7at" secondAttribute="trailing" constant="8" id="aDS-hQ-GON"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="hdM-WO-1ae" secondAttribute="bottom" id="ilA-zC-nvI"/>
+                                                <constraint firstItem="hdM-WO-1ae" firstAttribute="leading" secondItem="Qw1-sN-gax" secondAttribute="leadingMargin" constant="8" id="qZe-1u-oHW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="19E-xp-IfS" id="5bG-LH-1wc"/>
+                            <outlet property="delegate" destination="19E-xp-IfS" id="XYX-m7-2R0"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Constants" id="Vvw-oW-b53">
+                        <barButtonItem key="leftBarButtonItem" title="Done" id="Zhe-YI-ctJ">
                             <connections>
-                                <action selector="closeModal:" destination="J8V-OX-qR8" id="zxx-qw-eny"/>
+                                <action selector="closeModal:" destination="19E-xp-IfS" id="4SP-ub-Y6q"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="carbohydrateFactorTextField" destination="Lla-D0-0VF" id="Du3-1e-yQI"/>
-                        <outlet property="correctiveFactorTextField" destination="mFZ-Y8-src" id="j5y-50-jte"/>
-                        <outlet property="desiredBloodGlucoseTextField" destination="diG-j1-YgP" id="v1m-0V-y3q"/>
+                        <outlet property="carbohydrateFactorTextField" destination="8Qi-qn-SeI" id="JSm-J0-e3y"/>
+                        <outlet property="correctiveFactorTextField" destination="YZd-aO-Q5F" id="qnu-nA-Q9Z"/>
+                        <outlet property="desiredBloodGlucoseTextField" destination="gcb-Wv-7at" id="FTW-i3-uP8"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eKD-4c-WWi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rH3-UQ-EE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="992" y="-556"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Elr-Dx-2pu">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lrq-Zj-Nv8" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tM3-OD-IeE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="J8V-OX-qR8" kind="relationship" relationship="rootViewController" id="rEd-tJ-u3V"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qqh-up-DDu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="288" y="-556"/>
+            <point key="canvasLocation" x="1020" y="-424"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hdr-ia-mDd">
@@ -528,6 +493,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vlb-oh-dS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1137" y="-96"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pDe-af-CUR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j9z-3P-Jdf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="whE-0s-XDy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="19E-xp-IfS" kind="relationship" relationship="rootViewController" id="c7W-T9-BHY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="83L-Q7-Vde" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="284" y="-424"/>
         </scene>
     </scenes>
     <color key="tintColor" red="1" green="0.31945131965918705" blue="0.23116686813235043" alpha="1" colorSpace="calibratedRGB"/>

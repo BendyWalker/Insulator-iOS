@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConstantsViewController: UIViewController {
+class ConstantsTableViewController: UITableViewController {
 
     @IBOutlet weak var carbohydrateFactorTextField: UITextField!
     @IBOutlet weak var correctiveFactorTextField: UITextField!
@@ -29,9 +29,10 @@ class ConstantsViewController: UIViewController {
     }
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(animated: Bool) {
         updateDynamicViewElements()
+        self.tableView.estimatedRowHeight = 44
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     func updateDynamicViewElements() {

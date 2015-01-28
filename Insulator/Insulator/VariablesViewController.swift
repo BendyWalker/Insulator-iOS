@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VariablesTableViewController: UITableViewController, UITableViewDelegate {
+class VariablesTableViewController: UITableViewController {
 
     @IBOutlet weak var currentBloodGlucoseLevelTextField: UITextField!
     @IBOutlet weak var carbohydratesInMealTextField: UITextField!
