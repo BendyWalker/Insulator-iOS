@@ -21,10 +21,10 @@ class Calculator {
     }
     
     func convertBloodGlucose(bloodGlucose: Double) -> Double {
-        if !isMmolSelected {
-            return bloodGlucose / 18
-        } else {
+        if isMmolSelected {
             return bloodGlucose
+        } else {
+            return bloodGlucose / 18
         }
     }
     
