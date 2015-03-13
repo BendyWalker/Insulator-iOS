@@ -9,7 +9,9 @@
 import UIKit
 
 class VariablesTableViewController: UITableViewController {
-
+    
+    let healthManager = HealthManager()
+        
     @IBOutlet weak var currentBloodGlucoseLevelTextField: UITextField!
     @IBOutlet weak var carbohydratesInMealTextField: UITextField!
     @IBOutlet weak var correctiveDoseLabel: UILabel!
@@ -29,6 +31,19 @@ class VariablesTableViewController: UITableViewController {
         correctiveDoseLabel.text = "0.0"
         
         self.view.endEditing(true)
+    }
+    
+    @IBAction func authorizeHealthKit(sender: AnyObject) {
+        healthManager.authoriseHealthKit { (authorized, error) -> Void in
+            if authorized {
+                println("HealthKit authorization received.")
+            } else {
+                println("HealthKit authorization denied!")
+                if error != nil {
+                    println("\(error)")
+                }
+            }
+        }
     }
     
     override func viewDidLoad() {
