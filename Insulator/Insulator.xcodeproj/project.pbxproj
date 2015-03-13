@@ -17,6 +17,7 @@
 		1B6F497A1A6EC9BF003743B3 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1B6F49791A6EC9BF003743B3 /* Settings.bundle */; };
 		1B9F720B1A7644E70062D606 /* ConstantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F720A1A7644E70062D606 /* ConstantsViewController.swift */; };
 		1BD0B85E1AB35211000C909F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD0B85D1AB35211000C909F /* HealthKit.framework */; };
+		1BD0B8601AB35497000C909F /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD0B85F1AB35497000C909F /* HealthManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		1B9F720A1A7644E70062D606 /* ConstantsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantsViewController.swift; sourceTree = "<group>"; };
 		1BD0B8541AB346D3000C909F /* Insulator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Insulator.entitlements; sourceTree = "<group>"; };
 		1BD0B85D1AB35211000C909F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		1BD0B85F1AB35497000C909F /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthManager.swift; path = ../HealthManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				1B0A94A91A6C809E00DCFC85 /* LaunchScreen.xib */,
 				1B0A949E1A6C809E00DCFC85 /* Supporting Files */,
 				1B165B741A6EA9F20096F290 /* Calculator.swift */,
+				1BD0B85F1AB35497000C909F /* HealthManager.swift */,
 			);
 			path = Insulator;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				1B0A94A31A6C809E00DCFC85 /* VariablesViewController.swift in Sources */,
 				1B0A94A11A6C809E00DCFC85 /* AppDelegate.swift in Sources */,
 				1B165B751A6EA9F20096F290 /* Calculator.swift in Sources */,
+				1BD0B8601AB35497000C909F /* HealthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
