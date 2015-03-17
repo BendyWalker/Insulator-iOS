@@ -279,7 +279,6 @@
                         <outlet property="carbohydratesInMealTextField" destination="1Dk-B0-2PN" id="egT-qP-wqI"/>
                         <outlet property="correctiveDoseLabel" destination="RTD-1C-biv" id="xpF-0z-Fni"/>
                         <outlet property="currentBloodGlucoseLevelTextField" destination="tFd-iJ-e6l" id="09I-sl-n3B"/>
-                        <outlet property="healthKitButton" destination="Xsf-sh-7PA" id="odx-3z-neX"/>
                         <outlet property="suggestedDoseLabel" destination="UXc-RA-Oun" id="tCB-bO-X7k"/>
                     </connections>
                 </tableViewController>
