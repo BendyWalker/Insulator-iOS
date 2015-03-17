@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  Insulator
-//
-//  Created by Ben Walker on 19/01/2015.
-//  Copyright (c) 2015 Ben David Walker. All rights reserved.
-//
-
 import UIKit
 
 class VariablesTableViewController: UITableViewController {
