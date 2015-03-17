@@ -51,8 +51,8 @@ class HealthManager {
             if completion != nil {
                 completion (mostRecentSample, nil)
             }
-            
-            self.healthKitStore.executeQuery(sampleQuery)
         }
+        
+        self.healthKitStore.executeQuery(sampleQuery)
     }
 }
