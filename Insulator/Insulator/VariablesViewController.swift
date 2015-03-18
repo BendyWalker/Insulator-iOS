@@ -78,8 +78,8 @@ class VariablesTableViewController: UITableViewController {
         super.viewDidLoad()
         updateBloodGlucoseUnitPlaceholder()
         
-        currentBloodGlucoseLevelTextField.addTarget(self, action: "calculateDoseOnTextChange:", forControlEvents: UIControlEvents.AllEvents)
-        carbohydratesInMealTextField.addTarget(self, action: "calculateDoseOnTextChange:", forControlEvents: UIControlEvents.AllEvents)
+        currentBloodGlucoseLevelTextField.addTarget(self, action: "calculateDoseOnTextChange:", forControlEvents: UIControlEvents.EditingChanged)
+        carbohydratesInMealTextField.addTarget(self, action: "calculateDoseOnTextChange:", forControlEvents: UIControlEvents.EditingChanged)
         
         self.navigationController?.toolbarHidden = false
     }
@@ -89,8 +89,8 @@ class VariablesTableViewController: UITableViewController {
     }
     
     func calculateDose() {
-        let currentBloodGlucoseLevel = (currentBloodGlucoseLevelTextField.text as NSString).doubleValue
-        let carbohydratesInMeal = (carbohydratesInMealTextField.text as NSString).doubleValue
+        var currentBloodGlucoseLevel = (currentBloodGlucoseLevelTextField.text! as NSString).doubleValue
+        var carbohydratesInMeal = (carbohydratesInMealTextField.text! as NSString).doubleValue
         
         let calculator = Calculator(currentBloodGlucoseLevel: currentBloodGlucoseLevel, carbohydratesInMeal: carbohydratesInMeal)
         let suggestedDose: String = "\(calculator.getSuggestedDose(true))"
