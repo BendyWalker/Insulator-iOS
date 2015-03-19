@@ -138,6 +138,32 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="jvG-P3-Nxt">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Sr0-yW-0C8">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sr0-yW-0C8" id="Bcb-Zh-u0u">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsf-sh-7PA">
+                                                    <rect key="frame" x="168" y="4.5" width="265" height="33"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal" title="Get Most Recent Data from Health">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="isHealthKitAuthorized:" destination="Hbm-Im-bJG" eventType="touchUpInside" id="J71-QR-FfD"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerX" secondItem="Xsf-sh-7PA" secondAttribute="centerX" id="8bs-zm-U54"/>
+                                                <constraint firstAttribute="centerY" secondItem="Xsf-sh-7PA" secondAttribute="centerY" id="FQt-EZ-Jk6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="Dose" id="e65-0l-RAA">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dB8-Wf-8Zj">
@@ -145,7 +171,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dB8-Wf-8Zj" id="n4k-wO-mNX">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Suggested Dose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZh-gy-ogA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Suggested Dose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZh-gy-ogA">
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -238,41 +264,15 @@
                                                     <exclude reference="VSG-ag-amf"/>
                                                     <exclude reference="fV9-pO-hJc"/>
                                                     <exclude reference="uHR-Sw-2g0"/>
-                                                    <exclude reference="aPh-nu-WW9"/>
                                                     <exclude reference="1b4-ar-pfs"/>
                                                     <exclude reference="2BC-hq-ZNd"/>
                                                     <exclude reference="9hq-kv-nd0"/>
                                                     <exclude reference="1kJ-q4-tiq"/>
                                                     <exclude reference="7xM-I0-7wp"/>
                                                     <exclude reference="g26-T9-zm0"/>
+                                                    <exclude reference="aPh-nu-WW9"/>
                                                 </mask>
                                             </variation>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="jvG-P3-Nxt">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Sr0-yW-0C8">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sr0-yW-0C8" id="Bcb-Zh-u0u">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsf-sh-7PA">
-                                                    <rect key="frame" x="168" y="4.5" width="265" height="33"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <state key="normal" title="Get Most Recent Data from Health">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="isHealthKitAuthorized:" destination="Hbm-Im-bJG" eventType="touchUpInside" id="J71-QR-FfD"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="centerX" secondItem="Xsf-sh-7PA" secondAttribute="centerX" id="8bs-zm-U54"/>
-                                                <constraint firstAttribute="centerY" secondItem="Xsf-sh-7PA" secondAttribute="centerY" id="FQt-EZ-Jk6"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -612,7 +612,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="gDt-Av-aJe">
+                            <tableViewSection headerTitle="Suggestions" id="gDt-Av-aJe">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VIv-R8-Jv1">
                                         <autoresizingMask key="autoresizingMask"/>
