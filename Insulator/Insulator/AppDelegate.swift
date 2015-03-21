@@ -29,9 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // TODO: Set these back to 0.0 after testing!
-        userDefaults.setValue(0.0, forKey: "carbohydrate_factor_preference")
-        userDefaults.setValue(0.0, forKey: "corrective_factor_preference")
-        userDefaults.setValue(0.0, forKey: "desired_blood_glucose_preference")
+        userDefaults.setValue(9.2, forKey: "carbohydrate_factor_preference")
+        userDefaults.setValue(2.0, forKey: "corrective_factor_preference")
+        userDefaults.setValue(7.0, forKey: "desired_blood_glucose_preference")
         
         userDefaults.synchronize()
     }
