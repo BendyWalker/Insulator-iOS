@@ -1,17 +1,36 @@
 import Foundation
 
+enum BloodGlucoseUnit  {
+    case mmol
+    case mgdl
+    case error // Remove this case. BloodGlucoseUnit should be nillable
+    
+    static func fromString(stringValue: String) -> BloodGlucoseUnit {
+        switch stringValue {
+        case "mmol": return .mmol
+        case "mgdl": return .mgdl
+        default: return .error
+        }
+    }
+
+}
+
+
 class Calculator {
     let carbohydrateFactor: Double
     let correctiveFactor: Double
     let desiredBloodGlucoseLevel: Double
     let currentBloodGlucoseLevel: Double
     let carbohydratesInMeal: Double
-    let isMmolSelected: Bool
+    let bloodGlucoseUnit: BloodGlucoseUnit
     let isHalfUnitsEnabled: Bool
     
     init(currentBloodGlucoseLevel: Double, carbohydratesInMeal: Double) {
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        self.isMmolSelected = (userDefaults.stringForKey("blood_glucose_units_preference") == "mmol")
+
+        let savedBloodGlucoseUnit: String = userDefaults.stringForKey("blood_glucose_units_preference")!
+        self.bloodGlucoseUnit = BloodGlucoseUnit.fromString(savedBloodGlucoseUnit)
+        
         self.isHalfUnitsEnabled = userDefaults.boolForKey("half_units_preference")
         self.currentBloodGlucoseLevel = currentBloodGlucoseLevel
         self.carbohydratesInMeal = carbohydratesInMeal
@@ -21,11 +40,16 @@ class Calculator {
     }
     
     func convertBloodGlucose(bloodGlucose: Double) -> Double {
-        if isMmolSelected {
+        
+        switch bloodGlucoseUnit {
+        case .mmol:
             return bloodGlucose
-        } else {
+        case .mgdl:
             return bloodGlucose / 18
+        case .error:
+            return 0
         }
+    
     }
     
     func getCarbohydrateDose(isRounded: Bool) -> Double {
