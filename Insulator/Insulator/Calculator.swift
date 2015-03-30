@@ -1,18 +1,16 @@
 import Foundation
 
-enum BloodGlucoseUnit  {
-    case mmol
-    case mgdl
-    case error // Remove this case. BloodGlucoseUnit should be nillable
+enum BloodGlucoseUnit: String  {
+    case mmol = "mmol"
+    case mgdl = "mgdl"
     
-    static func fromString(stringValue: String) -> BloodGlucoseUnit {
-        switch stringValue {
-        case "mmol": return .mmol
-        case "mgdl": return .mgdl
-        default: return .error
+    static func fromString(string: String) -> BloodGlucoseUnit? {
+        switch string {
+        case BloodGlucoseUnit.mmol.rawValue: return .mmol
+        case BloodGlucoseUnit.mgdl.rawValue: return .mgdl
+        default: return nil
         }
     }
-
 }
 
 
@@ -25,18 +23,14 @@ class Calculator {
     let bloodGlucoseUnit: BloodGlucoseUnit
     let isHalfUnitsEnabled: Bool
     
-    init(currentBloodGlucoseLevel: Double, carbohydratesInMeal: Double) {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-
-        let savedBloodGlucoseUnit: String = userDefaults.stringForKey("blood_glucose_units_preference")!
-        self.bloodGlucoseUnit = BloodGlucoseUnit.fromString(savedBloodGlucoseUnit)
-        
-        self.isHalfUnitsEnabled = userDefaults.boolForKey("half_units_preference")
+    init(carbohydrateFactor: Double, correctiveFactor: Double, desiredBloodGlucoseLevel: Double, currentBloodGlucoseLevel: Double, carbohydratesInMeal: Double, bloodGlucoseUnit: BloodGlucoseUnit, isHalfUnitsEnabled: Bool) {
+        self.carbohydrateFactor = carbohydrateFactor
+        self.correctiveFactor = correctiveFactor
+        self.desiredBloodGlucoseLevel = carbohydrateFactor
         self.currentBloodGlucoseLevel = currentBloodGlucoseLevel
         self.carbohydratesInMeal = carbohydratesInMeal
-        self.carbohydrateFactor = userDefaults.doubleForKey("carbohydrate_factor_preference")
-        self.correctiveFactor = userDefaults.doubleForKey("corrective_factor_preference")
-        self.desiredBloodGlucoseLevel = userDefaults.doubleForKey("desired_blood_glucose_preference")
+        self.bloodGlucoseUnit = bloodGlucoseUnit
+        self.isHalfUnitsEnabled = isHalfUnitsEnabled
     }
     
     func convertBloodGlucose(bloodGlucose: Double) -> Double {
@@ -46,8 +40,6 @@ class Calculator {
             return bloodGlucose
         case .mgdl:
             return bloodGlucose / 18
-        case .error:
-            return 0
         }
     
     }
