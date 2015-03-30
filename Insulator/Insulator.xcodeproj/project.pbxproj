@@ -19,6 +19,7 @@
 		1BCA7A3C1AB9D6BA005A3CCC /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCA7A3B1AB9D6BA005A3CCC /* SuggestionsViewController.swift */; };
 		1BD0B85E1AB35211000C909F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD0B85D1AB35211000C909F /* HealthKit.framework */; };
 		1BD0B8601AB35497000C909F /* HealthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD0B85F1AB35497000C909F /* HealthManager.swift */; };
+		2E48EAD31AC975F400E0F856 /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48EAD21AC975F400E0F856 /* PreferencesManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1BD0B8541AB346D3000C909F /* Insulator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Insulator.entitlements; sourceTree = "<group>"; };
 		1BD0B85D1AB35211000C909F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		1BD0B85F1AB35497000C909F /* HealthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthManager.swift; path = ../HealthManager.swift; sourceTree = "<group>"; };
+		2E48EAD21AC975F400E0F856 /* PreferencesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				1BD0B8541AB346D3000C909F /* Insulator.entitlements */,
+				2E48EAD21AC975F400E0F856 /* PreferencesManager.swift */,
 				1B0A94A01A6C809E00DCFC85 /* AppDelegate.swift */,
 				1B0A94A21A6C809E00DCFC85 /* VariablesViewController.swift */,
 				1BCA7A3B1AB9D6BA005A3CCC /* SuggestionsViewController.swift */,
@@ -246,6 +249,7 @@
 				1B0A94A11A6C809E00DCFC85 /* AppDelegate.swift in Sources */,
 				1B165B751A6EA9F20096F290 /* Calculator.swift in Sources */,
 				1BD0B8601AB35497000C909F /* HealthManager.swift in Sources */,
+				2E48EAD31AC975F400E0F856 /* PreferencesManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
