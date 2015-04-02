@@ -1,11 +1,19 @@
 import Foundation
 
+let PreferenceDidChangeNotification = "PreferenceDidChangeNotification"
+
 class PreferencesStore  {
     
     private let userDefaults = NSUserDefaults.standardUserDefaults()
     
+    
+    private func postPreferenceDidChangeNotification() {
+        NSNotificationCenter.defaultCenter().postNotificationName(PreferenceDidChangeNotification, object: nil)
+    }
+    
     func saveBool(bool: Bool, withKey key: String) {
         userDefaults.setBool(bool, forKey: key)
+        postPreferenceDidChangeNotification()
     }
     
     func loadBoolWithKey(key: String) -> Bool {
@@ -13,7 +21,8 @@ class PreferencesStore  {
     }
     
     func saveObject(object: AnyObject, withKey key: String) {
-        return userDefaults.setObject(object, forKey:key)
+        userDefaults.setObject(object, forKey:key)
+        postPreferenceDidChangeNotification()
     }
     
     func loadObjectWithKey(key: String) -> AnyObject? {
@@ -21,7 +30,8 @@ class PreferencesStore  {
     }
     
     func saveDouble(double: Double, withKey key: String) {
-        return userDefaults.setDouble(double, forKey:key)
+        userDefaults.setDouble(double, forKey:key)
+        postPreferenceDidChangeNotification()
     }
     
     func loadDoubleWithKey(key: String) -> Double {

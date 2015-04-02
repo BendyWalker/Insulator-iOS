@@ -85,6 +85,12 @@ class VariablesTableViewController: UITableViewController {
         carbohydratesInMealTextField.addTarget(self, action: "calculateDoseOnTextChange:", forControlEvents: UIControlEvents.EditingChanged)
         
         self.navigationController?.toolbarHidden = false
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateBloodGlucoseUnitPlaceholder", name: PreferenceDidChangeNotification, object: nil)
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: PreferenceDidChangeNotification, object: nil)
     }
     
     func calculateDoseOnTextChange(sender: UITextField) {
@@ -108,16 +114,10 @@ class VariablesTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        // TODO: Listen for notification for when preferences change
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "defaultsDidChange:", name: NSUserDefaultsDidChangeNotification, object: nil)
-        
         self.tableView.estimatedRowHeight = 44
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
-    func defaultsDidChange(notification: NSNotification) {
-        updateBloodGlucoseUnitPlaceholder()
-    }
     
     func updateBloodGlucoseUnitPlaceholder() {
         let bloodGlucoseUnit = self.preferencesManager.bloodGlucoseUnit
@@ -137,5 +137,6 @@ class VariablesTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
 }
 
