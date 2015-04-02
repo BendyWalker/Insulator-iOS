@@ -44,52 +44,40 @@ class PreferencesManager {
     
     // MARK: Properties
     
-    var useHalfUnits: Bool? {
+    var useHalfUnits: Bool {
         didSet {
-            if let setValue = useHalfUnits {
-                store.saveBool(setValue, withKey: UseHalfUnitsKey)
-            }
+            store.saveBool(useHalfUnits, withKey: UseHalfUnitsKey)
         }
     }
     
-    var allowFloatingPointCarbohydrates: Bool? {
+    var allowFloatingPointCarbohydrates: Bool {
         didSet {
-            if let setValue = allowFloatingPointCarbohydrates {
-                store.saveBool(setValue, withKey: AllowFloatingPointCarbohydratesKey)
-            }
+            store.saveBool(allowFloatingPointCarbohydrates, withKey: AllowFloatingPointCarbohydratesKey)
         }
     }
     
-    var bloodGlucoseUnit: BloodGlucoseUnit? {
+    var bloodGlucoseUnit: BloodGlucoseUnit {
         didSet {
-            if let setValue = bloodGlucoseUnit {
-                store.saveObject(setValue.rawValue, withKey: BloodGlucoseUnitKey)
-            }
+            store.saveObject(bloodGlucoseUnit.rawValue, withKey: BloodGlucoseUnitKey)
         }
     }
     
-    var carbohydrateFactor: Double? {
+    var carbohydrateFactor: Double {
         didSet {
-            if let setValue = carbohydrateFactor {
-                store.saveDouble(setValue, withKey: CarbohydrateFactorKey)
-            }
+            store.saveDouble(carbohydrateFactor, withKey: CarbohydrateFactorKey)
         }
     }
     
     
-    var correctiveFactor: Double? {
+    var correctiveFactor: Double {
         didSet {
-            if let setValue = correctiveFactor {
-                store.saveDouble(setValue, withKey: CorrectiveFactorKey)
-            }
+            store.saveDouble(correctiveFactor, withKey: CorrectiveFactorKey)
         }
     }
     
-    var desiredBloodGlucose: Double? {
+    var desiredBloodGlucose: Double {
         didSet {
-            if let setValue = desiredBloodGlucose {
-                store.saveDouble(setValue, withKey: DesiredBloodGlucoseKey)
-            }
+            store.saveDouble(desiredBloodGlucose, withKey: DesiredBloodGlucoseKey)
         }
     }
     
@@ -110,11 +98,9 @@ class PreferencesManager {
     init(store: PreferencesStore) {
         self.store = store
         
-        if let loadedUnit = store.loadObjectWithKey(BloodGlucoseUnitKey) as? String {
-            if let bloodGlucoseUnit = BloodGlucoseUnit.fromString(loadedUnit) {
-                self.bloodGlucoseUnit = bloodGlucoseUnit
-            }
-        }
+        let loadedUnit = store.loadObjectWithKey(BloodGlucoseUnitKey) as? String
+        self.bloodGlucoseUnit = BloodGlucoseUnit.fromString(loadedUnit!)!
+        
         self.useHalfUnits = store.loadBoolWithKey(UseHalfUnitsKey)
         self.carbohydrateFactor = store.loadDoubleWithKey(CarbohydrateFactorKey)
         self.correctiveFactor = store.loadDoubleWithKey(CorrectiveFactorKey)
