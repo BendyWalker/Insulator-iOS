@@ -1,38 +1,104 @@
 import Foundation
 
+class PreferencesStore  {
+    
+    private let userDefaults = NSUserDefaults.standardUserDefaults()
+    
+    func saveBool(bool: Bool, withKey key: String) {
+        userDefaults.setBool(bool, forKey: key)
+    }
+    
+    func loadBoolWithKey(key: String) -> Bool {
+        return userDefaults.boolForKey(key)
+    }
+    
+    func saveObject(object: AnyObject, withKey key: String) {
+        return userDefaults.setObject(object, forKey:key)
+    }
+    
+    func loadObjectWithKey(key: String) -> AnyObject? {
+        return userDefaults.objectForKey(key)
+    }
+    
+    func saveDouble(double: Double, withKey key: String) {
+        return userDefaults.setDouble(double, forKey:key)
+    }
+    
+    func loadDoubleWithKey(key: String) -> Double {
+        return userDefaults.doubleForKey(key)
+    }
+    
+}
+
 class PreferencesManager {
-    private let useHalfUnitsKey = "UseHalfUnitsKey"
-    var useHalfUnits: Bool {
+    
+    let store: PreferencesStore
+    
+    private let UseHalfUnitsKey = "UseHalfUnitsKey"
+    private let AllowFloatingPointCarbohydratesKey = "AllowFloatingPointCarbohydratesKey"
+    private let BloodGlucoseUnitKey = "BloodGlucoseUnitKey"
+    private let CarbohydrateFactorKey = "CarbohydrateFactorKey"
+    private let CorrectiveFactorKey = "CorrectiveFactorKey"
+    private let DesiredBloodGlucoseKey = "DesiredBloodGlucoseKey"
+    
+    
+    // MARK: Properties
+    
+    var useHalfUnits: Bool? {
         didSet {
-            let useHalfUnitsObject = NSNumber(bool: useHalfUnits)
-            let userDefaults = NSUserDefaults.standardUserDefaults()
-            userDefaults.setObject(useHalfUnitsObject, forKey:useHalfUnitsKey)
+            if let setValue = useHalfUnits {
+                store.saveBool(setValue, withKey: UseHalfUnitsKey)
+            }
+        }
+    }
+    
+    var allowFloatingPointCarbohydrates: Bool? {
+        didSet {
+            if let setValue = allowFloatingPointCarbohydrates {
+                store.saveBool(setValue, withKey: AllowFloatingPointCarbohydratesKey)
+            }
+        }
+    }
+    
+    var bloodGlucoseUnit: BloodGlucoseUnit? {
+        didSet {
+            if let setValue = bloodGlucoseUnit {
+                store.saveObject(setValue.rawValue, withKey: BloodGlucoseUnitKey)
+            }
+        }
+    }
+    
+    var carbohydrateFactor: Double? {
+        didSet {
+            if let setValue = carbohydrateFactor {
+                store.saveDouble(setValue, withKey: CarbohydrateFactorKey)
+            }
         }
     }
     
     
-    private let allowFloatingPointCarbohydratesKey = "AllowFloatingPointCarbohydratesKey"
-    var allowFloatingPointCarbohydrates: Bool
-    
-    private let bloodGlucoseKey = "bloodGlucoseKey"
-    var bloodGlucoseUnit: BloodGlucoseUnit
-    
-    
-    private let carbohydrateFactorKey = "CarbohydrateFactorKey"
-    var carbohydrateFactor: Double {
+    var correctiveFactor: Double? {
         didSet {
-            let carbohydrateFactorObject = NSNumber(double: carbohydrateFactor)
-            let userDefaults = NSUserDefaults.standardUserDefaults()
-            NSUserDefaults.standardUserDefaults().setObject(carbohydrateFactorObject, forKey:carbohydrateFactorKey)
+            if let setValue = correctiveFactor {
+                store.saveDouble(setValue, withKey: CorrectiveFactorKey)
+            }
         }
     }
     
+    var desiredBloodGlucose: Double? {
+        didSet {
+            if let setValue = desiredBloodGlucose {
+                store.saveDouble(setValue, withKey: DesiredBloodGlucoseKey)
+            }
+        }
+    }
     
-    var correctiveFactor: Double
-    var desiredBloodGlucose: Double
+    // MARK: Initialisation
     
-    init(useHalfUnits: Bool, bloodGlucoseUnit: BloodGlucoseUnit, carbohydrateFactor: Double, correctiveFactor: Double, desiredBloodGlucose: Double, allowFloatingPointCarbohydrates: Bool)
+    init(store: PreferencesStore, useHalfUnits: Bool, bloodGlucoseUnit: BloodGlucoseUnit, carbohydrateFactor: Double, correctiveFactor: Double, desiredBloodGlucose: Double, allowFloatingPointCarbohydrates: Bool)
     {
+        self.store = store
+        
         self.useHalfUnits = useHalfUnits
         self.bloodGlucoseUnit = bloodGlucoseUnit
         self.carbohydrateFactor = carbohydrateFactor
@@ -41,14 +107,18 @@ class PreferencesManager {
         self.allowFloatingPointCarbohydrates = allowFloatingPointCarbohydrates
     }
     
-    init() {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        self.useHalfUnits = userDefaults.boolForKey(useHalfUnitsKey)
+    init(store: PreferencesStore) {
+        self.store = store
         
-        self.useHalfUnits = userDefaults.boolForKey(useHalfUnitsKey)
-        self.bloodGlucoseUnit = userDefaults.setObject(self.bloodGlucoseUnit.toString, forKey: bloodGlucoseKey)
-        self.carbohydrateFactor = userDefaults.boolForKey(useHalfUnitsKey)
-        self.correctiveFactor = userDefaults.boolForKey(useHalfUnitsKey)
-        self.allowFloatingPointCarbohydrates = userDefaults.boolForKey(useHalfUnitsKey)
+        if let loadedUnit = store.loadObjectWithKey(BloodGlucoseUnitKey) as? String {
+            if let bloodGlucoseUnit = BloodGlucoseUnit.fromString(loadedUnit) {
+                self.bloodGlucoseUnit = bloodGlucoseUnit
+            }
+        }
+        self.useHalfUnits = store.loadBoolWithKey(UseHalfUnitsKey)
+        self.carbohydrateFactor = store.loadDoubleWithKey(CarbohydrateFactorKey)
+        self.correctiveFactor = store.loadDoubleWithKey(CorrectiveFactorKey)
+        self.desiredBloodGlucose = store.loadDoubleWithKey(DesiredBloodGlucoseKey)
+        self.allowFloatingPointCarbohydrates = store.loadBoolWithKey(AllowFloatingPointCarbohydratesKey)
     }
 }
