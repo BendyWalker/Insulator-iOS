@@ -8,32 +8,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        setUserDefaults()
+        
+        PreferencesManager(
+            store: PreferencesStore(),
+            useHalfUnits: true,
+            bloodGlucoseUnit: .mmol,
+            carbohydrateFactor: 1,
+            correctiveFactor: 2,
+            desiredBloodGlucose: 3,
+            allowFloatingPointCarbohydrates: true
+        )
+        
+        
         return true
-    }
-    
-    func setUserDefaults() {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        
-        
-        if userDefaults.valueForKey("half_units_preference") == nil {
-            userDefaults.setValue(false, forKey: "half_units_preference")
-        }
-        
-        if userDefaults.valueForKey("blood_glucose_units_preference") == nil {
-            userDefaults.setValue("mmol", forKey: "blood_glucose_units_preference")
-        }
-        
-        if userDefaults.valueForKey("carbohydrates_decimal_preference") == nil {
-            userDefaults.setValue(false, forKey: "carbohydrates_decimal_preference")
-        }
-        
-        // TODO: Set these back to 0.0 after testing!
-        userDefaults.setValue(0.0, forKey: "carbohydrate_factor_preference")
-        userDefaults.setValue(0.0, forKey: "corrective_factor_preference")
-        userDefaults.setValue(0.0, forKey: "desired_blood_glucose_preference")
-        
-        userDefaults.synchronize()
     }
 
     func applicationWillResignActive(application: UIApplication) {
