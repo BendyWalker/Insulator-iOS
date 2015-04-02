@@ -4,6 +4,7 @@ import HealthKit
 class VariablesTableViewController: UITableViewController {
     
     let healthManager = HealthManager()
+    let preferencesManager = PreferencesManager(store: PreferencesStore())
     
     @IBOutlet weak var currentBloodGlucoseLevelTextField: UITextField!
     @IBOutlet weak var carbohydratesInMealTextField: UITextField!
@@ -92,7 +93,9 @@ class VariablesTableViewController: UITableViewController {
         var currentBloodGlucoseLevel = (currentBloodGlucoseLevelTextField.text! as NSString).doubleValue
         var carbohydratesInMeal = (carbohydratesInMealTextField.text! as NSString).doubleValue
         
-        let calculator = Calculator(currentBloodGlucoseLevel: currentBloodGlucoseLevel, carbohydratesInMeal: carbohydratesInMeal)
+        let calculator = Calculator(carbohydrateFactor: 1, correctiveFactor: 2, desiredBloodGlucoseLevel: 3, currentBloodGlucoseLevel: 4, carbohydratesInMeal: 5, bloodGlucoseUnit: .mmol, isHalfUnitsEnabled: true)
+        
+        
         let suggestedDose: String = "\(calculator.getSuggestedDose(true))"
         let carbohydrateDose: String = "\(calculator.getCarbohydrateDose(true))"
         let correctiveDose: String = "\(calculator.getCorrectiveDose(true))"
@@ -114,19 +117,14 @@ class VariablesTableViewController: UITableViewController {
     }
     
     func updateBloodGlucoseUnitPlaceholder() {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        let bloodGlucoseUnit = userDefaults.valueForKey("blood_glucose_units_preference") as String
-        let isMmolSelected = bloodGlucoseUnit.isEqual("mmol")
+        let bloodGlucoseUnit = self.preferencesManager.bloodGlucoseUnit
         
-        var placeholder : String
-        
-        if isMmolSelected {
-            placeholder = "mmol/L"
-        } else {
-            placeholder = "mg/dL"
-        }
-        
-        currentBloodGlucoseLevelTextField.placeholder = placeholder
+        currentBloodGlucoseLevelTextField.placeholder = {
+            switch bloodGlucoseUnit {
+            case .mmol: return "mmol/L"
+            case .mgdl: return "mg/dL"
+            }
+        }()
     }
     
     override func viewWillDisappear(animated: Bool) {
