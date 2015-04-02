@@ -7,18 +7,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        
+
+        // Pass defaults to the preferences manager
         PreferencesManager(
             store: PreferencesStore(),
             useHalfUnits: true,
             bloodGlucoseUnit: .mmol,
-            carbohydrateFactor: 1,
+            carbohydrateFactor: 9.2,
             correctiveFactor: 2,
-            desiredBloodGlucose: 3,
+            desiredBloodGlucose: 7,
             allowFloatingPointCarbohydrates: true
         )
-        
         
         return true
     }
