@@ -51,27 +51,29 @@ class VariablesTableViewController: UITableViewController {
             }
             
             let bloodGlucose: HKQuantitySample? = mostRecentBloodGlucose as? HKQuantitySample
-            let millgramsPerDeciliterOfBloodGlucose = bloodGlucose?.quantity.doubleValueForUnit(HKUnit(fromString: "mg/dL"))
-            
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                let userDefaults = NSUserDefaults.standardUserDefaults()
-                let bloodGlucoseUnit = userDefaults.valueForKey("blood_glucose_units_preference") as String
-                let isMmolSelected = bloodGlucoseUnit.isEqual("mmol")
-                
-                if millgramsPerDeciliterOfBloodGlucose != nil {
-                    var finalBloodGlucose: Double
-                    if isMmolSelected {
-                        finalBloodGlucose = Double(round((millgramsPerDeciliterOfBloodGlucose! / 18) * 10) / 10)
-                    } else {
-                        finalBloodGlucose = Double(round(millgramsPerDeciliterOfBloodGlucose! * 10) / 10)
-                    }
+            if let millgramsPerDeciliterOfBloodGlucose = bloodGlucose?.quantity.doubleValueForUnit(HKUnit(fromString: "mg/dL")) {
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    
+                    let bloodGlucoseUnit = self.preferencesManager.bloodGlucoseUnit
+                    
+                    // Maybe move this logic into the BloodGlucoseUnit type
+                    // Would be nice to just call bloodGlucoseUnit.calculateFinaLevel(quantity)
+                    let finalBloodGlucose: Double = {
+                        switch bloodGlucoseUnit {
+                        case .mmol: return Double(round((millgramsPerDeciliterOfBloodGlucose / 18) * 10) / 10)
+                        case .mgdl: return Double(round(millgramsPerDeciliterOfBloodGlucose * 10) / 10)
+                        }
+                        }()
+                    
                     self.currentBloodGlucoseLevelTextField.text = "\(finalBloodGlucose)"
-                } else {
-                    self.currentBloodGlucoseLevelTextField.text = ""
-                }
-                
-                self.calculateDose()
-            });
+                });
+            }
+            else {
+                // No blood glucose quanity, so show not text
+                self.currentBloodGlucoseLevelTextField.text = ""
+            }
+            
+            self.calculateDose()
         });
     }
     
@@ -106,6 +108,7 @@ class VariablesTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        // TODO: Listen for notification for when preferences change
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "defaultsDidChange:", name: NSUserDefaultsDidChangeNotification, object: nil)
         
         self.tableView.estimatedRowHeight = 44
@@ -124,7 +127,7 @@ class VariablesTableViewController: UITableViewController {
             case .mmol: return "mmol/L"
             case .mgdl: return "mg/dL"
             }
-        }()
+            }()
     }
     
     override func viewWillDisappear(animated: Bool) {
