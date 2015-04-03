@@ -4,7 +4,7 @@ import HealthKit
 class VariablesTableViewController: UITableViewController {
     
     let healthManager = HealthManager()
-    let preferencesManager = PreferencesManager(existingStore: PreferencesStore())
+    let preferencesManager = PreferencesManager.sharedInstance
     
     @IBOutlet weak var currentBloodGlucoseLevelTextField: UITextField!
     @IBOutlet weak var carbohydratesInMealTextField: UITextField!
@@ -86,11 +86,11 @@ class VariablesTableViewController: UITableViewController {
         
         self.navigationController?.toolbarHidden = false
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateBloodGlucoseUnitPlaceholder", name: PreferenceDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateBloodGlucoseUnitPlaceholder", name: PreferencesDidChangeNotification, object: nil)
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: PreferenceDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: PreferencesDidChangeNotification, object: nil)
     }
     
     func calculateDoseOnTextChange(sender: UITextField) {

@@ -6,7 +6,7 @@ class ConstantsTableViewController: UITableViewController {
     @IBOutlet weak var correctiveFactorTextField: UITextField!
     @IBOutlet weak var desiredBloodGlucoseTextField: UITextField!
     
-    let preferencesManager = PreferencesManager(existingStore: PreferencesStore())
+    let preferencesManager = PreferencesManager.sharedInstance
     
     @IBAction func closeModal(sender: AnyObject) {
         let carbohydrateFactor = (carbohydrateFactorTextField.text as NSString).doubleValue

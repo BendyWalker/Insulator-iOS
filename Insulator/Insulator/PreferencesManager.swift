@@ -1,6 +1,6 @@
 import Foundation
 
-let PreferenceDidChangeNotification = "PreferenceDidChangeNotification"
+let PreferencesDidChangeNotification = "PreferencesDidChangeNotification"
 
 class PreferencesStore  {
     
@@ -8,7 +8,7 @@ class PreferencesStore  {
     
     
     private func postPreferenceDidChangeNotification() {
-        NSNotificationCenter.defaultCenter().postNotificationName(PreferenceDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName(PreferencesDidChangeNotification, object: nil)
     }
     
     func saveBool(bool: Bool, withKey key: String) {
@@ -42,7 +42,9 @@ class PreferencesStore  {
 
 class PreferencesManager {
     
-    let store: PreferencesStore
+    // MARK: Store and storage keys
+    
+    let store: PreferencesStore = PreferencesStore()
     
     private let UseHalfUnitsKey = "UseHalfUnitsKey"
     private let AllowFloatingPointCarbohydratesKey = "AllowFloatingPointCarbohydratesKey"
@@ -91,43 +93,26 @@ class PreferencesManager {
         }
     }
     
-    // MARK: Initialisation
+    // MARK: Singleton
     
-    init(emptyStore: PreferencesStore, useHalfUnits: Bool, bloodGlucoseUnit: BloodGlucoseUnit, carbohydrateFactor: Double, correctiveFactor: Double, desiredBloodGlucose: Double, allowFloatingPointCarbohydrates: Bool)
-    {
-        self.store = emptyStore
-        
-        self.useHalfUnits = useHalfUnits
-        self.bloodGlucoseUnit = bloodGlucoseUnit
-        self.carbohydrateFactor = carbohydrateFactor
-        self.correctiveFactor = correctiveFactor
-        self.desiredBloodGlucose = desiredBloodGlucose
-        self.allowFloatingPointCarbohydrates = allowFloatingPointCarbohydrates
+    class var sharedInstance: PreferencesManager {
+        struct Static {
+            static let instance: PreferencesManager = PreferencesManager()
+        }
+        return Static.instance
     }
     
-    init(existingStore: PreferencesStore) {
-        self.store = existingStore
-        
-        if let loadedUnitString = store.loadObjectWithKey(BloodGlucoseUnitKey) as? String {
-            if let unitValue = BloodGlucoseUnit.fromString(loadedUnitString) {
-                self.bloodGlucoseUnit = unitValue
-            }
-            else {
-                // Bad!
-                self.bloodGlucoseUnit = .mmol
-            }
-        }
-        else {
-            // Bad!
-            self.bloodGlucoseUnit = .mmol
-        }
-        
-        
-        
-        self.useHalfUnits = store.loadBoolWithKey(UseHalfUnitsKey)
-        self.carbohydrateFactor = store.loadDoubleWithKey(CarbohydrateFactorKey)
-        self.correctiveFactor = store.loadDoubleWithKey(CorrectiveFactorKey)
-        self.desiredBloodGlucose = store.loadDoubleWithKey(DesiredBloodGlucoseKey)
-        self.allowFloatingPointCarbohydrates = store.loadBoolWithKey(AllowFloatingPointCarbohydratesKey)
+    // MARK: Initialisation
+    
+    init() {
+        // We must set some defaults
+        // In practise the Preference Manager will not be used without values being
+        // setup from user input
+        self.useHalfUnits = true
+        self.allowFloatingPointCarbohydrates = true
+        self.bloodGlucoseUnit = .mmol
+        self.carbohydrateFactor = 9.2
+        self.correctiveFactor = 2
+        self.desiredBloodGlucose = 7
     }
 }

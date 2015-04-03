@@ -8,16 +8,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-        // Pass defaults to the preferences manager
-        PreferencesManager(
-            emptyStore: PreferencesStore(),
-            useHalfUnits: true,
-            bloodGlucoseUnit: .mmol,
-            carbohydrateFactor: 9.2,
-            correctiveFactor: 2,
-            desiredBloodGlucose: 7,
-            allowFloatingPointCarbohydrates: true
-        )
+        // Set preferences
+        let preferenceManager = PreferencesManager.sharedInstance
+        preferenceManager.useHalfUnits = true
+        preferenceManager.bloodGlucoseUnit = .mmol
+        preferenceManager.carbohydrateFactor = 9.2
+        preferenceManager.correctiveFactor = 2
+        preferenceManager.desiredBloodGlucose = 7
+        preferenceManager.allowFloatingPointCarbohydrates = true
         
         return true
     }
