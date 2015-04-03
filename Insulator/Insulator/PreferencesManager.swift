@@ -93,9 +93,9 @@ class PreferencesManager {
     
     // MARK: Initialisation
     
-    init(store: PreferencesStore, useHalfUnits: Bool, bloodGlucoseUnit: BloodGlucoseUnit, carbohydrateFactor: Double, correctiveFactor: Double, desiredBloodGlucose: Double, allowFloatingPointCarbohydrates: Bool)
+    init(emptyStore: PreferencesStore, useHalfUnits: Bool, bloodGlucoseUnit: BloodGlucoseUnit, carbohydrateFactor: Double, correctiveFactor: Double, desiredBloodGlucose: Double, allowFloatingPointCarbohydrates: Bool)
     {
-        self.store = store
+        self.store = emptyStore
         
         self.useHalfUnits = useHalfUnits
         self.bloodGlucoseUnit = bloodGlucoseUnit
@@ -105,11 +105,24 @@ class PreferencesManager {
         self.allowFloatingPointCarbohydrates = allowFloatingPointCarbohydrates
     }
     
-    init(store: PreferencesStore) {
-        self.store = store
+    init(existingStore: PreferencesStore) {
+        self.store = existingStore
         
-        let loadedUnit = store.loadObjectWithKey(BloodGlucoseUnitKey) as? String
-        self.bloodGlucoseUnit = BloodGlucoseUnit.fromString(loadedUnit!)!
+        if let loadedUnitString = store.loadObjectWithKey(BloodGlucoseUnitKey) as? String {
+            if let unitValue = BloodGlucoseUnit.fromString(loadedUnitString) {
+                self.bloodGlucoseUnit = unitValue
+            }
+            else {
+                // Bad!
+                self.bloodGlucoseUnit = .mmol
+            }
+        }
+        else {
+            // Bad!
+            self.bloodGlucoseUnit = .mmol
+        }
+        
+        
         
         self.useHalfUnits = store.loadBoolWithKey(UseHalfUnitsKey)
         self.carbohydrateFactor = store.loadDoubleWithKey(CarbohydrateFactorKey)

@@ -4,7 +4,7 @@ import HealthKit
 class VariablesTableViewController: UITableViewController {
     
     let healthManager = HealthManager()
-    let preferencesManager = PreferencesManager(store: PreferencesStore())
+    let preferencesManager = PreferencesManager(existingStore: PreferencesStore())
     
     @IBOutlet weak var currentBloodGlucoseLevelTextField: UITextField!
     @IBOutlet weak var carbohydratesInMealTextField: UITextField!

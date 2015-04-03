@@ -6,7 +6,7 @@ class SuggestionsViewController: UITableViewController {
     @IBOutlet weak var carbohydrateFactorLabel: UILabel!
     @IBOutlet weak var correctiveFactorLabel: UILabel!
     
-    let preferencesManager = PreferencesManager(store: PreferencesStore())
+    let preferencesManager = PreferencesManager(existingStore: PreferencesStore())
     
     @IBAction func closeModal(sender: AnyObject) {
         let carbohydrateFactor = (carbohydrateFactorLabel.text! as NSString).doubleValue

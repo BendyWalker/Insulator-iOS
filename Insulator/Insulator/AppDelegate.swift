@@ -10,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Pass defaults to the preferences manager
         PreferencesManager(
-            store: PreferencesStore(),
+            emptyStore: PreferencesStore(),
             useHalfUnits: true,
             bloodGlucoseUnit: .mmol,
             carbohydrateFactor: 9.2,
