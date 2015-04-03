@@ -11,6 +11,8 @@ enum BloodGlucoseUnit: String  {
         default: return nil
         }
     }
+    
+    static func defaultUnit () -> BloodGlucoseUnit { return BloodGlucoseUnit.mmol }
 }
 
 
@@ -41,7 +43,6 @@ class Calculator {
         case .mgdl:
             return bloodGlucose / 18
         }
-    
     }
     
     func getCarbohydrateDose(isRounded: Bool) -> Double {

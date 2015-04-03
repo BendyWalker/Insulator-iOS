@@ -105,14 +105,23 @@ class PreferencesManager {
     // MARK: Initialisation
     
     init() {
-        // We must set some defaults
-        // In practise the Preference Manager will not be used without values being
-        // setup from user input
-        self.useHalfUnits = true
-        self.allowFloatingPointCarbohydrates = true
-        self.bloodGlucoseUnit = .mmol
-        self.carbohydrateFactor = 9.2
-        self.correctiveFactor = 2
-        self.desiredBloodGlucose = 7
+        self.useHalfUnits = store.loadBoolWithKey(UseHalfUnitsKey)
+        self.allowFloatingPointCarbohydrates = store.loadBoolWithKey(AllowFloatingPointCarbohydratesKey)
+        self.carbohydrateFactor = store.loadDoubleWithKey(CarbohydrateFactorKey)
+        self.correctiveFactor = store.loadDoubleWithKey(CorrectiveFactorKey)
+        self.desiredBloodGlucose = store.loadDoubleWithKey(DesiredBloodGlucoseKey)
+        
+        if let loadedUnitString = store.loadObjectWithKey(BloodGlucoseUnitKey) as? String {
+            if let bloodGlucoseUnit = BloodGlucoseUnit.fromString(loadedUnitString) {
+                self.bloodGlucoseUnit = bloodGlucoseUnit
+            }
+            else {
+                self.bloodGlucoseUnit = BloodGlucoseUnit.defaultUnit()
+            }
+        }
+        else {
+            self.bloodGlucoseUnit = BloodGlucoseUnit.defaultUnit()
+        }
+        
     }
 }

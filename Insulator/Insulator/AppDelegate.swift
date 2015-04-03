@@ -8,8 +8,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-        // Set preferences
         let preferenceManager = PreferencesManager.sharedInstance
+        
+        // Set preferences
+        // Comment these out to test the preferences are saved after the first run
         preferenceManager.useHalfUnits = true
         preferenceManager.bloodGlucoseUnit = .mmol
         preferenceManager.carbohydrateFactor = 9.2
