@@ -44,7 +44,7 @@ class PreferencesManager {
     
     // MARK: Store and storage keys
     
-    let store: PreferencesStore = PreferencesStore()
+    private let store: PreferencesStore = PreferencesStore()
     
     private let UseHalfUnitsKey = "UseHalfUnitsKey"
     private let AllowFloatingPointCarbohydratesKey = "AllowFloatingPointCarbohydratesKey"

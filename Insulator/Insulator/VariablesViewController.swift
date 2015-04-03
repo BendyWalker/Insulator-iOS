@@ -73,7 +73,7 @@ class VariablesTableViewController: UITableViewController {
                 self.currentBloodGlucoseLevelTextField.text = ""
             }
             
-            self.calculateDose()
+            self.attemptDoseCalculation()
         });
     }
     
@@ -81,8 +81,8 @@ class VariablesTableViewController: UITableViewController {
         super.viewDidLoad()
         updateBloodGlucoseUnitPlaceholder()
         
-        currentBloodGlucoseLevelTextField.addTarget(self, action: "calculateDoseOnTextChange:", forControlEvents: UIControlEvents.EditingChanged)
-        carbohydratesInMealTextField.addTarget(self, action: "calculateDoseOnTextChange:", forControlEvents: UIControlEvents.EditingChanged)
+        currentBloodGlucoseLevelTextField.addTarget(self, action: "attemptDoseCalculation", forControlEvents: UIControlEvents.EditingChanged)
+        carbohydratesInMealTextField.addTarget(self, action: "attemptDoseCalculation", forControlEvents: UIControlEvents.EditingChanged)
         
         self.navigationController?.toolbarHidden = false
         
@@ -93,15 +93,27 @@ class VariablesTableViewController: UITableViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: PreferencesDidChangeNotification, object: nil)
     }
     
-    func calculateDoseOnTextChange(sender: UITextField) {
-        calculateDose()
+    func attemptDoseCalculation() {
+        if let currentBloodGlucoseLevelText = currentBloodGlucoseLevelTextField.text {
+            if let carbohydratesInMealText = carbohydratesInMealTextField.text {
+                let bloodGlucoseLevel = (currentBloodGlucoseLevelText as NSString).doubleValue
+                let carbohydrates = (carbohydratesInMealText as NSString).doubleValue
+                
+                calculateDose(currentBloodGlucoseLevel: bloodGlucoseLevel, carbohydratesInMeal: carbohydrates)
+            }
+        }
     }
     
-    func calculateDose() {
-        var currentBloodGlucoseLevel = (currentBloodGlucoseLevelTextField.text! as NSString).doubleValue
-        var carbohydratesInMeal = (carbohydratesInMealTextField.text! as NSString).doubleValue
+    func calculateDose(#currentBloodGlucoseLevel: Double, carbohydratesInMeal: Double) {
         
-        let calculator = Calculator(carbohydrateFactor: 1, correctiveFactor: 2, desiredBloodGlucoseLevel: 3, currentBloodGlucoseLevel: 4, carbohydratesInMeal: 5, bloodGlucoseUnit: .mmol, isHalfUnitsEnabled: true)
+        let calculator = Calculator(
+            carbohydrateFactor: self.preferencesManager.carbohydrateFactor,
+            correctiveFactor: self.preferencesManager.correctiveFactor,
+            desiredBloodGlucoseLevel: self.preferencesManager.desiredBloodGlucose,
+            currentBloodGlucoseLevel: currentBloodGlucoseLevel,
+            carbohydratesInMeal: carbohydratesInMeal,
+            bloodGlucoseUnit: self.preferencesManager.bloodGlucoseUnit,
+            isHalfUnitsEnabled: self.preferencesManager.useHalfUnits)
         
         
         let suggestedDose: String = "\(calculator.getSuggestedDose(true))"
@@ -122,20 +134,13 @@ class VariablesTableViewController: UITableViewController {
     func updateBloodGlucoseUnitPlaceholder() {
         let bloodGlucoseUnit = self.preferencesManager.bloodGlucoseUnit
         
+        // TODO: Could you not just use .rawValue here?
         currentBloodGlucoseLevelTextField.placeholder = {
             switch bloodGlucoseUnit {
             case .mmol: return "mmol/L"
             case .mgdl: return "mg/dL"
             }
             }()
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
 }
