@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JMy-kn-27M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D127a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JMy-kn-27M">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -21,8 +21,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="joR-JH-Tfz" id="Yul-AJ-ynp">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Current Blood Glucose" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oU-CA-Ftw">
-                                                    <rect key="frame" x="16" y="8" width="482" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Current Blood Glucose" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oU-CA-Ftw">
+                                                    <rect key="frame" x="16" y="8" width="482" height="11"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -30,8 +30,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="175.5" height="20.5"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0c-bk-LjA">
-                                                    <rect key="frame" x="16" y="28" width="482" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0c-bk-LjA">
+                                                    <rect key="frame" x="16" y="19" width="482" height="16.5"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Enter your current blood glucose level">
                                                             <attributes>
@@ -46,10 +46,9 @@
                                                         <rect key="frame" x="16" y="17.5" width="44.5" height="17"/>
                                                     </variation>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tFd-iJ-e6l">
-                                                    <rect key="frame" x="514" y="12" width="70" height="21"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tFd-iJ-e6l">
+                                                    <rect key="frame" x="514" y="11" width="70" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="cHK-YO-KDJ"/>
                                                         <constraint firstAttribute="width" constant="70" id="m5d-We-x3U"/>
                                                     </constraints>
                                                     <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -81,17 +80,16 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pm7-hg-H23" id="Son-Wo-SAt">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Carbohydrates in Meal" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRe-yE-wvj">
-                                                    <rect key="frame" x="16" y="8" width="483" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Carbohydrates in Meal" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRe-yE-wvj">
+                                                    <rect key="frame" x="16" y="8" width="482" height="11"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="grams" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Dk-B0-2PN">
-                                                    <rect key="frame" x="514" y="12" width="70" height="21"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="grams" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Dk-B0-2PN">
+                                                    <rect key="frame" x="514" y="11" width="70" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="m7l-NG-rYY"/>
-                                                        <constraint firstAttribute="height" constant="21" id="nxx-Tf-IRX"/>
                                                     </constraints>
                                                     <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -100,8 +98,8 @@
                                                         <rect key="frame" x="290" y="6" width="97" height="30"/>
                                                     </variation>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7l-ZL-lod">
-                                                    <rect key="frame" x="16" y="29" width="483" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7l-ZL-lod">
+                                                    <rect key="frame" x="16" y="19" width="482" height="16.5"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Enter how many carbohydrates you consumed in your last meal">
                                                             <attributes>
@@ -171,16 +169,16 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dB8-Wf-8Zj" id="n4k-wO-mNX">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Suggested Dose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZh-gy-ogA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggested Dose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZh-gy-ogA">
+                                                    <rect key="frame" x="16" y="11" width="130.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXc-RA-Oun">
-                                                    <rect key="frame" x="513" y="8" width="71" height="21"/>
+                                                    <rect key="frame" x="514" y="11" width="70" height="20.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="TC9-eS-ecD"/>
-                                                        <constraint firstAttribute="width" constant="71" id="Wsq-r8-y58"/>
+                                                        <constraint firstAttribute="width" constant="70" id="5YB-Xz-nwq"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -189,90 +187,77 @@
                                                         <rect key="frame" x="189" y="8" width="24" height="20.5"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Carbohydrate Dose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91R-mI-MRt">
-                                                    <rect key="frame" x="16" y="16" width="481" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="16" y="36" width="149.5" height="20.5"/>
-                                                    </variation>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTN-vN-VXJ">
-                                                    <rect key="frame" x="513" y="37" width="71" height="21"/>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="UXc-RA-Oun" secondAttribute="trailing" constant="8" id="ELe-HR-gs8"/>
+                                                <constraint firstAttribute="centerY" secondItem="bZh-gy-ogA" secondAttribute="centerY" id="HTW-SM-ltc"/>
+                                                <constraint firstItem="bZh-gy-ogA" firstAttribute="leading" secondItem="n4k-wO-mNX" secondAttribute="leadingMargin" constant="8" id="e4H-ct-4p3"/>
+                                                <constraint firstItem="UXc-RA-Oun" firstAttribute="centerY" secondItem="bZh-gy-ogA" secondAttribute="centerY" id="vEe-AX-qmf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LYh-L3-9NZ">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LYh-L3-9NZ" id="qTW-3K-sKq">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmt-XE-3bf">
+                                                    <rect key="frame" x="514" y="12" width="70" height="20.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="B1W-H7-0MM"/>
-                                                        <constraint firstAttribute="width" constant="71" id="Dni-XF-ewx"/>
+                                                        <constraint firstAttribute="width" constant="70" id="MNZ-Lf-9RR"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="189" y="57" width="24" height="20.5"/>
+                                                    <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                                        <rect key="frame" x="189" y="8" width="24" height="20.5"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Corrective Dose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vl4-ah-DlR">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbohydrate Dose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gE-R2-RNT">
+                                                    <rect key="frame" x="16" y="12.5" width="148.5" height="20"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTD-1C-biv">
-                                                    <rect key="frame" x="513" y="57" width="71" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="71" id="2QA-yu-gvD"/>
-                                                        <constraint firstAttribute="height" constant="21" id="sS0-4v-DdZ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="189" y="36" width="24" height="20.5"/>
-                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="RTD-1C-biv" firstAttribute="top" secondItem="wTN-vN-VXJ" secondAttribute="bottom" id="0c1-hT-zU3"/>
-                                                <constraint firstItem="91R-mI-MRt" firstAttribute="top" secondItem="bZh-gy-ogA" secondAttribute="bottom" constant="8" id="1P4-Tn-lA7"/>
-                                                <constraint firstItem="UXc-RA-Oun" firstAttribute="width" secondItem="RTD-1C-biv" secondAttribute="width" id="1b4-ar-pfs"/>
-                                                <constraint firstItem="wTN-vN-VXJ" firstAttribute="width" secondItem="RTD-1C-biv" secondAttribute="width" id="1kJ-q4-tiq"/>
-                                                <constraint firstItem="UXc-RA-Oun" firstAttribute="leading" secondItem="bZh-gy-ogA" secondAttribute="trailing" constant="32" id="2BC-hq-ZNd"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Vl4-ah-DlR" secondAttribute="bottom" id="59e-t1-Llv"/>
-                                                <constraint firstItem="RTD-1C-biv" firstAttribute="leading" secondItem="Vl4-ah-DlR" secondAttribute="trailing" constant="16" id="5Kd-Ja-Q0A"/>
-                                                <constraint firstItem="RTD-1C-biv" firstAttribute="bottom" secondItem="n4k-wO-mNX" secondAttribute="bottomMargin" id="70U-gt-Qm6"/>
-                                                <constraint firstItem="wTN-vN-VXJ" firstAttribute="leading" secondItem="91R-mI-MRt" secondAttribute="trailing" constant="32" id="7xM-I0-7wp"/>
-                                                <constraint firstItem="UXc-RA-Oun" firstAttribute="top" secondItem="n4k-wO-mNX" secondAttribute="topMargin" id="833-gO-8Be"/>
-                                                <constraint firstItem="bZh-gy-ogA" firstAttribute="top" secondItem="n4k-wO-mNX" secondAttribute="topMargin" id="84V-p2-VW1"/>
-                                                <constraint firstItem="UXc-RA-Oun" firstAttribute="width" secondItem="wTN-vN-VXJ" secondAttribute="width" id="9hq-kv-nd0"/>
-                                                <constraint firstItem="91R-mI-MRt" firstAttribute="leading" secondItem="n4k-wO-mNX" secondAttribute="leadingMargin" constant="8" id="BZb-zz-E1H"/>
-                                                <constraint firstItem="Vl4-ah-DlR" firstAttribute="top" secondItem="91R-mI-MRt" secondAttribute="bottom" id="HwD-ew-ERf"/>
-                                                <constraint firstItem="Vl4-ah-DlR" firstAttribute="leading" secondItem="n4k-wO-mNX" secondAttribute="leadingMargin" constant="8" id="OJX-yu-Imi"/>
-                                                <constraint firstItem="bZh-gy-ogA" firstAttribute="width" secondItem="91R-mI-MRt" secondAttribute="width" id="VSG-ag-amf"/>
-                                                <constraint firstItem="UXc-RA-Oun" firstAttribute="leading" secondItem="bZh-gy-ogA" secondAttribute="trailing" constant="16" id="XWg-L6-EPr"/>
-                                                <constraint firstItem="RTD-1C-biv" firstAttribute="baseline" secondItem="Vl4-ah-DlR" secondAttribute="baseline" id="aPh-nu-WW9"/>
-                                                <constraint firstItem="bZh-gy-ogA" firstAttribute="leading" secondItem="n4k-wO-mNX" secondAttribute="leadingMargin" constant="8" id="e4H-ct-4p3"/>
-                                                <constraint firstItem="bZh-gy-ogA" firstAttribute="baseline" secondItem="UXc-RA-Oun" secondAttribute="baseline" id="fV9-pO-hJc"/>
-                                                <constraint firstItem="wTN-vN-VXJ" firstAttribute="baseline" secondItem="91R-mI-MRt" secondAttribute="baseline" id="g26-T9-zm0"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="UXc-RA-Oun" secondAttribute="trailing" constant="8" id="jNa-9h-71t"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="wTN-vN-VXJ" secondAttribute="trailing" constant="8" id="kjd-ab-K9X"/>
-                                                <constraint firstItem="wTN-vN-VXJ" firstAttribute="leading" secondItem="91R-mI-MRt" secondAttribute="trailing" constant="16" id="t1p-yI-KVG"/>
-                                                <constraint firstItem="91R-mI-MRt" firstAttribute="width" secondItem="Vl4-ah-DlR" secondAttribute="width" id="uHR-Sw-2g0"/>
-                                                <constraint firstItem="wTN-vN-VXJ" firstAttribute="top" secondItem="UXc-RA-Oun" secondAttribute="bottom" constant="8" id="yYh-Bj-WdH"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="RTD-1C-biv" secondAttribute="trailing" constant="8" id="yk8-ji-kSL"/>
+                                                <constraint firstItem="tmt-XE-3bf" firstAttribute="centerY" secondItem="0gE-R2-RNT" secondAttribute="centerY" id="MwU-AN-6wo"/>
+                                                <constraint firstAttribute="centerY" secondItem="0gE-R2-RNT" secondAttribute="centerY" id="gmj-O8-U5C"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="tmt-XE-3bf" secondAttribute="trailing" constant="8" id="jjp-5y-ruB"/>
+                                                <constraint firstItem="0gE-R2-RNT" firstAttribute="leading" secondItem="qTW-3K-sKq" secondAttribute="leadingMargin" constant="8" id="r1s-t4-Fir"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="VSG-ag-amf"/>
-                                                    <exclude reference="fV9-pO-hJc"/>
-                                                    <exclude reference="uHR-Sw-2g0"/>
-                                                    <exclude reference="1b4-ar-pfs"/>
-                                                    <exclude reference="2BC-hq-ZNd"/>
-                                                    <exclude reference="9hq-kv-nd0"/>
-                                                    <exclude reference="1kJ-q4-tiq"/>
-                                                    <exclude reference="7xM-I0-7wp"/>
-                                                    <exclude reference="g26-T9-zm0"/>
-                                                    <exclude reference="aPh-nu-WW9"/>
-                                                </mask>
-                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="K3h-rU-Giu">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="K3h-rU-Giu" id="P9u-Ws-A40">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72S-PQ-5qS">
+                                                    <rect key="frame" x="514" y="11" width="70" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="yQj-jS-TPu"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                                        <rect key="frame" x="189" y="8" width="24" height="20.5"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corrective Dose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZN-TQ-fYx">
+                                                    <rect key="frame" x="16" y="11.5" width="123.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="72S-PQ-5qS" firstAttribute="centerY" secondItem="6ZN-TQ-fYx" secondAttribute="centerY" id="8hc-cX-aq4"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="72S-PQ-5qS" secondAttribute="trailing" constant="8" id="9Bi-eD-Cd3"/>
+                                                <constraint firstItem="6ZN-TQ-fYx" firstAttribute="leading" secondItem="P9u-Ws-A40" secondAttribute="leadingMargin" constant="8" id="S1E-rZ-f8V"/>
+                                                <constraint firstAttribute="centerY" secondItem="6ZN-TQ-fYx" secondAttribute="centerY" id="eUg-H6-aQz"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -312,9 +297,9 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="carbohydrateDoseLabel" destination="wTN-vN-VXJ" id="Lu5-7L-vgB"/>
+                        <outlet property="carbohydrateDoseLabel" destination="tmt-XE-3bf" id="TjF-t6-Dxb"/>
                         <outlet property="carbohydratesInMealTextField" destination="1Dk-B0-2PN" id="egT-qP-wqI"/>
-                        <outlet property="correctiveDoseLabel" destination="RTD-1C-biv" id="xpF-0z-Fni"/>
+                        <outlet property="correctiveDoseLabel" destination="72S-PQ-5qS" id="qq6-gj-Kkj"/>
                         <outlet property="currentBloodGlucoseLevelTextField" destination="tFd-iJ-e6l" id="09I-sl-n3B"/>
                         <outlet property="suggestedDoseLabel" destination="UXc-RA-Oun" id="tCB-bO-X7k"/>
                     </connections>
@@ -339,8 +324,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rhn-Mb-HZu" id="N1Z-DB-saL">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Carbohydrate Factor" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pj-kC-Itf">
-                                                    <rect key="frame" x="16" y="8" width="482" height="11"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Carbohydrate Factor" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pj-kC-Itf">
+                                                    <rect key="frame" x="16" y="8" width="482" height="11.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -348,8 +333,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="175.5" height="20.5"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9P-L9-bk1">
-                                                    <rect key="frame" x="16" y="19" width="482" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9P-L9-bk1">
+                                                    <rect key="frame" x="16" y="19" width="482" height="16.5"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Enter how many carbohydrates 1 unit of fast-acting insulin covers">
                                                             <attributes>
@@ -364,11 +349,10 @@
                                                         <rect key="frame" x="16" y="17.5" width="44.5" height="17"/>
                                                     </variation>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="grams" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Qi-qn-SeI">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="grams" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Qi-qn-SeI">
                                                     <rect key="frame" x="514" y="12" width="70" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="GSh-1t-m9U"/>
-                                                        <constraint firstAttribute="height" constant="21" id="vac-o1-7tq"/>
                                                     </constraints>
                                                     <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -399,8 +383,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kkt-N1-mT0" id="oBi-H0-vZZ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Corrective Factor" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzD-uF-uwQ">
-                                                    <rect key="frame" x="16" y="8" width="482" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Corrective Factor" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzD-uF-uwQ">
+                                                    <rect key="frame" x="16" y="8" width="482" height="11.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -408,8 +392,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="175.5" height="20.5"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGF-CA-12S">
-                                                    <rect key="frame" x="16" y="29" width="482" height="7"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGF-CA-12S">
+                                                    <rect key="frame" x="16" y="19" width="482" height="16.5"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Enter how much 1 unit of fast-acting insulin lowers your blood glucose level">
                                                             <attributes>
@@ -424,10 +408,9 @@
                                                         <rect key="frame" x="16" y="17.5" width="44.5" height="17"/>
                                                     </variation>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZd-aO-Q5F">
-                                                    <rect key="frame" x="514" y="12" width="71" height="21"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZd-aO-Q5F">
+                                                    <rect key="frame" x="514" y="12" width="70" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="XT3-eV-csp"/>
                                                         <constraint firstAttribute="width" constant="70" id="YnW-l2-paS"/>
                                                     </constraints>
                                                     <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -459,8 +442,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gSB-qZ-MY1" id="Qw1-sN-gax">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Desired Blood Glucose" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDw-u5-pU3">
-                                                    <rect key="frame" x="16" y="8" width="482" height="11"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Desired Blood Glucose" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDw-u5-pU3">
+                                                    <rect key="frame" x="16" y="8" width="482" height="11.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -468,8 +451,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="175.5" height="20.5"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdM-WO-1ae">
-                                                    <rect key="frame" x="16" y="19" width="482" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdM-WO-1ae">
+                                                    <rect key="frame" x="16" y="19" width="482" height="16.5"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Enter your desired blood glucose level">
                                                             <attributes>
@@ -484,7 +467,7 @@
                                                         <rect key="frame" x="16" y="17.5" width="44.5" height="17"/>
                                                     </variation>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gcb-Wv-7at">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gcb-Wv-7at">
                                                     <rect key="frame" x="514" y="12" width="70" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="Uu3-6W-HpU"/>
@@ -554,8 +537,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rRh-00-72K" id="jB7-Bq-jvu">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Total Daily Dose" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLN-XZ-MXv">
-                                                    <rect key="frame" x="16" y="8" width="482" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Total Daily Dose" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLN-XZ-MXv">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -563,11 +545,24 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="175.5" height="20.5"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80G-fA-CJg">
-                                                    <rect key="frame" x="16" y="28" width="482" height="7"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80G-fA-CJg">
+                                                    <rect key="frame" x="16" y="8" width="482" height="27"/>
                                                     <attributedString key="attributedText">
-                                                        <fragment>
-                                                            <string key="content">Enter the total amount of insulin you take in a day (both fast-acting and long-acting). This will be used to give factor suggestions.</string>
+                                                        <fragment content="Enter the total amount of insulin ">
+                                                            <attributes>
+                                                                <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="(both fast-acting and long-acting)">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content=" you take in a day. This will be used to give factor suggestions.">
                                                             <attributes>
                                                                 <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <font key="NSFont" size="14" name="HelveticaNeue"/>
@@ -583,7 +578,6 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="units" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sUT-N6-vN6">
                                                     <rect key="frame" x="514" y="11" width="70" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="GXx-5E-muw"/>
                                                         <constraint firstAttribute="width" constant="70" id="Ibu-zj-KjU"/>
                                                     </constraints>
                                                     <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -619,7 +613,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VIv-R8-Jv1" id="B3d-vZ-YDV">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Carbohydrate Factor" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cc-AU-dzL">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbohydrate Factor" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cc-AU-dzL">
                                                     <rect key="frame" x="16" y="12" width="481" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -655,7 +649,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2tI-mF-kcy" id="kar-vO-gK8">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Corrective Factor" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kz-nT-OSp">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corrective Factor" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kz-nT-OSp">
                                                     <rect key="frame" x="16" y="12" width="481" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
