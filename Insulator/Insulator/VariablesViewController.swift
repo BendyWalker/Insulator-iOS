@@ -112,13 +112,11 @@ class VariablesTableViewController: UITableViewController {
             desiredBloodGlucoseLevel: self.preferencesManager.desiredBloodGlucose,
             currentBloodGlucoseLevel: currentBloodGlucoseLevel,
             carbohydratesInMeal: carbohydratesInMeal,
-            bloodGlucoseUnit: self.preferencesManager.bloodGlucoseUnit,
-            isHalfUnitsEnabled: self.preferencesManager.useHalfUnits)
+            bloodGlucoseUnit: self.preferencesManager.bloodGlucoseUnit)
         
-        
-        let suggestedDose: String = "\(calculator.getSuggestedDose(true))"
-        let carbohydrateDose: String = "\(calculator.getCarbohydrateDose(true))"
-        let correctiveDose: String = "\(calculator.getCorrectiveDose(true))"
+        let suggestedDose = String(format: "%.1f", calculator.getSuggestedDose())
+        let carbohydrateDose = String(format: "%.1f", calculator.getCarbohydrateDose())
+        let correctiveDose = String(format: "%.1f", calculator.getCorrectiveDose())
         
         suggestedDoseLabel.text = suggestedDose
         carbohydrateDoseLabel.text = carbohydrateDose
@@ -142,6 +140,4 @@ class VariablesTableViewController: UITableViewController {
             }
             }()
     }
-    
 }
-

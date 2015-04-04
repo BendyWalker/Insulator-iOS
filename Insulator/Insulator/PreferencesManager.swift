@@ -46,7 +46,6 @@ class PreferencesManager {
     
     private let store: PreferencesStore = PreferencesStore()
     
-    private let UseHalfUnitsKey = "UseHalfUnitsKey"
     private let AllowFloatingPointCarbohydratesKey = "AllowFloatingPointCarbohydratesKey"
     private let BloodGlucoseUnitKey = "BloodGlucoseUnitKey"
     private let CarbohydrateFactorKey = "CarbohydrateFactorKey"
@@ -55,12 +54,6 @@ class PreferencesManager {
     
     
     // MARK: Properties
-    
-    var useHalfUnits: Bool {
-        didSet {
-            store.saveBool(useHalfUnits, withKey: UseHalfUnitsKey)
-        }
-    }
     
     var allowFloatingPointCarbohydrates: Bool {
         didSet {
@@ -105,7 +98,6 @@ class PreferencesManager {
     // MARK: Initialisation
     
     init() {
-        self.useHalfUnits = store.loadBoolWithKey(UseHalfUnitsKey)
         self.allowFloatingPointCarbohydrates = store.loadBoolWithKey(AllowFloatingPointCarbohydratesKey)
         self.carbohydrateFactor = store.loadDoubleWithKey(CarbohydrateFactorKey)
         self.correctiveFactor = store.loadDoubleWithKey(CorrectiveFactorKey)

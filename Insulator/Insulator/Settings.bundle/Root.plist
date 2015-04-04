@@ -6,16 +6,6 @@
 	<array>
 		<dict>
 			<key>Title</key>
-			<string>Half-Unit Calculations</string>
-			<key>Key</key>
-			<string>half_units_preference</string>
-			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
-			<key>DefaultValue</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Title</key>
 			<string>Blood Glucose Units</string>
 			<key>Key</key>
 			<string>blood_glucose_units_preference</string>

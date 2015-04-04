@@ -12,7 +12,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Set preferences
         // Comment these out to test the preferences are saved after the first run
-        preferenceManager.useHalfUnits = true
         preferenceManager.bloodGlucoseUnit = .mmol
         preferenceManager.carbohydrateFactor = 9.2
         preferenceManager.correctiveFactor = 2
