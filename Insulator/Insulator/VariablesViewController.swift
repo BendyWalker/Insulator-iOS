@@ -11,20 +11,21 @@ class VariablesTableViewController: UITableViewController {
     @IBOutlet weak var correctiveDoseLabel: UILabel!
     @IBOutlet weak var carbohydrateDoseLabel: UILabel!
     @IBOutlet weak var suggestedDoseLabel: UILabel!
+    @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
     
     @IBAction func openSettings(sender: AnyObject) {
         var settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString, relativeToURL: nil)
         UIApplication.sharedApplication().openURL(settingsUrl!)
     }
     
-    @IBAction func clearFields(sender: AnyObject) {
-        currentBloodGlucoseLevelTextField.text = ""
-        carbohydratesInMealTextField.text = ""
-        suggestedDoseLabel.text = "0.0"
-        carbohydrateDoseLabel.text = "0.0"
-        correctiveDoseLabel.text = "0.0"
-        
-        self.view.endEditing(true)
+    @IBAction func onRightBarButtonTouched(sender: AnyObject) {
+        if carbohydratesInMealTextField.editing {
+            carbohydratesInMealTextField.resignFirstResponder()
+        } else if currentBloodGlucoseLevelTextField.editing {
+            currentBloodGlucoseLevelTextField.resignFirstResponder()
+        } else {
+            clearFields()
+        }
     }
     
     @IBAction func isHealthKitAuthorized(sender: UIButton) {
@@ -83,7 +84,11 @@ class VariablesTableViewController: UITableViewController {
         updateBloodGlucoseUnitPlaceholder()
         
         currentBloodGlucoseLevelTextField.addTarget(self, action: "attemptDoseCalculation", forControlEvents: UIControlEvents.EditingChanged)
+        currentBloodGlucoseLevelTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidBegin)
+        currentBloodGlucoseLevelTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidEnd)
         carbohydratesInMealTextField.addTarget(self, action: "attemptDoseCalculation", forControlEvents: UIControlEvents.EditingChanged)
+        carbohydratesInMealTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidBegin)
+        carbohydratesInMealTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidEnd)
         
         self.navigationController?.toolbarHidden = false
         
@@ -92,6 +97,16 @@ class VariablesTableViewController: UITableViewController {
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: PreferencesDidChangeNotification, object: nil)
+    }
+    
+    func toggleRightBarButtonItem() {
+        if currentBloodGlucoseLevelTextField.editing || carbohydratesInMealTextField.editing {
+            rightBarButtonItem.style = UIBarButtonItemStyle.Done
+            rightBarButtonItem.title = "Done"
+        } else {
+            rightBarButtonItem.style = UIBarButtonItemStyle.Bordered
+            rightBarButtonItem.title = "Clear"
+        }
     }
     
     func attemptDoseCalculation() {
@@ -141,4 +156,15 @@ class VariablesTableViewController: UITableViewController {
             }
             }()
     }
+    
+    func clearFields() {
+        currentBloodGlucoseLevelTextField.text = ""
+        carbohydratesInMealTextField.text = ""
+        suggestedDoseLabel.text = "0.0"
+        carbohydrateDoseLabel.text = "0.0"
+        correctiveDoseLabel.text = "0.0"
+        
+        self.view.endEditing(true)
+    }
+
 }

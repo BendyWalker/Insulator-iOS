@@ -291,7 +291,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Clear" id="3sN-6Z-74e">
                             <connections>
-                                <action selector="clearFields:" destination="Hbm-Im-bJG" id="FRI-aF-Cgf"/>
+                                <action selector="onRightBarButtonTouched:" destination="Hbm-Im-bJG" id="qvU-0d-CJ8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -301,6 +301,7 @@
                         <outlet property="carbohydratesInMealTextField" destination="1Dk-B0-2PN" id="egT-qP-wqI"/>
                         <outlet property="correctiveDoseLabel" destination="72S-PQ-5qS" id="qq6-gj-Kkj"/>
                         <outlet property="currentBloodGlucoseLevelTextField" destination="tFd-iJ-e6l" id="09I-sl-n3B"/>
+                        <outlet property="rightBarButtonItem" destination="3sN-6Z-74e" id="6mP-vD-C9s"/>
                         <outlet property="suggestedDoseLabel" destination="UXc-RA-Oun" id="tCB-bO-X7k"/>
                     </connections>
                 </tableViewController>
@@ -537,7 +538,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rRh-00-72K" id="jB7-Bq-jvu">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Total Daily Dose" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLN-XZ-MXv">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Total Daily Dose" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLN-XZ-MXv">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
