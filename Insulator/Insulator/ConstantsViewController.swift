@@ -6,16 +6,16 @@ class ConstantsTableViewController: UITableViewController {
     @IBOutlet weak var correctiveFactorTextField: UITextField!
     @IBOutlet weak var desiredBloodGlucoseTextField: UITextField!
     
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let preferencesManager = PreferencesManager.sharedInstance
     
     @IBAction func closeModal(sender: AnyObject) {
         let carbohydrateFactor = (carbohydrateFactorTextField.text as NSString).doubleValue
         let correctiveFactor = (correctiveFactorTextField.text as NSString).doubleValue
         let desiredBloodGlucose = (desiredBloodGlucoseTextField.text as NSString).doubleValue
         
-        userDefaults.setValue(carbohydrateFactor, forKey: "carbohydrate_factor_preference")
-        userDefaults.setValue(correctiveFactor, forKey: "corrective_factor_preference")
-        userDefaults.setValue(desiredBloodGlucose, forKey: "desired_blood_glucose_preference")
+        preferencesManager.carbohydrateFactor = carbohydrateFactor
+        preferencesManager.correctiveFactor = correctiveFactor
+        preferencesManager.desiredBloodGlucose = desiredBloodGlucose
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -28,29 +28,22 @@ class ConstantsTableViewController: UITableViewController {
     }
     
     func updateDynamicViewElements() {
-        // Update placeholder on glucose-related text fields
-        let bloodGlucoseUnit = userDefaults.valueForKey("blood_glucose_units_preference") as String
-        let isMmolSelected = bloodGlucoseUnit.isEqual("mmol")
+        let bloodGlucoseUnit = self.preferencesManager.bloodGlucoseUnit
         
-        var placeholder: String
-        
-        if isMmolSelected {
-            placeholder = "mmol/L"
-        } else {
-            placeholder = "mg/dL"
-        }
+        let placeholder: String = {
+            switch bloodGlucoseUnit {
+            case .mmol: return "mmol/L"
+            case .mgdl: return "mg/dL"
+            }
+            }()
         
         correctiveFactorTextField.placeholder = placeholder
         desiredBloodGlucoseTextField.placeholder = placeholder
         
-        // Update actual values with those saved in userDefaults
-        let carbohydrateFactor = userDefaults.valueForKey("carbohydrate_factor_preference") as Double
-        let correctiveFactor = userDefaults.valueForKey("corrective_factor_preference") as Double
-        let desiredBloodGlucose = userDefaults.valueForKey("desired_blood_glucose_preference") as Double
-        
-        carbohydrateFactorTextField.text = "\(carbohydrateFactor)"
-        correctiveFactorTextField.text = "\(correctiveFactor)"
-        desiredBloodGlucoseTextField.text = "\(desiredBloodGlucose)"
+        // Update actual values with those stored by the preference manager
+        carbohydrateFactorTextField.text = "\(preferencesManager.carbohydrateFactor)"
+        correctiveFactorTextField.text = "\(preferencesManager.correctiveFactor)"
+        desiredBloodGlucoseTextField.text = "\(preferencesManager.desiredBloodGlucose)"
     }
 
     override func didReceiveMemoryWarning() {

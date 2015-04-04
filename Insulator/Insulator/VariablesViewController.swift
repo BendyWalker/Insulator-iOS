@@ -4,6 +4,7 @@ import HealthKit
 class VariablesTableViewController: UITableViewController {
     
     let healthManager = HealthManager()
+    let preferencesManager = PreferencesManager.sharedInstance
     
     @IBOutlet weak var currentBloodGlucoseLevelTextField: UITextField!
     @IBOutlet weak var carbohydratesInMealTextField: UITextField!
@@ -50,27 +51,29 @@ class VariablesTableViewController: UITableViewController {
             }
             
             let bloodGlucose: HKQuantitySample? = mostRecentBloodGlucose as? HKQuantitySample
-            let millgramsPerDeciliterOfBloodGlucose = bloodGlucose?.quantity.doubleValueForUnit(HKUnit(fromString: "mg/dL"))
-            
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                let userDefaults = NSUserDefaults.standardUserDefaults()
-                let bloodGlucoseUnit = userDefaults.valueForKey("blood_glucose_units_preference") as String
-                let isMmolSelected = bloodGlucoseUnit.isEqual("mmol")
-                
-                if millgramsPerDeciliterOfBloodGlucose != nil {
-                    var finalBloodGlucose: Double
-                    if isMmolSelected {
-                        finalBloodGlucose = Double(round((millgramsPerDeciliterOfBloodGlucose! / 18) * 10) / 10)
-                    } else {
-                        finalBloodGlucose = Double(round(millgramsPerDeciliterOfBloodGlucose! * 10) / 10)
-                    }
+            if let millgramsPerDeciliterOfBloodGlucose = bloodGlucose?.quantity.doubleValueForUnit(HKUnit(fromString: "mg/dL")) {
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    
+                    let bloodGlucoseUnit = self.preferencesManager.bloodGlucoseUnit
+                    
+                    // Maybe move this logic into the BloodGlucoseUnit type
+                    // Would be nice to just call bloodGlucoseUnit.calculateFinaLevel(quantity)
+                    let finalBloodGlucose: Double = {
+                        switch bloodGlucoseUnit {
+                        case .mmol: return Double(round((millgramsPerDeciliterOfBloodGlucose / 18) * 10) / 10)
+                        case .mgdl: return Double(round(millgramsPerDeciliterOfBloodGlucose * 10) / 10)
+                        }
+                        }()
+                    
                     self.currentBloodGlucoseLevelTextField.text = "\(finalBloodGlucose)"
-                } else {
-                    self.currentBloodGlucoseLevelTextField.text = ""
-                }
-                
-                self.calculateDose()
-            });
+                });
+            }
+            else {
+                // No blood glucose quanity, so show not text
+                self.currentBloodGlucoseLevelTextField.text = ""
+            }
+            
+            self.attemptDoseCalculation()
         });
     }
     
@@ -78,21 +81,41 @@ class VariablesTableViewController: UITableViewController {
         super.viewDidLoad()
         updateBloodGlucoseUnitPlaceholder()
         
-        currentBloodGlucoseLevelTextField.addTarget(self, action: "calculateDoseOnTextChange:", forControlEvents: UIControlEvents.EditingChanged)
-        carbohydratesInMealTextField.addTarget(self, action: "calculateDoseOnTextChange:", forControlEvents: UIControlEvents.EditingChanged)
+        currentBloodGlucoseLevelTextField.addTarget(self, action: "attemptDoseCalculation", forControlEvents: UIControlEvents.EditingChanged)
+        carbohydratesInMealTextField.addTarget(self, action: "attemptDoseCalculation", forControlEvents: UIControlEvents.EditingChanged)
         
         self.navigationController?.toolbarHidden = false
-    }
-    
-    func calculateDoseOnTextChange(sender: UITextField) {
-        calculateDose()
-    }
-    
-    func calculateDose() {
-        var currentBloodGlucoseLevel = (currentBloodGlucoseLevelTextField.text! as NSString).doubleValue
-        var carbohydratesInMeal = (carbohydratesInMealTextField.text! as NSString).doubleValue
         
-        let calculator = Calculator(currentBloodGlucoseLevel: currentBloodGlucoseLevel, carbohydratesInMeal: carbohydratesInMeal)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateBloodGlucoseUnitPlaceholder", name: PreferencesDidChangeNotification, object: nil)
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: PreferencesDidChangeNotification, object: nil)
+    }
+    
+    func attemptDoseCalculation() {
+        if let currentBloodGlucoseLevelText = currentBloodGlucoseLevelTextField.text {
+            if let carbohydratesInMealText = carbohydratesInMealTextField.text {
+                let bloodGlucoseLevel = (currentBloodGlucoseLevelText as NSString).doubleValue
+                let carbohydrates = (carbohydratesInMealText as NSString).doubleValue
+                
+                calculateDose(currentBloodGlucoseLevel: bloodGlucoseLevel, carbohydratesInMeal: carbohydrates)
+            }
+        }
+    }
+    
+    func calculateDose(#currentBloodGlucoseLevel: Double, carbohydratesInMeal: Double) {
+        
+        let calculator = Calculator(
+            carbohydrateFactor: self.preferencesManager.carbohydrateFactor,
+            correctiveFactor: self.preferencesManager.correctiveFactor,
+            desiredBloodGlucoseLevel: self.preferencesManager.desiredBloodGlucose,
+            currentBloodGlucoseLevel: currentBloodGlucoseLevel,
+            carbohydratesInMeal: carbohydratesInMeal,
+            bloodGlucoseUnit: self.preferencesManager.bloodGlucoseUnit,
+            isHalfUnitsEnabled: self.preferencesManager.useHalfUnits)
+        
+        
         let suggestedDose: String = "\(calculator.getSuggestedDose(true))"
         let carbohydrateDose: String = "\(calculator.getCarbohydrateDose(true))"
         let correctiveDose: String = "\(calculator.getCorrectiveDose(true))"
@@ -103,38 +126,22 @@ class VariablesTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "defaultsDidChange:", name: NSUserDefaultsDidChangeNotification, object: nil)
-        
         self.tableView.estimatedRowHeight = 44
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
-    func defaultsDidChange(notification: NSNotification) {
-        updateBloodGlucoseUnitPlaceholder()
-    }
     
     func updateBloodGlucoseUnitPlaceholder() {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        let bloodGlucoseUnit = userDefaults.valueForKey("blood_glucose_units_preference") as String
-        let isMmolSelected = bloodGlucoseUnit.isEqual("mmol")
+        let bloodGlucoseUnit = self.preferencesManager.bloodGlucoseUnit
         
-        var placeholder : String
-        
-        if isMmolSelected {
-            placeholder = "mmol/L"
-        } else {
-            placeholder = "mg/dL"
-        }
-        
-        currentBloodGlucoseLevelTextField.placeholder = placeholder
+        // TODO: Could you not just use .rawValue here?
+        currentBloodGlucoseLevelTextField.placeholder = {
+            switch bloodGlucoseUnit {
+            case .mmol: return "mmol/L"
+            case .mgdl: return "mg/dL"
+            }
+            }()
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
 }
 

@@ -6,14 +6,14 @@ class SuggestionsViewController: UITableViewController {
     @IBOutlet weak var carbohydrateFactorLabel: UILabel!
     @IBOutlet weak var correctiveFactorLabel: UILabel!
     
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let preferencesManager = PreferencesManager.sharedInstance
     
     @IBAction func closeModal(sender: AnyObject) {
         let carbohydrateFactor = (carbohydrateFactorLabel.text! as NSString).doubleValue
         let correctiveFactor = (correctiveFactorLabel.text! as NSString).doubleValue
         
-        userDefaults.setValue(carbohydrateFactor, forKey: "carbohydrate_factor_preference")
-        userDefaults.setValue(correctiveFactor, forKey: "corrective_factor_preference")
+        preferencesManager.carbohydrateFactor = carbohydrateFactor
+        preferencesManager.correctiveFactor = correctiveFactor
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -26,20 +26,16 @@ class SuggestionsViewController: UITableViewController {
     }
     
     func calculateSuggestions(sender: UITextField) {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        let bloodGlucoseUnit = userDefaults.valueForKey("blood_glucose_units_preference") as String
-        let isMmolSelected = bloodGlucoseUnit.isEqual("mmol")
-        
+        let bloodGlucoseUnit = self.preferencesManager.bloodGlucoseUnit
         let totalDailyDose = (totalDailyDoseTextField.text as NSString).doubleValue
-        
         let carbohydrateFactor: Double = (500 / totalDailyDose)
-        var correctiveFactor: Double
         
-        if isMmolSelected {
-            correctiveFactor = (100 / totalDailyDose)
-        } else {
-            correctiveFactor = ((100 / totalDailyDose) * 18)
-        }
+        let correctiveFactor: Double = {
+            switch bloodGlucoseUnit {
+            case .mmol: return (100 / totalDailyDose)
+            case .mgdl: return ((100 / totalDailyDose) * 18)
+            }
+            }()
         
         var carbohydrateFactorString: String
         var correctiveFactorString: String

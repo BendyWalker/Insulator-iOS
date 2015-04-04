@@ -7,33 +7,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        setUserDefaults()
+
+        let preferenceManager = PreferencesManager.sharedInstance
+        
+        // Set preferences
+        // Comment these out to test the preferences are saved after the first run
+        preferenceManager.useHalfUnits = true
+        preferenceManager.bloodGlucoseUnit = .mmol
+        preferenceManager.carbohydrateFactor = 9.2
+        preferenceManager.correctiveFactor = 2
+        preferenceManager.desiredBloodGlucose = 7
+        preferenceManager.allowFloatingPointCarbohydrates = true
+        
         return true
-    }
-    
-    func setUserDefaults() {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        
-        
-        if userDefaults.valueForKey("half_units_preference") == nil {
-            userDefaults.setValue(false, forKey: "half_units_preference")
-        }
-        
-        if userDefaults.valueForKey("blood_glucose_units_preference") == nil {
-            userDefaults.setValue("mmol", forKey: "blood_glucose_units_preference")
-        }
-        
-        if userDefaults.valueForKey("carbohydrates_decimal_preference") == nil {
-            userDefaults.setValue(false, forKey: "carbohydrates_decimal_preference")
-        }
-        
-        // TODO: Set these back to 0.0 after testing!
-        userDefaults.setValue(9.2, forKey: "carbohydrate_factor_preference")
-        userDefaults.setValue(2.0, forKey: "corrective_factor_preference")
-        userDefaults.setValue(7.0, forKey: "desired_blood_glucose_preference")
-        
-        userDefaults.synchronize()
     }
 
     func applicationWillResignActive(application: UIApplication) {

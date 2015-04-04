@@ -1,29 +1,46 @@
 import Foundation
 
+enum BloodGlucoseUnit: String  {
+    case mmol = "mmol"
+    case mgdl = "mgdl"
+    
+    static func fromString(string: String) -> BloodGlucoseUnit? {
+        switch string {
+        case BloodGlucoseUnit.mmol.rawValue: return .mmol
+        case BloodGlucoseUnit.mgdl.rawValue: return .mgdl
+        default: return nil
+        }
+    }
+    
+    static func defaultUnit () -> BloodGlucoseUnit { return BloodGlucoseUnit.mmol }
+}
+
+
 class Calculator {
     let carbohydrateFactor: Double
     let correctiveFactor: Double
     let desiredBloodGlucoseLevel: Double
     let currentBloodGlucoseLevel: Double
     let carbohydratesInMeal: Double
-    let isMmolSelected: Bool
+    let bloodGlucoseUnit: BloodGlucoseUnit
     let isHalfUnitsEnabled: Bool
     
-    init(currentBloodGlucoseLevel: Double, carbohydratesInMeal: Double) {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        self.isMmolSelected = (userDefaults.stringForKey("blood_glucose_units_preference") == "mmol")
-        self.isHalfUnitsEnabled = userDefaults.boolForKey("half_units_preference")
+    init(carbohydrateFactor: Double, correctiveFactor: Double, desiredBloodGlucoseLevel: Double, currentBloodGlucoseLevel: Double, carbohydratesInMeal: Double, bloodGlucoseUnit: BloodGlucoseUnit, isHalfUnitsEnabled: Bool) {
+        self.carbohydrateFactor = carbohydrateFactor
+        self.correctiveFactor = correctiveFactor
+        self.desiredBloodGlucoseLevel = carbohydrateFactor
         self.currentBloodGlucoseLevel = currentBloodGlucoseLevel
         self.carbohydratesInMeal = carbohydratesInMeal
-        self.carbohydrateFactor = userDefaults.doubleForKey("carbohydrate_factor_preference")
-        self.correctiveFactor = userDefaults.doubleForKey("corrective_factor_preference")
-        self.desiredBloodGlucoseLevel = userDefaults.doubleForKey("desired_blood_glucose_preference")
+        self.bloodGlucoseUnit = bloodGlucoseUnit
+        self.isHalfUnitsEnabled = isHalfUnitsEnabled
     }
     
     func convertBloodGlucose(bloodGlucose: Double) -> Double {
-        if isMmolSelected {
+        
+        switch bloodGlucoseUnit {
+        case .mmol:
             return bloodGlucose
-        } else {
+        case .mgdl:
             return bloodGlucose / 18
         }
     }
