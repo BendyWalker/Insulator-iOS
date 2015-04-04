@@ -57,7 +57,7 @@ class VariablesTableViewController: UITableViewController {
                     let bloodGlucoseUnit = self.preferencesManager.bloodGlucoseUnit
                     
                     // Maybe move this logic into the BloodGlucoseUnit type
-                    // Would be nice to just call bloodGlucoseUnit.calculateFinaLevel(quantity)
+                    // Would be nice to just call bloodGlucoseUnit.calculateFinalLevel(quantity)
                     let finalBloodGlucose: Double = {
                         switch bloodGlucoseUnit {
                         case .mmol: return Double(round((millgramsPerDeciliterOfBloodGlucose / 18) * 10) / 10)
@@ -66,14 +66,15 @@ class VariablesTableViewController: UITableViewController {
                         }()
                     
                     self.currentBloodGlucoseLevelTextField.text = "\(finalBloodGlucose)"
+                    self.attemptDoseCalculation()
+
                 });
             }
             else {
-                // No blood glucose quanity, so show not text
+                // No blood glucose quanity, so show no text
                 self.currentBloodGlucoseLevelTextField.text = ""
             }
             
-            self.attemptDoseCalculation()
         });
     }
     
