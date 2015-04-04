@@ -505,7 +505,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Constants" id="Vvw-oW-b53">
-                        <barButtonItem key="leftBarButtonItem" title="Done" id="Zhe-YI-ctJ">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Zhe-YI-ctJ">
                             <connections>
                                 <action selector="closeModal:" destination="19E-xp-IfS" id="4SP-ub-Y6q"/>
                             </connections>
@@ -546,7 +546,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80G-fA-CJg">
-                                                    <rect key="frame" x="16" y="8" width="482" height="27"/>
+                                                    <rect key="frame" x="16" y="7.5" width="482" height="28"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Enter the total amount of insulin ">
                                                             <attributes>
@@ -576,7 +576,7 @@
                                                     </variation>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="units" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sUT-N6-vN6">
-                                                    <rect key="frame" x="514" y="11" width="70" height="21"/>
+                                                    <rect key="frame" x="514" y="11.5" width="70" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="Ibu-zj-KjU"/>
                                                     </constraints>
@@ -689,7 +689,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Factor Suggestions" id="clE-J4-viI">
-                        <barButtonItem key="leftBarButtonItem" title="Done" id="46S-0J-7o9">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="46S-0J-7o9">
                             <connections>
                                 <action selector="closeModal:" destination="1Sc-jh-okS" id="D1D-mf-H4S"/>
                             </connections>
