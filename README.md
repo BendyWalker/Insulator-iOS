@@ -3,7 +3,7 @@
 ## Description
 Insulator is a fast, efficient way for Type 1 Diabetics to calculate the amount of insulin needed to bring their blood sugar to a healthy level. It's the best insulin calculator for iPhone.
 
-Insulator uses standard formulas sanctioned by the [NHS](www.nhs.uk) and [DAFNE](http://www.dafne.uk.com), including the insulin-to-carb ratio, the 500 rule and the 100 rule. It supports half units and both mmol/L & mg/dL, so diabetics all over the world can enjoy simplified insulin calculations.
+Insulator uses standard formulas sanctioned by the [NHS](www.nhs.uk) and [DAFNE](http://www.dafne.uk.com), including the insulin-to-carb ratio, the 500 rule and the 100 rule. It supports both mmol/L & mg/dL so diabetics all over the world can enjoy simplified insulin calculations.
 
 The interface is designed to be clean, focused, simple-to-understand and easy-to-use, whilst adhering to the Apple's Human Interface Guidelines.
 
@@ -16,3 +16,8 @@ The best way for Type 1 Diabetics to quickly calculate insulin doses.
 
 ## Change Log
 ### 1.0.0
+#### Beta 2
+Tightened up the user interface, which should now render correctly on all screen sizes. Added a Done button in the Navigation Bar which will dismiss the keyboard.
+
+#### Beta 1
+Basic functionality is available but the complete feature set has not been implemented yet. The user interface is rough and lacking polish.
