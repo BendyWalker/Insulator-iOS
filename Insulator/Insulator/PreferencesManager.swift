@@ -2,7 +2,7 @@ import Foundation
 
 let PreferencesDidChangeNotification = "PreferencesDidChangeNotification"
 
-class PreferencesStore  {
+class PreferencesStore {
     
     private let userDefaults = NSUserDefaults.standardUserDefaults()
     

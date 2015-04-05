@@ -130,13 +130,9 @@ class VariablesTableViewController: UITableViewController {
             carbohydratesInMeal: carbohydratesInMeal,
             bloodGlucoseUnit: self.preferencesManager.bloodGlucoseUnit)
         
-        let suggestedDose = String(format: "%.1f", calculator.getSuggestedDose())
-        let carbohydrateDose = String(format: "%.1f", calculator.getCarbohydrateDose())
-        let correctiveDose = String(format: "%.1f", calculator.getCorrectiveDose())
-        
-        suggestedDoseLabel.text = suggestedDose
-        carbohydrateDoseLabel.text = carbohydrateDose
-        correctiveDoseLabel.text = correctiveDose
+        suggestedDoseLabel.text = Calculator.getString(calculator.getSuggestedDose())
+        carbohydrateDoseLabel.text = Calculator.getString(calculator.getCarbohydrateDose())
+        correctiveDoseLabel.text = Calculator.getString(calculator.getCorrectiveDose())
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -55,4 +55,8 @@ class Calculator {
         
         return suggestedDose
     }
+    
+    class func getString(value: Double) -> String {
+        return String(format: "%.1f", value)
+    }
 }
