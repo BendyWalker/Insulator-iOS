@@ -97,18 +97,16 @@
 			isa = PBXGroup;
 			children = (
 				1BD0B8541AB346D3000C909F /* Insulator.entitlements */,
-				2E48EAD21AC975F400E0F856 /* PreferencesManager.swift */,
 				1B0A94A01A6C809E00DCFC85 /* AppDelegate.swift */,
-				1B0A94A21A6C809E00DCFC85 /* VariablesViewController.swift */,
-				1BCA7A3B1AB9D6BA005A3CCC /* SuggestionsViewController.swift */,
-				1B9F720A1A7644E70062D606 /* ConstantsViewController.swift */,
-				1B0A94A41A6C809E00DCFC85 /* Main.storyboard */,
-				1B0A94A71A6C809E00DCFC85 /* Images.xcassets */,
-				1B0A94A91A6C809E00DCFC85 /* LaunchScreen.xib */,
-				1B0A949E1A6C809E00DCFC85 /* Supporting Files */,
+				1BD0B85F1AB35497000C909F /* HealthManager.swift */,
+				2E48EAD21AC975F400E0F856 /* PreferencesManager.swift */,
 				1B165B741A6EA9F20096F290 /* Calculator.swift */,
 				1B3834511AD1CCE10039CD6C /* BloodGlucoseUnit.swift */,
-				1BD0B85F1AB35497000C909F /* HealthManager.swift */,
+				1B3834531AD1E75E0039CD6C /* View Controllers */,
+				1B0A94A41A6C809E00DCFC85 /* Main.storyboard */,
+				1B0A94A91A6C809E00DCFC85 /* LaunchScreen.xib */,
+				1B0A94A71A6C809E00DCFC85 /* Images.xcassets */,
+				1B0A949E1A6C809E00DCFC85 /* Supporting Files */,
 			);
 			path = Insulator;
 			sourceTree = "<group>";
@@ -137,6 +135,16 @@
 				1B0A94B51A6C809E00DCFC85 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B3834531AD1E75E0039CD6C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1B0A94A21A6C809E00DCFC85 /* VariablesViewController.swift */,
+				1BCA7A3B1AB9D6BA005A3CCC /* SuggestionsViewController.swift */,
+				1B9F720A1A7644E70062D606 /* ConstantsViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
