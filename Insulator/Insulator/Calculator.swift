@@ -1,11 +1,14 @@
 import Foundation
 
 class Calculator {
+    let mgdlConversionValue = 18.0
+    
     let carbohydrateFactor: Double
     let correctiveFactor: Double
     let desiredBloodGlucoseLevel: Double
     let currentBloodGlucoseLevel: Double
     let carbohydratesInMeal: Double
+    let totalDailyDose: Double
     let bloodGlucoseUnit: BloodGlucoseUnit
     
     init(carbohydrateFactor: Double, correctiveFactor: Double, desiredBloodGlucoseLevel: Double, currentBloodGlucoseLevel: Double, carbohydratesInMeal: Double, bloodGlucoseUnit: BloodGlucoseUnit) {
@@ -15,6 +18,19 @@ class Calculator {
         self.currentBloodGlucoseLevel = currentBloodGlucoseLevel
         self.carbohydratesInMeal = carbohydratesInMeal
         self.bloodGlucoseUnit = bloodGlucoseUnit
+        
+        self.totalDailyDose = 0.0
+    }
+    
+    init(totalDailyDose: Double, bloodGlucoseUnit: BloodGlucoseUnit) {
+        self.totalDailyDose = totalDailyDose
+        self.bloodGlucoseUnit = bloodGlucoseUnit
+        
+        self.carbohydrateFactor = 0.0
+        self.correctiveFactor = 0.0
+        self.desiredBloodGlucoseLevel = 0.0
+        self.currentBloodGlucoseLevel = 0.0
+        self.carbohydratesInMeal = 0.0
     }
     
     func convertBloodGlucose(bloodGlucose: Double) -> Double {
@@ -22,7 +38,7 @@ class Calculator {
         case .mmol:
             return bloodGlucose
         case .mgdl:
-            return bloodGlucose / 18
+            return bloodGlucose / mgdlConversionValue
         }
     }
     
@@ -54,6 +70,19 @@ class Calculator {
         }
         
         return suggestedDose
+    }
+    
+    func getCarbohydrateFactor() -> Double {
+        return 500 / totalDailyDose
+    }
+    
+    func getCorrectiveFactor() -> Double {
+        switch bloodGlucoseUnit {
+        case .mmol:
+            return 100 / totalDailyDose
+        case .mgdl:
+            return (100 / totalDailyDose) * mgdlConversionValue
+        }
     }
     
     class func getString(value: Double) -> String {
