@@ -104,7 +104,7 @@ class VariablesTableViewController: UITableViewController {
             rightBarButtonItem.style = UIBarButtonItemStyle.Done
             rightBarButtonItem.title = "Done"
         } else {
-            rightBarButtonItem.style = UIBarButtonItemStyle.Bordered
+            rightBarButtonItem.style = UIBarButtonItemStyle.Plain
             rightBarButtonItem.title = "Clear"
         }
     }
