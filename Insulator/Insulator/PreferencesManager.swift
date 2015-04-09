@@ -37,7 +37,6 @@ class PreferencesStore {
     func loadDoubleWithKey(key: String) -> Double {
         return userDefaults.doubleForKey(key)
     }
-    
 }
 
 class PreferencesManager {
@@ -46,14 +45,20 @@ class PreferencesManager {
     
     private let store: PreferencesStore = PreferencesStore()
     
+    private let BuildNumberKey = "BuildNumberKey"
     private let AllowFloatingPointCarbohydratesKey = "AllowFloatingPointCarbohydratesKey"
     private let BloodGlucoseUnitKey = "BloodGlucoseUnitKey"
     private let CarbohydrateFactorKey = "CarbohydrateFactorKey"
     private let CorrectiveFactorKey = "CorrectiveFactorKey"
     private let DesiredBloodGlucoseKey = "DesiredBloodGlucoseKey"
     
-    
     // MARK: Properties
+    
+    var buildNumber: String {
+        didSet {
+            store.saveObject(buildNumber, withKey: BuildNumberKey)
+        }
+    }
     
     var allowFloatingPointCarbohydrates: Bool {
         didSet {
@@ -103,15 +108,19 @@ class PreferencesManager {
         self.correctiveFactor = store.loadDoubleWithKey(CorrectiveFactorKey)
         self.desiredBloodGlucose = store.loadDoubleWithKey(DesiredBloodGlucoseKey)
         
-        if let loadedUnitString = store.loadObjectWithKey(BloodGlucoseUnitKey) as? String {
-            if let bloodGlucoseUnit = BloodGlucoseUnit.fromString(loadedUnitString) {
+        if let buildNumberString = store.loadObjectWithKey(BuildNumberKey) as? String {
+            self.buildNumber = buildNumberString
+        } else {
+            self.buildNumber = ""
+        }
+        
+        if let bloodGlucoseUnitString = store.loadObjectWithKey(BloodGlucoseUnitKey) as? String {
+            if let bloodGlucoseUnit = BloodGlucoseUnit.fromString(bloodGlucoseUnitString) {
                 self.bloodGlucoseUnit = bloodGlucoseUnit
-            }
-            else {
+            } else {
                 self.bloodGlucoseUnit = BloodGlucoseUnit.defaultUnit()
             }
-        }
-        else {
+        } else {
             self.bloodGlucoseUnit = BloodGlucoseUnit.defaultUnit()
         }
         
