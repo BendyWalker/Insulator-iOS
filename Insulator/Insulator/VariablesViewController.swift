@@ -122,17 +122,11 @@ class VariablesTableViewController: UITableViewController {
     
     func calculateDose(#currentBloodGlucoseLevel: Double, carbohydratesInMeal: Double) {
         
-        let calculator = Calculator(
-            carbohydrateFactor: self.preferencesManager.carbohydrateFactor,
-            correctiveFactor: self.preferencesManager.correctiveFactor,
-            desiredBloodGlucoseLevel: self.preferencesManager.desiredBloodGlucose,
-            currentBloodGlucoseLevel: currentBloodGlucoseLevel,
-            carbohydratesInMeal: carbohydratesInMeal,
-            bloodGlucoseUnit: self.preferencesManager.bloodGlucoseUnit)
+        let calculator = Calculator(bloodGlucoseUnit: preferencesManager.bloodGlucoseUnit, carbohydrateFactor: preferencesManager.carbohydrateFactor, correctiveFactor: preferencesManager.correctiveFactor, desiredBloodGlucoseLevel: preferencesManager.desiredBloodGlucose, currentBloodGlucoseLevel: currentBloodGlucoseLevel, carbohydratesInMeal: carbohydratesInMeal)
         
-        suggestedDoseLabel.text = Calculator.getString(calculator.getSuggestedDose())
-        carbohydrateDoseLabel.text = Calculator.getString(calculator.getCarbohydrateDose())
-        correctiveDoseLabel.text = Calculator.getString(calculator.getCorrectiveDose())
+        suggestedDoseLabel.text = Calculator.getFormattedString(fromDouble: calculator.getSuggestedDose())
+        carbohydrateDoseLabel.text = Calculator.getFormattedString(fromDouble: calculator.getCarbohydrateDose())
+        correctiveDoseLabel.text = Calculator.getFormattedString(fromDouble: calculator.getCorrectiveDose())
     }
     
     override func viewWillAppear(animated: Bool) {

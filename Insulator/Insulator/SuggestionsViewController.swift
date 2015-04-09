@@ -28,7 +28,7 @@ class SuggestionsViewController: UITableViewController {
     func calculateSuggestions(sender: UITextField) {
         let bloodGlucoseUnit = self.preferencesManager.bloodGlucoseUnit
         let totalDailyDose = (totalDailyDoseTextField.text as NSString).doubleValue
-        let calculator = Calculator(totalDailyDose: totalDailyDose, bloodGlucoseUnit: bloodGlucoseUnit)
+        let calculator = Calculator(bloodGlucoseUnit: bloodGlucoseUnit, totalDailyDose: totalDailyDose)
         var carbohydrateFactorString: String
         var correctiveFactorString: String
         
@@ -36,8 +36,8 @@ class SuggestionsViewController: UITableViewController {
             carbohydrateFactorString = "0.0";
             correctiveFactorString = "0.0";
         } else {
-            carbohydrateFactorString = Calculator.getString(calculator.getCarbohydrateFactor());
-            correctiveFactorString = Calculator.getString(calculator.getCorrectiveFactor());
+            carbohydrateFactorString = Calculator.getFormattedString(fromDouble: calculator.getCarbohydrateFactor());
+            correctiveFactorString = Calculator.getFormattedString(fromDouble: calculator.getCorrectiveFactor());
         }
         
         carbohydrateFactorLabel.text = carbohydrateFactorString
