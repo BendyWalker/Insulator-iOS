@@ -5,6 +5,36 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="e9A-uU-7LM">
+            <objects>
+                <viewController id="c7D-vQ-j2B" customClass="WelcomeViewController" customModule="Insulator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7vv-Oo-lEw"/>
+                        <viewControllerLayoutGuide type="bottom" id="hrA-CP-Aqi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iW0-bR-3w6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hqa-cA-3a4">
+                                <rect key="frame" x="280" y="289" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Hqa-cA-3a4" secondAttribute="centerX" id="DCh-er-f6v"/>
+                            <constraint firstAttribute="centerY" secondItem="Hqa-cA-3a4" secondAttribute="centerY" id="SR0-FR-4gJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KMD-De-EJm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="263" y="-96"/>
+        </scene>
         <!--Variables-->
         <scene sceneID="zWO-QL-KiX">
             <objects>
@@ -303,6 +333,7 @@
                         <outlet property="currentBloodGlucoseLevelTextField" destination="tFd-iJ-e6l" id="09I-sl-n3B"/>
                         <outlet property="rightBarButtonItem" destination="3sN-6Z-74e" id="6mP-vD-C9s"/>
                         <outlet property="suggestedDoseLabel" destination="UXc-RA-Oun" id="tCB-bO-X7k"/>
+                        <segue destination="c7D-vQ-j2B" kind="presentation" identifier="welcome" id="erf-ct-fD0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPo-aL-wvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -520,7 +551,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rH3-UQ-EE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="-424"/>
+            <point key="canvasLocation" x="-774" y="1374"/>
         </scene>
         <!--Factor Suggestions-->
         <scene sceneID="6DQ-pQ-ysG">
@@ -705,7 +736,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Bq-Ua-7r9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="286"/>
+            <point key="canvasLocation" x="-120" y="1374"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hdr-ia-mDd">
@@ -741,7 +772,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83L-Q7-Vde" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="284" y="-424"/>
+            <point key="canvasLocation" x="-774" y="654"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pHA-W7-Nu2">
@@ -759,7 +790,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9lZ-rM-gRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="284" y="286"/>
+            <point key="canvasLocation" x="-120" y="654"/>
         </scene>
     </scenes>
     <color key="tintColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>

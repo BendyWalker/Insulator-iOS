@@ -9,17 +9,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let preferenceManager = PreferencesManager.sharedInstance
 
-        if let build = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion") as? String {
-            if preferenceManager.buildNumber != build {
-                preferenceManager.bloodGlucoseUnit = .mmol
-                preferenceManager.carbohydrateFactor = 9.2
-                preferenceManager.correctiveFactor = 2
-                preferenceManager.desiredBloodGlucose = 7
-                preferenceManager.allowFloatingPointCarbohydrates = true
-                
-                preferenceManager.buildNumber = build
-            }
-        }
+//        if let build = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion") as? String {
+//            if preferenceManager.buildNumber != build {
+//                preferenceManager.bloodGlucoseUnit = .mmol
+//                preferenceManager.carbohydrateFactor = 9.2
+//                preferenceManager.correctiveFactor = 2
+//                preferenceManager.desiredBloodGlucose = 7
+//                preferenceManager.allowFloatingPointCarbohydrates = true
+//                
+//                preferenceManager.buildNumber = build
+//            }
+//        }
         
         return true
     }
