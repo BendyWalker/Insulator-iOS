@@ -21,7 +21,7 @@ class HealthManager {
             return
         }
         
-        healthKitStore.requestAuthorizationToShareTypes(healthKitTypesToWrite, readTypes: healthKitTypesToRead) {
+        healthKitStore.requestAuthorizationToShareTypes(healthKitTypesToWrite as Set<NSObject>, readTypes: healthKitTypesToRead as Set<NSObject>) {
             (success, error) -> Void in
             
             if completion != nil {
@@ -31,7 +31,7 @@ class HealthManager {
     }
     
     func readMostRecentSample(sampleType: HKSampleType, completion: ((HKSample!, NSError!) -> Void)!) {
-        let past = NSDate.distantPast() as NSDate
+        let past = NSDate.distantPast() as! NSDate
         let now = NSDate()
         let mostRecentPredicate = HKQuery.predicateForSamplesWithStartDate(past, endDate: now, options: .None)
         
