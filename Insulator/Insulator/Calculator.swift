@@ -3,12 +3,12 @@ import Foundation
 class Calculator {
     let mgdlConversionValue = 18.0
     
-    let carbohydrateFactor: Double
-    let correctiveFactor: Double
-    let desiredBloodGlucoseLevel: Double
-    let currentBloodGlucoseLevel: Double
-    let carbohydratesInMeal: Double
-    let totalDailyDose: Double
+    let carbohydrateFactor = 0.0
+    let correctiveFactor = 0.0
+    let desiredBloodGlucoseLevel = 0.0
+    let currentBloodGlucoseLevel = 0.0
+    let carbohydratesInMeal = 0.0
+    let totalDailyDose = 0.0
     let bloodGlucoseUnit: BloodGlucoseUnit
     
     init(carbohydrateFactor: Double, correctiveFactor: Double, desiredBloodGlucoseLevel: Double, currentBloodGlucoseLevel: Double, carbohydratesInMeal: Double, bloodGlucoseUnit: BloodGlucoseUnit) {
@@ -18,19 +18,11 @@ class Calculator {
         self.currentBloodGlucoseLevel = currentBloodGlucoseLevel
         self.carbohydratesInMeal = carbohydratesInMeal
         self.bloodGlucoseUnit = bloodGlucoseUnit
-        
-        self.totalDailyDose = 0.0
     }
     
     init(totalDailyDose: Double, bloodGlucoseUnit: BloodGlucoseUnit) {
         self.totalDailyDose = totalDailyDose
         self.bloodGlucoseUnit = bloodGlucoseUnit
-        
-        self.carbohydrateFactor = 0.0
-        self.correctiveFactor = 0.0
-        self.desiredBloodGlucoseLevel = 0.0
-        self.currentBloodGlucoseLevel = 0.0
-        self.carbohydratesInMeal = 0.0
     }
     
     func convertBloodGlucose(bloodGlucose: Double) -> Double {
