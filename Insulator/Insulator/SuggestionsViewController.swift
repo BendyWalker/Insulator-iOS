@@ -36,8 +36,8 @@ class SuggestionsViewController: UITableViewController {
             carbohydrateFactorString = "0.0";
             correctiveFactorString = "0.0";
         } else {
-            carbohydrateFactorString = Calculator.getFormattedString(fromDouble: calculator.getCarbohydrateFactor());
-            correctiveFactorString = Calculator.getFormattedString(fromDouble: calculator.getCorrectiveFactor());
+            carbohydrateFactorString = "\(calculator.getCarbohydrateFactor())";
+            correctiveFactorString = "\(calculator.getCorrectiveFactor())";
         }
         
         carbohydrateFactorLabel.text = carbohydrateFactorString

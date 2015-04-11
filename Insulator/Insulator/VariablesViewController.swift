@@ -129,9 +129,9 @@ class VariablesTableViewController: UITableViewController {
         
         let calculator = Calculator(bloodGlucoseUnit: preferencesManager.bloodGlucoseUnit, carbohydrateFactor: preferencesManager.carbohydrateFactor, correctiveFactor: preferencesManager.correctiveFactor, desiredBloodGlucoseLevel: preferencesManager.desiredBloodGlucose, currentBloodGlucoseLevel: currentBloodGlucoseLevel, carbohydratesInMeal: carbohydratesInMeal)
         
-        suggestedDoseLabel.text = Calculator.getFormattedString(fromDouble: calculator.getSuggestedDose())
-        carbohydrateDoseLabel.text = Calculator.getFormattedString(fromDouble: calculator.getCarbohydrateDose())
-        correctiveDoseLabel.text = Calculator.getFormattedString(fromDouble: calculator.getCorrectiveDose())
+        suggestedDoseLabel.text = "\(calculator.getSuggestedDose())"
+        carbohydrateDoseLabel.text = "\(calculator.getCarbohydrateDose())"
+        correctiveDoseLabel.text = "\(calculator.getCorrectiveDose())"
     }
     
     override func viewWillAppear(animated: Bool) {

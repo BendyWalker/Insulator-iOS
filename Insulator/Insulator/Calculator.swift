@@ -37,6 +37,7 @@ class Calculator {
             carbohydrateDose = carbohydratesInMeal / carbohydrateFactor
         }
         
+        carbohydrateDose = roundDouble(carbohydrateDose)
         return carbohydrateDose
     }
     
@@ -47,6 +48,7 @@ class Calculator {
             correctiveDose = (convertBloodGlucose(currentBloodGlucoseLevel) - convertBloodGlucose(desiredBloodGlucoseLevel)) / correctiveFactor
         }
         
+        correctiveDose = roundDouble(correctiveDose)
         return correctiveDose
     }
     
@@ -61,19 +63,25 @@ class Calculator {
     }
     
     func getCarbohydrateFactor() -> Double {
-        return 500 / totalDailyDose
+        var carbohydrateFactor = 500 / totalDailyDose
+        carbohydrateFactor = roundDouble(carbohydrateFactor)
+        return carbohydrateFactor
     }
     
     func getCorrectiveFactor() -> Double {
+        var correctiveFactor = 0.0
         switch bloodGlucoseUnit {
         case .mmol:
-            return 100 / totalDailyDose
+            correctiveFactor = 100 / totalDailyDose
         case .mgdl:
-            return (100 / totalDailyDose) * mgdlConversionValue
+            correctiveFactor = (100 / totalDailyDose) * mgdlConversionValue
         }
+        
+        correctiveFactor = roundDouble(correctiveFactor)
+        return correctiveFactor
     }
     
-    class func getFormattedString(fromDouble double: Double) -> String {
-        return String(format: "%.1f", double)
+    func roundDouble(double: Double) -> Double {
+        return (round(10 * double)) / 10
     }
 }
