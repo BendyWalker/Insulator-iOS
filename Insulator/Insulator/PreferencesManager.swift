@@ -125,4 +125,12 @@ class PreferencesManager {
         }
         
     }
+    
+    func outputToLog() {
+        println("Blood Glucose Unit: \(self.bloodGlucoseUnit.rawValue)")
+        println("Allow Floating Point Carbohydrates: \(self.allowFloatingPointCarbohydrates)")
+        println("Carbohydrate Factor: \(self.carbohydrateFactor)")
+        println("Corrective Factor: \(self.correctiveFactor)")
+        println("Desired Blood Glucose: \(self.desiredBloodGlucose)")
+    }
 }

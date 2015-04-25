@@ -82,23 +82,26 @@ class VariablesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if true {
-            self.performSegueWithIdentifier("welcome", sender: AnyObject?())
-        } else {
-            updateBloodGlucoseUnitPlaceholder()
-            
-            currentBloodGlucoseLevelTextField.addTarget(self, action: "attemptDoseCalculation", forControlEvents: UIControlEvents.EditingChanged)
-            currentBloodGlucoseLevelTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidBegin)
-            currentBloodGlucoseLevelTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidEnd)
-            carbohydratesInMealTextField.addTarget(self, action: "attemptDoseCalculation", forControlEvents: UIControlEvents.EditingChanged)
-            carbohydratesInMealTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidBegin)
-            carbohydratesInMealTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidEnd)
-            
-            self.navigationController?.toolbarHidden = false
-            
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateBloodGlucoseUnitPlaceholder", name: PreferencesDidChangeNotification, object: nil)
+        if let build = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion") as? String {
+            if preferencesManager.buildNumber != build {
+                self.performSegueWithIdentifier("welcome", sender: AnyObject?())
+            } else {
+                updateBloodGlucoseUnitPlaceholder()
+                
+                currentBloodGlucoseLevelTextField.addTarget(self, action: "attemptDoseCalculation", forControlEvents: UIControlEvents.EditingChanged)
+                currentBloodGlucoseLevelTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidBegin)
+                currentBloodGlucoseLevelTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidEnd)
+                carbohydratesInMealTextField.addTarget(self, action: "attemptDoseCalculation", forControlEvents: UIControlEvents.EditingChanged)
+                carbohydratesInMealTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidBegin)
+                carbohydratesInMealTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidEnd)
+                
+                self.navigationController?.toolbarHidden = false
+                
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateBloodGlucoseUnitPlaceholder", name: PreferencesDidChangeNotification, object: nil)
+            }
         }
     }
+
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: PreferencesDidChangeNotification, object: nil)
@@ -141,7 +144,7 @@ class VariablesTableViewController: UITableViewController {
     
     
     func updateBloodGlucoseUnitPlaceholder() {
-        let bloodGlucoseUnit = self.preferencesManager.bloodGlucoseUnit
+        let bloodGlucoseUnit = preferencesManager.bloodGlucoseUnit
         
         // TODO: Could you not just use .rawValue here?
         currentBloodGlucoseLevelTextField.placeholder = {

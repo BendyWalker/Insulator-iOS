@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JMy-kn-27M">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JMy-kn-27M">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -28,7 +28,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o09-4P-cHA">
                                         <rect key="frame" x="0.0" y="0.0" width="568" height="60"/>
-                                        <string key="text">Insulator is the quickest way to easily calculate insulin doses. On the following screens, you will input all the data needed to calculate your doses.</string>
+                                        <string key="text">Insulator is the easiest way to quickly calculate insulin doses. On the following screens, you will input all the data needed to calculate your doses.</string>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -104,8 +104,8 @@
                                     <segue destination="m02-6G-btS" kind="show" id="OpN-Z4-wFk"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vD5-KN-V0O" userLabel="Blood Glucose Unit Container">
-                                <rect key="frame" x="16" y="76" width="568" height="91"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vD5-KN-V0O" userLabel="Blood Glucose Unit Container">
+                                <rect key="frame" x="16" y="76" width="568" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood Glucose Unit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ar-yI-Atk">
                                         <rect key="frame" x="0.0" y="0.0" width="568" height="27"/>
@@ -122,9 +122,12 @@
                                             <segment title="mmol/L"/>
                                             <segment title="mg/dL"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="bloodGlucoseUnitSegmentedControlValueChanged:" destination="3K6-sG-eMr" eventType="valueChanged" id="ERh-yy-xq1"/>
+                                        </connections>
                                     </segmentedControl>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Choose preferred blood glucose measurement unit" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oi8-8h-SAc">
-                                        <rect key="frame" x="0.0" y="71" width="568" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose preferred blood glucose measurement unit" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oi8-8h-SAc">
+                                        <rect key="frame" x="0.0" y="71" width="568" height="19"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -171,8 +174,8 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="92J-4u-neH" userLabel="Floating Point Carbohydrates Container">
-                                <rect key="frame" x="16" y="199" width="568" height="94"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="92J-4u-neH" userLabel="Floating Point Carbohydrates Container">
+                                <rect key="frame" x="16" y="198" width="568" height="93"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbohydrate Decimal Place" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0U-oL-bq4">
                                         <rect key="frame" x="0.0" y="0.0" width="568" height="27"/>
@@ -180,8 +183,8 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Toggle decimal place in 'carbohydrates in meal' entry field" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71i-m0-eiA">
-                                        <rect key="frame" x="0.0" y="74" width="568" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toggle decimal place in 'carbohydrates in meal' entry field" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71i-m0-eiA">
+                                        <rect key="frame" x="0.0" y="74" width="568" height="19"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -195,6 +198,9 @@
                                         <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="319" y="44" width="51" height="31"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="allowFloatingPointCarbohydratesSwitchValueChanged:" destination="3K6-sG-eMr" eventType="valueChanged" id="lks-Ld-Kgl"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -237,8 +243,8 @@
                                     <rect key="frame" x="16" y="179" width="368" height="75"/>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R3Z-pp-DvG" userLabel="Health Data Access Container">
-                                <rect key="frame" x="16" y="325" width="568" height="80"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3Z-pp-DvG" userLabel="Health Data Access Container">
+                                <rect key="frame" x="16" y="323" width="568" height="79"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health Data Access" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LhD-Z6-y60">
                                         <rect key="frame" x="0.0" y="0.0" width="568" height="27"/>
@@ -250,9 +256,12 @@
                                         <rect key="frame" x="248" y="27" width="73" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Authorise"/>
+                                        <connections>
+                                            <action selector="displayHealthDataAuthorisation:" destination="3K6-sG-eMr" eventType="touchUpInside" id="PmP-pH-LcM"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Authorise access to data stored in the Health app" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wp5-8R-bMv">
-                                        <rect key="frame" x="0.0" y="60" width="568" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authorise access to data stored in the Health app" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wp5-8R-bMv">
+                                        <rect key="frame" x="0.0" y="60" width="568" height="19"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -332,7 +341,7 @@
         <!--Welcome 3-->
         <scene sceneID="bEk-Nq-b4y">
             <objects>
-                <viewController title="Welcome 3" id="m02-6G-btS" sceneMemberID="viewController">
+                <viewController title="Welcome 3" id="m02-6G-btS" customClass="WelcomeViewController" customModule="Insulator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m1b-C9-skG"/>
                         <viewControllerLayoutGuide type="bottom" id="m1u-69-9ne"/>
@@ -367,6 +376,9 @@
                                         <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <connections>
+                                            <action selector="saveValuesToPreferenceManager:" destination="m02-6G-btS" eventType="editingChanged" id="A7c-FY-ECK"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -414,6 +426,9 @@
                                         <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <action selector="saveValuesToPreferenceManager:" destination="m02-6G-btS" eventType="editingChanged" id="Yl3-8e-aQA"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter how much 1 unit of fast-acting insulin lowers your blood glucose level" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Luf-TS-f5w">
                                         <rect key="frame" x="0.0" y="64" width="568" height="19"/>
@@ -479,6 +494,9 @@
                                         <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <action selector="saveValuesToPreferenceManager:" destination="m02-6G-btS" eventType="editingChanged" id="a2V-iR-9bN"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -499,10 +517,10 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="U2g-O1-Ydg"/>
-                                        <exclude reference="n3G-iu-9R0"/>
                                         <exclude reference="Isy-CV-pCe"/>
                                         <exclude reference="zyd-96-rTK"/>
+                                        <exclude reference="U2g-O1-Ydg"/>
+                                        <exclude reference="n3G-iu-9R0"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
@@ -539,6 +557,11 @@
                     <navigationItem key="navigationItem" id="iAi-lf-JK5">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="gqU-Cw-Psb"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="carbohydrateFactorTextField" destination="eMN-A6-9bN" id="kFP-aN-AFq"/>
+                        <outlet property="correctiveFactorTextField" destination="bAw-WE-8pr" id="LMo-3x-Nby"/>
+                        <outlet property="desiredBloodGlucoseTextField" destination="rxV-gP-zZc" id="Xr1-cW-u7e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ec9-FF-TlW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -925,7 +948,7 @@
                         <outlet property="currentBloodGlucoseLevelTextField" destination="tFd-iJ-e6l" id="09I-sl-n3B"/>
                         <outlet property="rightBarButtonItem" destination="3sN-6Z-74e" id="6mP-vD-C9s"/>
                         <outlet property="suggestedDoseLabel" destination="UXc-RA-Oun" id="tCB-bO-X7k"/>
-                        <segue destination="gvP-Fu-3Oq" kind="presentation" identifier="welcome" animates="NO" id="erf-ct-fD0"/>
+                        <segue destination="gvP-Fu-3Oq" kind="presentation" identifier="welcome" id="erf-ct-fD0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPo-aL-wvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1116,7 +1139,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rH3-UQ-EE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1157" y="706"/>
+            <point key="canvasLocation" x="-1157" y="770"/>
         </scene>
         <!--Factor Suggestions-->
         <scene sceneID="6DQ-pQ-ysG">
@@ -1280,7 +1303,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Bq-Ua-7r9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-425" y="706"/>
+            <point key="canvasLocation" x="-425" y="770"/>
         </scene>
         <!--Variables Navigation-->
         <scene sceneID="hdr-ia-mDd">
