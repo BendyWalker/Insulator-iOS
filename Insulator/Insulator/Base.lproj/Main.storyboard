@@ -679,31 +679,24 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Current Blood Glucose" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oU-CA-Ftw">
-                                                    <rect key="frame" x="16" y="8" width="482" height="11"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="8" y="8" width="498" height="12"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0c-bk-LjA">
-                                                    <rect key="frame" x="16" y="19" width="482" height="16.5"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="Enter your current blood glucose level">
-                                                            <attributes>
-                                                                <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Enter your current blood glucose level" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0c-bk-LjA">
+                                                    <rect key="frame" x="8" y="20" width="498" height="15"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tFd-iJ-e6l">
-                                                    <rect key="frame" x="514" y="11" width="70" height="21"/>
+                                                    <rect key="frame" x="522" y="12" width="70" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="m5d-We-x3U"/>
                                                     </constraints>
                                                     <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="290" y="6" width="97" height="30"/>
@@ -712,11 +705,11 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="tFd-iJ-e6l" secondAttribute="centerY" id="Ltu-XS-aYn"/>
-                                                <constraint firstItem="R0c-bk-LjA" firstAttribute="leading" secondItem="Yul-AJ-ynp" secondAttribute="leadingMargin" constant="8" id="Nth-bg-AYn"/>
-                                                <constraint firstItem="2oU-CA-Ftw" firstAttribute="leading" secondItem="Yul-AJ-ynp" secondAttribute="leadingMargin" constant="8" id="QpG-4R-d0h"/>
+                                                <constraint firstItem="R0c-bk-LjA" firstAttribute="leading" secondItem="Yul-AJ-ynp" secondAttribute="leadingMargin" id="Nth-bg-AYn"/>
+                                                <constraint firstItem="2oU-CA-Ftw" firstAttribute="leading" secondItem="Yul-AJ-ynp" secondAttribute="leadingMargin" id="QpG-4R-d0h"/>
                                                 <constraint firstItem="tFd-iJ-e6l" firstAttribute="leading" secondItem="2oU-CA-Ftw" secondAttribute="trailing" constant="16" id="SL2-7Z-80r"/>
                                                 <constraint firstItem="R0c-bk-LjA" firstAttribute="top" secondItem="2oU-CA-Ftw" secondAttribute="bottom" id="Td4-sB-rYY"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="tFd-iJ-e6l" secondAttribute="trailing" constant="8" id="Wi0-RW-N2A"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="tFd-iJ-e6l" secondAttribute="trailing" id="Wi0-RW-N2A"/>
                                                 <constraint firstItem="2oU-CA-Ftw" firstAttribute="top" secondItem="Yul-AJ-ynp" secondAttribute="topMargin" id="XcX-Fq-yre"/>
                                                 <constraint firstItem="tFd-iJ-e6l" firstAttribute="leading" secondItem="R0c-bk-LjA" secondAttribute="trailing" constant="16" id="e62-Tk-5h9"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="R0c-bk-LjA" secondAttribute="bottom" id="zlH-ix-GUm"/>
@@ -729,34 +722,27 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Carbohydrates in Meal" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRe-yE-wvj">
-                                                    <rect key="frame" x="16" y="8" width="482" height="11"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="8" y="8" width="498" height="12"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="grams" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Dk-B0-2PN">
-                                                    <rect key="frame" x="514" y="11" width="70" height="21"/>
+                                                    <rect key="frame" x="522" y="12" width="70" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="m7l-NG-rYY"/>
                                                     </constraints>
                                                     <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="290" y="6" width="97" height="30"/>
                                                     </variation>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7l-ZL-lod">
-                                                    <rect key="frame" x="16" y="19" width="482" height="16.5"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="Enter how many carbohydrates you consumed in your last meal">
-                                                            <attributes>
-                                                                <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Enter how many carbohydrates you consumed in your last meal" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7l-ZL-lod">
+                                                    <rect key="frame" x="8" y="20" width="498" height="15"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" misplaced="YES">
                                                         <rect key="frame" x="16" y="29" width="210" height="17"/>
@@ -770,14 +756,14 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="F7l-ZL-lod" firstAttribute="leading" secondItem="Son-Wo-SAt" secondAttribute="leadingMargin" constant="8" id="2Bk-3a-bFp"/>
+                                                <constraint firstItem="F7l-ZL-lod" firstAttribute="leading" secondItem="Son-Wo-SAt" secondAttribute="leadingMargin" id="2Bk-3a-bFp"/>
                                                 <constraint firstItem="BRe-yE-wvj" firstAttribute="top" secondItem="Son-Wo-SAt" secondAttribute="topMargin" id="7DU-dk-ADE"/>
                                                 <constraint firstItem="F7l-ZL-lod" firstAttribute="top" secondItem="BRe-yE-wvj" secondAttribute="bottom" id="MQZ-Oi-Vy7"/>
-                                                <constraint firstItem="BRe-yE-wvj" firstAttribute="leading" secondItem="Son-Wo-SAt" secondAttribute="leadingMargin" constant="8" id="R2a-fK-0GB"/>
+                                                <constraint firstItem="BRe-yE-wvj" firstAttribute="leading" secondItem="Son-Wo-SAt" secondAttribute="leadingMargin" id="R2a-fK-0GB"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="F7l-ZL-lod" secondAttribute="bottom" id="Snm-W3-Qm7"/>
                                                 <constraint firstItem="1Dk-B0-2PN" firstAttribute="leading" secondItem="F7l-ZL-lod" secondAttribute="trailing" constant="16" id="ZMO-ft-h5I"/>
                                                 <constraint firstAttribute="centerY" secondItem="1Dk-B0-2PN" secondAttribute="centerY" id="a3o-47-scY"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="1Dk-B0-2PN" secondAttribute="trailing" constant="8" id="hNh-z8-2Wm"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1Dk-B0-2PN" secondAttribute="trailing" id="hNh-z8-2Wm"/>
                                                 <constraint firstItem="1Dk-B0-2PN" firstAttribute="leading" secondItem="BRe-yE-wvj" secondAttribute="trailing" constant="16" id="sli-qs-KSY"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -792,8 +778,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xsf-sh-7PA">
-                                                    <rect key="frame" x="168" y="5" width="265" height="33"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="175" y="6" width="251" height="32"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <state key="normal" title="Get Most Recent Data from Health">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -818,17 +804,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggested Dose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZh-gy-ogA">
-                                                    <rect key="frame" x="16" y="11" width="130.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <rect key="frame" x="8" y="11" width="121" height="20"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXc-RA-Oun">
-                                                    <rect key="frame" x="514" y="11" width="70" height="20.5"/>
+                                                    <rect key="frame" x="522" y="11" width="70" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="5YB-Xz-nwq"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" misplaced="YES">
@@ -837,9 +823,9 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="UXc-RA-Oun" secondAttribute="trailing" constant="8" id="ELe-HR-gs8"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="UXc-RA-Oun" secondAttribute="trailing" id="ELe-HR-gs8"/>
                                                 <constraint firstAttribute="centerY" secondItem="bZh-gy-ogA" secondAttribute="centerY" id="HTW-SM-ltc"/>
-                                                <constraint firstItem="bZh-gy-ogA" firstAttribute="leading" secondItem="n4k-wO-mNX" secondAttribute="leadingMargin" constant="8" id="e4H-ct-4p3"/>
+                                                <constraint firstItem="bZh-gy-ogA" firstAttribute="leading" secondItem="n4k-wO-mNX" secondAttribute="leadingMargin" id="e4H-ct-4p3"/>
                                                 <constraint firstItem="UXc-RA-Oun" firstAttribute="centerY" secondItem="bZh-gy-ogA" secondAttribute="centerY" id="vEe-AX-qmf"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -850,29 +836,29 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmt-XE-3bf">
-                                                    <rect key="frame" x="514" y="11" width="70" height="21"/>
+                                                    <rect key="frame" x="522" y="12" width="70" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="MNZ-Lf-9RR"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" misplaced="YES">
                                                         <rect key="frame" x="189" y="8" width="24" height="20.5"/>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbohydrate Dose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gE-R2-RNT">
-                                                    <rect key="frame" x="16" y="12" width="149" height="20"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="8" y="12" width="142" height="20"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="tmt-XE-3bf" firstAttribute="centerY" secondItem="0gE-R2-RNT" secondAttribute="centerY" id="MwU-AN-6wo"/>
                                                 <constraint firstAttribute="centerY" secondItem="0gE-R2-RNT" secondAttribute="centerY" id="gmj-O8-U5C"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="tmt-XE-3bf" secondAttribute="trailing" constant="8" id="jjp-5y-ruB"/>
-                                                <constraint firstItem="0gE-R2-RNT" firstAttribute="leading" secondItem="qTW-3K-sKq" secondAttribute="leadingMargin" constant="8" id="r1s-t4-Fir"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="tmt-XE-3bf" secondAttribute="trailing" id="jjp-5y-ruB"/>
+                                                <constraint firstItem="0gE-R2-RNT" firstAttribute="leading" secondItem="qTW-3K-sKq" secondAttribute="leadingMargin" id="r1s-t4-Fir"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -882,28 +868,28 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72S-PQ-5qS">
-                                                    <rect key="frame" x="514" y="11" width="70" height="20.5"/>
+                                                    <rect key="frame" x="522" y="12" width="70" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="yQj-jS-TPu"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" misplaced="YES">
                                                         <rect key="frame" x="189" y="8" width="24" height="20.5"/>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corrective Dose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ZN-TQ-fYx">
-                                                    <rect key="frame" x="16" y="11.5" width="123.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="8" y="12" width="117" height="20"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="72S-PQ-5qS" firstAttribute="centerY" secondItem="6ZN-TQ-fYx" secondAttribute="centerY" id="8hc-cX-aq4"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="72S-PQ-5qS" secondAttribute="trailing" constant="8" id="9Bi-eD-Cd3"/>
-                                                <constraint firstItem="6ZN-TQ-fYx" firstAttribute="leading" secondItem="P9u-Ws-A40" secondAttribute="leadingMargin" constant="8" id="S1E-rZ-f8V"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="72S-PQ-5qS" secondAttribute="trailing" id="9Bi-eD-Cd3"/>
+                                                <constraint firstItem="6ZN-TQ-fYx" firstAttribute="leading" secondItem="P9u-Ws-A40" secondAttribute="leadingMargin" id="S1E-rZ-f8V"/>
                                                 <constraint firstAttribute="centerY" secondItem="6ZN-TQ-fYx" secondAttribute="centerY" id="eUg-H6-aQz"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -972,31 +958,24 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Carbohydrate Factor" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pj-kC-Itf">
-                                                    <rect key="frame" x="16" y="8" width="482" height="10"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="8" y="8" width="498" height="12"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9P-L9-bk1">
-                                                    <rect key="frame" x="16" y="18" width="482" height="17"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="Enter how many carbohydrates 1 unit of fast-acting insulin covers">
-                                                            <attributes>
-                                                                <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" verticalCompressionResistancePriority="1000" text="Enter how many carbohydrates 1 unit of fast-acting insulin covers" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9P-L9-bk1">
+                                                    <rect key="frame" x="8" y="20" width="498" height="15"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="grams" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Qi-qn-SeI">
-                                                    <rect key="frame" x="514" y="11" width="70" height="21"/>
+                                                    <rect key="frame" x="522" y="12" width="70" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="GSh-1t-m9U"/>
                                                     </constraints>
                                                     <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="290" y="6" width="97" height="30"/>
@@ -1004,11 +983,11 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="8Qi-qn-SeI" secondAttribute="trailing" constant="8" id="Io9-S7-FvB"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="8Qi-qn-SeI" secondAttribute="trailing" id="Io9-S7-FvB"/>
                                                 <constraint firstItem="8Qi-qn-SeI" firstAttribute="leading" secondItem="X9P-L9-bk1" secondAttribute="trailing" constant="16" id="KBN-0r-jzX"/>
                                                 <constraint firstItem="3Pj-kC-Itf" firstAttribute="top" secondItem="N1Z-DB-saL" secondAttribute="topMargin" id="Xb9-0t-oso"/>
-                                                <constraint firstItem="3Pj-kC-Itf" firstAttribute="leading" secondItem="N1Z-DB-saL" secondAttribute="leadingMargin" constant="8" id="cGf-r2-6r6"/>
-                                                <constraint firstItem="X9P-L9-bk1" firstAttribute="leading" secondItem="N1Z-DB-saL" secondAttribute="leadingMargin" constant="8" id="iVr-76-kmm"/>
+                                                <constraint firstItem="3Pj-kC-Itf" firstAttribute="leading" secondItem="N1Z-DB-saL" secondAttribute="leadingMargin" id="cGf-r2-6r6"/>
+                                                <constraint firstItem="X9P-L9-bk1" firstAttribute="leading" secondItem="N1Z-DB-saL" secondAttribute="leadingMargin" id="iVr-76-kmm"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="X9P-L9-bk1" secondAttribute="bottom" id="jR7-kz-Afq"/>
                                                 <constraint firstItem="8Qi-qn-SeI" firstAttribute="leading" secondItem="3Pj-kC-Itf" secondAttribute="trailing" constant="16" id="l0I-1J-w62"/>
                                                 <constraint firstItem="X9P-L9-bk1" firstAttribute="top" secondItem="3Pj-kC-Itf" secondAttribute="bottom" id="lCq-48-wUk"/>
@@ -1022,31 +1001,24 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Corrective Factor" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzD-uF-uwQ">
-                                                    <rect key="frame" x="16" y="8" width="482" height="10"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="8" y="8" width="498" height="12"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGF-CA-12S">
-                                                    <rect key="frame" x="16" y="18" width="482" height="17"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="Enter how much 1 unit of fast-acting insulin lowers your blood glucose level">
-                                                            <attributes>
-                                                                <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" verticalCompressionResistancePriority="1000" text="Enter how much 1 unit of fast-acting insulin lowers your blood glucose level" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGF-CA-12S">
+                                                    <rect key="frame" x="8" y="20" width="498" height="15"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZd-aO-Q5F">
-                                                    <rect key="frame" x="514" y="11" width="70" height="21"/>
+                                                    <rect key="frame" x="522" y="12" width="70" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="YnW-l2-paS"/>
                                                     </constraints>
                                                     <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="290" y="6" width="97" height="30"/>
@@ -1055,13 +1027,13 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="TGF-CA-12S" secondAttribute="bottom" id="15g-R5-dYV"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="YZd-aO-Q5F" secondAttribute="trailing" constant="8" id="5BW-cb-hMQ"/>
-                                                <constraint firstItem="HzD-uF-uwQ" firstAttribute="leading" secondItem="oBi-H0-vZZ" secondAttribute="leadingMargin" constant="8" id="C9n-AP-g7k"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="YZd-aO-Q5F" secondAttribute="trailing" id="5BW-cb-hMQ"/>
+                                                <constraint firstItem="HzD-uF-uwQ" firstAttribute="leading" secondItem="oBi-H0-vZZ" secondAttribute="leadingMargin" id="C9n-AP-g7k"/>
                                                 <constraint firstItem="YZd-aO-Q5F" firstAttribute="leading" secondItem="TGF-CA-12S" secondAttribute="trailing" constant="16" id="CAd-k9-EuI"/>
                                                 <constraint firstItem="TGF-CA-12S" firstAttribute="top" secondItem="HzD-uF-uwQ" secondAttribute="bottom" id="GIJ-5f-Q9Y"/>
                                                 <constraint firstItem="HzD-uF-uwQ" firstAttribute="top" secondItem="oBi-H0-vZZ" secondAttribute="topMargin" id="Y8G-FJ-jZn"/>
                                                 <constraint firstItem="YZd-aO-Q5F" firstAttribute="leading" secondItem="HzD-uF-uwQ" secondAttribute="trailing" constant="16" id="YUx-wT-su8"/>
-                                                <constraint firstItem="TGF-CA-12S" firstAttribute="leading" secondItem="oBi-H0-vZZ" secondAttribute="leadingMargin" constant="8" id="bsq-re-9zr"/>
+                                                <constraint firstItem="TGF-CA-12S" firstAttribute="leading" secondItem="oBi-H0-vZZ" secondAttribute="leadingMargin" id="bsq-re-9zr"/>
                                                 <constraint firstAttribute="centerY" secondItem="YZd-aO-Q5F" secondAttribute="centerY" id="vHX-yq-jIL"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1072,31 +1044,24 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Desired Blood Glucose" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDw-u5-pU3">
-                                                    <rect key="frame" x="16" y="8" width="482" height="10"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="8" y="8" width="498" height="12"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdM-WO-1ae">
-                                                    <rect key="frame" x="16" y="18" width="482" height="17"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="Enter your desired blood glucose level">
-                                                            <attributes>
-                                                                <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" verticalCompressionResistancePriority="1000" text="Enter your desired blood glucose level" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdM-WO-1ae">
+                                                    <rect key="frame" x="8" y="20" width="498" height="15"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gcb-Wv-7at">
-                                                    <rect key="frame" x="514" y="11" width="70" height="21"/>
+                                                    <rect key="frame" x="522" y="12" width="70" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="Uu3-6W-HpU"/>
                                                     </constraints>
                                                     <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="290" y="6" width="97" height="30"/>
@@ -1107,12 +1072,12 @@
                                                 <constraint firstItem="gcb-Wv-7at" firstAttribute="leading" secondItem="jDw-u5-pU3" secondAttribute="trailing" constant="16" id="0x3-oA-Te4"/>
                                                 <constraint firstItem="gcb-Wv-7at" firstAttribute="leading" secondItem="hdM-WO-1ae" secondAttribute="trailing" constant="16" id="BQI-aw-gla"/>
                                                 <constraint firstItem="jDw-u5-pU3" firstAttribute="top" secondItem="Qw1-sN-gax" secondAttribute="topMargin" id="GRy-zW-VSr"/>
-                                                <constraint firstItem="jDw-u5-pU3" firstAttribute="leading" secondItem="Qw1-sN-gax" secondAttribute="leadingMargin" constant="8" id="P7P-wr-dJY"/>
+                                                <constraint firstItem="jDw-u5-pU3" firstAttribute="leading" secondItem="Qw1-sN-gax" secondAttribute="leadingMargin" id="P7P-wr-dJY"/>
                                                 <constraint firstAttribute="centerY" secondItem="gcb-Wv-7at" secondAttribute="centerY" id="UMc-cz-0a7"/>
                                                 <constraint firstItem="hdM-WO-1ae" firstAttribute="top" secondItem="jDw-u5-pU3" secondAttribute="bottom" id="Vtb-NT-e0O"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="gcb-Wv-7at" secondAttribute="trailing" constant="8" id="aDS-hQ-GON"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gcb-Wv-7at" secondAttribute="trailing" id="aDS-hQ-GON"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="hdM-WO-1ae" secondAttribute="bottom" id="ilA-zC-nvI"/>
-                                                <constraint firstItem="hdM-WO-1ae" firstAttribute="leading" secondItem="Qw1-sN-gax" secondAttribute="leadingMargin" constant="8" id="qZe-1u-oHW"/>
+                                                <constraint firstItem="hdM-WO-1ae" firstAttribute="leading" secondItem="Qw1-sN-gax" secondAttribute="leadingMargin" id="qZe-1u-oHW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1158,45 +1123,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Total Daily Dose" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLN-XZ-MXv">
-                                                    <rect key="frame" x="16" y="8" width="482" height="0.0"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="8" y="8" width="498" height="0.0"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" verticalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80G-fA-CJg">
-                                                    <rect key="frame" x="16" y="8" width="482" height="27"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="Enter the total amount of insulin ">
-                                                            <attributes>
-                                                                <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                        <fragment content="(both fast-acting and long-acting)">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                        <fragment content=" you take in a day. This will be used to give factor suggestions.">
-                                                            <attributes>
-                                                                <color key="NSColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" verticalCompressionResistancePriority="1000" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80G-fA-CJg">
+                                                    <rect key="frame" x="8" y="8" width="498" height="27"/>
+                                                    <string key="text">Enter the total amount of insulin (both fast-acting and long-acting) you take in a day. This will be used to give factor suggestions.</string>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="units" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sUT-N6-vN6">
-                                                    <rect key="frame" x="514" y="11" width="70" height="21"/>
+                                                    <rect key="frame" x="522" y="12" width="70" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="Ibu-zj-KjU"/>
                                                     </constraints>
                                                     <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                         <rect key="frame" x="290" y="6" width="97" height="30"/>
@@ -1205,13 +1150,13 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="80G-fA-CJg" firstAttribute="top" secondItem="TLN-XZ-MXv" secondAttribute="bottom" id="0u3-sX-Ty7"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="sUT-N6-vN6" secondAttribute="trailing" constant="8" id="7Qz-4h-UKU"/>
-                                                <constraint firstItem="TLN-XZ-MXv" firstAttribute="leading" secondItem="jB7-Bq-jvu" secondAttribute="leadingMargin" constant="8" id="7gn-qu-KpY"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="sUT-N6-vN6" secondAttribute="trailing" id="7Qz-4h-UKU"/>
+                                                <constraint firstItem="TLN-XZ-MXv" firstAttribute="leading" secondItem="jB7-Bq-jvu" secondAttribute="leadingMargin" id="7gn-qu-KpY"/>
                                                 <constraint firstItem="TLN-XZ-MXv" firstAttribute="top" secondItem="jB7-Bq-jvu" secondAttribute="topMargin" id="HfX-LH-teX"/>
                                                 <constraint firstItem="sUT-N6-vN6" firstAttribute="leading" secondItem="80G-fA-CJg" secondAttribute="trailing" constant="16" id="TzR-M8-NrI"/>
                                                 <constraint firstItem="80G-fA-CJg" firstAttribute="bottom" secondItem="jB7-Bq-jvu" secondAttribute="bottomMargin" id="WoY-TM-beO"/>
                                                 <constraint firstAttribute="centerY" secondItem="sUT-N6-vN6" secondAttribute="centerY" id="cwB-gf-cRw"/>
-                                                <constraint firstItem="80G-fA-CJg" firstAttribute="leading" secondItem="jB7-Bq-jvu" secondAttribute="leadingMargin" constant="8" id="jTU-VZ-pfv"/>
+                                                <constraint firstItem="80G-fA-CJg" firstAttribute="leading" secondItem="jB7-Bq-jvu" secondAttribute="leadingMargin" id="jTU-VZ-pfv"/>
                                                 <constraint firstItem="sUT-N6-vN6" firstAttribute="leading" secondItem="TLN-XZ-MXv" secondAttribute="trailing" constant="16" id="jg5-vm-RWg"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1226,17 +1171,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbohydrate Factor" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cc-AU-dzL">
-                                                    <rect key="frame" x="16" y="11" width="481" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="8" y="12" width="497" height="20"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="use-O1-IvL">
-                                                    <rect key="frame" x="513" y="12" width="71" height="21"/>
+                                                    <rect key="frame" x="521" y="12" width="71" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="71" id="xnt-BJ-54l"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1244,9 +1189,9 @@
                                             <constraints>
                                                 <constraint firstItem="use-O1-IvL" firstAttribute="leading" secondItem="5Cc-AU-dzL" secondAttribute="trailing" constant="16" id="3So-RN-TsQ"/>
                                                 <constraint firstAttribute="centerY" secondItem="5Cc-AU-dzL" secondAttribute="centerY" id="Fda-eG-caU"/>
-                                                <constraint firstItem="5Cc-AU-dzL" firstAttribute="leading" secondItem="B3d-vZ-YDV" secondAttribute="leadingMargin" constant="8" id="alV-84-9Ul"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="use-O1-IvL" secondAttribute="trailing" constant="8" id="feF-iI-Ir4"/>
-                                                <constraint firstAttribute="centerY" secondItem="use-O1-IvL" secondAttribute="centerY" constant="-0.5" id="xLd-EP-c9b"/>
+                                                <constraint firstItem="5Cc-AU-dzL" firstAttribute="leading" secondItem="B3d-vZ-YDV" secondAttribute="leadingMargin" id="alV-84-9Ul"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="use-O1-IvL" secondAttribute="trailing" id="feF-iI-Ir4"/>
+                                                <constraint firstAttribute="centerY" secondItem="use-O1-IvL" secondAttribute="centerY" id="xLd-EP-c9b"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1256,17 +1201,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corrective Factor" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kz-nT-OSp">
-                                                    <rect key="frame" x="16" y="11" width="481" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="8" y="12" width="497" height="20"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="70" translatesAutoresizingMaskIntoConstraints="NO" id="CnD-Xt-xkT">
-                                                    <rect key="frame" x="513" y="11" width="71" height="21"/>
+                                                    <rect key="frame" x="521" y="12" width="71" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="71" id="BLN-f9-xS5"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1274,8 +1219,8 @@
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="CnD-Xt-xkT" secondAttribute="centerY" id="5QH-Uf-nKU"/>
                                                 <constraint firstAttribute="centerY" secondItem="3kz-nT-OSp" secondAttribute="centerY" id="K3p-hu-fG7"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="CnD-Xt-xkT" secondAttribute="trailing" constant="8" id="Uef-Cr-heS"/>
-                                                <constraint firstItem="3kz-nT-OSp" firstAttribute="leading" secondItem="kar-vO-gK8" secondAttribute="leadingMargin" constant="8" id="jPL-Fr-h7m"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="CnD-Xt-xkT" secondAttribute="trailing" id="Uef-Cr-heS"/>
+                                                <constraint firstItem="3kz-nT-OSp" firstAttribute="leading" secondItem="kar-vO-gK8" secondAttribute="leadingMargin" id="jPL-Fr-h7m"/>
                                                 <constraint firstItem="CnD-Xt-xkT" firstAttribute="leading" secondItem="3kz-nT-OSp" secondAttribute="trailing" constant="16" id="ohn-qx-88h"/>
                                             </constraints>
                                         </tableViewCellContentView>
