@@ -69,6 +69,8 @@ class VariablesTableViewController: UITableViewController {
                 self.navigationController?.toolbarHidden = false
                 
                 NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateBloodGlucoseUnitPlaceholder", name: PreferencesDidChangeNotification, object: nil)
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateBloodGlucoseUnitPlaceholder", name: NSUserDefaultsDidChangeNotification, object: nil)
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateDynamicType", name: UIContentSizeCategoryDidChangeNotification, object: nil)
             }
         }
     }
@@ -76,6 +78,8 @@ class VariablesTableViewController: UITableViewController {
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: PreferencesDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: NSUserDefaultsDidChangeNotification, object: nil)
     }
     
     func toggleRightBarButtonItem() {
@@ -113,7 +117,6 @@ class VariablesTableViewController: UITableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
-    
     func updateBloodGlucoseUnitPlaceholder() {
         let bloodGlucoseUnit = preferencesManager.bloodGlucoseUnit
         
@@ -123,7 +126,7 @@ class VariablesTableViewController: UITableViewController {
             case .mmol: return "mmol/L"
             case .mgdl: return "mg/dL"
             }
-            }()
+        }()
     }
     
     func clearFields() {
