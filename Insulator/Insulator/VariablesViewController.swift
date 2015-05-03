@@ -32,7 +32,7 @@ class VariablesTableViewController: UITableViewController {
         healthManager.authoriseHealthKit { (authorized, error) -> Void in
             if authorized {
                 println("HealthKit authorization received.")
-                self.getDataFromHealthKit()
+                self.updateCurrentBloodGlucoseTextFieldFromHealthKit()
             } else {
                 println("HealthKit authorization denied!")
                 if error != nil {
@@ -42,41 +42,12 @@ class VariablesTableViewController: UITableViewController {
         }
     }
     
-    func getDataFromHealthKit() {
-        let sampleType = HKSampleType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodGlucose)
-        
-        healthManager.readMostRecentSample(sampleType, completion: { (mostRecentBloodGlucose, error) -> Void in
-            if (error != nil) {
-                println("Error reading blood glucose from HealthKit Store: \(error.localizedDescription)")
-                return
-            }
-            
-            let bloodGlucose: HKQuantitySample? = mostRecentBloodGlucose as? HKQuantitySample
-            if let millgramsPerDeciliterOfBloodGlucose = bloodGlucose?.quantity.doubleValueForUnit(HKUnit(fromString: "mg/dL")) {
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    
-                    let bloodGlucoseUnit = self.preferencesManager.bloodGlucoseUnit
-                    
-                    // Maybe move this logic into the BloodGlucoseUnit type
-                    // Would be nice to just call bloodGlucoseUnit.calculateFinalLevel(quantity)
-                    let finalBloodGlucose: Double = {
-                        switch bloodGlucoseUnit {
-                        case .mmol: return Double(round((millgramsPerDeciliterOfBloodGlucose / 18) * 10) / 10)
-                        case .mgdl: return Double(round(millgramsPerDeciliterOfBloodGlucose * 10) / 10)
-                        }
-                        }()
-                    
-                    self.currentBloodGlucoseLevelTextField.text = "\(finalBloodGlucose)"
-                    self.attemptDoseCalculation()
-
-                });
-            }
-            else {
-                // No blood glucose quanity, so show no text
-                self.currentBloodGlucoseLevelTextField.text = ""
-            }
-            
-        });
+    func updateCurrentBloodGlucoseTextFieldFromHealthKit() {
+        healthManager.queryBloodGlucose() { bloodGlucose in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            self.currentBloodGlucoseLevelTextField.text = "\(bloodGlucose!)"
+            });
+        }
     }
     
     override func viewDidLoad() {

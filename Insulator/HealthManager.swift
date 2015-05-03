@@ -3,6 +3,7 @@ import HealthKit
 
 class HealthManager {
     let healthKitStore: HKHealthStore = HKHealthStore()
+    let preferencesManager = PreferencesManager.sharedInstance
     
     func authoriseHealthKit(completion: ((success: Bool, error: NSError!) -> Void)!) {
         let healthKitTypesToRead = NSSet(array:[
@@ -30,29 +31,27 @@ class HealthManager {
         }
     }
     
-    func readMostRecentSample(sampleType: HKSampleType, completion: ((HKSample!, NSError!) -> Void)!) {
-        let past = NSDate.distantPast() as! NSDate
-        let now = NSDate()
-        let mostRecentPredicate = HKQuery.predicateForSamplesWithStartDate(past, endDate: now, options: .None)
-        
+    func queryBloodGlucose(completion: ((Double?) -> Void)) {
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
-        let limit = 1
+        let sampleType = HKSampleType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodGlucose)
         
-        let sampleQuery = HKSampleQuery(sampleType: sampleType, predicate: mostRecentPredicate, limit: limit, sortDescriptors: [sortDescriptor]) {
-            (sampleQuery, results, error) -> Void in
-            
-            if let queryError = error {
-                completion (nil, error)
-                return
-            }
-            
-            let mostRecentSample = results.first as? HKQuantitySample
-            
-            if completion != nil {
-                completion (mostRecentSample, nil)
+        let query = HKSampleQuery(sampleType: sampleType, predicate: nil, limit: 1, sortDescriptors: [sortDescriptor]) { query, results, error in
+            if let samples = results as? [HKQuantitySample] {
+                let sample = samples.first!
+                let millgramsPerDeciliterOfBloodGlucose = sample.quantity.doubleValueForUnit(HKUnit(fromString: "mg/dL"))
+                let bloodGlucoseUnit = self.preferencesManager.bloodGlucoseUnit
+                
+                let finalBloodGlucose: Double = {
+                    switch bloodGlucoseUnit {
+                    case .mmol: return Double(round((millgramsPerDeciliterOfBloodGlucose / 18) * 10) / 10)
+                    case .mgdl: return Double(round(millgramsPerDeciliterOfBloodGlucose * 10) / 10)
+                    }
+                }()
+                
+                completion(finalBloodGlucose)
             }
         }
         
-        self.healthKitStore.executeQuery(sampleQuery)
+        self.healthKitStore.executeQuery(query)
     }
 }
