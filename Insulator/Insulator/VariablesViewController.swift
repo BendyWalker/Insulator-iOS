@@ -45,7 +45,8 @@ class VariablesTableViewController: UITableViewController {
     func updateCurrentBloodGlucoseTextFieldFromHealthKit() {
         healthManager.queryBloodGlucose() { bloodGlucose in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.currentBloodGlucoseLevelTextField.text = "\(bloodGlucose!)"
+                self.currentBloodGlucoseLevelTextField.text = "\(bloodGlucose!)"
+                self.attemptDoseCalculation()
             });
         }
     }
