@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B0A2B9F1AF7807200D8D0D6 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A2B9E1AF7807200D8D0D6 /* SettingsTableViewController.swift */; };
+		1B0A2B9F1AF7807200D8D0D6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A2B9E1AF7807200D8D0D6 /* SettingsViewController.swift */; };
 		1B0A94A11A6C809E00DCFC85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A94A01A6C809E00DCFC85 /* AppDelegate.swift */; };
 		1B0A94A31A6C809E00DCFC85 /* VariablesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A94A21A6C809E00DCFC85 /* VariablesViewController.swift */; };
 		1B0A94A61A6C809E00DCFC85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B0A94A41A6C809E00DCFC85 /* Main.storyboard */; };
@@ -17,7 +17,6 @@
 		1B165B751A6EA9F20096F290 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B165B741A6EA9F20096F290 /* Calculator.swift */; };
 		1B3834521AD1CCE10039CD6C /* BloodGlucoseUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3834511AD1CCE10039CD6C /* BloodGlucoseUnit.swift */; };
 		1B3FE1C41AD6B437003B32AC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3FE1C31AD6B437003B32AC /* WelcomeViewController.swift */; };
-		1B6F497A1A6EC9BF003743B3 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1B6F49791A6EC9BF003743B3 /* Settings.bundle */; };
 		1B9F720B1A7644E70062D606 /* ConstantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F720A1A7644E70062D606 /* ConstantsViewController.swift */; };
 		1BCA7A3C1AB9D6BA005A3CCC /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCA7A3B1AB9D6BA005A3CCC /* SuggestionsViewController.swift */; };
 		1BD0B85E1AB35211000C909F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BD0B85D1AB35211000C909F /* HealthKit.framework */; };
@@ -36,7 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B0A2B9E1AF7807200D8D0D6 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		1B0A2B9E1AF7807200D8D0D6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1B0A949B1A6C809E00DCFC85 /* Insulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Insulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B0A949F1A6C809E00DCFC85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B0A94A01A6C809E00DCFC85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +49,6 @@
 		1B165B741A6EA9F20096F290 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		1B3834511AD1CCE10039CD6C /* BloodGlucoseUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodGlucoseUnit.swift; sourceTree = "<group>"; };
 		1B3FE1C31AD6B437003B32AC /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		1B6F49791A6EC9BF003743B3 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		1B9F720A1A7644E70062D606 /* ConstantsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantsViewController.swift; sourceTree = "<group>"; };
 		1BCA7A3B1AB9D6BA005A3CCC /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
 		1BD0B8541AB346D3000C909F /* Insulator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Insulator.entitlements; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				1B0A949F1A6C809E00DCFC85 /* Info.plist */,
-				1B6F49791A6EC9BF003743B3 /* Settings.bundle */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -148,7 +145,7 @@
 				1B0A94A21A6C809E00DCFC85 /* VariablesViewController.swift */,
 				1B9F720A1A7644E70062D606 /* ConstantsViewController.swift */,
 				1BCA7A3B1AB9D6BA005A3CCC /* SuggestionsViewController.swift */,
-				1B0A2B9E1AF7807200D8D0D6 /* SettingsTableViewController.swift */,
+				1B0A2B9E1AF7807200D8D0D6 /* SettingsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -239,7 +236,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B6F497A1A6EC9BF003743B3 /* Settings.bundle in Resources */,
 				1B0A94A61A6C809E00DCFC85 /* Main.storyboard in Resources */,
 				1B0A94AB1A6C809E00DCFC85 /* LaunchScreen.xib in Resources */,
 				1B0A94A81A6C809E00DCFC85 /* Images.xcassets in Resources */,
@@ -263,7 +259,7 @@
 				1B3FE1C41AD6B437003B32AC /* WelcomeViewController.swift in Sources */,
 				1B9F720B1A7644E70062D606 /* ConstantsViewController.swift in Sources */,
 				1B0A94A31A6C809E00DCFC85 /* VariablesViewController.swift in Sources */,
-				1B0A2B9F1AF7807200D8D0D6 /* SettingsTableViewController.swift in Sources */,
+				1B0A2B9F1AF7807200D8D0D6 /* SettingsViewController.swift in Sources */,
 				1BCA7A3C1AB9D6BA005A3CCC /* SuggestionsViewController.swift in Sources */,
 				1B3834521AD1CCE10039CD6C /* BloodGlucoseUnit.swift in Sources */,
 				1B0A94A11A6C809E00DCFC85 /* AppDelegate.swift in Sources */,
