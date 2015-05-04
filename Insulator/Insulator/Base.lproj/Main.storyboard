@@ -85,7 +85,7 @@
         <!--Blood Glucose Unit-->
         <scene sceneID="pR3-jc-k1S">
             <objects>
-                <tableViewController title="Blood Glucose Unit" id="FQT-Ro-YLn" customClass="SettingsTableViewController" customModule="Insulator" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Blood Glucose Unit" id="FQT-Ro-YLn" customClass="BloodGlucoseUnitTableViewController" customModule="Insulator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="eg0-KF-PcH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
