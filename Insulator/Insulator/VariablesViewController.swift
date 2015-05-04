@@ -12,11 +12,7 @@ class VariablesTableViewController: UITableViewController {
     @IBOutlet weak var carbohydrateDoseLabel: UILabel!
     @IBOutlet weak var suggestedDoseLabel: UILabel!
     @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
-    
-    @IBAction func openSettings(sender: AnyObject) {
-        var settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString, relativeToURL: nil)
-        UIApplication.sharedApplication().openURL(settingsUrl!)
-    }
+
     
     @IBAction func onRightBarButtonTouched(sender: AnyObject) {
         if carbohydratesInMealTextField.editing {
