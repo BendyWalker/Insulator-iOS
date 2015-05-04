@@ -13,11 +13,14 @@ class SettingsTableViewController: UITableViewController {
     }
     
     @IBAction func updateAllowFloatingPointCarbohydratePreference(sender: UISwitch) {
+        preferencesManager.allowFloatingPointCarbohydrates = sender.on
     }
     
     
     override func viewDidLoad() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateBloodGlucoseUnitLabel", name: PreferencesDidChangeNotification, object: nil)
+        
+        allowFloatingPointCarbohydratesSwitch.on = preferencesManager.allowFloatingPointCarbohydrates
     }
     
     override func viewWillAppear(animated: Bool) {
