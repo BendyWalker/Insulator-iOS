@@ -949,7 +949,7 @@
         <!--Settings-->
         <scene sceneID="0XZ-l3-dyD">
             <objects>
-                <tableViewController title="Settings" id="UiE-YM-D8I" sceneMemberID="viewController">
+                <tableViewController title="Settings" id="UiE-YM-D8I" customClass="SettingsTableViewController" customModule="Insulator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="hgA-rg-5fW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -983,6 +983,9 @@
                                                         <segment title="mmol/L"/>
                                                         <segment title="mg/dL"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="updateBloodGlucoseUnitPreference:" destination="UiE-YM-D8I" eventType="valueChanged" id="22u-fe-beU"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
@@ -1014,6 +1017,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KmR-Au-Y9n">
                                                     <rect key="frame" x="543" y="6" width="51" height="31"/>
                                                     <color key="onTintColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="updateAllowFloatingPointCarbohydratePreference:" destination="UiE-YM-D8I" eventType="valueChanged" id="aVg-uu-yla"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbohydrate Decimal Place" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yn-my-RlF">
                                                     <rect key="frame" x="8" y="8" width="519" height="12"/>
@@ -1094,8 +1100,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="QnE-BS-0Nn">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="upU-aO-nTu"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="upU-aO-nTu">
+                            <connections>
+                                <action selector="closeModal:" destination="UiE-YM-D8I" id="EAh-8V-vq5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="allowFloatingPointCarbohydratesSwitch" destination="KmR-Au-Y9n" id="Z7H-f9-gMf"/>
+                        <outlet property="bloodGlucoseUnitSegmentedControl" destination="ge5-rK-Whd" id="YS6-Q7-K2C"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tto-dW-y2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
