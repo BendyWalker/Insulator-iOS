@@ -66,8 +66,6 @@ class VariablesTableViewController: UITableViewController {
                 self.navigationController?.toolbarHidden = false
                 
                 NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateBloodGlucoseUnitPlaceholder", name: PreferencesDidChangeNotification, object: nil)
-                NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateBloodGlucoseUnitPlaceholder", name: NSUserDefaultsDidChangeNotification, object: nil)
-                NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateDynamicType", name: UIContentSizeCategoryDidChangeNotification, object: nil)
             }
         }
     }
@@ -75,8 +73,6 @@ class VariablesTableViewController: UITableViewController {
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: PreferencesDidChangeNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIContentSizeCategoryDidChangeNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: NSUserDefaultsDidChangeNotification, object: nil)
     }
     
     func toggleRightBarButtonItem() {
