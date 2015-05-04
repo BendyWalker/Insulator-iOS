@@ -2,9 +2,9 @@ import UIKit
 import HealthKit
 
 class VariablesTableViewController: UITableViewController {
-    
     let healthManager = HealthManager()
     let preferencesManager = PreferencesManager.sharedInstance
+    
     
     @IBOutlet weak var currentBloodGlucoseLevelTextField: UITextField!
     @IBOutlet weak var carbohydratesInMealTextField: UITextField!
@@ -38,14 +38,6 @@ class VariablesTableViewController: UITableViewController {
         }
     }
     
-    func updateCurrentBloodGlucoseTextFieldFromHealthKit() {
-        healthManager.queryBloodGlucose() { bloodGlucose in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.currentBloodGlucoseLevelTextField.text = "\(bloodGlucose!)"
-                self.attemptDoseCalculation()
-            });
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,11 +61,16 @@ class VariablesTableViewController: UITableViewController {
             }
         }
     }
-
+    
+    override func viewWillAppear(animated: Bool) {
+        self.tableView.estimatedRowHeight = 44
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+    }
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: PreferencesDidChangeNotification, object: nil)
     }
+    
     
     func toggleRightBarButtonItem() {
         if currentBloodGlucoseLevelTextField.editing || carbohydratesInMealTextField.editing {
@@ -82,6 +79,29 @@ class VariablesTableViewController: UITableViewController {
         } else {
             rightBarButtonItem.style = UIBarButtonItemStyle.Plain
             rightBarButtonItem.title = "Clear"
+        }
+    }
+    
+    func updateBloodGlucoseUnitPlaceholder() {
+        currentBloodGlucoseLevelTextField.placeholder = preferencesManager.bloodGlucoseUnit.rawValue
+    }
+    
+    func clearFields() {
+        currentBloodGlucoseLevelTextField.text = ""
+        carbohydratesInMealTextField.text = ""
+        suggestedDoseLabel.text = "0.0"
+        carbohydrateDoseLabel.text = "0.0"
+        correctiveDoseLabel.text = "0.0"
+        
+        self.view.endEditing(true)
+    }
+    
+    func updateCurrentBloodGlucoseTextFieldFromHealthKit() {
+        healthManager.queryBloodGlucose() { bloodGlucose in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.currentBloodGlucoseLevelTextField.text = "\(bloodGlucose!)"
+                self.attemptDoseCalculation()
+            });
         }
     }
     
@@ -104,24 +124,4 @@ class VariablesTableViewController: UITableViewController {
         carbohydrateDoseLabel.text = "\(calculator.getCarbohydrateDose())"
         correctiveDoseLabel.text = "\(calculator.getCorrectiveDose())"
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.tableView.estimatedRowHeight = 44
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-    }
-    
-    func updateBloodGlucoseUnitPlaceholder() {
-        currentBloodGlucoseLevelTextField.placeholder = preferencesManager.bloodGlucoseUnit.rawValue
-    }
-    
-    func clearFields() {
-        currentBloodGlucoseLevelTextField.text = ""
-        carbohydratesInMealTextField.text = ""
-        suggestedDoseLabel.text = "0.0"
-        carbohydrateDoseLabel.text = "0.0"
-        correctiveDoseLabel.text = "0.0"
-        
-        self.view.endEditing(true)
-    }
-
 }

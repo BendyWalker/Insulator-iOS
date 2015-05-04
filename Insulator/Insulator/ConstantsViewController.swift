@@ -1,12 +1,13 @@
 import UIKit
 
 class ConstantsTableViewController: UITableViewController {
+    let preferencesManager = PreferencesManager.sharedInstance
+
 
     @IBOutlet weak var carbohydrateFactorTextField: UITextField!
     @IBOutlet weak var correctiveFactorTextField: UITextField!
     @IBOutlet weak var desiredBloodGlucoseTextField: UITextField!
     
-    let preferencesManager = PreferencesManager.sharedInstance
     
     @IBAction func closeModal(sender: AnyObject) {
         let carbohydrateFactor = (carbohydrateFactorTextField.text as NSString).doubleValue
@@ -26,6 +27,7 @@ class ConstantsTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = 44
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
+    
     
     func updateDynamicViewElements() {
         let placeholder: String = preferencesManager.bloodGlucoseUnit.rawValue
