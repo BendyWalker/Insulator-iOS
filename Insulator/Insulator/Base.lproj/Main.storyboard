@@ -82,6 +82,41 @@
             </objects>
             <point key="canvasLocation" x="1002" y="53"/>
         </scene>
+        <!--Blood Glucose Unit-->
+        <scene sceneID="pR3-jc-k1S">
+            <objects>
+                <tableViewController title="Blood Glucose Unit" id="FQT-Ro-YLn" customClass="SettingsTableViewController" customModule="Insulator" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="eg0-KF-PcH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="BloodGlucoseUnitCell" textLabel="f0Q-dL-wyP" style="IBUITableViewCellStyleDefault" id="Bq1-Bu-Gjt">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bq1-Bu-Gjt" id="zur-Xl-Njl">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f0Q-dL-wyP">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="FQT-Ro-YLn" id="3et-gI-tgb"/>
+                            <outlet property="delegate" destination="FQT-Ro-YLn" id="5yU-gN-tWF"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M4J-2E-cLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1758" y="-798"/>
+        </scene>
         <!--Welcome 2-->
         <scene sceneID="AnX-Ri-wkp">
             <objects>
@@ -678,7 +713,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="joR-JH-Tfz" id="Yul-AJ-ynp">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Current Blood Glucose" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oU-CA-Ftw">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="500" text="Current Blood Glucose" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oU-CA-Ftw">
                                                     <rect key="frame" x="8" y="8" width="498" height="12"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -690,7 +725,7 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tFd-iJ-e6l">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="500" verticalHuggingPriority="500" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tFd-iJ-e6l">
                                                     <rect key="frame" x="522" y="12" width="70" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="m5d-We-x3U"/>
@@ -957,77 +992,73 @@
                         <sections>
                             <tableViewSection headerTitle="Settings" id="IAg-7F-CmC">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="DR5-1z-huk">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="DR5-1z-huk">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DR5-1z-huk" id="6bo-5h-iAj">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood Glucose Unit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUw-jT-wg6">
-                                                    <rect key="frame" x="8" y="8" width="443" height="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="500" text="Blood Glucose Unit" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUw-jT-wg6">
+                                                    <rect key="frame" x="8" y="8" width="480" height="12"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Choose your preferred blood glucose measurement unit" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHp-Ae-klT">
-                                                    <rect key="frame" x="8" y="20" width="443" height="15"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Choose your preferred blood glucose measurement unit" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHp-Ae-klT">
+                                                    <rect key="frame" x="8" y="20" width="480" height="15"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ge5-rK-Whd">
-                                                    <rect key="frame" x="467" y="8" width="125" height="28"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="125" id="2Dg-cL-YrN"/>
-                                                    </constraints>
-                                                    <segments>
-                                                        <segment title="mmol/L"/>
-                                                        <segment title="mg/dL"/>
-                                                    </segments>
-                                                    <connections>
-                                                        <action selector="updateBloodGlucoseUnitPreference:" destination="UiE-YM-D8I" eventType="valueChanged" id="22u-fe-beU"/>
-                                                    </connections>
-                                                </segmentedControl>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="500" verticalHuggingPriority="500" text="mmol/L" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mY-4N-PZS">
+                                                    <rect key="frame" x="504" y="12" width="55" height="20"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="ge5-rK-Whd" secondAttribute="centerY" id="2mT-1s-1fD"/>
                                                 <constraint firstItem="uUw-jT-wg6" firstAttribute="leading" secondItem="6bo-5h-iAj" secondAttribute="leadingMargin" id="BcV-cX-8hT"/>
-                                                <constraint firstItem="ge5-rK-Whd" firstAttribute="leading" secondItem="uUw-jT-wg6" secondAttribute="trailing" constant="16" id="I8p-n9-bTY"/>
+                                                <constraint firstAttribute="centerY" secondItem="2mY-4N-PZS" secondAttribute="centerY" id="Ium-3L-aRw"/>
                                                 <constraint firstItem="wHp-Ae-klT" firstAttribute="leading" secondItem="6bo-5h-iAj" secondAttribute="leadingMargin" id="JED-8H-nwC"/>
-                                                <constraint firstItem="wHp-Ae-klT" firstAttribute="top" secondItem="ge5-rK-Whd" secondAttribute="bottom" constant="-15" id="SV9-g8-u6I"/>
+                                                <constraint firstItem="2mY-4N-PZS" firstAttribute="leading" secondItem="wHp-Ae-klT" secondAttribute="trailing" constant="16" id="JkP-Vp-gne"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="2mY-4N-PZS" secondAttribute="bottom" id="LtA-Rg-8jB"/>
                                                 <constraint firstItem="uUw-jT-wg6" firstAttribute="top" secondItem="6bo-5h-iAj" secondAttribute="topMargin" id="SYN-kH-1hH"/>
-                                                <constraint firstItem="ge5-rK-Whd" firstAttribute="top" secondItem="6bo-5h-iAj" secondAttribute="topMargin" id="Sf7-c0-r4a"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ge5-rK-Whd" secondAttribute="bottom" id="U5L-MR-qYW"/>
+                                                <constraint firstItem="2mY-4N-PZS" firstAttribute="top" secondItem="6bo-5h-iAj" secondAttribute="topMargin" id="XJK-Wf-PSe"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2mY-4N-PZS" secondAttribute="trailing" id="Z7g-w3-lJh"/>
+                                                <constraint firstItem="2mY-4N-PZS" firstAttribute="leading" secondItem="uUw-jT-wg6" secondAttribute="trailing" constant="16" id="j24-wt-2cj"/>
                                                 <constraint firstItem="wHp-Ae-klT" firstAttribute="top" secondItem="uUw-jT-wg6" secondAttribute="bottom" id="nUa-Tr-Sdl"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ge5-rK-Whd" secondAttribute="trailing" id="qAH-N4-IAD"/>
-                                                <constraint firstItem="ge5-rK-Whd" firstAttribute="leading" secondItem="wHp-Ae-klT" secondAttribute="trailing" constant="16" id="xh8-jH-Tdz"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="wHp-Ae-klT" secondAttribute="bottom" id="yEx-n3-Ujc"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="SV9-g8-u6I"/>
+                                                    <exclude reference="LtA-Rg-8jB"/>
+                                                    <exclude reference="XJK-Wf-PSe"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="FQT-Ro-YLn" kind="show" id="bye-7H-GIR"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3dr-Wf-9to">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="3dr-Wf-9to">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3dr-Wf-9to" id="CW7-GC-wWQ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KmR-Au-Y9n">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" verticalHuggingPriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KmR-Au-Y9n">
                                                     <rect key="frame" x="543" y="6" width="51" height="31"/>
                                                     <color key="onTintColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <connections>
                                                         <action selector="updateAllowFloatingPointCarbohydratePreference:" destination="UiE-YM-D8I" eventType="valueChanged" id="aVg-uu-yla"/>
                                                     </connections>
                                                 </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbohydrate Decimal Place" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yn-my-RlF">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="500" text="Carbohydrate Decimal Place" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yn-my-RlF">
                                                     <rect key="frame" x="8" y="8" width="519" height="12"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Toggles decimal place in 'Carbohydrates In Meal' field" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gU9-Ge-Ttc">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Toggles decimal place in 'Carbohydrates In Meal' field" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gU9-Ge-Ttc">
                                                     <rect key="frame" x="8" y="20" width="519" height="15"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1108,7 +1139,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="allowFloatingPointCarbohydratesSwitch" destination="KmR-Au-Y9n" id="Z7H-f9-gMf"/>
-                        <outlet property="bloodGlucoseUnitSegmentedControl" destination="ge5-rK-Whd" id="YS6-Q7-K2C"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tto-dW-y2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
