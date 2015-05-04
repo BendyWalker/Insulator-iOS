@@ -1,12 +1,13 @@
 import UIKit
 
 class ConstantsTableViewController: UITableViewController {
+    let preferencesManager = PreferencesManager.sharedInstance
+
 
     @IBOutlet weak var carbohydrateFactorTextField: UITextField!
     @IBOutlet weak var correctiveFactorTextField: UITextField!
     @IBOutlet weak var desiredBloodGlucoseTextField: UITextField!
     
-    let preferencesManager = PreferencesManager.sharedInstance
     
     @IBAction func closeModal(sender: AnyObject) {
         let carbohydrateFactor = (carbohydrateFactorTextField.text as NSString).doubleValue
@@ -27,27 +28,15 @@ class ConstantsTableViewController: UITableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+    
     func updateDynamicViewElements() {
-        let bloodGlucoseUnit = self.preferencesManager.bloodGlucoseUnit
-        
-        let placeholder: String = {
-            switch bloodGlucoseUnit {
-            case .mmol: return "mmol/L"
-            case .mgdl: return "mg/dL"
-            }
-            }()
+        let placeholder: String = preferencesManager.bloodGlucoseUnit.rawValue
         
         correctiveFactorTextField.placeholder = placeholder
         desiredBloodGlucoseTextField.placeholder = placeholder
         
-        // Update actual values with those stored by the preference manager
         carbohydrateFactorTextField.text = "\(preferencesManager.carbohydrateFactor)"
         correctiveFactorTextField.text = "\(preferencesManager.correctiveFactor)"
         desiredBloodGlucoseTextField.text = "\(preferencesManager.desiredBloodGlucose)"
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

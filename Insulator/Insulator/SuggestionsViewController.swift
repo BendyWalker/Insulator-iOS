@@ -1,12 +1,13 @@
 import UIKit
 
 class SuggestionsViewController: UITableViewController {
+    let preferencesManager = PreferencesManager.sharedInstance
+
     
     @IBOutlet weak var totalDailyDoseTextField: UITextField!
     @IBOutlet weak var carbohydrateFactorLabel: UILabel!
     @IBOutlet weak var correctiveFactorLabel: UILabel!
     
-    let preferencesManager = PreferencesManager.sharedInstance
     
     @IBAction func closeModal(sender: AnyObject) {
         let carbohydrateFactor = (carbohydrateFactorLabel.text! as NSString).doubleValue
@@ -18,12 +19,14 @@ class SuggestionsViewController: UITableViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    
     override func viewWillAppear(animated: Bool) {
         self.tableView.estimatedRowHeight = 44
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
         totalDailyDoseTextField.addTarget(self, action: "calculateSuggestions:", forControlEvents: UIControlEvents.AllEvents)
     }
+    
     
     func calculateSuggestions(sender: UITextField) {
         let bloodGlucoseUnit = self.preferencesManager.bloodGlucoseUnit
@@ -42,9 +45,5 @@ class SuggestionsViewController: UITableViewController {
         
         carbohydrateFactorLabel.text = carbohydrateFactorString
         correctiveFactorLabel.text = correctiveFactorString
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 }
