@@ -115,15 +115,7 @@ class VariablesTableViewController: UITableViewController {
     }
     
     func updateBloodGlucoseUnitPlaceholder() {
-        let bloodGlucoseUnit = preferencesManager.bloodGlucoseUnit
-        
-        // TODO: Could you not just use .rawValue here?
-        currentBloodGlucoseLevelTextField.placeholder = {
-            switch bloodGlucoseUnit {
-            case .mmol: return "mmol/L"
-            case .mgdl: return "mg/dL"
-            }
-        }()
+        currentBloodGlucoseLevelTextField.placeholder = preferencesManager.bloodGlucoseUnit.rawValue
     }
     
     func clearFields() {
