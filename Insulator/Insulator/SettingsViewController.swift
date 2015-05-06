@@ -6,6 +6,8 @@ class SettingsTableViewController: UITableViewController {
     
     @IBOutlet weak var bloodGlucoseUnitLabel: UILabel!
     @IBOutlet weak var allowFloatingPointCarbohydratesSwitch: UISwitch!
+    @IBOutlet weak var smallTipPriceLabel: UILabel!
+    @IBOutlet weak var largeTipPriceLabel: UILabel!
     
     
     @IBAction func closeModal(sender: UIBarButtonItem) {
