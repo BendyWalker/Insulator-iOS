@@ -1,13 +1,17 @@
 import UIKit
+import StoreKit
 
-class SettingsTableViewController: UITableViewController {
-    let preferencesManager = PreferencesManager.sharedInstance
+class SettingsTableViewController: UITableViewController, SKProductsRequestDelegate {
+    var products: [SKProduct] = []
     
+    let preferencesManager = PreferencesManager.sharedInstance
     
     @IBOutlet weak var bloodGlucoseUnitLabel: UILabel!
     @IBOutlet weak var allowFloatingPointCarbohydratesSwitch: UISwitch!
     @IBOutlet weak var smallTipPriceLabel: UILabel!
     @IBOutlet weak var largeTipPriceLabel: UILabel!
+    @IBOutlet weak var smallTipPriceActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var largeTipPriceActivityIndicator: UIActivityIndicatorView!
     
     
     @IBAction func closeModal(sender: UIBarButtonItem) {
@@ -23,6 +27,11 @@ class SettingsTableViewController: UITableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateBloodGlucoseUnitLabel", name: PreferencesDidChangeNotification, object: nil)
         
         allowFloatingPointCarbohydratesSwitch.on = preferencesManager.allowFloatingPointCarbohydrates
+        
+        let productIdentifiers: Set = ["small_tip", "large_tip"]
+        let productsRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
+        productsRequest.delegate = self
+        productsRequest.start()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -32,6 +41,26 @@ class SettingsTableViewController: UITableViewController {
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: PreferencesDidChangeNotification, object: nil)
+    }
+    
+    func productsRequest(request: SKProductsRequest!, didReceiveResponse response: SKProductsResponse!) {
+        products = response.products as! [SKProduct]
+        
+        for product in products {
+            switch product.productIdentifier {
+            case "small_tip":
+                smallTipPriceLabel.text = product.price.description
+                smallTipPriceLabel.hidden = false
+                smallTipPriceActivityIndicator.stopAnimating()
+            case "large_tip":
+                largeTipPriceLabel.text = product.price.description
+                largeTipPriceLabel.hidden = false
+                largeTipPriceActivityIndicator.stopAnimating()
+            default:
+                smallTipPriceLabel.text = ""
+                largeTipPriceLabel.text = ""
+            }
+        }
     }
     
     

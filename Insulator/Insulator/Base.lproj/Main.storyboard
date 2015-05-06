@@ -1083,7 +1083,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Small Tip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFy-TC-FJc">
-                                                    <rect key="frame" x="15" y="12" width="68" height="20"/>
+                                                    <rect key="frame" x="8" y="12" width="68" height="20"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1094,7 +1094,7 @@
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="eRP-T2-fRY">
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="eRP-T2-fRY">
                                                     <rect key="frame" x="562" y="12" width="20" height="20"/>
                                                 </activityIndicatorView>
                                             </subviews>
@@ -1104,11 +1104,13 @@
                                                 <constraint firstItem="fsC-cU-W2D" firstAttribute="centerX" secondItem="eRP-T2-fRY" secondAttribute="centerX" id="bV5-WH-kKU"/>
                                                 <constraint firstItem="fsC-cU-W2D" firstAttribute="centerY" secondItem="DFy-TC-FJc" secondAttribute="centerY" id="hxL-oV-GJ9"/>
                                                 <constraint firstItem="fsC-cU-W2D" firstAttribute="centerY" secondItem="eRP-T2-fRY" secondAttribute="centerY" id="lKH-Mz-x2o"/>
+                                                <constraint firstItem="DFy-TC-FJc" firstAttribute="leading" secondItem="PTC-H7-eh7" secondAttribute="leadingMargin" id="nif-1m-8OG"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="fsC-cU-W2D" secondAttribute="trailing" id="rvV-Iv-Gkv"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="DFy-TC-FJc" secondAttribute="trailing" constant="509" id="wtU-hm-Gll"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="wtU-hm-Gll"/>
                                                     <exclude reference="Hm6-u5-NSv"/>
                                                 </mask>
                                             </variation>
@@ -1120,7 +1122,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Large Tip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lM1-Bm-cgX">
-                                                    <rect key="frame" x="15" y="12" width="68" height="20"/>
+                                                    <rect key="frame" x="8" y="12" width="68" height="20"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1131,11 +1133,12 @@
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="efp-Jc-IHy">
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="efp-Jc-IHy">
                                                     <rect key="frame" x="562" y="12" width="20" height="20"/>
                                                 </activityIndicatorView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="lM1-Bm-cgX" firstAttribute="leading" secondItem="k4s-80-ZxX" secondAttribute="leadingMargin" id="5KT-8D-SuH"/>
                                                 <constraint firstItem="Wma-5d-3b0" firstAttribute="centerY" secondItem="efp-Jc-IHy" secondAttribute="centerY" id="6xw-P1-vId"/>
                                                 <constraint firstItem="Wma-5d-3b0" firstAttribute="centerY" secondItem="lM1-Bm-cgX" secondAttribute="centerY" id="TlX-hN-I8Q"/>
                                                 <constraint firstItem="Wma-5d-3b0" firstAttribute="centerX" secondItem="efp-Jc-IHy" secondAttribute="centerX" id="hBr-aQ-LQD"/>
@@ -1146,6 +1149,7 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="zf4-Jq-VP5"/>
                                                     <exclude reference="qbl-8L-ll9"/>
                                                 </mask>
                                             </variation>
@@ -1169,7 +1173,9 @@
                     <connections>
                         <outlet property="allowFloatingPointCarbohydratesSwitch" destination="KmR-Au-Y9n" id="Z7H-f9-gMf"/>
                         <outlet property="bloodGlucoseUnitLabel" destination="2mY-4N-PZS" id="stl-Rb-XF7"/>
+                        <outlet property="largeTipPriceActivityIndicator" destination="efp-Jc-IHy" id="VGZ-y9-lus"/>
                         <outlet property="largeTipPriceLabel" destination="Wma-5d-3b0" id="oX2-5X-mfq"/>
+                        <outlet property="smallTipPriceActivityIndicator" destination="eRP-T2-fRY" id="9re-Wu-u61"/>
                         <outlet property="smallTipPriceLabel" destination="fsC-cU-W2D" id="gqF-RR-HBR"/>
                     </connections>
                 </tableViewController>
