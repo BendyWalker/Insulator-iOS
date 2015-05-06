@@ -71,8 +71,30 @@ class BloodGlucoseUnitTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if let bloodGlucoseUnit = BloodGlucoseUnit.fromInt(indexPath.row) {
-            preferencesManager.bloodGlucoseUnit = bloodGlucoseUnit
+        var currentBloodGlucoseUnit = preferencesManager.bloodGlucoseUnit
+        var desiredBloodGlucose = preferencesManager.desiredBloodGlucose
+        var correctiveFactor = preferencesManager.correctiveFactor
+        let calculator = Calculator(bloodGlucoseUnit: currentBloodGlucoseUnit)
+        
+        if let selectedBloodGlucoseUnit = BloodGlucoseUnit.fromInt(indexPath.row) {
+            switch selectedBloodGlucoseUnit {
+            case .mmol:
+                if currentBloodGlucoseUnit != .mmol {
+                    currentBloodGlucoseUnit = .mmol;
+                    desiredBloodGlucose = calculator.roundDouble(desiredBloodGlucose / calculator.mgdlConversionValue)
+                    correctiveFactor = calculator.roundDouble(correctiveFactor / calculator.mgdlConversionValue);
+                }
+            case .mgdl:
+                if currentBloodGlucoseUnit != .mgdl {
+                    currentBloodGlucoseUnit = .mgdl;
+                    desiredBloodGlucose = calculator.roundDouble(desiredBloodGlucose * calculator.mgdlConversionValue)
+                    correctiveFactor = calculator.roundDouble(correctiveFactor * calculator.mgdlConversionValue);
+                }
+            }
+            
+            preferencesManager.bloodGlucoseUnit = currentBloodGlucoseUnit
+            preferencesManager.desiredBloodGlucose = desiredBloodGlucose
+            preferencesManager.correctiveFactor = correctiveFactor
         }
         
         tableView.reloadData()
