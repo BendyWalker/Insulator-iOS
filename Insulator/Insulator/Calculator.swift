@@ -26,7 +26,7 @@ class Calculator {
         case .mmol:
             return bloodGlucose
         case .mgdl:
-            return bloodGlucose / mgdlConversionValue
+            return roundDouble(bloodGlucose / mgdlConversionValue)
         }
     }
     
@@ -45,7 +45,7 @@ class Calculator {
         var correctiveDose = 0.0
         
         if currentBloodGlucoseLevel != 0 {
-            correctiveDose = (convertBloodGlucose(currentBloodGlucoseLevel) - convertBloodGlucose(desiredBloodGlucoseLevel)) / correctiveFactor
+            correctiveDose = (convertBloodGlucose(currentBloodGlucoseLevel) - convertBloodGlucose(desiredBloodGlucoseLevel)) / convertBloodGlucose(correctiveFactor)
         }
         
         correctiveDose = roundDouble(correctiveDose)
