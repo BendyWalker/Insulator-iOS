@@ -1076,6 +1076,7 @@
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Feedback" id="ZSa-p2-ETH">
+                                <string key="footerTitle">All feedback is welcome, so feel free to get in touch. In addition, please consider leaving a rating or review on the App Store.</string>
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="YWB-x5-Uit">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -1157,7 +1158,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Tip Jar" footerTitle="If you find insulator useful, please consider leaving a tip to support future development of the application." id="Zzr-lS-ZIy">
+                            <tableViewSection headerTitle="Tip Jar" footerTitle="If you find insulator useful, please consider leaving a tip to support further development of the application." id="Zzr-lS-ZIy">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="h6o-m4-KZk">
                                         <autoresizingMask key="autoresizingMask"/>
