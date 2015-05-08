@@ -1075,7 +1075,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Support" id="ZSa-p2-ETH">
+                            <tableViewSection headerTitle="Feedback" id="ZSa-p2-ETH">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="YWB-x5-Uit">
                                         <autoresizingMask key="autoresizingMask"/>
