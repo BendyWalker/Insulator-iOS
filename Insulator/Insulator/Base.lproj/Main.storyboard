@@ -1075,6 +1075,62 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Support" id="ZSa-p2-ETH">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="YWB-x5-Uit">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YWB-x5-Uit" id="3fC-nA-awv">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EwV-BF-2Xr">
+                                                    <rect key="frame" x="8" y="12" width="40" height="20"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mail@insulatorapp.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BJ-w6-lJg">
+                                                    <rect key="frame" x="423" y="12" width="169" height="20"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0BJ-w6-lJg" firstAttribute="centerY" secondItem="EwV-BF-2Xr" secondAttribute="centerY" id="Omj-3B-96v"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="0BJ-w6-lJg" secondAttribute="trailing" id="ZHN-5E-wW5"/>
+                                                <constraint firstAttribute="centerY" secondItem="EwV-BF-2Xr" secondAttribute="centerY" id="k15-Ca-UKC"/>
+                                                <constraint firstItem="EwV-BF-2Xr" firstAttribute="leading" secondItem="3fC-nA-awv" secondAttribute="leadingMargin" id="qbq-hR-mZO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Vf4-Hi-zvJ">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vf4-Hi-zvJ" id="JiU-Yi-ZS2">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOr-7S-Mf6">
+                                                    <rect key="frame" x="8" y="12" width="48" height="20"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@insulatorapp" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDB-Eb-RXg">
+                                                    <rect key="frame" x="489" y="12" width="103" height="20"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="AOr-7S-Mf6" firstAttribute="leading" secondItem="JiU-Yi-ZS2" secondAttribute="leadingMargin" id="5Ck-16-uh7"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="GDB-Eb-RXg" secondAttribute="trailing" id="Fm9-4x-fZk"/>
+                                                <constraint firstAttribute="centerY" secondItem="AOr-7S-Mf6" secondAttribute="centerY" id="TWz-sK-Xc7"/>
+                                                <constraint firstItem="GDB-Eb-RXg" firstAttribute="centerY" secondItem="AOr-7S-Mf6" secondAttribute="centerY" id="n9k-Sp-Hog"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="Leave a Tip" footerTitle="If you find insulator useful, please consider leaving a tip to support future development of the application." id="Zzr-lS-ZIy">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="h6o-m4-KZk">
@@ -1099,21 +1155,13 @@
                                                 </activityIndicatorView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="fsC-cU-W2D" secondAttribute="centerY" constant="1" id="Hm6-u5-NSv"/>
                                                 <constraint firstAttribute="centerY" secondItem="DFy-TC-FJc" secondAttribute="centerY" id="Ybc-Sv-zP8"/>
                                                 <constraint firstItem="fsC-cU-W2D" firstAttribute="centerX" secondItem="eRP-T2-fRY" secondAttribute="centerX" id="bV5-WH-kKU"/>
                                                 <constraint firstItem="fsC-cU-W2D" firstAttribute="centerY" secondItem="DFy-TC-FJc" secondAttribute="centerY" id="hxL-oV-GJ9"/>
                                                 <constraint firstItem="fsC-cU-W2D" firstAttribute="centerY" secondItem="eRP-T2-fRY" secondAttribute="centerY" id="lKH-Mz-x2o"/>
                                                 <constraint firstItem="DFy-TC-FJc" firstAttribute="leading" secondItem="PTC-H7-eh7" secondAttribute="leadingMargin" id="nif-1m-8OG"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="fsC-cU-W2D" secondAttribute="trailing" id="rvV-Iv-Gkv"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="DFy-TC-FJc" secondAttribute="trailing" constant="509" id="wtU-hm-Gll"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="wtU-hm-Gll"/>
-                                                    <exclude reference="Hm6-u5-NSv"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zDC-dj-639">
@@ -1143,16 +1191,8 @@
                                                 <constraint firstItem="Wma-5d-3b0" firstAttribute="centerY" secondItem="lM1-Bm-cgX" secondAttribute="centerY" id="TlX-hN-I8Q"/>
                                                 <constraint firstItem="Wma-5d-3b0" firstAttribute="centerX" secondItem="efp-Jc-IHy" secondAttribute="centerX" id="hBr-aQ-LQD"/>
                                                 <constraint firstAttribute="centerY" secondItem="lM1-Bm-cgX" secondAttribute="centerY" id="nrT-aI-NEu"/>
-                                                <constraint firstAttribute="centerY" secondItem="Wma-5d-3b0" secondAttribute="centerY" constant="1" id="qbl-8L-ll9"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Wma-5d-3b0" secondAttribute="trailing" id="uHH-ES-uRT"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="lM1-Bm-cgX" secondAttribute="trailing" constant="509" id="zf4-Jq-VP5"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="zf4-Jq-VP5"/>
-                                                    <exclude reference="qbl-8L-ll9"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
