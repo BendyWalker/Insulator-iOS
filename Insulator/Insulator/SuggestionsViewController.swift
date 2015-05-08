@@ -13,12 +13,12 @@ class SuggestionsViewController: UITableViewController {
     @IBOutlet weak var carbohydrateFactorTableViewCell: UITableViewCell!
     @IBOutlet weak var correctiveFactorTableViewCell: UITableViewCell!
     
-    @IBAction func closeModal(sender: AnyObject) {
+    @IBAction func closeModal(sender: UIBarButtonItem) {
         let carbohydrateFactor = (carbohydrateFactorLabel.text! as NSString).doubleValue
         let correctiveFactor = (correctiveFactorLabel.text! as NSString).doubleValue
         
-        preferencesManager.carbohydrateFactor = carbohydrateFactor
-        preferencesManager.correctiveFactor = correctiveFactor
+        if saveCarbohydrateFactor { preferencesManager.carbohydrateFactor = carbohydrateFactor }
+        if saveCorrectiveFactor { preferencesManager.correctiveFactor = correctiveFactor }
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -31,31 +31,48 @@ class SuggestionsViewController: UITableViewController {
         totalDailyDoseTextField.addTarget(self, action: "calculateSuggestions:", forControlEvents: UIControlEvents.AllEvents)
     }
     
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0: return 1
+        case 1: return 2
+        default: return 0
+        }
+    }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 1 {
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0:
+                self.totalDailyDoseTextField.becomeFirstResponder()
+            default:
+                return
+            }
+        case 1:
             switch indexPath.row {
             case 0:
                 saveCarbohydrateFactor = !saveCarbohydrateFactor
                 if saveCarbohydrateFactor {
-                    carbohydrateFactorTableViewCell.accessoryType = UITableViewCellAccessoryType.Checkmark
+                    carbohydrateFactorTableViewCell.accessoryType = .Checkmark
                 } else {
-                    carbohydrateFactorTableViewCell.accessoryType = UITableViewCellAccessoryType.None
+                    carbohydrateFactorTableViewCell.accessoryType = .None
                 }
-                
-                println("\(saveCarbohydrateFactor)")
             case 1:
                 saveCorrectiveFactor = !saveCorrectiveFactor
                 if saveCorrectiveFactor {
-                    correctiveFactorTableViewCell.accessoryType = UITableViewCellAccessoryType.Checkmark
+                    correctiveFactorTableViewCell.accessoryType = .Checkmark
                 } else {
-                    correctiveFactorTableViewCell.accessoryType = UITableViewCellAccessoryType.None
+                    correctiveFactorTableViewCell.accessoryType = .None
                 }
-                
-                println("\(saveCorrectiveFactor)")
             default:
-                saveCarbohydrateFactor = false
-                saveCorrectiveFactor = false
+                return
             }
+        default:
+            return
         }
         
         tableView.reloadData()
