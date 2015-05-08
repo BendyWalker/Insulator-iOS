@@ -1317,7 +1317,7 @@
                         <sections>
                             <tableViewSection id="5r8-RX-cRi">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="rRh-00-72K">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SuggestionsCell" id="rRh-00-72K">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rRh-00-72K" id="jB7-Bq-jvu">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -1362,7 +1362,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Suggestions" id="gDt-Av-aJe">
+                            <tableViewSection footerTitle="Tap the suggestions you are happy with, then press Done to save them." id="gDt-Av-aJe">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VIv-R8-Jv1">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -1441,7 +1441,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="carbohydrateFactorLabel" destination="use-O1-IvL" id="LAs-40-3xG"/>
+                        <outlet property="carbohydrateFactorTableViewCell" destination="VIv-R8-Jv1" id="q3R-Af-fRg"/>
                         <outlet property="correctiveFactorLabel" destination="CnD-Xt-xkT" id="Ybb-6G-A2G"/>
+                        <outlet property="correctiveFactorTableViewCell" destination="2tI-mF-kcy" id="1dI-Gh-tho"/>
                         <outlet property="totalDailyDoseTextField" destination="sUT-N6-vN6" id="zbO-QU-b1m"/>
                     </connections>
                 </tableViewController>

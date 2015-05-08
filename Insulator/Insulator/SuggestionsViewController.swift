@@ -1,13 +1,17 @@
 import UIKit
 
 class SuggestionsViewController: UITableViewController {
+    var saveCarbohydrateFactor = false
+    var saveCorrectiveFactor = false
+    
     let preferencesManager = PreferencesManager.sharedInstance
 
     
     @IBOutlet weak var totalDailyDoseTextField: UITextField!
     @IBOutlet weak var carbohydrateFactorLabel: UILabel!
     @IBOutlet weak var correctiveFactorLabel: UILabel!
-    
+    @IBOutlet weak var carbohydrateFactorTableViewCell: UITableViewCell!
+    @IBOutlet weak var correctiveFactorTableViewCell: UITableViewCell!
     
     @IBAction func closeModal(sender: AnyObject) {
         let carbohydrateFactor = (carbohydrateFactorLabel.text! as NSString).doubleValue
@@ -25,6 +29,36 @@ class SuggestionsViewController: UITableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
         totalDailyDoseTextField.addTarget(self, action: "calculateSuggestions:", forControlEvents: UIControlEvents.AllEvents)
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 1 {
+            switch indexPath.row {
+            case 0:
+                saveCarbohydrateFactor = !saveCarbohydrateFactor
+                if saveCarbohydrateFactor {
+                    carbohydrateFactorTableViewCell.accessoryType = UITableViewCellAccessoryType.Checkmark
+                } else {
+                    carbohydrateFactorTableViewCell.accessoryType = UITableViewCellAccessoryType.None
+                }
+                
+                println("\(saveCarbohydrateFactor)")
+            case 1:
+                saveCorrectiveFactor = !saveCorrectiveFactor
+                if saveCorrectiveFactor {
+                    correctiveFactorTableViewCell.accessoryType = UITableViewCellAccessoryType.Checkmark
+                } else {
+                    correctiveFactorTableViewCell.accessoryType = UITableViewCellAccessoryType.None
+                }
+                
+                println("\(saveCorrectiveFactor)")
+            default:
+                saveCarbohydrateFactor = false
+                saveCorrectiveFactor = false
+            }
+        }
+        
+        tableView.reloadData()
     }
     
     
