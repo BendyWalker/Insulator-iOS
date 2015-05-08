@@ -99,9 +99,24 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
                 return
             }
         case 2:
-            let product = products[indexPath.row]
-            let request = SKPayment(product: product)
-            SKPaymentQueue.defaultQueue().addPayment(request)
+            switch indexPath.row {
+            case 0:
+                for product in products {
+                    if product.productIdentifier == "small_tip" {
+                        let payment = SKPayment(product: product)
+                        SKPaymentQueue.defaultQueue().addPayment(payment)
+                    }
+                }
+            case 1:
+                for product in products {
+                    if product.productIdentifier == "large_tip" {
+                        let payment = SKPayment(product: product)
+                        SKPaymentQueue.defaultQueue().addPayment(payment)
+                    }
+                }
+            default:
+                return
+            }
         default:
             return
         }
@@ -116,6 +131,7 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     
     func updateBloodGlucoseUnitLabel() {
         bloodGlucoseUnitLabel.text = preferencesManager.bloodGlucoseUnit.rawValue
+        tableView.reloadData()
     }
 }
 
