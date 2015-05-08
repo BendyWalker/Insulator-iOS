@@ -1,7 +1,8 @@
 import UIKit
 import StoreKit
+import MessageUI
 
-class SettingsTableViewController: UITableViewController, SKProductsRequestDelegate {
+class SettingsTableViewController: UITableViewController, SKProductsRequestDelegate, MFMailComposeViewControllerDelegate {
     var products: [SKProduct] = []
     
     let preferencesManager = PreferencesManager.sharedInstance
@@ -86,7 +87,10 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
         case 1:
             switch indexPath.row {
             case 0:
-                println("Email")
+                let mailComposer = MFMailComposeViewController()
+                mailComposer.mailComposeDelegate = self
+                mailComposer.setToRecipients(["mail@insulatorapp.com"])
+                self.presentViewController(mailComposer, animated: true, completion: nil)
             case 1:
                 println("Twitter")
             case 2:
@@ -103,6 +107,10 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
         }
         
         tableView.reloadData()
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     
