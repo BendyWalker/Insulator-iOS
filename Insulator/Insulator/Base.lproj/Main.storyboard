@@ -1157,7 +1157,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Leave a Tip" footerTitle="If you find insulator useful, please consider leaving a tip to support future development of the application." id="Zzr-lS-ZIy">
+                            <tableViewSection headerTitle="Tip Jar" footerTitle="If you find insulator useful, please consider leaving a tip to support future development of the application." id="Zzr-lS-ZIy">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="h6o-m4-KZk">
                                         <autoresizingMask key="autoresizingMask"/>
