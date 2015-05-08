@@ -1,6 +1,7 @@
 import UIKit
 import StoreKit
 import MessageUI
+import Social
 
 class SettingsTableViewController: UITableViewController, SKProductsRequestDelegate, MFMailComposeViewControllerDelegate {
     var products: [SKProduct] = []
@@ -93,6 +94,15 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
                 self.presentViewController(mailComposer, animated: true, completion: nil)
             case 1:
                 UIApplication.sharedApplication().openURL(NSURL(string: "http://www.twitter.com/insulatorapp")!)
+                let sendTweetAlertAction = UIAlertAction(title: "Send Tweet", style: .Default) { alertAction in
+                    let composeTweetViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+                    composeTweetViewController.setInitialText("@insulatorapp ")
+                    self.presentViewController(composeTweetViewController, animated: true, completion: nil)
+                }
+                let twitterAlertController = UIAlertController(title: nil, message: "Send a Tweet from Insulator or view profile on Twitter.com?", preferredStyle: .ActionSheet)
+                twitterAlertController.addAction(sendTweetAlertAction)
+                twitterAlertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+                self.presentViewController(twitterAlertController, animated: true, completion: nil)
             case 2:
                 println("App Store")
             default:
