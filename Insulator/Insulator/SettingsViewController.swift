@@ -90,14 +90,9 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
                 return
             }
         case 2:
-            switch indexPath.row {
-            case 0:
-                println("Small Tip")
-            case 1:
-                println("Large Tip")
-            default:
-                return
-            }
+            let product = products[indexPath.row]
+            let request = SKPayment(product: product)
+            SKPaymentQueue.defaultQueue().addPayment(request)
         default:
             return
         }
