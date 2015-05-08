@@ -16,6 +16,8 @@ The best way for Type 1 Diabetics to quickly calculate insulin doses.
 
 ## Change Log
 ### 1.0.0
+#### Beta 3
+Added Dynamic Type support.
 #### Beta 2
 Tightened up the user interface, which should now render correctly on all screen sizes. Added a Done button in the Navigation Bar which will dismiss the keyboard.
 
