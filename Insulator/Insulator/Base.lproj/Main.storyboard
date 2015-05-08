@@ -990,7 +990,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
-                            <tableViewSection headerTitle="Settings" id="IAg-7F-CmC">
+                            <tableViewSection headerTitle="Preferences" id="IAg-7F-CmC">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="DR5-1z-huk">
                                         <autoresizingMask key="autoresizingMask"/>
