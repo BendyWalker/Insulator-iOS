@@ -109,7 +109,8 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
                 twitterAlertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
                 self.presentViewController(twitterAlertController, animated: true, completion: nil)
             case 2:
-                println("App Store")
+                let identifer = 591613202
+                UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&id=\(identifer)")!)
             default:
                 return
             }
