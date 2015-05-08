@@ -35,8 +35,8 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.tableView.estimatedRowHeight = 44
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     deinit {
@@ -61,6 +61,41 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
                 largeTipPriceLabel.text = ""
             }
         }
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.section {
+        case 1:
+            switch indexPath.row {
+            case 0:
+                println("Email")
+            case 1:
+                println("Twitter")
+            default:
+                return
+            }
+        case 2:
+            switch indexPath.row {
+            case 0:
+                println("Small Tip")
+            case 1:
+                println("Large Tip")
+            default:
+                return
+            }
+        default:
+            return
+        }
+        
+        tableView.reloadData()
     }
     
     
