@@ -93,14 +93,18 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
                 mailComposer.setToRecipients(["mail@insulatorapp.com"])
                 self.presentViewController(mailComposer, animated: true, completion: nil)
             case 1:
-                UIApplication.sharedApplication().openURL(NSURL(string: "http://www.twitter.com/insulatorapp")!)
+                let viewProfileAlertAction = UIAlertAction(title: "View Profile", style: .Default) { alertAction in
+                    let twitterWebViewController = TwitterWebViewController()
+                    self.presentViewController(twitterWebViewController, animated: true, completion: nil)
+                }
                 let sendTweetAlertAction = UIAlertAction(title: "Send Tweet", style: .Default) { alertAction in
                     let composeTweetViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
                     composeTweetViewController.setInitialText("@insulatorapp ")
                     self.presentViewController(composeTweetViewController, animated: true, completion: nil)
                 }
-                let twitterAlertController = UIAlertController(title: nil, message: "Send a Tweet from Insulator or view profile on Twitter.com?", preferredStyle: .ActionSheet)
+                let twitterAlertController = UIAlertController(title: nil, message: "Send Tweet from Insulator or view profile on Twitter.com?", preferredStyle: .ActionSheet)
                 twitterAlertController.addAction(sendTweetAlertAction)
+                twitterAlertController.addAction(viewProfileAlertAction)
                 twitterAlertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
                 self.presentViewController(twitterAlertController, animated: true, completion: nil)
             case 2:
@@ -142,6 +146,23 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     func updateBloodGlucoseUnitLabel() {
         bloodGlucoseUnitLabel.text = preferencesManager.bloodGlucoseUnit.rawValue
         tableView.reloadData()
+    }
+}
+
+class TwitterWebViewController: UINavigationController {
+    let webView = UIWebView()
+    let viewController = UIViewController()
+    
+    override func viewDidLoad() {
+        viewController.view = webView
+        viewController.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "closeModal")
+        self.showViewController(viewController, sender: nil)
+        let urlRequest = NSURLRequest(URL: NSURL(string: "http://www.twitter.com/insulatorapp")!)
+        webView.loadRequest(urlRequest)
+    }
+    
+    func closeModal() {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
