@@ -39,6 +39,7 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     override func viewWillAppear(animated: Bool) {
         tableView.estimatedRowHeight = 44
         tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.reloadData()
     }
     
     deinit {
@@ -145,7 +146,6 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     
     func updateBloodGlucoseUnitLabel() {
         bloodGlucoseUnitLabel.text = preferencesManager.bloodGlucoseUnit.rawValue
-        tableView.reloadData()
     }
 }
 
