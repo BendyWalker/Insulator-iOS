@@ -46,14 +46,19 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     func productsRequest(request: SKProductsRequest!, didReceiveResponse response: SKProductsResponse!) {
         products = response.products as! [SKProduct]
         
+        let priceFormatter = NSNumberFormatter()
+        priceFormatter.formatterBehavior = NSNumberFormatterBehavior.Behavior10_4
+        priceFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        
         for product in products {
+            priceFormatter.locale = product.priceLocale
             switch product.productIdentifier {
             case "small_tip":
-                smallTipPriceLabel.text = product.price.description
+                smallTipPriceLabel.text = priceFormatter.stringFromNumber(product.price)
                 smallTipPriceLabel.hidden = false
                 smallTipPriceActivityIndicator.stopAnimating()
             case "large_tip":
-                largeTipPriceLabel.text = product.price.description
+                largeTipPriceLabel.text = priceFormatter.stringFromNumber(product.price)
                 largeTipPriceLabel.hidden = false
                 largeTipPriceActivityIndicator.stopAnimating()
             default:
