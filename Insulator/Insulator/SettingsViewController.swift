@@ -68,7 +68,12 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        switch section {
+        case 0: return 2
+        case 1: return 3
+        case 2: return 2
+        default: return 0
+        }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -79,6 +84,8 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
                 println("Email")
             case 1:
                 println("Twitter")
+            case 2:
+                println("App Store")
             default:
                 return
             }
