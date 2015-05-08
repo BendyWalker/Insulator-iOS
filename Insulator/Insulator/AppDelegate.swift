@@ -1,14 +1,28 @@
 import UIKit
+import StoreKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, SKPaymentTransactionObserver {
 
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let preferenceManager = PreferencesManager.sharedInstance
+        SKPaymentQueue.defaultQueue().addTransactionObserver(self)
         return true
+    }
+    
+    func paymentQueue(queue: SKPaymentQueue!, updatedTransactions transactions: [AnyObject]!) {
+        for transaction in transactions as! [SKPaymentTransaction] {
+            switch transaction.transactionState {
+            case .Purchased:
+                queue.finishTransaction(transaction)
+            case .Failed:
+                queue.finishTransaction(transaction)
+            default: return
+            }
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {
