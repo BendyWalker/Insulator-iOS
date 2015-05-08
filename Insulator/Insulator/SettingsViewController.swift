@@ -103,7 +103,7 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
                     composeTweetViewController.setInitialText("@insulatorapp ")
                     self.presentViewController(composeTweetViewController, animated: true, completion: nil)
                 }
-                let twitterAlertController = UIAlertController(title: nil, message: "Send Tweet from Insulator or view profile on Twitter.com?", preferredStyle: .ActionSheet)
+                let twitterAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
                 twitterAlertController.addAction(sendTweetAlertAction)
                 twitterAlertController.addAction(viewProfileAlertAction)
                 twitterAlertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
