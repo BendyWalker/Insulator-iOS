@@ -92,7 +92,7 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
                 mailComposer.setToRecipients(["mail@insulatorapp.com"])
                 self.presentViewController(mailComposer, animated: true, completion: nil)
             case 1:
-                println("Twitter")
+                UIApplication.sharedApplication().openURL(NSURL(string: "http://www.twitter.com/insulatorapp")!)
             case 2:
                 println("App Store")
             default:
