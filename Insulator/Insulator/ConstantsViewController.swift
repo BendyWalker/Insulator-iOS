@@ -23,17 +23,26 @@ class ConstantsTableViewController: UITableViewController {
     
     
     override func viewWillAppear(animated: Bool) {
-        updateDynamicViewElements()
+        updateUi()
         self.tableView.estimatedRowHeight = 44
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     
-    func updateDynamicViewElements() {
-        let placeholder: String = preferencesManager.bloodGlucoseUnit.rawValue
+    func updateUi() {
+        let bloodGlucoseUnit = preferencesManager.bloodGlucoseUnit
+        let placeholder: String = bloodGlucoseUnit.rawValue
+        var keyboardType: UIKeyboardType
+        
+        switch bloodGlucoseUnit {
+        case .mmol: keyboardType = .DecimalPad
+        case .mgdl: keyboardType = .NumberPad
+        }
         
         correctiveFactorTextField.placeholder = placeholder
         desiredBloodGlucoseTextField.placeholder = placeholder
+        correctiveFactorTextField.keyboardType = keyboardType
+        desiredBloodGlucoseTextField.keyboardType = keyboardType
         
         carbohydrateFactorTextField.text = "\(preferencesManager.carbohydrateFactor)"
         correctiveFactorTextField.text = "\(preferencesManager.correctiveFactor)"

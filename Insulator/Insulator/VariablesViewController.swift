@@ -46,7 +46,7 @@ class VariablesTableViewController: UITableViewController {
             if preferencesManager.buildNumber != build {
                 self.performSegueWithIdentifier("welcome", sender: AnyObject?())
             } else {
-                updateBloodGlucoseUnitPlaceholder()
+                updateUi()
                 
                 currentBloodGlucoseLevelTextField.addTarget(self, action: "attemptDoseCalculation", forControlEvents: UIControlEvents.EditingChanged)
                 currentBloodGlucoseLevelTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidBegin)
@@ -57,7 +57,7 @@ class VariablesTableViewController: UITableViewController {
                 
                 self.navigationController?.toolbarHidden = false
                 
-                NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateBloodGlucoseUnitPlaceholder", name: PreferencesDidChangeNotification, object: nil)
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateUi", name: PreferencesDidChangeNotification, object: nil)
             }
         }
     }
@@ -82,8 +82,25 @@ class VariablesTableViewController: UITableViewController {
         }
     }
     
-    func updateBloodGlucoseUnitPlaceholder() {
-        currentBloodGlucoseLevelTextField.placeholder = preferencesManager.bloodGlucoseUnit.rawValue
+    func updateUi() {
+        let bloodGlucoseUnit = preferencesManager.bloodGlucoseUnit
+        let placeholder: String = bloodGlucoseUnit.rawValue
+        var keyboardType: UIKeyboardType
+        
+        switch bloodGlucoseUnit {
+        case .mmol: keyboardType = .DecimalPad
+        case .mgdl: keyboardType = .NumberPad
+        }
+        
+        currentBloodGlucoseLevelTextField.placeholder = placeholder
+        currentBloodGlucoseLevelTextField.keyboardType = keyboardType
+        carbohydratesInMealTextField.keyboardType = keyboardType
+        
+        if preferencesManager.allowFloatingPointCarbohydrates {
+            carbohydratesInMealTextField.keyboardType = UIKeyboardType.DecimalPad
+        } else {
+            carbohydratesInMealTextField.keyboardType = UIKeyboardType.NumberPad
+        }
     }
     
     func clearFields() {

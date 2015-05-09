@@ -26,9 +26,9 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     
     
     override func viewDidLoad() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateBloodGlucoseUnitLabel", name: PreferencesDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateUi", name: PreferencesDidChangeNotification, object: nil)
         
-        allowFloatingPointCarbohydratesSwitch.on = preferencesManager.allowFloatingPointCarbohydrates
+        updateUi()
         
         if SKPaymentQueue.canMakePayments() {
             let productIdentifiers: Set = ["small_tip", "large_tip"]
@@ -165,8 +165,10 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
         UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&id=\(identifer)")!)
     }
     
-    func updateBloodGlucoseUnitLabel() {
+    func updateUi() {
         bloodGlucoseUnitLabel.text = preferencesManager.bloodGlucoseUnit.rawValue
+        allowFloatingPointCarbohydratesSwitch.on = preferencesManager.allowFloatingPointCarbohydrates
+
     }
 }
 
