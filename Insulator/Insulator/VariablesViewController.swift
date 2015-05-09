@@ -143,17 +143,32 @@ class VariablesTableViewController: UITableViewController {
     }
     
     func checkHealthKitAuthorisation() {
-        healthManager.authoriseHealthKit { (authorized, error) -> Void in
-            if authorized {
-                println("HealthKit authorization received.")
-                self.updateCurrentBloodGlucoseTextFieldFromHealthKit()
-            } else {
-                println("HealthKit authorization denied!")
-                if error != nil {
-                    println("\(error)")
+        healthManager.getAuthorisationStatus() { status in
+            switch status {
+            case .NotDetermined:
+                self.healthManager.authoriseHealthKit { (authorized, error) -> Void in
+                    if authorized {
+                        println("HealthKit authorization received.")
+                    } else {
+                        println("HealthKit authorization denied!")
+                        
+                        if error != nil {
+                            println("\(error)")
+                        }
+                    }
                 }
+            case .SharingAuthorized:
+                self.updateCurrentBloodGlucoseTextFieldFromHealthKit()
+            case .SharingDenied:
+                let alertView = UIAlertController(title: "No Health Access", message: "Insulator cannot access data in Health. To allow access, please open Health and change your settings.", preferredStyle: UIAlertControllerStyle.Alert)
+                let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
+                alertView.addAction(okButton)
+                self.presentViewController(alertView, animated: true, completion: nil)
             }
+            
         }
+        
+        
     }
     
     func updateCurrentBloodGlucoseTextFieldFromHealthKit() {
