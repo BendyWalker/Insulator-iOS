@@ -28,7 +28,7 @@ class SuggestionsViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        tableView.estimatedRowHeight = 44
+        tableView.estimatedRowHeight = 100
         tableView.reloadData()
         tableView.setNeedsLayout()
         tableView.layoutIfNeeded()
