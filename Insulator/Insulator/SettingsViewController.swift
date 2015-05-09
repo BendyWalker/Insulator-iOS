@@ -89,28 +89,11 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
         case 1:
             switch indexPath.row {
             case 0:
-                let mailComposer = MFMailComposeViewController()
-                mailComposer.mailComposeDelegate = self
-                mailComposer.setToRecipients(["mail@insulatorapp.com"])
-                self.presentViewController(mailComposer, animated: true, completion: nil)
+                displayComposeMailViewController()
             case 1:
-                let viewProfileAlertAction = UIAlertAction(title: "View Profile", style: .Default) { alertAction in
-                    let twitterWebViewController = TwitterWebViewController()
-                    self.presentViewController(twitterWebViewController, animated: true, completion: nil)
-                }
-                let sendTweetAlertAction = UIAlertAction(title: "Send Tweet", style: .Default) { alertAction in
-                    let composeTweetViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-                    composeTweetViewController.setInitialText("@insulatorapp ")
-                    self.presentViewController(composeTweetViewController, animated: true, completion: nil)
-                }
-                let twitterAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
-                twitterAlertController.addAction(sendTweetAlertAction)
-                twitterAlertController.addAction(viewProfileAlertAction)
-                twitterAlertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-                self.presentViewController(twitterAlertController, animated: true, completion: nil)
+                displayTwitterActionSheet()
             case 2:
-                let identifer = 591613202
-                UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&id=\(identifer)")!)
+                openAppStoreAtReviews()
             default:
                 return
             }
@@ -144,6 +127,37 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    
+    func displayComposeMailViewController() {
+        let mailComposer = MFMailComposeViewController()
+        mailComposer.mailComposeDelegate = self
+        mailComposer.setToRecipients(["mail@insulatorapp.com"])
+        self.presentViewController(mailComposer, animated: true, completion: nil)
+    }
+    
+    func displayTwitterActionSheet() {
+        let viewProfileAlertAction = UIAlertAction(title: "View Profile", style: .Default) { alertAction in
+            let twitterWebViewController = TwitterWebViewController()
+            self.presentViewController(twitterWebViewController, animated: true, completion: nil)
+        }
+        
+        let sendTweetAlertAction = UIAlertAction(title: "Send Tweet", style: .Default) { alertAction in
+            let composeTweetViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            composeTweetViewController.setInitialText("@insulatorapp ")
+            self.presentViewController(composeTweetViewController, animated: true, completion: nil)
+        }
+        
+        let twitterAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        twitterAlertController.addAction(sendTweetAlertAction)
+        twitterAlertController.addAction(viewProfileAlertAction)
+        twitterAlertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        self.presentViewController(twitterAlertController, animated: true, completion: nil)
+    }
+    
+    func openAppStoreAtReviews() {
+        let identifer = 591613202
+        UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&id=\(identifer)")!)
+    }
     
     func updateBloodGlucoseUnitLabel() {
         bloodGlucoseUnitLabel.text = preferencesManager.bloodGlucoseUnit.rawValue
