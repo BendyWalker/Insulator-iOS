@@ -38,17 +38,24 @@ class HealthManager {
         let query = HKSampleQuery(sampleType: sampleType, predicate: nil, limit: 1, sortDescriptors: [sortDescriptor]) { query, results, error in
             if let samples = results as? [HKQuantitySample] {
                 let sample = samples.first!
-                let millgramsPerDeciliterOfBloodGlucose = sample.quantity.doubleValueForUnit(HKUnit(fromString: "mg/dL"))
+                
                 let bloodGlucoseUnit = self.preferencesManager.bloodGlucoseUnit
+                var bloodGlucose = 0.0
+                switch bloodGlucoseUnit {
+                case .mmol:
+                    let millimoles = HKUnit.moleUnitWithMetricPrefix(HKMetricPrefix.Milli, molarMass: HKUnitMolarMassBloodGlucose)
+                    let litre = HKUnit.literUnit()
+                    let millimolesPerLitre = millimoles.unitDividedByUnit(litre)
+                    bloodGlucose = sample.quantity.doubleValueForUnit(millimolesPerLitre)
+                case .mgdl:
+                    let milligrams = HKUnit.gramUnitWithMetricPrefix(HKMetricPrefix.Milli)
+                    let decilitre = HKUnit.literUnitWithMetricPrefix(HKMetricPrefix.Deci)
+                    let milligramsPerDecilitre = milligrams.unitDividedByUnit(decilitre)
+                    bloodGlucose = sample.quantity.doubleValueForUnit(milligramsPerDecilitre)
+                }
                 
-                let finalBloodGlucose: Double = {
-                    switch bloodGlucoseUnit {
-                    case .mmol: return Double(round((millgramsPerDeciliterOfBloodGlucose / 18) * 10) / 10)
-                    case .mgdl: return Double(round(millgramsPerDeciliterOfBloodGlucose * 10) / 10)
-                    }
-                }()
-                
-                completion(finalBloodGlucose)
+                bloodGlucose = Calculator(bloodGlucoseUnit: bloodGlucoseUnit).roundDouble(bloodGlucose)
+                completion(bloodGlucose)
             }
         }
         
