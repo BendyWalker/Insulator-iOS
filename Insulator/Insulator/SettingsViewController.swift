@@ -30,10 +30,12 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
         
         allowFloatingPointCarbohydratesSwitch.on = preferencesManager.allowFloatingPointCarbohydrates
         
-        let productIdentifiers: Set = ["small_tip", "large_tip"]
-        let productsRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
-        productsRequest.delegate = self
-        productsRequest.start()
+        if SKPaymentQueue.canMakePayments() {
+            let productIdentifiers: Set = ["small_tip", "large_tip"]
+            let productsRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
+            productsRequest.delegate = self
+            productsRequest.start()
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -72,7 +74,11 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        if SKPaymentQueue.canMakePayments() {
+            return 3
+        } else {
+            return 2
+        }
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
