@@ -24,8 +24,13 @@ class ConstantsTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         updateUi()
-        self.tableView.estimatedRowHeight = 44
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.reloadData()
+        tableView.setNeedsLayout()
+        tableView.layoutIfNeeded()
+        tableView.reloadData()
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

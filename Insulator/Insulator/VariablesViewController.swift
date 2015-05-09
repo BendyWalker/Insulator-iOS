@@ -49,8 +49,12 @@ class VariablesTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.tableView.estimatedRowHeight = 44
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.reloadData()
+        tableView.setNeedsLayout()
+        tableView.layoutIfNeeded()
+        tableView.reloadData()
     }
     
     deinit {

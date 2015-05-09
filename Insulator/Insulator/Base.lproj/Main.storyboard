@@ -990,22 +990,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" text="Blood Glucose Unit" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUw-jT-wg6">
-                                                    <rect key="frame" x="8" y="8" width="465" height="12"/>
+                                                    <rect key="frame" x="8" y="8" width="480" height="12"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Choose your preferred blood glucose measurement unit" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHp-Ae-klT">
-                                                    <rect key="frame" x="8" y="20" width="465" height="15"/>
+                                                    <rect key="frame" x="8" y="20" width="480" height="15"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="mmol/L" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mY-4N-PZS">
-                                                    <rect key="frame" x="489" y="12" width="70" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="1vJ-Lg-IuC"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" text="mmol/L" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mY-4N-PZS">
+                                                    <rect key="frame" x="504" y="12" width="55" height="20"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1075,13 +1072,13 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YWB-x5-Uit" id="3fC-nA-awv">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EwV-BF-2Xr">
-                                                    <rect key="frame" x="8" y="12" width="40" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EwV-BF-2Xr">
+                                                    <rect key="frame" x="8" y="12" width="374" height="20"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mail@insulatorapp.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BJ-w6-lJg">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mail@insulatorapp.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BJ-w6-lJg">
                                                     <rect key="frame" x="390" y="12" width="169" height="20"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1091,6 +1088,7 @@
                                             <constraints>
                                                 <constraint firstItem="0BJ-w6-lJg" firstAttribute="centerY" secondItem="EwV-BF-2Xr" secondAttribute="centerY" id="Omj-3B-96v"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="0BJ-w6-lJg" secondAttribute="trailing" id="ZHN-5E-wW5"/>
+                                                <constraint firstItem="0BJ-w6-lJg" firstAttribute="leading" secondItem="EwV-BF-2Xr" secondAttribute="trailing" constant="8" id="hgI-3N-Qfq"/>
                                                 <constraint firstAttribute="centerY" secondItem="EwV-BF-2Xr" secondAttribute="centerY" id="k15-Ca-UKC"/>
                                                 <constraint firstItem="EwV-BF-2Xr" firstAttribute="leading" secondItem="3fC-nA-awv" secondAttribute="leadingMargin" id="qbq-hR-mZO"/>
                                             </constraints>
@@ -1101,13 +1099,13 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vf4-Hi-zvJ" id="JiU-Yi-ZS2">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOr-7S-Mf6">
-                                                    <rect key="frame" x="8" y="12" width="48" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOr-7S-Mf6">
+                                                    <rect key="frame" x="8" y="12" width="440" height="20"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@insulatorapp" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDB-Eb-RXg">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@insulatorapp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDB-Eb-RXg">
                                                     <rect key="frame" x="456" y="12" width="103" height="20"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1117,6 +1115,7 @@
                                             <constraints>
                                                 <constraint firstItem="AOr-7S-Mf6" firstAttribute="leading" secondItem="JiU-Yi-ZS2" secondAttribute="leadingMargin" id="5Ck-16-uh7"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="GDB-Eb-RXg" secondAttribute="trailing" id="Fm9-4x-fZk"/>
+                                                <constraint firstItem="GDB-Eb-RXg" firstAttribute="leading" secondItem="AOr-7S-Mf6" secondAttribute="trailing" constant="8" id="Rt6-KL-vUV"/>
                                                 <constraint firstAttribute="centerY" secondItem="AOr-7S-Mf6" secondAttribute="centerY" id="TWz-sK-Xc7"/>
                                                 <constraint firstItem="GDB-Eb-RXg" firstAttribute="centerY" secondItem="AOr-7S-Mf6" secondAttribute="centerY" id="n9k-Sp-Hog"/>
                                             </constraints>
@@ -1127,13 +1126,13 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U7h-hp-JKw" id="gZm-XL-Xia">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Store" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wo5-Do-g2h">
-                                                    <rect key="frame" x="8" y="12" width="74" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="App Store" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wo5-Do-g2h">
+                                                    <rect key="frame" x="8" y="12" width="442" height="20"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate Insulator" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZv-9x-Der">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate Insulator" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZv-9x-Der">
                                                     <rect key="frame" x="458" y="12" width="101" height="20"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1144,6 +1143,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="NZv-9x-Der" secondAttribute="trailing" id="C7p-YV-9Yu"/>
                                                 <constraint firstItem="wo5-Do-g2h" firstAttribute="leading" secondItem="gZm-XL-Xia" secondAttribute="leadingMargin" id="RUe-eq-O9A"/>
                                                 <constraint firstItem="NZv-9x-Der" firstAttribute="centerY" secondItem="wo5-Do-g2h" secondAttribute="centerY" id="ew5-2r-MRn"/>
+                                                <constraint firstItem="NZv-9x-Der" firstAttribute="leading" secondItem="wo5-Do-g2h" secondAttribute="trailing" constant="8" id="luH-m7-5zO"/>
                                                 <constraint firstAttribute="centerY" secondItem="wo5-Do-g2h" secondAttribute="centerY" id="xXA-Ga-Fug"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1417,6 +1417,7 @@
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="5r8-RX-cRi">
+                                <string key="footerTitle">If you are unsure of your carbohydrate or corrective factor, enter your total daily dose above then review the suggestions below.</string>
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="rRh-00-72K">
                                         <autoresizingMask key="autoresizingMask"/>
