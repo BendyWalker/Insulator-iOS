@@ -26,7 +26,6 @@ class ConstantsTableViewController: UITableViewController {
         updateUi()
 
         tableView.estimatedRowHeight = 100
-        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.reloadData()
         tableView.setNeedsLayout()
         tableView.layoutIfNeeded()
