@@ -24,20 +24,6 @@ class VariablesTableViewController: UITableViewController {
         }
     }
     
-    @IBAction func isHealthKitAuthorized(sender: UIButton) {
-        healthManager.authoriseHealthKit { (authorized, error) -> Void in
-            if authorized {
-                println("HealthKit authorization received.")
-                self.updateCurrentBloodGlucoseTextFieldFromHealthKit()
-            } else {
-                println("HealthKit authorization denied!")
-                if error != nil {
-                    println("\(error)")
-                }
-            }
-        }
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +55,45 @@ class VariablesTableViewController: UITableViewController {
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: PreferencesDidChangeNotification, object: nil)
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0: return 2
+        case 1: return 1
+        case 2: return 3
+        default: return 0
+        }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0:
+                currentBloodGlucoseLevelTextField.becomeFirstResponder()
+                currentBloodGlucoseLevelTextField.selectAll(self)
+            case 1:
+                carbohydratesInMealTextField.becomeFirstResponder()
+                carbohydratesInMealTextField.selectAll(self)
+            default:
+                return
+            }
+        case 1:
+            switch indexPath.row {
+            case 0:
+                checkHealthKitAuthorisation()
+            default:
+                return
+            }
+            tableView.reloadData()
+        default:
+            return
+        }
     }
     
     
@@ -111,6 +136,20 @@ class VariablesTableViewController: UITableViewController {
         correctiveDoseLabel.text = "0.0"
         
         self.view.endEditing(true)
+    }
+    
+    func checkHealthKitAuthorisation() {
+        healthManager.authoriseHealthKit { (authorized, error) -> Void in
+            if authorized {
+                println("HealthKit authorization received.")
+                self.updateCurrentBloodGlucoseTextFieldFromHealthKit()
+            } else {
+                println("HealthKit authorization denied!")
+                if error != nil {
+                    println("\(error)")
+                }
+            }
+        }
     }
     
     func updateCurrentBloodGlucoseTextFieldFromHealthKit() {

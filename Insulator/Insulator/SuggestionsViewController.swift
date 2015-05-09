@@ -49,6 +49,7 @@ class SuggestionsViewController: UITableViewController {
             switch indexPath.row {
             case 0:
                 self.totalDailyDoseTextField.becomeFirstResponder()
+                self.totalDailyDoseTextField.selectAll(self)
             default:
                 return
             }
@@ -71,11 +72,10 @@ class SuggestionsViewController: UITableViewController {
             default:
                 return
             }
+            tableView.reloadData()
         default:
             return
         }
-        
-        tableView.reloadData()
     }
     
     

@@ -28,6 +28,40 @@ class ConstantsTableViewController: UITableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0: return 3
+        default: return 0
+        }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0:
+                carbohydrateFactorTextField.becomeFirstResponder()
+                carbohydrateFactorTextField.selectAll(self)
+            case 1:
+                correctiveFactorTextField.becomeFirstResponder()
+                correctiveFactorTextField.selectAll(self)
+
+            case 2:
+                desiredBloodGlucoseTextField.becomeFirstResponder()
+                desiredBloodGlucoseTextField.selectAll(self)
+
+            default:
+                return
+            }
+        default:
+            return
+        }
+    }
+    
     
     func updateUi() {
         let bloodGlucoseUnit = preferencesManager.bloodGlucoseUnit
