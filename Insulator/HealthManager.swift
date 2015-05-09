@@ -31,6 +31,12 @@ class HealthManager {
         }
     }
     
+    func getAuthorisationStatus(completion: ((authorisationStatus: HKAuthorizationStatus) -> Void)!) {
+        let authorisation = healthKitStore.authorizationStatusForType(HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodGlucose))
+        
+        completion(authorisationStatus: authorisation)
+    }
+    
     func queryBloodGlucose(completion: ((Double?) -> Void)) {
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         let sampleType = HKSampleType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodGlucose)
