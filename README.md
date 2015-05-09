@@ -16,6 +16,17 @@ The best way for Type 1 Diabetics to quickly calculate insulin doses.
 
 ## Change Log
 ### 1.0.0
+#### Beta 5
+Many of you pointed out issues in the 'onboarding experience'. This wasn't ready for primetime and wasn't supposed to be visible! It has been removed.
+
+Fixed a lot of Auto Layout issues, which should result in less UI weirdness. If you encounter any UI oddities during your testing, please let me know (along with the device you're using and Text Size setting).
+
+If you have denied Insulator access to Health, pressing 'Get Health Data' will now display an alert explaining the situation.
+
+Tapping on cells with text entry fields now sets focus on those fields. If the field already contains a value, tapping the cell will select all text in the field.
+
+The 'Carbohydrate Decimal Place' preference has been renamed to 'Carbohdyrate Accuracy', and now works correctly.
+
 #### Beta 4
 Added in-app settings. This screen features three sections: Preferences, Feedback and Tip Jar. The feedback section has three rows: Email, Twitter and App Store. Please test these (the App Store button should open App Store and load Pinner for Pinboard). While you won't be able to make any in-app purchases, the prices should load in correctly.
 
