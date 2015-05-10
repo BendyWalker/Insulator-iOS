@@ -807,7 +807,7 @@
                             </tableViewSection>
                             <tableViewSection id="jvG-P3-Nxt">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Sr0-yW-0C8">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="Sr0-yW-0C8">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sr0-yW-0C8" id="Bcb-Zh-u0u">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -820,19 +820,11 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerX" secondItem="ibU-Oq-pXT" secondAttribute="centerX" id="4Ym-Qm-cAU"/>
                                                 <constraint firstItem="ibU-Oq-pXT" firstAttribute="leading" secondItem="Bcb-Zh-u0u" secondAttribute="leadingMargin" id="8f5-IV-2KU"/>
-                                                <constraint firstAttribute="centerY" secondItem="ibU-Oq-pXT" secondAttribute="centerY" id="LDk-ug-gFq"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ibU-Oq-pXT" secondAttribute="trailing" id="Uxs-ut-dRq"/>
                                                 <constraint firstItem="ibU-Oq-pXT" firstAttribute="top" secondItem="Bcb-Zh-u0u" secondAttribute="topMargin" id="V9I-Jv-lPa"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="ibU-Oq-pXT" secondAttribute="bottom" id="Y24-BB-YiZ"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="4Ym-Qm-cAU"/>
-                                                    <exclude reference="LDk-ug-gFq"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
