@@ -143,40 +143,33 @@ class VariablesTableViewController: UITableViewController {
     }
     
     func checkHealthKitAuthorisation() {
-        healthManager.getAuthorisationStatus() { status in
-            switch status {
-            case .NotDetermined:
-                self.healthManager.authoriseHealthKit { (authorized, error) -> Void in
-                    if authorized {
-                        println("HealthKit authorization received.")
-                    } else {
-                        println("HealthKit authorization denied!")
-                        
-                        if error != nil {
-                            println("\(error)")
-                        }
-                    }
-                }
-            case .SharingAuthorized:
+        self.healthManager.authoriseHealthKit { (authorized, error) -> Void in
+            if authorized {
+                println("HealthKit authorization received.")
                 self.updateCurrentBloodGlucoseTextFieldFromHealthKit()
-            case .SharingDenied:
-                let alertView = UIAlertController(title: "No Health Access", message: "Insulator cannot access data in Health. To allow access, please open Health and change your settings.", preferredStyle: UIAlertControllerStyle.Alert)
-                let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
-                alertView.addAction(okButton)
-                self.presentViewController(alertView, animated: true, completion: nil)
+            } else {
+                println("HealthKit authorization denied!")
+                
+                if error != nil {
+                    println("\(error)")
+                }
             }
-            
         }
-        
-        
     }
     
     func updateCurrentBloodGlucoseTextFieldFromHealthKit() {
         healthManager.queryBloodGlucose() { bloodGlucose in
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.currentBloodGlucoseLevelTextField.text = "\(bloodGlucose!)"
-                self.attemptDoseCalculation()
-            });
+            if bloodGlucose != nil {
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.currentBloodGlucoseLevelTextField.text = "\(bloodGlucose!)"
+                    self.attemptDoseCalculation()
+                });
+            } else {
+                let alertView = UIAlertController(title: "No Health Access", message: "Insulator cannot find any Blood Glucose data in Health. This may be because you have denied access to Health data. To allow access, please open Health and change your settings.", preferredStyle: UIAlertControllerStyle.Alert)
+                let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
+                alertView.addAction(okButton)
+                self.presentViewController(alertView, animated: true, completion: nil)
+            }
         }
     }
     
