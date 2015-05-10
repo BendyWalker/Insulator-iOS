@@ -28,10 +28,6 @@ class VariablesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if let build = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion") as? String {
-//            if preferencesManager.buildNumber != build {
-//                self.performSegueWithIdentifier("welcome", sender: AnyObject?())
-//            } else {
         currentBloodGlucoseLevelTextField.addTarget(self, action: "attemptDoseCalculation", forControlEvents: UIControlEvents.EditingChanged)
         currentBloodGlucoseLevelTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidBegin)
         currentBloodGlucoseLevelTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidEnd)
@@ -39,14 +35,18 @@ class VariablesTableViewController: UITableViewController {
         carbohydratesInMealTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidBegin)
         carbohydratesInMealTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidEnd)
         
-        self.navigationController?.toolbarHidden = false
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateUi", name: PreferencesDidChangeNotification, object: nil)
         
         updateUi()
+        
+        if true {
+            self.performSegueWithIdentifier("welcome", sender: AnyObject?())
 
-//            }
+//        if let build = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion") as? String {
+//            if preferencesManager.buildNumber != build {
+//                self.performSegueWithIdentifier("welcome", sender: AnyObject?())
 //        }
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -149,7 +149,6 @@ class VariablesTableViewController: UITableViewController {
                 self.updateCurrentBloodGlucoseTextFieldFromHealthKit()
             } else {
                 println("HealthKit authorization denied!")
-                
                 if error != nil {
                     println("\(error)")
                 }
@@ -165,7 +164,7 @@ class VariablesTableViewController: UITableViewController {
                     self.attemptDoseCalculation()
                 });
             } else {
-                let alertView = UIAlertController(title: "No Health Access", message: "Insulator cannot find any Blood Glucose data in Health. This may be because you have denied access to Health data. To allow access, please open Health and change your settings.", preferredStyle: UIAlertControllerStyle.Alert)
+                let alertView = UIAlertController(title: "No Data Found", message: "Insulator cannot find any Blood Glucose data in Health. This may be because you have denied access to Health data. To allow access, please open Health and change your settings.", preferredStyle: UIAlertControllerStyle.Alert)
                 let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
                 alertView.addAction(okButton)
                 self.presentViewController(alertView, animated: true, completion: nil)

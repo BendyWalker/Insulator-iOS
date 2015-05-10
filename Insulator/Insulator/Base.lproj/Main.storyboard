@@ -169,6 +169,9 @@
                                         <state key="normal" title="Allow Access">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="authoriseHealthKit:" destination="3K6-sG-eMr" eventType="touchUpInside" id="VEN-Gf-Xn4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -223,8 +226,7 @@
         <!--Preferences-->
         <scene sceneID="v6l-Nx-4gy">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FWn-0v-m7x" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="tBC-7p-JdJ" sceneMemberID="viewController">
+                <viewController id="tBC-7p-JdJ" customClass="WelcomeViewController" customModule="Insulator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="B8d-Bw-aG5"/>
                         <viewControllerLayoutGuide type="bottom" id="CQ5-Sv-Hib"/>
@@ -252,12 +254,15 @@
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="G2D-bh-n1b">
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="G2D-bh-n1b">
                                                 <rect key="frame" x="447" y="0.0" width="121" height="29"/>
                                                 <segments>
                                                     <segment title="mmol/L"/>
                                                     <segment title="mg/dL"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="bloodGlucoseUnitSegmentedControlValueChanged:" destination="tBC-7p-JdJ" eventType="valueChanged" id="cMk-tb-A2R"/>
+                                                </connections>
                                             </segmentedControl>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -275,26 +280,30 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMR-aZ-x9z">
                                         <rect key="frame" x="0.0" y="109" width="568" height="80"/>
                                         <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbohdyrate Accuracy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2d-Bw-QxZ">
+                                                <rect key="frame" x="0.0" y="6" width="172" height="20"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Enables use of decimals when entering carbohydrates. If you are a highly accurate carb-counter, this may be useful!" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djo-9x-RZK">
                                                 <rect key="frame" x="0.0" y="39" width="568" height="41"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kge-eP-Q3w">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kge-eP-Q3w">
                                                 <rect key="frame" x="519" y="0.0" width="51" height="31"/>
                                                 <color key="onTintColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="allowFloatingPointCarbohydratesSwitchValueChanged:" destination="tBC-7p-JdJ" eventType="valueChanged" id="2HK-dW-wuQ"/>
+                                                </connections>
                                             </switch>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbohdyrate Accuracy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2d-Bw-QxZ">
-                                                <rect key="frame" x="0.0" y="0.0" width="568" height="31"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="centerX" secondItem="Kge-eP-Q3w" secondAttribute="centerX" id="0Yg-rD-n0f"/>
+                                            <constraint firstItem="O2d-Bw-QxZ" firstAttribute="leading" secondItem="IMR-aZ-x9z" secondAttribute="leading" id="6C0-55-IZP"/>
                                             <constraint firstItem="Kge-eP-Q3w" firstAttribute="top" secondItem="O2d-Bw-QxZ" secondAttribute="bottom" constant="8" id="E18-x9-cnN"/>
                                             <constraint firstItem="Kge-eP-Q3w" firstAttribute="centerY" secondItem="O2d-Bw-QxZ" secondAttribute="centerY" id="SDs-vK-Ov1"/>
                                             <constraint firstItem="O2d-Bw-QxZ" firstAttribute="top" secondItem="IMR-aZ-x9z" secondAttribute="top" id="X6g-zt-BXh"/>
@@ -309,6 +318,9 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="X6g-zt-BXh"/>
+                                                <exclude reference="vnB-4o-TGe"/>
+                                                <exclude reference="xgd-2q-728"/>
                                                 <exclude reference="0Yg-rD-n0f"/>
                                                 <exclude reference="E18-x9-cnN"/>
                                             </mask>
@@ -354,6 +366,7 @@
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FWn-0v-m7x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2418" y="53"/>
         </scene>
@@ -494,10 +507,10 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="ABe-oA-rmU"/>
-                                                <exclude reference="FhH-wh-ExM"/>
                                                 <exclude reference="X2q-MK-fSF"/>
                                                 <exclude reference="ZT4-3a-wpX"/>
+                                                <exclude reference="ABe-oA-rmU"/>
+                                                <exclude reference="FhH-wh-ExM"/>
                                                 <exclude reference="1FT-ig-PK7"/>
                                                 <exclude reference="369-7B-l6P"/>
                                                 <exclude reference="jQm-2n-Drw"/>
@@ -560,10 +573,10 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="Isy-CV-pCe"/>
-                                                <exclude reference="zyd-96-rTK"/>
                                                 <exclude reference="agL-BR-hTB"/>
                                                 <exclude reference="zTb-gS-daM"/>
+                                                <exclude reference="Isy-CV-pCe"/>
+                                                <exclude reference="zyd-96-rTK"/>
                                                 <exclude reference="DEI-G2-Z2C"/>
                                                 <exclude reference="U2g-O1-Ydg"/>
                                                 <exclude reference="YbU-BC-d1c"/>
@@ -681,7 +694,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Ready to Use" id="ctl-WX-xIV">
-                        <barButtonItem key="rightBarButtonItem" title="Use Insulator" id="Fpp-fp-OHj"/>
+                        <barButtonItem key="rightBarButtonItem" title="Use Insulator" id="Fpp-fp-OHj">
+                            <connections>
+                                <action selector="closeModal:" destination="a98-yB-nB9" id="C5I-R9-zrN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDp-Va-bjB" userLabel="First Responder" sceneMemberID="firstResponder"/>
