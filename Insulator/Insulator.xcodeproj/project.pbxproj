@@ -15,9 +15,9 @@
 		1B0A94AB1A6C809E00DCFC85 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B0A94A91A6C809E00DCFC85 /* LaunchScreen.xib */; };
 		1B0A94B71A6C809E00DCFC85 /* InsulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A94B61A6C809E00DCFC85 /* InsulatorTests.swift */; };
 		1B165B751A6EA9F20096F290 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B165B741A6EA9F20096F290 /* Calculator.swift */; };
-		1B3834521AD1CCE10039CD6C /* BloodGlucoseUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3834511AD1CCE10039CD6C /* BloodGlucoseUnit.swift */; };
 		1B3FE1C41AD6B437003B32AC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3FE1C31AD6B437003B32AC /* WelcomeViewController.swift */; };
 		1B7E266F1AFCD31100F430FB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B7E266E1AFCD31100F430FB /* MessageUI.framework */; };
+		1B82F1C71B027CA400CAA41D /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B82F1C61B027CA400CAA41D /* Tools.swift */; };
 		1B9BA7D51AFCFA7300AE57C4 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B9BA7D41AFCFA7300AE57C4 /* Social.framework */; };
 		1B9F720B1A7644E70062D606 /* ConstantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9F720A1A7644E70062D606 /* ConstantsViewController.swift */; };
 		1BCA7A3C1AB9D6BA005A3CCC /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCA7A3B1AB9D6BA005A3CCC /* SuggestionsViewController.swift */; };
@@ -50,9 +50,9 @@
 		1B0A94B51A6C809E00DCFC85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B0A94B61A6C809E00DCFC85 /* InsulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsulatorTests.swift; sourceTree = "<group>"; };
 		1B165B741A6EA9F20096F290 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
-		1B3834511AD1CCE10039CD6C /* BloodGlucoseUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodGlucoseUnit.swift; sourceTree = "<group>"; };
 		1B3FE1C31AD6B437003B32AC /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1B7E266E1AFCD31100F430FB /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		1B82F1C61B027CA400CAA41D /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		1B9BA7D41AFCFA7300AE57C4 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		1B9F720A1A7644E70062D606 /* ConstantsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantsViewController.swift; sourceTree = "<group>"; };
 		1BCA7A3B1AB9D6BA005A3CCC /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 				1BD0B85F1AB35497000C909F /* HealthManager.swift */,
 				2E48EAD21AC975F400E0F856 /* PreferencesManager.swift */,
 				1B165B741A6EA9F20096F290 /* Calculator.swift */,
-				1B3834511AD1CCE10039CD6C /* BloodGlucoseUnit.swift */,
+				1B82F1C61B027CA400CAA41D /* Tools.swift */,
 				1B3834531AD1E75E0039CD6C /* View Controllers */,
 				1B0A94A41A6C809E00DCFC85 /* Main.storyboard */,
 				1B0A94A91A6C809E00DCFC85 /* LaunchScreen.xib */,
@@ -276,8 +276,8 @@
 				1B0A94A31A6C809E00DCFC85 /* VariablesViewController.swift in Sources */,
 				1B0A2B9F1AF7807200D8D0D6 /* SettingsViewController.swift in Sources */,
 				1BCA7A3C1AB9D6BA005A3CCC /* SuggestionsViewController.swift in Sources */,
-				1B3834521AD1CCE10039CD6C /* BloodGlucoseUnit.swift in Sources */,
 				1B0A94A11A6C809E00DCFC85 /* AppDelegate.swift in Sources */,
+				1B82F1C71B027CA400CAA41D /* Tools.swift in Sources */,
 				1B165B751A6EA9F20096F290 /* Calculator.swift in Sources */,
 				1BD0B8601AB35497000C909F /* HealthManager.swift in Sources */,
 				2E48EAD31AC975F400E0F856 /* PreferencesManager.swift in Sources */,

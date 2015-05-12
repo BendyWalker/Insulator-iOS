@@ -976,7 +976,7 @@
                         <outlet property="currentBloodGlucoseLevelTextField" destination="tFd-iJ-e6l" id="09I-sl-n3B"/>
                         <outlet property="rightBarButtonItem" destination="3sN-6Z-74e" id="6mP-vD-C9s"/>
                         <outlet property="suggestedDoseLabel" destination="UXc-RA-Oun" id="tCB-bO-X7k"/>
-                        <segue destination="gvP-Fu-3Oq" kind="presentation" identifier="welcome" id="erf-ct-fD0"/>
+                        <segue destination="gvP-Fu-3Oq" kind="presentation" identifier="Welcome" id="erf-ct-fD0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dPo-aL-wvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
