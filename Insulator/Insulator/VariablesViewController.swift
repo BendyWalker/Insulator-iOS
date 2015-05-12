@@ -39,13 +39,10 @@ class VariablesTableViewController: UITableViewController {
         
         updateUi()
         
-        if true {
-            self.performSegueWithIdentifier("welcome", sender: AnyObject?())
-
-//        if let build = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion") as? String {
-//            if preferencesManager.buildNumber != build {
-//                self.performSegueWithIdentifier("welcome", sender: AnyObject?())
-//        }
+        if let build = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion") as? String {
+            if preferencesManager.buildNumber != build {
+                self.performSegueWithIdentifier("welcome", sender: AnyObject?())
+            }
         }
     }
     
@@ -112,24 +109,7 @@ class VariablesTableViewController: UITableViewController {
     }
     
     func updateUi() {
-        let bloodGlucoseUnit = preferencesManager.bloodGlucoseUnit
-        let placeholder: String = bloodGlucoseUnit.rawValue
-        var keyboardType: UIKeyboardType
-        
-        switch bloodGlucoseUnit {
-        case .mmol: keyboardType = .DecimalPad
-        case .mgdl: keyboardType = .NumberPad
-        }
-        
-        currentBloodGlucoseLevelTextField.placeholder = placeholder
-        currentBloodGlucoseLevelTextField.keyboardType = keyboardType
-        carbohydratesInMealTextField.keyboardType = keyboardType
-        
-        if preferencesManager.allowFloatingPointCarbohydrates {
-            carbohydratesInMealTextField.keyboardType = UIKeyboardType.DecimalPad
-        } else {
-            carbohydratesInMealTextField.keyboardType = UIKeyboardType.NumberPad
-        }
+        currentBloodGlucoseLevelTextField.placeholder = preferencesManager.bloodGlucoseUnit.rawValue
     }
     
     func clearFields() {
@@ -178,6 +158,14 @@ class VariablesTableViewController: UITableViewController {
                 let bloodGlucoseLevel = (currentBloodGlucoseLevelText as NSString).doubleValue
                 let carbohydrates = (carbohydratesInMealText as NSString).doubleValue
                 
+                if preferencesManager.bloodGlucoseUnit == .mmol {
+                currentBloodGlucoseLevelTextField.text = addDecimalPlace(currentBloodGlucoseLevelTextField.text)
+                }
+                
+                if preferencesManager.allowFloatingPointCarbohydrates {
+                    carbohydratesInMealTextField.text = addDecimalPlace(carbohydratesInMealTextField.text)
+                }
+                
                 calculateDose(currentBloodGlucoseLevel: bloodGlucoseLevel, carbohydratesInMeal: carbohydrates)
             }
         }
@@ -190,5 +178,48 @@ class VariablesTableViewController: UITableViewController {
         suggestedDoseLabel.text = "\(calculator.getSuggestedDose())"
         carbohydrateDoseLabel.text = "\(calculator.getCarbohydrateDose())"
         correctiveDoseLabel.text = "\(calculator.getCorrectiveDose())"
+    }
+    
+    func addDecimalPlace(string: String) -> String {
+        let point: Character = "."
+        let zero: Character = "0"
+        
+        var index = 0
+        var indexToRemove = 0
+        var editedString = ""
+        
+        for character in string {
+            if index == 0 {
+                if character == zero {
+                } else {
+                editedString.append(character)
+                }
+            } else if index > 0 {
+                if character == point {
+                } else {
+                    editedString.append(character)
+                }
+            }
+            index++
+        }
+        
+        let length = count(editedString)
+        index = 0
+        var newString = ""
+        
+        for character in editedString {
+            if length == 1 {
+                newString += "0.\(character)"
+            } else {
+                if index == length - 1 {
+                    newString.append(point)
+                }
+                newString.append(character)
+            }
+            
+            index++
+        }
+        println(index)
+        return newString
     }
 }
