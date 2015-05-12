@@ -42,6 +42,7 @@ class VariablesTableViewController: UITableViewController {
                 self.performSegueWithIdentifier("welcome", sender: AnyObject?())
             }
         }
+                self.performSegueWithIdentifier("Welcome", sender: AnyObject?())
     }
     
     override func viewWillAppear(animated: Bool) {
