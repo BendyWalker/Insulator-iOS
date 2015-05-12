@@ -4,9 +4,6 @@ class WelcomeViewController: UIViewController {
     let preferencesManager = PreferencesManager.sharedInstance
     let healthManager = HealthManager()
     
-    @IBOutlet weak var carbohydrateFactorTextField: UITextField!
-    @IBOutlet weak var correctiveFactorTextField: UITextField!
-    @IBOutlet weak var desiredBloodGlucoseTextField: UITextField!
     
     @IBAction func authoriseHealthKit(sender: UIButton) {
         self.healthManager.authoriseHealthKit { (authorized, error) -> Void in
@@ -30,8 +27,26 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func allowFloatingPointCarbohydratesSwitchValueChanged(sender: UISwitch) {
-        preferencesManager.allowFloatingPointCarbohydrates = sender.enabled
+        preferencesManager.allowFloatingPointCarbohydrates = sender.on
     }
+    
+    @IBAction func closeModal(sender: UIBarButtonItem) {
+        if let build = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion") as? String {
+            preferencesManager.buildNumber = build
+        }
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+class ConstantsWelcomeViewController: UIViewController {
+    let preferencesManager = PreferencesManager.sharedInstance
+    
+    
+    @IBOutlet weak var carbohydrateFactorTextField: UITextField!
+    @IBOutlet weak var correctiveFactorTextField: UITextField!
+    @IBOutlet weak var desiredBloodGlucoseTextField: UITextField!
+    
     
     @IBAction func saveValuesToPreferenceManager(sender: UITextField) {
         if let carbohydrateFactorText = carbohydrateFactorTextField.text {
@@ -48,21 +63,26 @@ class WelcomeViewController: UIViewController {
             let desiredBloodGlucose = (desiredBloodGlucoseText as NSString).doubleValue
             preferencesManager.desiredBloodGlucose = desiredBloodGlucose
         }
-        
-        preferencesManager.outputToLog()
-    }
-    
-    @IBAction func closeModal(sender: UIBarButtonItem) {
-        if let build = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion") as? String {
-            preferencesManager.buildNumber = build
-        }
-        
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     
     override func viewDidLoad() {
-        preferencesManager.bloodGlucoseUnit = BloodGlucoseUnit.defaultUnit()
-        preferencesManager.allowFloatingPointCarbohydrates = false
+        carbohydrateFactorTextField.addTarget(self, action: "addDecimal", forControlEvents: UIControlEvents.EditingChanged)
+        correctiveFactorTextField.addTarget(self, action: "addDecimal", forControlEvents: UIControlEvents.EditingChanged)
+        desiredBloodGlucoseTextField.addTarget(self, action: "addDecimal", forControlEvents: UIControlEvents.EditingChanged)
+        
+        let placeholder = preferencesManager.bloodGlucoseUnit.rawValue
+        correctiveFactorTextField.placeholder = placeholder
+        desiredBloodGlucoseTextField.placeholder = placeholder
+    }
+    
+    
+    func addDecimal() {
+        carbohydrateFactorTextField.text = addDecimalPlace(carbohydrateFactorTextField.text)
+        
+        if preferencesManager.bloodGlucoseUnit == .mmol {
+            correctiveFactorTextField.text = addDecimalPlace(correctiveFactorTextField.text)
+            desiredBloodGlucoseTextField.text = addDecimalPlace(desiredBloodGlucoseTextField.text)
+        }
     }
 }
