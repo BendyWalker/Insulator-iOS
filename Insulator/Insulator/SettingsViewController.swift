@@ -163,7 +163,7 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     }
     
     func openAppStoreAtReviews() {
-        let identifer = 591613202
+        let identifer = 978321797
         UIApplication.sharedApplication().openURL(NSURL(string: "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&id=\(identifer)")!)
     }
     
