@@ -46,6 +46,7 @@ class ConstantsWelcomeViewController: UIViewController {
     @IBOutlet weak var carbohydrateFactorTextField: UITextField!
     @IBOutlet weak var correctiveFactorTextField: UITextField!
     @IBOutlet weak var desiredBloodGlucoseTextField: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     
     @IBAction func saveValuesToPreferenceManager(sender: UITextField) {
@@ -74,8 +75,30 @@ class ConstantsWelcomeViewController: UIViewController {
         let placeholder = preferencesManager.bloodGlucoseUnit.rawValue
         correctiveFactorTextField.placeholder = placeholder
         desiredBloodGlucoseTextField.placeholder = placeholder
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil)
     }
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardDidShowNotification, object: nil)
+    }
+    
+    
+    func keyboardWasShown(notification: NSNotification) {
+        let info: NSDictionary = notification.userInfo!
+        let value: NSValue = info.valueForKey(UIKeyboardFrameBeginUserInfoKey) as! NSValue
+        let keyboardSize: CGSize = value.CGRectValue().size
+        let contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height, 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        
+        var rect = self.view.frame
+        rect.size.height = (rect.size.height - keyboardSize.height)
+        
+        if !CGRectContainsPoint(rect, desiredBloodGlucoseTextField.frame.origin) {
+            self.scrollView.scrollRectToVisible(desiredBloodGlucoseTextField.frame, animated: true)
+        }
+    }
     
     func addDecimal() {
         carbohydrateFactorTextField.text = addDecimalPlace(carbohydrateFactorTextField.text)

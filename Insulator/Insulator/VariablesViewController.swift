@@ -37,12 +37,11 @@ class VariablesTableViewController: UITableViewController {
         
         updateUi()
         
-        if let build = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion") as? String {
-            if preferencesManager.buildNumber != build {
-                self.performSegueWithIdentifier("welcome", sender: AnyObject?())
-            }
-        }
+//        if let build = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion") as? String {
+//            if preferencesManager.buildNumber != build {
                 self.performSegueWithIdentifier("Welcome", sender: AnyObject?())
+//            }
+//        }
     }
     
     override func viewWillAppear(animated: Bool) {
