@@ -153,17 +153,21 @@ class VariablesTableViewController: UITableViewController {
     func attemptDoseCalculation() {
         if let currentBloodGlucoseLevelText = currentBloodGlucoseLevelTextField.text {
             if let carbohydratesInMealText = carbohydratesInMealTextField.text {
-                let bloodGlucoseLevel = (currentBloodGlucoseLevelText as NSString).doubleValue
-                let carbohydrates = (carbohydratesInMealText as NSString).doubleValue
+                var finalCurrentBloodGlucoseLevelText = currentBloodGlucoseLevelText
+                var finalCarbohydratesInMealText = carbohydratesInMealText
                 
                 if preferencesManager.bloodGlucoseUnit == .mmol {
-                currentBloodGlucoseLevelTextField.text = addDecimalPlace(currentBloodGlucoseLevelTextField.text)
+                    currentBloodGlucoseLevelTextField.text = addDecimalPlace(currentBloodGlucoseLevelText)
+                    finalCurrentBloodGlucoseLevelText = currentBloodGlucoseLevelTextField.text
                 }
                 
                 if preferencesManager.allowFloatingPointCarbohydrates {
-                    carbohydratesInMealTextField.text = addDecimalPlace(carbohydratesInMealTextField.text)
+                    carbohydratesInMealTextField.text = addDecimalPlace(carbohydratesInMealText)
+                    finalCarbohydratesInMealText = carbohydratesInMealTextField.text
                 }
                 
+                let bloodGlucoseLevel = (finalCurrentBloodGlucoseLevelText as NSString).doubleValue
+                let carbohydrates = (finalCarbohydratesInMealText as NSString).doubleValue
                 calculateDose(currentBloodGlucoseLevel: bloodGlucoseLevel, carbohydratesInMeal: carbohydrates)
             }
         }
