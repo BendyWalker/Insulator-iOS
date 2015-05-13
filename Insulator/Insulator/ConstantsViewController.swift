@@ -26,6 +26,8 @@ class ConstantsTableViewController: UITableViewController {
         carbohydrateFactorTextField.addTarget(self, action: "addDecimal", forControlEvents: UIControlEvents.EditingChanged)
         correctiveFactorTextField.addTarget(self, action: "addDecimal", forControlEvents: UIControlEvents.EditingChanged)
         desiredBloodGlucoseTextField.addTarget(self, action: "addDecimal", forControlEvents: UIControlEvents.EditingChanged)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -36,6 +38,10 @@ class ConstantsTableViewController: UITableViewController {
         tableView.setNeedsLayout()
         tableView.layoutIfNeeded()
         tableView.reloadData()
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardDidShowNotification, object: nil)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -92,5 +98,21 @@ class ConstantsTableViewController: UITableViewController {
         carbohydrateFactorTextField.text = "\(preferencesManager.carbohydrateFactor)"
         correctiveFactorTextField.text = "\(preferencesManager.correctiveFactor)"
         desiredBloodGlucoseTextField.text = "\(preferencesManager.desiredBloodGlucose)"
+    }
+    
+    func keyboardWasShown(notification: NSNotification) {
+        let info: NSDictionary = notification.userInfo!
+        let value: NSValue = info.valueForKey(UIKeyboardFrameBeginUserInfoKey) as! NSValue
+        let keyboardSize: CGSize = value.CGRectValue().size
+        let contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height, 0.0)
+        tableView.contentInset = contentInsets
+        tableView.scrollIndicatorInsets = contentInsets
+        
+        var rect = self.view.frame
+        rect.size.height = (rect.size.height - keyboardSize.height)
+        
+        if !CGRectContainsPoint(rect, desiredBloodGlucoseTextField.frame.origin) {
+            self.tableView.scrollRectToVisible(desiredBloodGlucoseTextField.frame, animated: true)
+        }
     }
 }
