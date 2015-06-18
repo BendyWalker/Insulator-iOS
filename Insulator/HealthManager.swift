@@ -6,11 +6,8 @@ class HealthManager {
     let preferencesManager = PreferencesManager.sharedInstance
     
     func authoriseHealthKit(completion: ((success: Bool, error: NSError!) -> Void)!) {
-        let healthKitTypesToRead = NSSet(array:[
-            HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodGlucose)
-            ])
-        
-        let healthKitTypesToWrite = NSSet(array: [])
+        let typesToShare = Set<HKSampleType>()
+        let typesToRead = Set<HKObjectType>(arrayLiteral: HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodGlucose)!);
         
         if !HKHealthStore.isHealthDataAvailable() {
             let error = NSError(domain: "com.bendywalker.Insulator", code: 2, userInfo: [NSLocalizedDescriptionKey:"HealthKit is not available on this device"])
@@ -22,7 +19,7 @@ class HealthManager {
             return
         }
         
-        healthKitStore.requestAuthorizationToShareTypes(healthKitTypesToWrite as Set<NSObject>, readTypes: healthKitTypesToRead as Set<NSObject>) {
+        healthKitStore.requestAuthorizationToShareTypes(typesToShare, readTypes: typesToRead) {
             (success, error) -> Void in
             
             if completion != nil {
@@ -32,7 +29,7 @@ class HealthManager {
     }
     
     func getAuthorisationStatus(completion: ((authorisationStatus: HKAuthorizationStatus) -> Void)!) {
-        let authorisation = healthKitStore.authorizationStatusForType(HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodGlucose))
+        let authorisation = healthKitStore.authorizationStatusForType(HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodGlucose)!)
         
         completion(authorisationStatus: authorisation)
     }
@@ -41,7 +38,7 @@ class HealthManager {
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         let sampleType = HKSampleType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodGlucose)
         
-        let query = HKSampleQuery(sampleType: sampleType, predicate: nil, limit: 1, sortDescriptors: [sortDescriptor]) { query, results, error in
+        let query = HKSampleQuery(sampleType: sampleType!, predicate: nil, limit: 1, sortDescriptors: [sortDescriptor]) { query, results, error in
             if let samples = results as? [HKQuantitySample] {
                 if !samples.isEmpty {
                     let sample = samples.first!

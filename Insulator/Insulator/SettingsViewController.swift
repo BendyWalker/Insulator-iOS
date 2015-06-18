@@ -204,7 +204,7 @@ class BloodGlucoseUnitTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("BloodGlucoseUnitCell") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("BloodGlucoseUnitCell") as UITableViewCell!
         
         if let bloodGlucoseUnit = BloodGlucoseUnit.fromInt(indexPath.row) {
             cell.textLabel?.text = bloodGlucoseUnit.rawValue
