@@ -14,8 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SKPaymentTransactionObser
         return true
     }
     
-    func paymentQueue(queue: SKPaymentQueue!, updatedTransactions transactions: [AnyObject]!) {
-        for transaction in transactions as! [SKPaymentTransaction] {
+    func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transaction in transactions as [SKPaymentTransaction] {
             switch transaction.transactionState {
             case .Purchased:
                 queue.finishTransaction(transaction)

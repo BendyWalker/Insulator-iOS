@@ -123,12 +123,12 @@ class VariablesTableViewController: UITableViewController {
     func checkHealthKitAuthorisation() {
         self.healthManager.authoriseHealthKit { (authorized, error) -> Void in
             if authorized {
-                println("HealthKit authorization received.")
+                print("HealthKit authorization received.")
                 self.updateCurrentBloodGlucoseTextFieldFromHealthKit()
             } else {
-                println("HealthKit authorization denied!")
+                print("HealthKit authorization denied!")
                 if error != nil {
-                    println("\(error)")
+                    print("\(error)")
                 }
             }
         }
@@ -173,7 +173,7 @@ class VariablesTableViewController: UITableViewController {
         }
     }
     
-    func calculateDose(#currentBloodGlucoseLevel: Double, carbohydratesInMeal: Double) {
+    func calculateDose(currentBloodGlucoseLevel currentBloodGlucoseLevel: Double, carbohydratesInMeal: Double) {
         
         let calculator = Calculator(bloodGlucoseUnit: preferencesManager.bloodGlucoseUnit, carbohydrateFactor: preferencesManager.carbohydrateFactor, correctiveFactor: preferencesManager.correctiveFactor, desiredBloodGlucoseLevel: preferencesManager.desiredBloodGlucose, currentBloodGlucoseLevel: currentBloodGlucoseLevel, carbohydratesInMeal: carbohydratesInMeal)
         

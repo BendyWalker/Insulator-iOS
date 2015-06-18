@@ -50,8 +50,8 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
         NSNotificationCenter.defaultCenter().removeObserver(self, name: PreferencesDidChangeNotification, object: nil)
     }
     
-    func productsRequest(request: SKProductsRequest!, didReceiveResponse response: SKProductsResponse!) {
-        products = response.products as! [SKProduct]
+    func productsRequest(request: SKProductsRequest, didReceiveResponse response: SKProductsResponse) {
+        products = response.products as [SKProduct]
         
         let priceFormatter = NSNumberFormatter()
         priceFormatter.formatterBehavior = NSNumberFormatterBehavior.Behavior10_4
@@ -131,7 +131,7 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
         tableView.reloadData()
     }
     
-    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     

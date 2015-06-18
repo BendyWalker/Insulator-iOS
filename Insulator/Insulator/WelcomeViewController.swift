@@ -8,11 +8,11 @@ class WelcomeViewController: UIViewController {
     @IBAction func authoriseHealthKit(sender: UIButton) {
         self.healthManager.authoriseHealthKit { (authorized, error) -> Void in
             if authorized {
-                println("HealthKit authorization received.")
+                print("HealthKit authorization received.")
             } else {
-                println("HealthKit authorization denied!")
+                print("HealthKit authorization denied!")
                 if error != nil {
-                    println("\(error)")
+                    print("\(error)")
                 }
             }
         }

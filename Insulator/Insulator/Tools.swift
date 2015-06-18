@@ -33,7 +33,7 @@ func addDecimalPlace(string: String) -> String {
     var indexToRemove = 0
     var editedString = ""
     
-    for character in string {
+    for character in string.characters {
         if index == 0 {
             if character == zero {
             } else {
@@ -48,11 +48,11 @@ func addDecimalPlace(string: String) -> String {
         index++
     }
     
-    let length = count(editedString)
+    let length = editedString.characters.count
     index = 0
     var newString = ""
     
-    for character in editedString {
+    for character in editedString.characters {
         if length == 1 {
             newString += "0.\(character)"
         } else {
