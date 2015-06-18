@@ -13,7 +13,6 @@
 		1B0A94A61A6C809E00DCFC85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B0A94A41A6C809E00DCFC85 /* Main.storyboard */; };
 		1B0A94A81A6C809E00DCFC85 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0A94A71A6C809E00DCFC85 /* Images.xcassets */; };
 		1B0A94AB1A6C809E00DCFC85 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B0A94A91A6C809E00DCFC85 /* LaunchScreen.xib */; };
-		1B0A94B71A6C809E00DCFC85 /* InsulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A94B61A6C809E00DCFC85 /* InsulatorTests.swift */; };
 		1B165B751A6EA9F20096F290 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B165B741A6EA9F20096F290 /* Calculator.swift */; };
 		1B3FE1C41AD6B437003B32AC /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3FE1C31AD6B437003B32AC /* WelcomeViewController.swift */; };
 		1B7E266F1AFCD31100F430FB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B7E266E1AFCD31100F430FB /* MessageUI.framework */; };
@@ -28,16 +27,6 @@
 		2E48EAD31AC975F400E0F856 /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48EAD21AC975F400E0F856 /* PreferencesManager.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		1B0A94B11A6C809E00DCFC85 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B0A94931A6C809E00DCFC85 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1B0A949A1A6C809E00DCFC85;
-			remoteInfo = Insulator;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		1B0A2B9E1AF7807200D8D0D6 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1B0A949B1A6C809E00DCFC85 /* Insulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Insulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,9 +36,6 @@
 		1B0A94A51A6C809E00DCFC85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B0A94A71A6C809E00DCFC85 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1B0A94AA1A6C809E00DCFC85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		1B0A94B01A6C809E00DCFC85 /* InsulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InsulatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B0A94B51A6C809E00DCFC85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B0A94B61A6C809E00DCFC85 /* InsulatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsulatorTests.swift; sourceTree = "<group>"; };
 		1B165B741A6EA9F20096F290 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		1B3FE1C31AD6B437003B32AC /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		1B7E266E1AFCD31100F430FB /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -77,13 +63,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B0A94AD1A6C809E00DCFC85 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -95,7 +74,6 @@
 				1BFE62E21AFA33CD0056A0FA /* StoreKit.framework */,
 				1BD0B85D1AB35211000C909F /* HealthKit.framework */,
 				1B0A949D1A6C809E00DCFC85 /* Insulator */,
-				1B0A94B31A6C809E00DCFC85 /* InsulatorTests */,
 				1B0A949C1A6C809E00DCFC85 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,7 +82,6 @@
 			isa = PBXGroup;
 			children = (
 				1B0A949B1A6C809E00DCFC85 /* Insulator.app */,
-				1B0A94B01A6C809E00DCFC85 /* InsulatorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,23 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				1B0A949F1A6C809E00DCFC85 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		1B0A94B31A6C809E00DCFC85 /* InsulatorTests */ = {
-			isa = PBXGroup;
-			children = (
-				1B0A94B61A6C809E00DCFC85 /* InsulatorTests.swift */,
-				1B0A94B41A6C809E00DCFC85 /* Supporting Files */,
-			);
-			path = InsulatorTests;
-			sourceTree = "<group>";
-		};
-		1B0A94B41A6C809E00DCFC85 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				1B0A94B51A6C809E00DCFC85 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -185,24 +145,6 @@
 			productReference = 1B0A949B1A6C809E00DCFC85 /* Insulator.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1B0A94AF1A6C809E00DCFC85 /* InsulatorTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1B0A94BD1A6C809E00DCFC85 /* Build configuration list for PBXNativeTarget "InsulatorTests" */;
-			buildPhases = (
-				1B0A94AC1A6C809E00DCFC85 /* Sources */,
-				1B0A94AD1A6C809E00DCFC85 /* Frameworks */,
-				1B0A94AE1A6C809E00DCFC85 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1B0A94B21A6C809E00DCFC85 /* PBXTargetDependency */,
-			);
-			name = InsulatorTests;
-			productName = InsulatorTests;
-			productReference = 1B0A94B01A6C809E00DCFC85 /* InsulatorTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -225,10 +167,6 @@
 							};
 						};
 					};
-					1B0A94AF1A6C809E00DCFC85 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 1B0A949A1A6C809E00DCFC85;
-					};
 				};
 			};
 			buildConfigurationList = 1B0A94961A6C809E00DCFC85 /* Build configuration list for PBXProject "Insulator" */;
@@ -245,7 +183,6 @@
 			projectRoot = "";
 			targets = (
 				1B0A949A1A6C809E00DCFC85 /* Insulator */,
-				1B0A94AF1A6C809E00DCFC85 /* InsulatorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -258,13 +195,6 @@
 				1B0A94A61A6C809E00DCFC85 /* Main.storyboard in Resources */,
 				1B0A94AB1A6C809E00DCFC85 /* LaunchScreen.xib in Resources */,
 				1B0A94A81A6C809E00DCFC85 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1B0A94AE1A6C809E00DCFC85 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,23 +219,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B0A94AC1A6C809E00DCFC85 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1B0A94B71A6C809E00DCFC85 /* InsulatorTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		1B0A94B21A6C809E00DCFC85 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1B0A949A1A6C809E00DCFC85 /* Insulator */;
-			targetProxy = 1B0A94B11A6C809E00DCFC85 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1B0A94A41A6C809E00DCFC85 /* Main.storyboard */ = {
@@ -437,42 +351,6 @@
 			};
 			name = Release;
 		};
-		1B0A94BE1A6C809E00DCFC85 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = InsulatorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bendywalker.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Insulator.app/Insulator";
-			};
-			name = Debug;
-		};
-		1B0A94BF1A6C809E00DCFC85 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = InsulatorTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bendywalker.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Insulator.app/Insulator";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -490,15 +368,6 @@
 			buildConfigurations = (
 				1B0A94BB1A6C809E00DCFC85 /* Debug */,
 				1B0A94BC1A6C809E00DCFC85 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1B0A94BD1A6C809E00DCFC85 /* Build configuration list for PBXNativeTarget "InsulatorTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1B0A94BE1A6C809E00DCFC85 /* Debug */,
-				1B0A94BF1A6C809E00DCFC85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
