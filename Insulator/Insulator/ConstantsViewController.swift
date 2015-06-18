@@ -10,13 +10,17 @@ class ConstantsTableViewController: UITableViewController {
     
     
     @IBAction func closeModal(sender: AnyObject) {
-        let carbohydrateFactor = (carbohydrateFactorTextField.text as NSString).doubleValue
-        let correctiveFactor = (correctiveFactorTextField.text as NSString).doubleValue
-        let desiredBloodGlucose = (desiredBloodGlucoseTextField.text as NSString).doubleValue
+        if let carbohydrateFactorText = carbohydrateFactorTextField.text {
+            preferencesManager.carbohydrateFactor = carbohydrateFactorText.doubleValue
+        }
         
-        preferencesManager.carbohydrateFactor = carbohydrateFactor
-        preferencesManager.correctiveFactor = correctiveFactor
-        preferencesManager.desiredBloodGlucose = desiredBloodGlucose
+        if let correctiveFactorText = correctiveFactorTextField.text {
+            preferencesManager.correctiveFactor = correctiveFactorText.doubleValue
+        }
+        
+        if let desiredBloodGlucoseText = desiredBloodGlucoseTextField.text {
+            preferencesManager.desiredBloodGlucose = desiredBloodGlucoseText.doubleValue
+        }
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -80,11 +84,18 @@ class ConstantsTableViewController: UITableViewController {
     
     
     func addDecimal() {
-        carbohydrateFactorTextField.text = addDecimalPlace(carbohydrateFactorTextField.text)
+        if let carbohydrateFactorText = carbohydrateFactorTextField.text {
+            carbohydrateFactorTextField.text = addDecimalPlace(carbohydrateFactorText)
+        }
         
         if preferencesManager.bloodGlucoseUnit == .mmol {
-            correctiveFactorTextField.text = addDecimalPlace(correctiveFactorTextField.text)
-            desiredBloodGlucoseTextField.text = addDecimalPlace(desiredBloodGlucoseTextField.text)
+            if let correctiveFactorText = correctiveFactorTextField.text {
+                correctiveFactorTextField.text = addDecimalPlace(correctiveFactorText)
+            }
+            
+            if let desiredBloodGlucoseText = desiredBloodGlucoseTextField.text {
+                desiredBloodGlucoseTextField.text = addDecimalPlace(desiredBloodGlucoseText)
+            }
         }
     }
     

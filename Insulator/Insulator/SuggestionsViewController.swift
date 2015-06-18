@@ -14,11 +14,13 @@ class SuggestionsViewController: UITableViewController {
     @IBOutlet weak var correctiveFactorTableViewCell: UITableViewCell!
     
     @IBAction func closeModal(sender: UIBarButtonItem) {
-        let carbohydrateFactor = (carbohydrateFactorLabel.text! as NSString).doubleValue
-        let correctiveFactor = (correctiveFactorLabel.text! as NSString).doubleValue
+        if let carbohydrateFactorText = carbohydrateFactorLabel.text {
+            if saveCarbohydrateFactor { preferencesManager.carbohydrateFactor = carbohydrateFactorText.doubleValue }
+        }
         
-        if saveCarbohydrateFactor { preferencesManager.carbohydrateFactor = carbohydrateFactor }
-        if saveCorrectiveFactor { preferencesManager.correctiveFactor = correctiveFactor }
+        if let correctiveFactorText = correctiveFactorLabel.text {
+            if saveCorrectiveFactor { preferencesManager.correctiveFactor = correctiveFactorText.doubleValue }
+        }
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -85,20 +87,23 @@ class SuggestionsViewController: UITableViewController {
     
     func calculateSuggestions(sender: UITextField) {
         let bloodGlucoseUnit = self.preferencesManager.bloodGlucoseUnit
-        let totalDailyDose = (totalDailyDoseTextField.text as NSString).doubleValue
-        let calculator = Calculator(bloodGlucoseUnit: bloodGlucoseUnit, totalDailyDose: totalDailyDose)
-        var carbohydrateFactorString: String
-        var correctiveFactorString: String
         
-        if totalDailyDose == 0 {
-            carbohydrateFactorString = "0.0";
-            correctiveFactorString = "0.0";
-        } else {
-            carbohydrateFactorString = "\(calculator.getCarbohydrateFactor())";
-            correctiveFactorString = "\(calculator.getCorrectiveFactor())";
+        if let totalDailyDoseText = totalDailyDoseTextField.text {
+            let totalDailyDose = totalDailyDoseText.doubleValue
+            let calculator = Calculator(bloodGlucoseUnit: bloodGlucoseUnit, totalDailyDose: totalDailyDose)
+            var carbohydrateFactorString: String
+            var correctiveFactorString: String
+            
+            if totalDailyDose == 0 {
+                carbohydrateFactorString = "0.0";
+                correctiveFactorString = "0.0";
+            } else {
+                carbohydrateFactorString = "\(calculator.getCarbohydrateFactor())";
+                correctiveFactorString = "\(calculator.getCorrectiveFactor())";
+            }
+            
+            carbohydrateFactorLabel.text = carbohydrateFactorString
+            correctiveFactorLabel.text = correctiveFactorString
         }
-        
-        carbohydrateFactorLabel.text = carbohydrateFactorString
-        correctiveFactorLabel.text = correctiveFactorString
     }
 }

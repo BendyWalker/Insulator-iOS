@@ -51,17 +51,17 @@ class ConstantsWelcomeViewController: UIViewController {
     
     @IBAction func saveValuesToPreferenceManager(sender: UITextField) {
         if let carbohydrateFactorText = carbohydrateFactorTextField.text {
-            let carbohydrateFactor = (carbohydrateFactorText as NSString).doubleValue
+            let carbohydrateFactor = carbohydrateFactorText.doubleValue
             preferencesManager.carbohydrateFactor = carbohydrateFactor
         }
         
         if let correctiveFactorText = correctiveFactorTextField.text {
-            let correctiveFactor = (correctiveFactorText as NSString).doubleValue
+            let correctiveFactor = correctiveFactorText.doubleValue
             preferencesManager.correctiveFactor = correctiveFactor
         }
         
         if let desiredBloodGlucoseText = desiredBloodGlucoseTextField.text {
-            let desiredBloodGlucose = (desiredBloodGlucoseText as NSString).doubleValue
+            let desiredBloodGlucose = desiredBloodGlucoseText.doubleValue
             preferencesManager.desiredBloodGlucose = desiredBloodGlucose
         }
     }
@@ -101,11 +101,15 @@ class ConstantsWelcomeViewController: UIViewController {
     }
     
     func addDecimal() {
-        carbohydrateFactorTextField.text = addDecimalPlace(carbohydrateFactorTextField.text)
+        if let carbohydrateFactorText = carbohydrateFactorTextField.text {
+            carbohydrateFactorTextField.text = addDecimalPlace(carbohydrateFactorText)
+        }
         
         if preferencesManager.bloodGlucoseUnit == .mmol {
-            correctiveFactorTextField.text = addDecimalPlace(correctiveFactorTextField.text)
-            desiredBloodGlucoseTextField.text = addDecimalPlace(desiredBloodGlucoseTextField.text)
+            if let correctiveFactorText = correctiveFactorTextField.text, desiredBloodGlucoseText = desiredBloodGlucoseTextField.text {
+                correctiveFactorTextField.text = addDecimalPlace(correctiveFactorText)
+                desiredBloodGlucoseTextField.text = addDecimalPlace(desiredBloodGlucoseText)
+            }
         }
     }
 }
