@@ -30,7 +30,6 @@ func addDecimalPlace(string: String) -> String {
     let zero: Character = "0"
     
     var index = 0
-    var indexToRemove = 0
     var editedString = ""
     
     for character in string.characters {

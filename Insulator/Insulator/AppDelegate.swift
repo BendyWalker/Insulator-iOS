@@ -9,7 +9,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SKPaymentTransactionObser
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window?.tintColor = UIColor(red:1, green:0.37, blue:0.4, alpha:1)
-        let preferenceManager = PreferencesManager.sharedInstance
         SKPaymentQueue.defaultQueue().addTransactionObserver(self)
         return true
     }
