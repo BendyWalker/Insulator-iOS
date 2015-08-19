@@ -145,8 +145,7 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     
     func displayTwitterActionSheet() {
         let viewProfileAlertAction = UIAlertAction(title: "View Profile", style: .Default) { alertAction in
-            let twitterWebViewController = TwitterWebViewController()
-            self.presentViewController(twitterWebViewController, animated: true, completion: nil)
+            UIApplication.sharedApplication().openURL(NSURL(string: "http://www.twitter.com/insulatorapp")!)
         }
         
         let sendTweetAlertAction = UIAlertAction(title: "Send Tweet", style: .Default) { alertAction in
@@ -173,24 +172,6 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
 
     }
 }
-
-class TwitterWebViewController: UINavigationController {
-    let webView = UIWebView()
-    let viewController = UIViewController()
-    
-    override func viewDidLoad() {
-        viewController.view = webView
-        viewController.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "closeModal")
-        self.showViewController(viewController, sender: nil)
-        let urlRequest = NSURLRequest(URL: NSURL(string: "http://www.twitter.com/insulatorapp")!)
-        webView.loadRequest(urlRequest)
-    }
-    
-    func closeModal() {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-}
-
 
 class BloodGlucoseUnitTableViewController: UITableViewController {
     let preferencesManager = PreferencesManager.sharedInstance
