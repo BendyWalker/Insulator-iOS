@@ -38,7 +38,11 @@ class HealthManager {
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         let sampleType = HKSampleType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodGlucose)
         
-        let query = HKSampleQuery(sampleType: sampleType!, predicate: nil, limit: 1, sortDescriptors: [sortDescriptor]) { query, results, error in
+        let oneDayAgo = NSDate(timeIntervalSinceNow: -86400)
+        let now = NSDate()
+        let lastDayPredicate = HKQuery.predicateForSamplesWithStartDate(oneDayAgo, endDate: now, options: .None)
+        
+        let query = HKSampleQuery(sampleType: sampleType!, predicate: lastDayPredicate, limit: 1, sortDescriptors: [sortDescriptor]) { query, results, error in
             if let samples = results as? [HKQuantitySample] {
                 if !samples.isEmpty {
                     let sample = samples.first!
