@@ -35,6 +35,23 @@ class HealthManager {
         completion(authorisationStatus: authorisation)
     }
     
+    func enableBackgroundUpdates() {
+        healthKitStore.enableBackgroundDeliveryForType(bloodGlucoseType!, frequency: HKUpdateFrequency.Immediate) { success, error in
+        }
+    }
+    
+    func observeBloodGlucose(completion: ((bloodGlucose: Double?) -> Void)) {
+        let query = HKObserverQuery(sampleType: bloodGlucoseType!, predicate: nil) { query, completionHandler, error in
+            self.queryBloodGlucose() { bloodGlucose in
+                completion(bloodGlucose: bloodGlucose)
+            }
+            
+            completionHandler()
+        }
+        
+        self.healthKitStore.executeQuery(query)
+    }
+    
     func queryBloodGlucose(completion: ((Double?) -> Void)) {
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
         
