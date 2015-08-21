@@ -5,10 +5,21 @@ import StoreKit
 class AppDelegate: UIResponder, UIApplicationDelegate, SKPaymentTransactionObserver {
 
     var window: UIWindow?
+    let healthManager = HealthManager()
+    let preferencesManager = PreferencesManager.sharedInstance
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window?.tintColor = UIColor(red:1, green:0.37, blue:0.4, alpha:1)
+        
+        healthManager.observeBloodGlucose() { bloodGlucose in
+            if let value = bloodGlucose {
+                self.preferencesManager.healthKitBloodGlucose = value
+            } else {
+                self.preferencesManager.healthKitBloodGlucose = 0
+            }
+        }
+        
         SKPaymentQueue.defaultQueue().addTransactionObserver(self)
         return true
     }

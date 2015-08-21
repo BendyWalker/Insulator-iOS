@@ -40,10 +40,14 @@ class HealthManager {
         }
     }
     
-    func observeBloodGlucose(completion: ((bloodGlucose: Double?) -> Void)) {
+    func observeBloodGlucose(completion: ((Double?) -> Void)) {
         let query = HKObserverQuery(sampleType: bloodGlucoseType!, predicate: nil) { query, completionHandler, error in
-            self.queryBloodGlucose() { bloodGlucose in
-                completion(bloodGlucose: bloodGlucose)
+            self.queryBloodGlucose() { sample in
+                if let bloodGlucose = sample {
+                    completion(bloodGlucose)
+                } else {
+                    completion(nil)
+                }
             }
             
             completionHandler()

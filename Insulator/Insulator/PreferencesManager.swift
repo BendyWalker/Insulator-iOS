@@ -51,6 +51,7 @@ class PreferencesManager {
     private let CarbohydrateFactorKey = "CarbohydrateFactorKey"
     private let CorrectiveFactorKey = "CorrectiveFactorKey"
     private let DesiredBloodGlucoseKey = "DesiredBloodGlucoseKey"
+    private let HealthKitBloodGlucoseKey = "HealthKitBloodGlucoseKey"
     
     // MARK: Properties
     
@@ -91,6 +92,12 @@ class PreferencesManager {
         }
     }
     
+    var healthKitBloodGlucose: Double {
+        didSet {
+            store.saveDouble(healthKitBloodGlucose, withKey: HealthKitBloodGlucoseKey)
+        }
+    }
+    
     // MARK: Singleton
     
     class var sharedInstance: PreferencesManager {
@@ -107,6 +114,7 @@ class PreferencesManager {
         self.carbohydrateFactor = store.loadDoubleWithKey(CarbohydrateFactorKey)
         self.correctiveFactor = store.loadDoubleWithKey(CorrectiveFactorKey)
         self.desiredBloodGlucose = store.loadDoubleWithKey(DesiredBloodGlucoseKey)
+        self.healthKitBloodGlucose = store.loadDoubleWithKey(HealthKitBloodGlucoseKey)
         
         if let buildNumberString = store.loadObjectWithKey(BuildNumberKey) as? String {
             self.buildNumber = buildNumberString

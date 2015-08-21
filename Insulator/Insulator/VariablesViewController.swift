@@ -34,6 +34,7 @@ class VariablesTableViewController: UITableViewController {
         carbohydratesInMealTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidEnd)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateUi", name: PreferencesDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateUi", name: UIApplicationDidBecomeActiveNotification, object: nil)
         
         updateUi()
         
@@ -53,6 +54,7 @@ class VariablesTableViewController: UITableViewController {
     }
     
     deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIApplicationDidBecomeActiveNotification, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: PreferencesDidChangeNotification, object: nil)
     }
     
@@ -85,7 +87,7 @@ class VariablesTableViewController: UITableViewController {
         case 1:
             switch indexPath.row {
             case 0:
-                checkHealthKitAuthorisation()
+                updateUi()
             default:
                 return
             }
@@ -107,7 +109,15 @@ class VariablesTableViewController: UITableViewController {
     }
     
     func updateUi() {
+        let healthKitBloodGlucose = self.preferencesManager.healthKitBloodGlucose
         currentBloodGlucoseLevelTextField.placeholder = preferencesManager.bloodGlucoseUnit.rawValue
+        
+        if healthKitBloodGlucose != 0 {
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.currentBloodGlucoseLevelTextField.text = "\(healthKitBloodGlucose)"
+                self.attemptDoseCalculation()
+            });
+        }
     }
     
     func clearFields() {
@@ -118,36 +128,6 @@ class VariablesTableViewController: UITableViewController {
         correctiveDoseLabel.text = "0.0"
         
         self.view.endEditing(true)
-    }
-    
-    func checkHealthKitAuthorisation() {
-        self.healthManager.authoriseHealthKit { (authorized, error) -> Void in
-            if authorized {
-                print("HealthKit authorization received.")
-                self.updateCurrentBloodGlucoseTextFieldFromHealthKit()
-            } else {
-                print("HealthKit authorization denied!")
-                if error != nil {
-                    print("\(error)")
-                }
-            }
-        }
-    }
-    
-    func updateCurrentBloodGlucoseTextFieldFromHealthKit() {
-        healthManager.queryBloodGlucose() { bloodGlucose in
-            if bloodGlucose != nil {
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.currentBloodGlucoseLevelTextField.text = "\(bloodGlucose!)"
-                    self.attemptDoseCalculation()
-                });
-            } else {
-                let alertView = UIAlertController(title: "No Data Found", message: "Insulator cannot find any Blood Glucose data in Health. This may be because you have denied access to Health data. To allow access, please open Health and change your settings.", preferredStyle: UIAlertControllerStyle.Alert)
-                let okButton = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
-                alertView.addAction(okButton)
-                self.presentViewController(alertView, animated: true, completion: nil)
-            }
-        }
     }
     
     func attemptDoseCalculation() {
