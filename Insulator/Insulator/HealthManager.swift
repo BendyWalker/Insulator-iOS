@@ -4,10 +4,11 @@ import HealthKit
 class HealthManager {
     let healthKitStore: HKHealthStore = HKHealthStore()
     let preferencesManager = PreferencesManager.sharedInstance
+    let bloodGlucoseType = HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodGlucose)
     
     func authoriseHealthKit(completion: ((success: Bool, error: NSError!) -> Void)!) {
         let typesToShare = Set<HKSampleType>()
-        let typesToRead = Set<HKObjectType>(arrayLiteral: HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodGlucose)!);
+        let typesToRead = Set<HKObjectType>(arrayLiteral: bloodGlucoseType!);
         
         if !HKHealthStore.isHealthDataAvailable() {
             let error = NSError(domain: "com.bendywalker.Insulator", code: 2, userInfo: [NSLocalizedDescriptionKey:"HealthKit is not available on this device"])
@@ -36,13 +37,12 @@ class HealthManager {
     
     func queryBloodGlucose(completion: ((Double?) -> Void)) {
         let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
-        let sampleType = HKSampleType.quantityTypeForIdentifier(HKQuantityTypeIdentifierBloodGlucose)
         
         let oneDayAgo = NSDate(timeIntervalSinceNow: -86400)
         let now = NSDate()
         let lastDayPredicate = HKQuery.predicateForSamplesWithStartDate(oneDayAgo, endDate: now, options: .None)
         
-        let query = HKSampleQuery(sampleType: sampleType!, predicate: lastDayPredicate, limit: 1, sortDescriptors: [sortDescriptor]) { query, results, error in
+        let query = HKSampleQuery(sampleType: bloodGlucoseType!, predicate: lastDayPredicate, limit: 1, sortDescriptors: [sortDescriptor]) { query, results, error in
             if let samples = results as? [HKQuantitySample] {
                 if !samples.isEmpty {
                     let sample = samples.first!
