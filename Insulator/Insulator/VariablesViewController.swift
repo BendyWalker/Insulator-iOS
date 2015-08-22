@@ -8,9 +8,9 @@ class VariablesTableViewController: UITableViewController {
     
     @IBOutlet weak var currentBloodGlucoseLevelTextField: UITextField!
     @IBOutlet weak var carbohydratesInMealTextField: UITextField!
-    @IBOutlet weak var correctiveDoseLabel: UILabel!
-    @IBOutlet weak var carbohydrateDoseLabel: UILabel!
     @IBOutlet weak var suggestedDoseLabel: UILabel!
+    @IBOutlet weak var carbohydrateDoseLabel: UILabel!
+    @IBOutlet weak var correctiveDoseLabel: UILabel!
     @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
 
     
@@ -59,16 +59,19 @@ class VariablesTableViewController: UITableViewController {
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0: return 2
-        case 1: return 1
-        case 2: return 3
+        case 1: return 3
         default: return 0
         }
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -84,13 +87,7 @@ class VariablesTableViewController: UITableViewController {
             default:
                 return
             }
-        case 1:
-            switch indexPath.row {
-            case 0:
-                updateUi()
-            default:
-                return
-            }
+            
             tableView.reloadData()
         default:
             return
