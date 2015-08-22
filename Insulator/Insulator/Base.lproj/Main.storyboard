@@ -699,7 +699,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="crN-42-FX3">
                                                     <rect key="frame" x="16" y="8" width="576" height="27"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="de6-oM-d5e">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="de6-oM-d5e">
                                                             <rect key="frame" x="0.0" y="0.0" width="490" height="27"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Blood Glucose" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qin-bH-TPf">
@@ -709,31 +709,28 @@
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" verticalCompressionResistancePriority="749" fixedFrame="YES" text="Enter your current blood glucose level" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6j2-Ae-AKC">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" text="Enter your current blood glucose level" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6j2-Ae-AKC" userLabel="Current Blood Glucose Description">
                                                                     <rect key="frame" x="0.0" y="20" width="490" height="7"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                             <animations/>
                                                         </stackView>
-                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="USX-O0-5o4">
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="USX-O0-5o4" userLabel="Current Blood Glucose Entry">
                                                             <rect key="frame" x="506" y="0.0" width="70" height="27"/>
                                                             <animations/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="Xk2-Ct-Ttb"/>
                                                             </constraints>
+                                                            <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                         </textField>
                                                     </subviews>
                                                     <animations/>
-                                                    <constraints>
-                                                        <constraint firstItem="de6-oM-d5e" firstAttribute="top" secondItem="crN-42-FX3" secondAttribute="top" id="Qpt-Ke-iJK"/>
-                                                        <constraint firstAttribute="bottom" secondItem="de6-oM-d5e" secondAttribute="bottom" id="hw3-S4-nMW"/>
-                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <animations/>
@@ -759,32 +756,30 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="g0V-7U-LXW">
                                                             <rect key="frame" x="0.0" y="0.0" width="490" height="27"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Carbohydrates in Meal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuM-Px-kLL">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Carbohydrates in Meal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IuM-Px-kLL">
                                                                     <rect key="frame" x="0.0" y="0.0" width="490" height="20"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" verticalCompressionResistancePriority="749" misplaced="YES" text="Enter how many carbohydrates you consumed in your meal" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2n-nK-rE5">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" text="Enter how many carbohydrates you consumed in your meal" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2n-nK-rE5" userLabel="Carbohydrates in Meal Description">
                                                                     <rect key="frame" x="0.0" y="20" width="490" height="7"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                             <animations/>
-                                                            <constraints>
-                                                                <constraint firstItem="d2n-nK-rE5" firstAttribute="top" secondItem="IuM-Px-kLL" secondAttribute="bottom" id="YwQ-3M-fK0"/>
-                                                            </constraints>
                                                         </stackView>
-                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="grams" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ceH-Mc-Ikj">
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="grams" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ceH-Mc-Ikj" userLabel="Carbohydrates In Meal Entry">
                                                             <rect key="frame" x="506" y="0.0" width="70" height="27"/>
                                                             <animations/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="70" id="Isd-Hn-0YU"/>
                                                             </constraints>
+                                                            <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                             <textInputTraits key="textInputTraits"/>
                                                         </textField>
@@ -861,7 +856,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="490" height="27"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cr-KA-QoW">
@@ -871,7 +866,7 @@
                                                                 <constraint firstAttribute="width" constant="70" id="fJi-6v-rp4"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -902,7 +897,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="490" height="27"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCu-NN-RKD">
@@ -912,7 +907,7 @@
                                                                 <constraint firstAttribute="width" constant="70" id="atJ-Mw-ibL"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -997,14 +992,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" text="Blood Glucose Unit" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUw-jT-wg6">
-                                                    <rect key="frame" x="8" y="8" width="480" height="12"/>
+                                                    <rect key="frame" x="16" y="8" width="472" height="12"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Choose your preferred blood glucose measurement unit" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHp-Ae-klT">
-                                                    <rect key="frame" x="8" y="20" width="480" height="15"/>
+                                                    <rect key="frame" x="16" y="20" width="472" height="15"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1020,9 +1015,9 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="uUw-jT-wg6" firstAttribute="leading" secondItem="6bo-5h-iAj" secondAttribute="leadingMargin" id="BcV-cX-8hT"/>
+                                                <constraint firstItem="uUw-jT-wg6" firstAttribute="leading" secondItem="6bo-5h-iAj" secondAttribute="leadingMargin" constant="8" id="BcV-cX-8hT"/>
                                                 <constraint firstAttribute="centerY" secondItem="2mY-4N-PZS" secondAttribute="centerY" id="Ium-3L-aRw"/>
-                                                <constraint firstItem="wHp-Ae-klT" firstAttribute="leading" secondItem="6bo-5h-iAj" secondAttribute="leadingMargin" id="JED-8H-nwC"/>
+                                                <constraint firstItem="wHp-Ae-klT" firstAttribute="leading" secondItem="6bo-5h-iAj" secondAttribute="leadingMargin" constant="8" id="JED-8H-nwC"/>
                                                 <constraint firstItem="2mY-4N-PZS" firstAttribute="leading" secondItem="wHp-Ae-klT" secondAttribute="trailing" constant="16" id="JkP-Vp-gne"/>
                                                 <constraint firstItem="uUw-jT-wg6" firstAttribute="top" secondItem="6bo-5h-iAj" secondAttribute="topMargin" id="SYN-kH-1hH"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="2mY-4N-PZS" secondAttribute="trailing" id="Z7g-w3-lJh"/>
@@ -1044,14 +1039,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" text="Carbohydrate Accuracy" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yn-my-RlF">
-                                                    <rect key="frame" x="8" y="8" width="519" height="12"/>
+                                                    <rect key="frame" x="16" y="8" width="511" height="12"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Enables use of decimals when entering carbohydrates" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gU9-Ge-Ttc">
-                                                    <rect key="frame" x="8" y="20" width="519" height="15"/>
+                                                    <rect key="frame" x="16" y="20" width="511" height="15"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1068,13 +1063,13 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="9Yn-my-RlF" firstAttribute="leading" secondItem="CW7-GC-wWQ" secondAttribute="leadingMargin" id="4nB-d4-sff"/>
+                                                <constraint firstItem="9Yn-my-RlF" firstAttribute="leading" secondItem="CW7-GC-wWQ" secondAttribute="leadingMargin" constant="8" id="4nB-d4-sff"/>
                                                 <constraint firstItem="9Yn-my-RlF" firstAttribute="top" secondItem="CW7-GC-wWQ" secondAttribute="topMargin" id="JLR-Ok-MPd"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="gU9-Ge-Ttc" secondAttribute="bottom" id="Pe9-gH-Uiu"/>
                                                 <constraint firstItem="gU9-Ge-Ttc" firstAttribute="top" secondItem="9Yn-my-RlF" secondAttribute="bottom" id="WkX-P0-APn"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="KmR-Au-Y9n" secondAttribute="trailing" id="bGx-Rr-yrP"/>
                                                 <constraint firstAttribute="centerY" secondItem="KmR-Au-Y9n" secondAttribute="centerY" id="gN2-W4-i7L"/>
-                                                <constraint firstItem="gU9-Ge-Ttc" firstAttribute="leading" secondItem="CW7-GC-wWQ" secondAttribute="leadingMargin" id="trb-sf-FHh"/>
+                                                <constraint firstItem="gU9-Ge-Ttc" firstAttribute="leading" secondItem="CW7-GC-wWQ" secondAttribute="leadingMargin" constant="8" id="trb-sf-FHh"/>
                                                 <constraint firstItem="KmR-Au-Y9n" firstAttribute="leading" secondItem="gU9-Ge-Ttc" secondAttribute="trailing" constant="16" id="tzT-Ha-2E2"/>
                                                 <constraint firstItem="KmR-Au-Y9n" firstAttribute="leading" secondItem="9Yn-my-RlF" secondAttribute="trailing" constant="16" id="zwl-l1-PTd"/>
                                             </constraints>
@@ -1094,7 +1089,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EwV-BF-2Xr">
-                                                    <rect key="frame" x="8" y="12" width="374" height="20"/>
+                                                    <rect key="frame" x="16" y="12" width="366" height="20"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1114,7 +1109,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="0BJ-w6-lJg" secondAttribute="trailing" id="ZHN-5E-wW5"/>
                                                 <constraint firstItem="0BJ-w6-lJg" firstAttribute="leading" secondItem="EwV-BF-2Xr" secondAttribute="trailing" constant="8" id="hgI-3N-Qfq"/>
                                                 <constraint firstAttribute="centerY" secondItem="EwV-BF-2Xr" secondAttribute="centerY" id="k15-Ca-UKC"/>
-                                                <constraint firstItem="EwV-BF-2Xr" firstAttribute="leading" secondItem="3fC-nA-awv" secondAttribute="leadingMargin" id="qbq-hR-mZO"/>
+                                                <constraint firstItem="EwV-BF-2Xr" firstAttribute="leading" secondItem="3fC-nA-awv" secondAttribute="leadingMargin" constant="8" id="qbq-hR-mZO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -1126,15 +1121,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOr-7S-Mf6">
-                                                    <rect key="frame" x="8" y="12" width="440" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOr-7S-Mf6">
+                                                    <rect key="frame" x="16" y="12" width="430" height="20"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="@insulatorapp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDB-Eb-RXg">
-                                                    <rect key="frame" x="456" y="12" width="103" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@insulatorapp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDB-Eb-RXg">
+                                                    <rect key="frame" x="454" y="12" width="105" height="20"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1143,7 +1138,7 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="AOr-7S-Mf6" firstAttribute="leading" secondItem="JiU-Yi-ZS2" secondAttribute="leadingMargin" id="5Ck-16-uh7"/>
+                                                <constraint firstItem="AOr-7S-Mf6" firstAttribute="leading" secondItem="JiU-Yi-ZS2" secondAttribute="leadingMargin" constant="8" id="5Ck-16-uh7"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="GDB-Eb-RXg" secondAttribute="trailing" id="Fm9-4x-fZk"/>
                                                 <constraint firstItem="GDB-Eb-RXg" firstAttribute="leading" secondItem="AOr-7S-Mf6" secondAttribute="trailing" constant="8" id="Rt6-KL-vUV"/>
                                                 <constraint firstAttribute="centerY" secondItem="AOr-7S-Mf6" secondAttribute="centerY" id="TWz-sK-Xc7"/>
@@ -1159,8 +1154,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="App Store" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wo5-Do-g2h">
-                                                    <rect key="frame" x="8" y="12" width="442" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="App Store" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wo5-Do-g2h">
+                                                    <rect key="frame" x="16" y="12" width="435" height="20"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1177,7 +1172,7 @@
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="NZv-9x-Der" secondAttribute="trailing" id="C7p-YV-9Yu"/>
-                                                <constraint firstItem="wo5-Do-g2h" firstAttribute="leading" secondItem="gZm-XL-Xia" secondAttribute="leadingMargin" id="RUe-eq-O9A"/>
+                                                <constraint firstItem="wo5-Do-g2h" firstAttribute="leading" secondItem="gZm-XL-Xia" secondAttribute="leadingMargin" constant="8" id="RUe-eq-O9A"/>
                                                 <constraint firstItem="NZv-9x-Der" firstAttribute="centerY" secondItem="wo5-Do-g2h" secondAttribute="centerY" id="ew5-2r-MRn"/>
                                                 <constraint firstItem="NZv-9x-Der" firstAttribute="leading" secondItem="wo5-Do-g2h" secondAttribute="trailing" constant="8" id="luH-m7-5zO"/>
                                                 <constraint firstAttribute="centerY" secondItem="wo5-Do-g2h" secondAttribute="centerY" id="xXA-Ga-Fug"/>
@@ -1196,8 +1191,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Small Tip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFy-TC-FJc">
-                                                    <rect key="frame" x="8" y="12" width="68" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Small Tip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFy-TC-FJc">
+                                                    <rect key="frame" x="16" y="12" width="67" height="20"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1211,7 +1206,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="eRP-T2-fRY">
-                                                    <rect key="frame" x="529" y="12" width="20" height="20"/>
+                                                    <rect key="frame" x="528" y="12" width="20" height="20"/>
                                                     <animations/>
                                                 </activityIndicatorView>
                                             </subviews>
@@ -1221,7 +1216,7 @@
                                                 <constraint firstItem="fsC-cU-W2D" firstAttribute="centerX" secondItem="eRP-T2-fRY" secondAttribute="centerX" id="bV5-WH-kKU"/>
                                                 <constraint firstItem="fsC-cU-W2D" firstAttribute="centerY" secondItem="DFy-TC-FJc" secondAttribute="centerY" id="hxL-oV-GJ9"/>
                                                 <constraint firstItem="fsC-cU-W2D" firstAttribute="centerY" secondItem="eRP-T2-fRY" secondAttribute="centerY" id="lKH-Mz-x2o"/>
-                                                <constraint firstItem="DFy-TC-FJc" firstAttribute="leading" secondItem="PTC-H7-eh7" secondAttribute="leadingMargin" id="nif-1m-8OG"/>
+                                                <constraint firstItem="DFy-TC-FJc" firstAttribute="leading" secondItem="PTC-H7-eh7" secondAttribute="leadingMargin" constant="8" id="nif-1m-8OG"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="fsC-cU-W2D" secondAttribute="trailing" id="rvV-Iv-Gkv"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1234,8 +1229,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Large Tip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lM1-Bm-cgX">
-                                                    <rect key="frame" x="8" y="12" width="68" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Large Tip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lM1-Bm-cgX">
+                                                    <rect key="frame" x="16" y="12" width="69" height="20"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1249,13 +1244,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="efp-Jc-IHy">
-                                                    <rect key="frame" x="529" y="12" width="20" height="20"/>
+                                                    <rect key="frame" x="528" y="12" width="20" height="20"/>
                                                     <animations/>
                                                 </activityIndicatorView>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="lM1-Bm-cgX" firstAttribute="leading" secondItem="k4s-80-ZxX" secondAttribute="leadingMargin" id="5KT-8D-SuH"/>
+                                                <constraint firstItem="lM1-Bm-cgX" firstAttribute="leading" secondItem="k4s-80-ZxX" secondAttribute="leadingMargin" constant="8" id="5KT-8D-SuH"/>
                                                 <constraint firstItem="Wma-5d-3b0" firstAttribute="centerY" secondItem="efp-Jc-IHy" secondAttribute="centerY" id="6xw-P1-vId"/>
                                                 <constraint firstItem="Wma-5d-3b0" firstAttribute="centerY" secondItem="lM1-Bm-cgX" secondAttribute="centerY" id="TlX-hN-I8Q"/>
                                                 <constraint firstItem="Wma-5d-3b0" firstAttribute="centerX" secondItem="efp-Jc-IHy" secondAttribute="centerX" id="hBr-aQ-LQD"/>
@@ -1312,45 +1307,49 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" text="Carbohydrate Factor" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pj-kC-Itf">
-                                                    <rect key="frame" x="8" y="8" width="498" height="12"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="GBq-Mg-bn7">
+                                                    <rect key="frame" x="16" y="8" width="576" height="27"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BQD-2K-Y0F">
+                                                            <rect key="frame" x="0.0" y="0.0" width="490" height="27"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Carbohydrate Factor" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Pj-kC-Itf">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="490" height="20"/>
+                                                                    <animations/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" text="Enter how many carbohydrates 1 unit of fast-acting insulin covers" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9P-L9-bk1" userLabel="Carbohydrate Factor Description">
+                                                                    <rect key="frame" x="0.0" y="20" width="490" height="7"/>
+                                                                    <animations/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <animations/>
+                                                        </stackView>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="grams" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Qi-qn-SeI" userLabel="Carbohydrate Factor Entry">
+                                                            <rect key="frame" x="506" y="0.0" width="70" height="27"/>
+                                                            <animations/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="70" id="GSh-1t-m9U"/>
+                                                            </constraints>
+                                                            <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        </textField>
+                                                    </subviews>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" verticalCompressionResistancePriority="1000" text="Enter how many carbohydrates 1 unit of fast-acting insulin covers" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X9P-L9-bk1">
-                                                    <rect key="frame" x="8" y="20" width="498" height="15"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" placeholder="grams" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Qi-qn-SeI">
-                                                    <rect key="frame" x="522" y="12" width="70" height="20"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="GSh-1t-m9U"/>
-                                                    </constraints>
-                                                    <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="290" y="6" width="97" height="30"/>
-                                                    </variation>
-                                                </textField>
+                                                </stackView>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="8Qi-qn-SeI" secondAttribute="trailing" id="Io9-S7-FvB"/>
-                                                <constraint firstItem="8Qi-qn-SeI" firstAttribute="leading" secondItem="X9P-L9-bk1" secondAttribute="trailing" constant="16" id="KBN-0r-jzX"/>
-                                                <constraint firstItem="3Pj-kC-Itf" firstAttribute="top" secondItem="N1Z-DB-saL" secondAttribute="topMargin" id="Xb9-0t-oso"/>
-                                                <constraint firstItem="3Pj-kC-Itf" firstAttribute="leading" secondItem="N1Z-DB-saL" secondAttribute="leadingMargin" id="cGf-r2-6r6"/>
-                                                <constraint firstItem="X9P-L9-bk1" firstAttribute="leading" secondItem="N1Z-DB-saL" secondAttribute="leadingMargin" id="iVr-76-kmm"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="X9P-L9-bk1" secondAttribute="bottom" id="jR7-kz-Afq"/>
-                                                <constraint firstItem="8Qi-qn-SeI" firstAttribute="leading" secondItem="3Pj-kC-Itf" secondAttribute="trailing" constant="16" id="l0I-1J-w62"/>
-                                                <constraint firstItem="X9P-L9-bk1" firstAttribute="top" secondItem="3Pj-kC-Itf" secondAttribute="bottom" id="lCq-48-wUk"/>
-                                                <constraint firstAttribute="centerY" secondItem="8Qi-qn-SeI" secondAttribute="centerY" id="o9c-DD-FIC"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="GBq-Mg-bn7" secondAttribute="trailing" id="07Q-5p-hEf"/>
+                                                <constraint firstItem="GBq-Mg-bn7" firstAttribute="leading" secondItem="N1Z-DB-saL" secondAttribute="leadingMargin" constant="8" id="WrW-nz-sXO"/>
+                                                <constraint firstAttribute="topMargin" secondItem="GBq-Mg-bn7" secondAttribute="top" id="YK7-t1-LKY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="GBq-Mg-bn7" secondAttribute="bottom" id="aJG-Jd-6Nf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -1362,45 +1361,52 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" text="Corrective Factor" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzD-uF-uwQ">
-                                                    <rect key="frame" x="8" y="8" width="498" height="12"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="awq-JG-6JQ">
+                                                    <rect key="frame" x="16" y="8" width="576" height="27"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bpf-yU-vge">
+                                                            <rect key="frame" x="0.0" y="0.0" width="490" height="27"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Corrective Factor" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvZ-Vg-SVh">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="490" height="20"/>
+                                                                    <animations/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" text="Enter how much 1 unit of fast-acting insulin lowers your blood glucose level" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltr-uG-s6m" userLabel="Corrective Factor Description">
+                                                                    <rect key="frame" x="0.0" y="20" width="490" height="7"/>
+                                                                    <animations/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <animations/>
+                                                        </stackView>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bS3-9p-Zs6" userLabel="Corrective Factor Entry">
+                                                            <rect key="frame" x="506" y="0.0" width="70" height="27"/>
+                                                            <animations/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="70" id="Y2X-6D-YOc"/>
+                                                            </constraints>
+                                                            <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                                <rect key="frame" x="290" y="6" width="97" height="30"/>
+                                                            </variation>
+                                                        </textField>
+                                                    </subviews>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" verticalCompressionResistancePriority="1000" text="Enter how much 1 unit of fast-acting insulin lowers your blood glucose level" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGF-CA-12S">
-                                                    <rect key="frame" x="8" y="20" width="498" height="15"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZd-aO-Q5F">
-                                                    <rect key="frame" x="522" y="12" width="70" height="20"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="YnW-l2-paS"/>
-                                                    </constraints>
-                                                    <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="290" y="6" width="97" height="30"/>
-                                                    </variation>
-                                                </textField>
+                                                </stackView>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="TGF-CA-12S" secondAttribute="bottom" id="15g-R5-dYV"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="YZd-aO-Q5F" secondAttribute="trailing" id="5BW-cb-hMQ"/>
-                                                <constraint firstItem="HzD-uF-uwQ" firstAttribute="leading" secondItem="oBi-H0-vZZ" secondAttribute="leadingMargin" id="C9n-AP-g7k"/>
-                                                <constraint firstItem="YZd-aO-Q5F" firstAttribute="leading" secondItem="TGF-CA-12S" secondAttribute="trailing" constant="16" id="CAd-k9-EuI"/>
-                                                <constraint firstItem="TGF-CA-12S" firstAttribute="top" secondItem="HzD-uF-uwQ" secondAttribute="bottom" id="GIJ-5f-Q9Y"/>
-                                                <constraint firstItem="HzD-uF-uwQ" firstAttribute="top" secondItem="oBi-H0-vZZ" secondAttribute="topMargin" id="Y8G-FJ-jZn"/>
-                                                <constraint firstItem="YZd-aO-Q5F" firstAttribute="leading" secondItem="HzD-uF-uwQ" secondAttribute="trailing" constant="16" id="YUx-wT-su8"/>
-                                                <constraint firstItem="TGF-CA-12S" firstAttribute="leading" secondItem="oBi-H0-vZZ" secondAttribute="leadingMargin" id="bsq-re-9zr"/>
-                                                <constraint firstAttribute="centerY" secondItem="YZd-aO-Q5F" secondAttribute="centerY" id="vHX-yq-jIL"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="awq-JG-6JQ" secondAttribute="bottom" id="71H-hg-1Go"/>
+                                                <constraint firstAttribute="topMargin" secondItem="awq-JG-6JQ" secondAttribute="top" id="8ee-u2-q6A"/>
+                                                <constraint firstItem="awq-JG-6JQ" firstAttribute="leading" secondItem="oBi-H0-vZZ" secondAttribute="leadingMargin" constant="8" id="jq4-XP-8b2"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="awq-JG-6JQ" secondAttribute="trailing" id="tyI-tW-Phu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -1412,45 +1418,52 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" text="Desired Blood Glucose" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDw-u5-pU3">
-                                                    <rect key="frame" x="8" y="8" width="498" height="12"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="2nm-ez-rjP">
+                                                    <rect key="frame" x="16" y="8" width="576" height="27"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vbr-dG-7rB">
+                                                            <rect key="frame" x="0.0" y="0.0" width="490" height="27"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Desired Blood Glucose" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEB-EO-Ol0">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="490" height="20"/>
+                                                                    <animations/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" text="Enter your desired blood glucose level" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKO-Yv-PEe" userLabel="Desired Blood Glucose Description">
+                                                                    <rect key="frame" x="0.0" y="20" width="490" height="7"/>
+                                                                    <animations/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <animations/>
+                                                        </stackView>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VgN-ue-B8g" userLabel="Desired Blood Glucose Entry">
+                                                            <rect key="frame" x="506" y="0.0" width="70" height="27"/>
+                                                            <animations/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="70" id="Uv1-pL-s4w"/>
+                                                            </constraints>
+                                                            <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                                <rect key="frame" x="290" y="6" width="97" height="30"/>
+                                                            </variation>
+                                                        </textField>
+                                                    </subviews>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" verticalCompressionResistancePriority="1000" text="Enter your desired blood glucose level" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdM-WO-1ae">
-                                                    <rect key="frame" x="8" y="20" width="498" height="15"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" placeholder="mmol/L" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gcb-Wv-7at">
-                                                    <rect key="frame" x="522" y="12" width="70" height="20"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="70" id="Uu3-6W-HpU"/>
-                                                    </constraints>
-                                                    <color key="textColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="290" y="6" width="97" height="30"/>
-                                                    </variation>
-                                                </textField>
+                                                </stackView>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="gcb-Wv-7at" firstAttribute="leading" secondItem="jDw-u5-pU3" secondAttribute="trailing" constant="16" id="0x3-oA-Te4"/>
-                                                <constraint firstItem="gcb-Wv-7at" firstAttribute="leading" secondItem="hdM-WO-1ae" secondAttribute="trailing" constant="16" id="BQI-aw-gla"/>
-                                                <constraint firstItem="jDw-u5-pU3" firstAttribute="top" secondItem="Qw1-sN-gax" secondAttribute="topMargin" id="GRy-zW-VSr"/>
-                                                <constraint firstItem="jDw-u5-pU3" firstAttribute="leading" secondItem="Qw1-sN-gax" secondAttribute="leadingMargin" id="P7P-wr-dJY"/>
-                                                <constraint firstAttribute="centerY" secondItem="gcb-Wv-7at" secondAttribute="centerY" id="UMc-cz-0a7"/>
-                                                <constraint firstItem="hdM-WO-1ae" firstAttribute="top" secondItem="jDw-u5-pU3" secondAttribute="bottom" id="Vtb-NT-e0O"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="gcb-Wv-7at" secondAttribute="trailing" id="aDS-hQ-GON"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="hdM-WO-1ae" secondAttribute="bottom" id="ilA-zC-nvI"/>
-                                                <constraint firstItem="hdM-WO-1ae" firstAttribute="leading" secondItem="Qw1-sN-gax" secondAttribute="leadingMargin" id="qZe-1u-oHW"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="2nm-ez-rjP" secondAttribute="bottom" id="Mco-id-6Tg"/>
+                                                <constraint firstItem="2nm-ez-rjP" firstAttribute="leading" secondItem="Qw1-sN-gax" secondAttribute="leadingMargin" constant="8" id="VfG-T2-i3E"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="2nm-ez-rjP" secondAttribute="trailing" id="lKa-qQ-K7C"/>
+                                                <constraint firstAttribute="topMargin" secondItem="2nm-ez-rjP" secondAttribute="top" id="spC-FO-lTu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -1472,8 +1485,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="carbohydrateFactorTextField" destination="8Qi-qn-SeI" id="JSm-J0-e3y"/>
-                        <outlet property="correctiveFactorTextField" destination="YZd-aO-Q5F" id="qnu-nA-Q9Z"/>
-                        <outlet property="desiredBloodGlucoseTextField" destination="gcb-Wv-7at" id="FTW-i3-uP8"/>
+                        <outlet property="correctiveFactorTextField" destination="bS3-9p-Zs6" id="9Rs-no-DPW"/>
+                        <outlet property="desiredBloodGlucoseTextField" destination="VgN-ue-B8g" id="9oT-bd-Baw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rH3-UQ-EE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1501,14 +1514,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" text="Total Daily Dose" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLN-XZ-MXv">
-                                                    <rect key="frame" x="8" y="8" width="498" height="12"/>
+                                                    <rect key="frame" x="16" y="8" width="490" height="12"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" verticalCompressionResistancePriority="1000" text="Enter the total amount of insulin (both fast-acting and long-acting) you take in a day" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80G-fA-CJg">
-                                                    <rect key="frame" x="8" y="20" width="498" height="15"/>
+                                                    <rect key="frame" x="16" y="20" width="490" height="15"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                     <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -1532,12 +1545,12 @@
                                             <constraints>
                                                 <constraint firstItem="80G-fA-CJg" firstAttribute="top" secondItem="TLN-XZ-MXv" secondAttribute="bottom" id="0u3-sX-Ty7"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="sUT-N6-vN6" secondAttribute="trailing" id="7Qz-4h-UKU"/>
-                                                <constraint firstItem="TLN-XZ-MXv" firstAttribute="leading" secondItem="jB7-Bq-jvu" secondAttribute="leadingMargin" id="7gn-qu-KpY"/>
+                                                <constraint firstItem="TLN-XZ-MXv" firstAttribute="leading" secondItem="jB7-Bq-jvu" secondAttribute="leadingMargin" constant="8" id="7gn-qu-KpY"/>
                                                 <constraint firstItem="TLN-XZ-MXv" firstAttribute="top" secondItem="jB7-Bq-jvu" secondAttribute="topMargin" id="HfX-LH-teX"/>
                                                 <constraint firstItem="sUT-N6-vN6" firstAttribute="leading" secondItem="80G-fA-CJg" secondAttribute="trailing" constant="16" id="TzR-M8-NrI"/>
                                                 <constraint firstItem="80G-fA-CJg" firstAttribute="bottom" secondItem="jB7-Bq-jvu" secondAttribute="bottomMargin" id="WoY-TM-beO"/>
                                                 <constraint firstAttribute="centerY" secondItem="sUT-N6-vN6" secondAttribute="centerY" id="cwB-gf-cRw"/>
-                                                <constraint firstItem="80G-fA-CJg" firstAttribute="leading" secondItem="jB7-Bq-jvu" secondAttribute="leadingMargin" id="jTU-VZ-pfv"/>
+                                                <constraint firstItem="80G-fA-CJg" firstAttribute="leading" secondItem="jB7-Bq-jvu" secondAttribute="leadingMargin" constant="8" id="jTU-VZ-pfv"/>
                                                 <constraint firstItem="sUT-N6-vN6" firstAttribute="leading" secondItem="TLN-XZ-MXv" secondAttribute="trailing" constant="16" id="jg5-vm-RWg"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1548,14 +1561,14 @@
                             <tableViewSection footerTitle="Tap the suggestions you are happy with, then press Done to save them." id="gDt-Av-aJe">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="VIv-R8-Jv1">
-                                        <rect key="frame" x="0.0" y="196" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="194" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VIv-R8-Jv1" id="B3d-vZ-YDV">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Carbohydrate Factor" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Cc-AU-dzL">
-                                                    <rect key="frame" x="8" y="12" width="497" height="20"/>
+                                                    <rect key="frame" x="16" y="12" width="489" height="20"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1576,7 +1589,7 @@
                                             <constraints>
                                                 <constraint firstItem="use-O1-IvL" firstAttribute="leading" secondItem="5Cc-AU-dzL" secondAttribute="trailing" constant="16" id="3So-RN-TsQ"/>
                                                 <constraint firstAttribute="centerY" secondItem="5Cc-AU-dzL" secondAttribute="centerY" id="Fda-eG-caU"/>
-                                                <constraint firstItem="5Cc-AU-dzL" firstAttribute="leading" secondItem="B3d-vZ-YDV" secondAttribute="leadingMargin" id="alV-84-9Ul"/>
+                                                <constraint firstItem="5Cc-AU-dzL" firstAttribute="leading" secondItem="B3d-vZ-YDV" secondAttribute="leadingMargin" constant="8" id="alV-84-9Ul"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="use-O1-IvL" secondAttribute="trailing" id="feF-iI-Ir4"/>
                                                 <constraint firstAttribute="centerY" secondItem="use-O1-IvL" secondAttribute="centerY" id="xLd-EP-c9b"/>
                                             </constraints>
@@ -1584,14 +1597,14 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2tI-mF-kcy">
-                                        <rect key="frame" x="0.0" y="240" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="238" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2tI-mF-kcy" id="kar-vO-gK8">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Corrective Factor" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kz-nT-OSp">
-                                                    <rect key="frame" x="8" y="12" width="497" height="20"/>
+                                                    <rect key="frame" x="16" y="12" width="489" height="20"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1613,7 +1626,7 @@
                                                 <constraint firstAttribute="centerY" secondItem="CnD-Xt-xkT" secondAttribute="centerY" id="5QH-Uf-nKU"/>
                                                 <constraint firstAttribute="centerY" secondItem="3kz-nT-OSp" secondAttribute="centerY" id="K3p-hu-fG7"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="CnD-Xt-xkT" secondAttribute="trailing" id="Uef-Cr-heS"/>
-                                                <constraint firstItem="3kz-nT-OSp" firstAttribute="leading" secondItem="kar-vO-gK8" secondAttribute="leadingMargin" id="jPL-Fr-h7m"/>
+                                                <constraint firstItem="3kz-nT-OSp" firstAttribute="leading" secondItem="kar-vO-gK8" secondAttribute="leadingMargin" constant="8" id="jPL-Fr-h7m"/>
                                                 <constraint firstItem="CnD-Xt-xkT" firstAttribute="leading" secondItem="3kz-nT-OSp" secondAttribute="trailing" constant="16" id="ohn-qx-88h"/>
                                             </constraints>
                                         </tableViewCellContentView>

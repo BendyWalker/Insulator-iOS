@@ -31,17 +31,13 @@ class ConstantsTableViewController: UITableViewController {
         correctiveFactorTextField.addTarget(self, action: "addDecimal", forControlEvents: UIControlEvents.EditingChanged)
         desiredBloodGlucoseTextField.addTarget(self, action: "addDecimal", forControlEvents: UIControlEvents.EditingChanged)
         
+        updateUi()
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
-        updateUi()
-
         tableView.estimatedRowHeight = 100
-        tableView.reloadData()
-        tableView.setNeedsLayout()
-        tableView.layoutIfNeeded()
-        tableView.reloadData()
     }
     
     deinit {
@@ -57,6 +53,10 @@ class ConstantsTableViewController: UITableViewController {
         case 0: return 3
         default: return 0
         }
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -47,10 +47,6 @@ class VariablesTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         tableView.estimatedRowHeight = 100
-        tableView.reloadData()
-        tableView.setNeedsLayout()
-        tableView.layoutIfNeeded()
-        tableView.reloadData()
     }
     
     deinit {
@@ -87,8 +83,6 @@ class VariablesTableViewController: UITableViewController {
             default:
                 return
             }
-            
-            tableView.reloadData()
         default:
             return
         }

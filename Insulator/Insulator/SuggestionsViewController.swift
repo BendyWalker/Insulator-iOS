@@ -31,10 +31,6 @@ class SuggestionsViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         tableView.estimatedRowHeight = 100
-        tableView.reloadData()
-        tableView.setNeedsLayout()
-        tableView.layoutIfNeeded()
-        tableView.reloadData()
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -47,6 +43,10 @@ class SuggestionsViewController: UITableViewController {
         case 1: return 2
         default: return 0
         }
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
