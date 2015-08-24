@@ -45,9 +45,6 @@ class VariablesTableViewController: UITableViewController {
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
-        tableView.estimatedRowHeight = 100
-    }
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIApplicationDidBecomeActiveNotification, object: nil)
@@ -64,6 +61,10 @@ class VariablesTableViewController: UITableViewController {
         case 1: return 3
         default: return 0
         }
+    }
+    
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
