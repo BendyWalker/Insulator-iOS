@@ -13,16 +13,20 @@ class SuggestionsViewController: UITableViewController {
     @IBOutlet weak var carbohydrateFactorTableViewCell: UITableViewCell!
     @IBOutlet weak var correctiveFactorTableViewCell: UITableViewCell!
     
-    @IBAction func closeModal(sender: UIBarButtonItem) {
-        if let carbohydrateFactorText = carbohydrateFactorLabel.text {
-            if saveCarbohydrateFactor { preferencesManager.carbohydrateFactor = carbohydrateFactorText.doubleValue }
+    @IBAction func onRightBarButtonTouched(sender: UIBarButtonItem) {
+        if totalDailyDoseTextField.editing {
+            totalDailyDoseTextField.resignFirstResponder()
+        } else {
+            if let carbohydrateFactorText = carbohydrateFactorLabel.text {
+                if saveCarbohydrateFactor { preferencesManager.carbohydrateFactor = carbohydrateFactorText.doubleValue }
+            }
+            
+            if let correctiveFactorText = correctiveFactorLabel.text {
+                if saveCorrectiveFactor { preferencesManager.correctiveFactor = correctiveFactorText.doubleValue }
+            }
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
-        
-        if let correctiveFactorText = correctiveFactorLabel.text {
-            if saveCorrectiveFactor { preferencesManager.correctiveFactor = correctiveFactorText.doubleValue }
-        }
-        
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func viewDidLoad() {
