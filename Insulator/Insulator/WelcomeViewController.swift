@@ -9,6 +9,14 @@ class WelcomeViewController: UIViewController {
         self.healthManager.authoriseHealthKit { (authorized, error) -> Void in
             if authorized {
                 print("HealthKit authorization received.")
+                
+                self.healthManager.observeBloodGlucose() { bloodGlucose in
+                    if let value = bloodGlucose {
+                        self.preferencesManager.healthKitBloodGlucose = value
+                    } else {
+                        self.preferencesManager.healthKitBloodGlucose = 0
+                    }
+                }
             } else {
                 print("HealthKit authorization denied!")
                 if error != nil {
