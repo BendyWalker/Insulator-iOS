@@ -34,7 +34,32 @@ class PreferencesWelcomeTableViewController: UITableViewController {
     @IBOutlet weak var carbohydrateFactorTextField: UITextField!
     @IBOutlet weak var correctiveFactorTextField: UITextField!
     @IBOutlet weak var desiredBloodGlucoseTextField: UITextField!
+    @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
     
+    
+    @IBAction func onRightBarButtonTouched(sender: AnyObject) {
+        if carbohydrateFactorTextField.editing {
+            carbohydrateFactorTextField.resignFirstResponder()
+        } else if correctiveFactorTextField.editing {
+            carbohydrateFactorTextField.resignFirstResponder()
+        } else if desiredBloodGlucoseTextField.editing {
+            desiredBloodGlucoseTextField.resignFirstResponder()
+        } else {
+            if let carbohydrateFactorText = carbohydrateFactorTextField.text {
+                preferencesManager.carbohydrateFactor = carbohydrateFactorText.doubleValue
+            }
+            
+            if let correctiveFactorText = correctiveFactorTextField.text {
+                preferencesManager.correctiveFactor = correctiveFactorText.doubleValue
+            }
+            
+            if let desiredBloodGlucoseText = desiredBloodGlucoseTextField.text {
+                preferencesManager.desiredBloodGlucose = desiredBloodGlucoseText.doubleValue
+            }
+            
+            performSegueWithIdentifier("ReadyToUse", sender: UIBarButtonItem())
+        }
+    }
     
     @IBAction func bloodGlucoseUnitSegmentedControlValueChanged(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -50,27 +75,19 @@ class PreferencesWelcomeTableViewController: UITableViewController {
         preferencesManager.allowFloatingPointCarbohydrates = sender.on
     }
     
-    @IBAction func saveValuesToPreferenceManager(sender: UITextField) {
-        if let carbohydrateFactorText = carbohydrateFactorTextField.text {
-            let carbohydrateFactor = carbohydrateFactorText.doubleValue
-            preferencesManager.carbohydrateFactor = carbohydrateFactor
-        }
-        
-        if let correctiveFactorText = correctiveFactorTextField.text {
-            let correctiveFactor = correctiveFactorText.doubleValue
-            preferencesManager.correctiveFactor = correctiveFactor
-        }
-        
-        if let desiredBloodGlucoseText = desiredBloodGlucoseTextField.text {
-            let desiredBloodGlucose = desiredBloodGlucoseText.doubleValue
-            preferencesManager.desiredBloodGlucose = desiredBloodGlucose
-        }
-    }
     
     override func viewDidLoad() {
         carbohydrateFactorTextField.addTarget(self, action: "addDecimal", forControlEvents: UIControlEvents.EditingChanged)
+        carbohydrateFactorTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidBegin)
+        carbohydrateFactorTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidEnd)
+        
         correctiveFactorTextField.addTarget(self, action: "addDecimal", forControlEvents: UIControlEvents.EditingChanged)
+        correctiveFactorTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidBegin)
+        correctiveFactorTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidEnd)
+        
         desiredBloodGlucoseTextField.addTarget(self, action: "addDecimal", forControlEvents: UIControlEvents.EditingChanged)
+        desiredBloodGlucoseTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidBegin)
+        desiredBloodGlucoseTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidEnd)
         
         let bodyFontDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
         let bodyMonospacedNumbersFontDescriptor = bodyFontDescriptor.fontDescriptorByAddingAttributes(
@@ -88,6 +105,8 @@ class PreferencesWelcomeTableViewController: UITableViewController {
         carbohydrateFactorTextField.font = bodyMonospacedNumbersFont
         correctiveFactorTextField.font = bodyMonospacedNumbersFont
         desiredBloodGlucoseTextField.font = bodyMonospacedNumbersFont
+        
+        toggleRightBarButtonItem()
     }
     
     
@@ -128,5 +147,17 @@ class PreferencesWelcomeTableViewController: UITableViewController {
         let placeholder = preferencesManager.bloodGlucoseUnit.rawValue
         correctiveFactorTextField.placeholder = placeholder
         desiredBloodGlucoseTextField.placeholder = placeholder
+    }
+    
+    func toggleRightBarButtonItem() {
+        if carbohydrateFactorTextField.editing || correctiveFactorTextField.editing || desiredBloodGlucoseTextField.editing {
+            rightBarButtonItem.style = UIBarButtonItemStyle.Done
+            rightBarButtonItem.title = "Done"
+            rightBarButtonItem.enabled = true
+        } else {
+            rightBarButtonItem.style = UIBarButtonItemStyle.Plain
+            rightBarButtonItem.title = "Next"
+            rightBarButtonItem.enabled = (!carbohydrateFactorTextField.text!.isEmpty) && (!correctiveFactorTextField.text!.isEmpty) && (!desiredBloodGlucoseTextField.text!.isEmpty)
+        }
     }
 }
