@@ -31,6 +31,23 @@ class SuggestionsViewController: UITableViewController {
     
     override func viewDidLoad() {
         totalDailyDoseTextField.addTarget(self, action: "calculateSuggestions:", forControlEvents: UIControlEvents.AllEvents)
+        
+        let bodyFontDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
+        let bodyMonospacedNumbersFontDescriptor = bodyFontDescriptor.fontDescriptorByAddingAttributes(
+            [
+                UIFontDescriptorFeatureSettingsAttribute: [
+                    [
+                        UIFontFeatureTypeIdentifierKey: kNumberSpacingType,
+                        UIFontFeatureSelectorIdentifierKey: kMonospacedNumbersSelector
+                    ]
+                ]
+            ])
+        let bodyMonospacedNumbersFont = UIFont(descriptor: bodyMonospacedNumbersFontDescriptor, size: 0.0)
+        
+        
+        totalDailyDoseTextField.font = bodyMonospacedNumbersFont
+        carbohydrateFactorLabel.font = bodyMonospacedNumbersFont
+        correctiveFactorLabel.font = bodyMonospacedNumbersFont
     }
     
     override func viewWillAppear(animated: Bool) {

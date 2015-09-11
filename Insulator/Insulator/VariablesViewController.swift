@@ -36,6 +36,26 @@ class VariablesTableViewController: UITableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateUi", name: PreferencesDidChangeNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateUi", name: UIApplicationDidBecomeActiveNotification, object: nil)
         
+        let bodyFontDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
+        let bodyMonospacedNumbersFontDescriptor = bodyFontDescriptor.fontDescriptorByAddingAttributes(
+            [
+                UIFontDescriptorFeatureSettingsAttribute: [
+                    [
+                        UIFontFeatureTypeIdentifierKey: kNumberSpacingType,
+                        UIFontFeatureSelectorIdentifierKey: kMonospacedNumbersSelector
+                    ]
+                ]
+            ])
+        let bodyMonospacedNumbersFont = UIFont(descriptor: bodyMonospacedNumbersFontDescriptor, size: 0.0)
+        
+        
+        currentBloodGlucoseLevelTextField.font = bodyMonospacedNumbersFont
+        carbohydratesInMealTextField.font = bodyMonospacedNumbersFont
+        suggestedDoseLabel.font = bodyMonospacedNumbersFont
+        correctiveDoseLabel.font = bodyMonospacedNumbersFont
+        carbohydrateDoseLabel.font = bodyMonospacedNumbersFont
+
+        
         updateUi()
         
         if let build = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion") as? String {
