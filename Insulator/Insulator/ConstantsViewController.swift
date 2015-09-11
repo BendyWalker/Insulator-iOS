@@ -31,21 +31,24 @@ class ConstantsTableViewController: UITableViewController {
         correctiveFactorTextField.addTarget(self, action: "addDecimal", forControlEvents: UIControlEvents.EditingChanged)
         desiredBloodGlucoseTextField.addTarget(self, action: "addDecimal", forControlEvents: UIControlEvents.EditingChanged)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
+        let bodyFontDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
+        let bodyMonospacedNumbersFontDescriptor = bodyFontDescriptor.fontDescriptorByAddingAttributes(
+            [
+                UIFontDescriptorFeatureSettingsAttribute: [
+                    [
+                        UIFontFeatureTypeIdentifierKey: kNumberSpacingType,
+                        UIFontFeatureSelectorIdentifierKey: kMonospacedNumbersSelector
+                    ]
+                ]
+            ])
+        let bodyMonospacedNumbersFont = UIFont(descriptor: bodyMonospacedNumbersFontDescriptor, size: 0.0)
+        
+        
+        carbohydrateFactorTextField.font = bodyMonospacedNumbersFont
+        correctiveFactorTextField.font = bodyMonospacedNumbersFont
+        desiredBloodGlucoseTextField.font = bodyMonospacedNumbersFont
+        
         updateUi()
-
-        tableView.estimatedRowHeight = 100
-        tableView.reloadData()
-        tableView.setNeedsLayout()
-        tableView.layoutIfNeeded()
-        tableView.reloadData()
-    }
-    
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardDidShowNotification, object: nil)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -57,6 +60,14 @@ class ConstantsTableViewController: UITableViewController {
         case 0: return 3
         default: return 0
         }
+    }
+    
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -109,21 +120,5 @@ class ConstantsTableViewController: UITableViewController {
         carbohydrateFactorTextField.text = "\(preferencesManager.carbohydrateFactor)"
         correctiveFactorTextField.text = "\(preferencesManager.correctiveFactor)"
         desiredBloodGlucoseTextField.text = "\(preferencesManager.desiredBloodGlucose)"
-    }
-    
-    func keyboardWasShown(notification: NSNotification) {
-        let info: NSDictionary = notification.userInfo!
-        let value: NSValue = info.valueForKey(UIKeyboardFrameBeginUserInfoKey) as! NSValue
-        let keyboardSize: CGSize = value.CGRectValue().size
-        let contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height, 0.0)
-        tableView.contentInset = contentInsets
-        tableView.scrollIndicatorInsets = contentInsets
-        
-        var rect = self.view.frame
-        rect.size.height = (rect.size.height - keyboardSize.height)
-        
-        if !CGRectContainsPoint(rect, desiredBloodGlucoseTextField.frame.origin) {
-            self.tableView.scrollRectToVisible(desiredBloodGlucoseTextField.frame, animated: true)
-        }
     }
 }

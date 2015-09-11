@@ -8,9 +8,9 @@ class VariablesTableViewController: UITableViewController {
     
     @IBOutlet weak var currentBloodGlucoseLevelTextField: UITextField!
     @IBOutlet weak var carbohydratesInMealTextField: UITextField!
-    @IBOutlet weak var correctiveDoseLabel: UILabel!
-    @IBOutlet weak var carbohydrateDoseLabel: UILabel!
     @IBOutlet weak var suggestedDoseLabel: UILabel!
+    @IBOutlet weak var carbohydrateDoseLabel: UILabel!
+    @IBOutlet weak var correctiveDoseLabel: UILabel!
     @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
 
     
@@ -36,6 +36,26 @@ class VariablesTableViewController: UITableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateUi", name: PreferencesDidChangeNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateUi", name: UIApplicationDidBecomeActiveNotification, object: nil)
         
+        let bodyFontDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
+        let bodyMonospacedNumbersFontDescriptor = bodyFontDescriptor.fontDescriptorByAddingAttributes(
+            [
+                UIFontDescriptorFeatureSettingsAttribute: [
+                    [
+                        UIFontFeatureTypeIdentifierKey: kNumberSpacingType,
+                        UIFontFeatureSelectorIdentifierKey: kMonospacedNumbersSelector
+                    ]
+                ]
+            ])
+        let bodyMonospacedNumbersFont = UIFont(descriptor: bodyMonospacedNumbersFontDescriptor, size: 0.0)
+        
+        
+        currentBloodGlucoseLevelTextField.font = bodyMonospacedNumbersFont
+        carbohydratesInMealTextField.font = bodyMonospacedNumbersFont
+        suggestedDoseLabel.font = bodyMonospacedNumbersFont
+        correctiveDoseLabel.font = bodyMonospacedNumbersFont
+        carbohydrateDoseLabel.font = bodyMonospacedNumbersFont
+
+        
         updateUi()
         
         if let build = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion") as? String {
@@ -45,13 +65,6 @@ class VariablesTableViewController: UITableViewController {
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
-        tableView.estimatedRowHeight = 100
-        tableView.reloadData()
-        tableView.setNeedsLayout()
-        tableView.layoutIfNeeded()
-        tableView.reloadData()
-    }
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIApplicationDidBecomeActiveNotification, object: nil)
@@ -59,16 +72,23 @@ class VariablesTableViewController: UITableViewController {
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        return 2
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0: return 2
-        case 1: return 1
-        case 2: return 3
+        case 1: return 3
         default: return 0
         }
+    }
+    
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -84,14 +104,6 @@ class VariablesTableViewController: UITableViewController {
             default:
                 return
             }
-        case 1:
-            switch indexPath.row {
-            case 0:
-                updateUi()
-            default:
-                return
-            }
-            tableView.reloadData()
         default:
             return
         }

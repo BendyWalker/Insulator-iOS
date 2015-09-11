@@ -40,10 +40,6 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     
     override func viewWillAppear(animated: Bool) {
         tableView.estimatedRowHeight = 100
-        tableView.reloadData()
-        tableView.setNeedsLayout()
-        tableView.layoutIfNeeded()
-        tableView.reloadData()
     }
     
     deinit {
@@ -90,6 +86,10 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
         case 2: return 2
         default: return 0
         }
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -169,7 +169,6 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     func updateUi() {
         bloodGlucoseUnitLabel.text = preferencesManager.bloodGlucoseUnit.rawValue
         allowFloatingPointCarbohydratesSwitch.on = preferencesManager.allowFloatingPointCarbohydrates
-
     }
 }
 

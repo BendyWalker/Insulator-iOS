@@ -9,6 +9,14 @@ class WelcomeViewController: UIViewController {
         self.healthManager.authoriseHealthKit { (authorized, error) -> Void in
             if authorized {
                 print("HealthKit authorization received.")
+                
+                self.healthManager.observeBloodGlucose() { bloodGlucose in
+                    if let value = bloodGlucose {
+                        self.preferencesManager.healthKitBloodGlucose = value
+                    } else {
+                        self.preferencesManager.healthKitBloodGlucose = 0
+                    }
+                }
             } else {
                 print("HealthKit authorization denied!")
                 if error != nil {
@@ -16,18 +24,6 @@ class WelcomeViewController: UIViewController {
                 }
             }
         }
-    }
-    
-    @IBAction func bloodGlucoseUnitSegmentedControlValueChanged(sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0: preferencesManager.bloodGlucoseUnit = .mmol
-        case 1: preferencesManager.bloodGlucoseUnit = .mgdl
-        default: preferencesManager.bloodGlucoseUnit = BloodGlucoseUnit.defaultUnit()
-        }
-    }
-    
-    @IBAction func allowFloatingPointCarbohydratesSwitchValueChanged(sender: UISwitch) {
-        preferencesManager.allowFloatingPointCarbohydrates = sender.on
     }
     
     @IBAction func closeModal(sender: UIBarButtonItem) {
@@ -39,65 +35,104 @@ class WelcomeViewController: UIViewController {
     }
 }
 
-class ConstantsWelcomeViewController: UIViewController {
+class PreferencesWelcomeTableViewController: UITableViewController {
     let preferencesManager = PreferencesManager.sharedInstance
     
     
     @IBOutlet weak var carbohydrateFactorTextField: UITextField!
     @IBOutlet weak var correctiveFactorTextField: UITextField!
     @IBOutlet weak var desiredBloodGlucoseTextField: UITextField!
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var bloodGlucoseUnitLabel: UILabel!
+    @IBOutlet weak var carbohydrateAccuracySwitch: UISwitch!
+    @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
     
     
-    @IBAction func saveValuesToPreferenceManager(sender: UITextField) {
-        if let carbohydrateFactorText = carbohydrateFactorTextField.text {
-            let carbohydrateFactor = carbohydrateFactorText.doubleValue
-            preferencesManager.carbohydrateFactor = carbohydrateFactor
+    @IBAction func onRightBarButtonTouched(sender: AnyObject) {
+        if carbohydrateFactorTextField.editing {
+            carbohydrateFactorTextField.resignFirstResponder()
+        } else if correctiveFactorTextField.editing {
+            carbohydrateFactorTextField.resignFirstResponder()
+        } else if desiredBloodGlucoseTextField.editing {
+            desiredBloodGlucoseTextField.resignFirstResponder()
+        } else {
+            if let carbohydrateFactorText = carbohydrateFactorTextField.text {
+                preferencesManager.carbohydrateFactor = carbohydrateFactorText.doubleValue
+            }
+            
+            if let correctiveFactorText = correctiveFactorTextField.text {
+                preferencesManager.correctiveFactor = correctiveFactorText.doubleValue
+            }
+            
+            if let desiredBloodGlucoseText = desiredBloodGlucoseTextField.text {
+                preferencesManager.desiredBloodGlucose = desiredBloodGlucoseText.doubleValue
+            }
+            
+            performSegueWithIdentifier("ReadyToUse", sender: UIBarButtonItem())
         }
-        
-        if let correctiveFactorText = correctiveFactorTextField.text {
-            let correctiveFactor = correctiveFactorText.doubleValue
-            preferencesManager.correctiveFactor = correctiveFactor
-        }
-        
-        if let desiredBloodGlucoseText = desiredBloodGlucoseTextField.text {
-            let desiredBloodGlucose = desiredBloodGlucoseText.doubleValue
-            preferencesManager.desiredBloodGlucose = desiredBloodGlucose
-        }
+    }
+    
+    @IBAction func allowFloatingPointCarbohydratesSwitchValueChanged(sender: UISwitch) {
+        preferencesManager.allowFloatingPointCarbohydrates = sender.on
     }
     
     
     override func viewDidLoad() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateUi", name: PreferencesDidChangeNotification, object: nil)
+
         carbohydrateFactorTextField.addTarget(self, action: "addDecimal", forControlEvents: UIControlEvents.EditingChanged)
+        carbohydrateFactorTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidBegin)
+        carbohydrateFactorTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidEnd)
+        
         correctiveFactorTextField.addTarget(self, action: "addDecimal", forControlEvents: UIControlEvents.EditingChanged)
+        correctiveFactorTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidBegin)
+        correctiveFactorTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidEnd)
+        
         desiredBloodGlucoseTextField.addTarget(self, action: "addDecimal", forControlEvents: UIControlEvents.EditingChanged)
+        desiredBloodGlucoseTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidBegin)
+        desiredBloodGlucoseTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidEnd)
         
-        let placeholder = preferencesManager.bloodGlucoseUnit.rawValue
-        correctiveFactorTextField.placeholder = placeholder
-        desiredBloodGlucoseTextField.placeholder = placeholder
+        let bodyFontDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
+        let bodyMonospacedNumbersFontDescriptor = bodyFontDescriptor.fontDescriptorByAddingAttributes(
+            [
+                UIFontDescriptorFeatureSettingsAttribute: [
+                    [
+                        UIFontFeatureTypeIdentifierKey: kNumberSpacingType,
+                        UIFontFeatureSelectorIdentifierKey: kMonospacedNumbersSelector
+                    ]
+                ]
+            ])
+        let bodyMonospacedNumbersFont = UIFont(descriptor: bodyMonospacedNumbersFontDescriptor, size: 0.0)
+
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil)
+        carbohydrateFactorTextField.font = bodyMonospacedNumbersFont
+        correctiveFactorTextField.font = bodyMonospacedNumbersFont
+        desiredBloodGlucoseTextField.font = bodyMonospacedNumbersFont
+        
+        toggleRightBarButtonItem()
+        
+        updateUi()
     }
     
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardDidShowNotification, object: nil)
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 3
     }
     
-    
-    func keyboardWasShown(notification: NSNotification) {
-        let info: NSDictionary = notification.userInfo!
-        let value: NSValue = info.valueForKey(UIKeyboardFrameBeginUserInfoKey) as! NSValue
-        let keyboardSize: CGSize = value.CGRectValue().size
-        let contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height, 0.0)
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
-        
-        var rect = self.view.frame
-        rect.size.height = (rect.size.height - keyboardSize.height)
-        
-        if !CGRectContainsPoint(rect, desiredBloodGlucoseTextField.frame.origin) {
-            self.scrollView.scrollRectToVisible(desiredBloodGlucoseTextField.frame, animated: true)
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0: return 0
+        case 1: return 2
+        case 2: return 3
+        default: return 0
         }
+    }
+    
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     func addDecimal() {
@@ -110,6 +145,30 @@ class ConstantsWelcomeViewController: UIViewController {
                 correctiveFactorTextField.text = addDecimalPlace(correctiveFactorText)
                 desiredBloodGlucoseTextField.text = addDecimalPlace(desiredBloodGlucoseText)
             }
+        }
+    }
+    
+    func updateUi() {
+        bloodGlucoseUnitLabel.text = preferencesManager.bloodGlucoseUnit.rawValue
+        carbohydrateAccuracySwitch.on = preferencesManager.allowFloatingPointCarbohydrates
+        updatePlaceholder()
+    }
+    
+    func updatePlaceholder() {
+        let placeholder = preferencesManager.bloodGlucoseUnit.rawValue
+        correctiveFactorTextField.placeholder = placeholder
+        desiredBloodGlucoseTextField.placeholder = placeholder
+    }
+    
+    func toggleRightBarButtonItem() {
+        if carbohydrateFactorTextField.editing || correctiveFactorTextField.editing || desiredBloodGlucoseTextField.editing {
+            rightBarButtonItem.style = UIBarButtonItemStyle.Done
+            rightBarButtonItem.title = "Done"
+            rightBarButtonItem.enabled = true
+        } else {
+            rightBarButtonItem.style = UIBarButtonItemStyle.Plain
+            rightBarButtonItem.title = "Next"
+            rightBarButtonItem.enabled = (!carbohydrateFactorTextField.text!.isEmpty) && (!correctiveFactorTextField.text!.isEmpty) && (!desiredBloodGlucoseTextField.text!.isEmpty)
         }
     }
 }

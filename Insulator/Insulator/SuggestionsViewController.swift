@@ -13,28 +13,45 @@ class SuggestionsViewController: UITableViewController {
     @IBOutlet weak var carbohydrateFactorTableViewCell: UITableViewCell!
     @IBOutlet weak var correctiveFactorTableViewCell: UITableViewCell!
     
-    @IBAction func closeModal(sender: UIBarButtonItem) {
-        if let carbohydrateFactorText = carbohydrateFactorLabel.text {
-            if saveCarbohydrateFactor { preferencesManager.carbohydrateFactor = carbohydrateFactorText.doubleValue }
+    @IBAction func onRightBarButtonTouched(sender: UIBarButtonItem) {
+        if totalDailyDoseTextField.editing {
+            totalDailyDoseTextField.resignFirstResponder()
+        } else {
+            if let carbohydrateFactorText = carbohydrateFactorLabel.text {
+                if saveCarbohydrateFactor { preferencesManager.carbohydrateFactor = carbohydrateFactorText.doubleValue }
+            }
+            
+            if let correctiveFactorText = correctiveFactorLabel.text {
+                if saveCorrectiveFactor { preferencesManager.correctiveFactor = correctiveFactorText.doubleValue }
+            }
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
-        
-        if let correctiveFactorText = correctiveFactorLabel.text {
-            if saveCorrectiveFactor { preferencesManager.correctiveFactor = correctiveFactorText.doubleValue }
-        }
-        
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func viewDidLoad() {
         totalDailyDoseTextField.addTarget(self, action: "calculateSuggestions:", forControlEvents: UIControlEvents.AllEvents)
+        
+        let bodyFontDescriptor = UIFontDescriptor.preferredFontDescriptorWithTextStyle(UIFontTextStyleBody)
+        let bodyMonospacedNumbersFontDescriptor = bodyFontDescriptor.fontDescriptorByAddingAttributes(
+            [
+                UIFontDescriptorFeatureSettingsAttribute: [
+                    [
+                        UIFontFeatureTypeIdentifierKey: kNumberSpacingType,
+                        UIFontFeatureSelectorIdentifierKey: kMonospacedNumbersSelector
+                    ]
+                ]
+            ])
+        let bodyMonospacedNumbersFont = UIFont(descriptor: bodyMonospacedNumbersFontDescriptor, size: 0.0)
+        
+        
+        totalDailyDoseTextField.font = bodyMonospacedNumbersFont
+        carbohydrateFactorLabel.font = bodyMonospacedNumbersFont
+        correctiveFactorLabel.font = bodyMonospacedNumbersFont
     }
     
     override func viewWillAppear(animated: Bool) {
         tableView.estimatedRowHeight = 100
-        tableView.reloadData()
-        tableView.setNeedsLayout()
-        tableView.layoutIfNeeded()
-        tableView.reloadData()
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -47,6 +64,10 @@ class SuggestionsViewController: UITableViewController {
         case 1: return 2
         default: return 0
         }
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
