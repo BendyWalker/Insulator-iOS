@@ -34,6 +34,8 @@ class PreferencesWelcomeTableViewController: UITableViewController {
     @IBOutlet weak var carbohydrateFactorTextField: UITextField!
     @IBOutlet weak var correctiveFactorTextField: UITextField!
     @IBOutlet weak var desiredBloodGlucoseTextField: UITextField!
+    @IBOutlet weak var bloodGlucoseUnitLabel: UILabel!
+    @IBOutlet weak var carbohydrateAccuracySwitch: UISwitch!
     @IBOutlet weak var rightBarButtonItem: UIBarButtonItem!
     
     
@@ -61,22 +63,14 @@ class PreferencesWelcomeTableViewController: UITableViewController {
         }
     }
     
-    @IBAction func bloodGlucoseUnitSegmentedControlValueChanged(sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0: preferencesManager.bloodGlucoseUnit = .mmol
-        case 1: preferencesManager.bloodGlucoseUnit = .mgdl
-        default: preferencesManager.bloodGlucoseUnit = BloodGlucoseUnit.defaultUnit()
-        }
-        
-        updatePlaceholder()
-    }
-    
     @IBAction func allowFloatingPointCarbohydratesSwitchValueChanged(sender: UISwitch) {
         preferencesManager.allowFloatingPointCarbohydrates = sender.on
     }
     
     
     override func viewDidLoad() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateUi", name: PreferencesDidChangeNotification, object: nil)
+
         carbohydrateFactorTextField.addTarget(self, action: "addDecimal", forControlEvents: UIControlEvents.EditingChanged)
         carbohydrateFactorTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidBegin)
         carbohydrateFactorTextField.addTarget(self, action: "toggleRightBarButtonItem", forControlEvents: UIControlEvents.EditingDidEnd)
@@ -107,17 +101,20 @@ class PreferencesWelcomeTableViewController: UITableViewController {
         desiredBloodGlucoseTextField.font = bodyMonospacedNumbersFont
         
         toggleRightBarButtonItem()
+        
+        updateUi()
     }
     
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0: return 2
-        case 1: return 3
+        case 0: return 0
+        case 1: return 2
+        case 2: return 3
         default: return 0
         }
     }
@@ -141,6 +138,12 @@ class PreferencesWelcomeTableViewController: UITableViewController {
                 desiredBloodGlucoseTextField.text = addDecimalPlace(desiredBloodGlucoseText)
             }
         }
+    }
+    
+    func updateUi() {
+        bloodGlucoseUnitLabel.text = preferencesManager.bloodGlucoseUnit.rawValue
+        carbohydrateAccuracySwitch.on = preferencesManager.allowFloatingPointCarbohydrates
+        updatePlaceholder()
     }
     
     func updatePlaceholder() {

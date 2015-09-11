@@ -24,17 +24,17 @@
                                         <rect key="frame" x="230" y="0.0" width="100" height="100"/>
                                         <animations/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="If you're unsure about any of the information requested or terms used, please contact your doctor before using Insulator." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Exk-qs-8bH">
-                                        <rect key="frame" x="0.0" y="116" width="560" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o09-4P-cHA">
+                                        <rect key="frame" x="6" y="116" width="549" height="41"/>
                                         <animations/>
+                                        <string key="text">Insulator is the easiest way to quickly calculate insulin doses. On the following screens, you will input all the data needed to calculate your doses.</string>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o09-4P-cHA">
-                                        <rect key="frame" x="6" y="173" width="549" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="If you're unsure about any of the information requested or terms used, please contact your doctor before using Insulator." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Exk-qs-8bH">
+                                        <rect key="frame" x="0.0" y="173" width="560" height="41"/>
                                         <animations/>
-                                        <string key="text">Insulator is the easiest way to quickly calculate insulin doses. On the following screens, you will input all the data needed to calculate your doses.</string>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -80,13 +80,13 @@
             <objects>
                 <tableViewController title="Blood Glucose Unit" id="FQT-Ro-YLn" customClass="BloodGlucoseUnitTableViewController" customModule="Insulator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="eg0-KF-PcH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BloodGlucoseUnitCell" textLabel="f0Q-dL-wyP" style="IBUITableViewCellStyleDefault" id="Bq1-Bu-Gjt">
-                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="50" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bq1-Bu-Gjt" id="zur-Xl-Njl">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -115,7 +115,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M4J-2E-cLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1758" y="-798"/>
+            <point key="canvasLocation" x="3079" y="-796"/>
         </scene>
         <!--Welcome Health-->
         <scene sceneID="AnX-Ri-wkp">
@@ -196,47 +196,46 @@
                         <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
+                            <tableViewSection footerTitle="The data requested on this screen is required to provide accurate insulin dose suggestions." id="l6Z-Ls-Ab2">
+                                <cells/>
+                            </tableViewSection>
                             <tableViewSection headerTitle="Preferences" id="N9w-dW-Gj1">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Iae-wa-6AG">
-                                        <rect key="frame" x="0.0" y="50" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="Iae-wa-6AG">
+                                        <rect key="frame" x="0.0" y="102" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iae-wa-6AG" id="V4p-TN-6Ma">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mHx-xa-ZX5">
-                                                    <rect key="frame" x="16" y="8" width="576" height="27"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ZnF-92-DF3">
+                                                    <rect key="frame" x="16" y="8" width="543" height="27"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="W8r-IB-P34">
-                                                            <rect key="frame" x="0.0" y="0.0" width="576" height="19"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="awn-C6-sM7">
+                                                            <rect key="frame" x="0.0" y="0.0" width="472" height="27"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood Glucose Unit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXU-Nb-wwT">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="439" height="19"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" verticalCompressionResistancePriority="800" text="Blood Glucose Unit" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ya-l6-5nx">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="472" height="12"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="G2D-bh-n1b">
-                                                                    <rect key="frame" x="455" y="0.0" width="121" height="20"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Choose your preferred blood glucose measurement unit" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBz-43-Aln">
+                                                                    <rect key="frame" x="0.0" y="12" width="472" height="15"/>
                                                                     <animations/>
-                                                                    <segments>
-                                                                        <segment title="mmol/L"/>
-                                                                        <segment title="mg/dL"/>
-                                                                    </segments>
-                                                                    <connections>
-                                                                        <action selector="bloodGlucoseUnitSegmentedControlValueChanged:" destination="nI0-G3-rgs" eventType="valueChanged" id="oxM-se-7EW"/>
-                                                                    </connections>
-                                                                </segmentedControl>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                             <animations/>
                                                         </stackView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Choose your preferred blood glucose measurement unit" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J70-Jg-NFn" userLabel="Blood Glucose Unit Description">
-                                                            <rect key="frame" x="0.0" y="27" width="576" height="0.0"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" text="mmol/L" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wv1-Rb-jbE">
+                                                            <rect key="frame" x="488" y="0.0" width="55" height="27"/>
                                                             <animations/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                            <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -245,62 +244,66 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="mHx-xa-ZX5" firstAttribute="leading" secondItem="V4p-TN-6Ma" secondAttribute="leadingMargin" constant="8" id="G0Z-KY-JSR"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="mHx-xa-ZX5" secondAttribute="trailing" id="I8l-LT-608"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="mHx-xa-ZX5" secondAttribute="bottom" id="My1-YE-wx3"/>
-                                                <constraint firstItem="mHx-xa-ZX5" firstAttribute="top" secondItem="V4p-TN-6Ma" secondAttribute="topMargin" id="Q4F-Lg-GaH"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ZnF-92-DF3" secondAttribute="bottom" id="Lc8-Wn-XY8"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ZnF-92-DF3" secondAttribute="trailing" id="WoY-ro-lWk"/>
+                                                <constraint firstItem="ZnF-92-DF3" firstAttribute="leading" secondItem="V4p-TN-6Ma" secondAttribute="leadingMargin" constant="8" id="gxz-aU-hyW"/>
+                                                <constraint firstAttribute="topMargin" secondItem="ZnF-92-DF3" secondAttribute="top" id="ju9-8r-8yK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="FQT-Ro-YLn" kind="show" id="bH5-gd-fut"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ELb-QX-OdQ">
-                                        <rect key="frame" x="0.0" y="94" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="146" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ELb-QX-OdQ" id="yga-hI-9eQ">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sDA-4U-IFr">
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="grH-Sv-O29">
                                                     <rect key="frame" x="16" y="8" width="576" height="27"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="BHG-Uw-STb">
-                                                            <rect key="frame" x="0.0" y="0.0" width="576" height="4"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3xP-NA-UAR">
+                                                            <rect key="frame" x="0.0" y="0.0" width="511" height="27"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carbohdyrate Accuracy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2d-Bw-QxZ">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="511" height="4"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="750" verticalCompressionResistancePriority="800" text="Carbohydrate Accuracy" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngd-TL-x2T">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="511" height="12"/>
                                                                     <animations/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Kge-eP-Q3w">
-                                                                    <rect key="frame" x="527" y="0.0" width="51" height="4"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Enables use of decimals when entering carbohydrates" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSt-6R-OU6">
+                                                                    <rect key="frame" x="0.0" y="12" width="511" height="15"/>
                                                                     <animations/>
-                                                                    <color key="onTintColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                                    <connections>
-                                                                        <action selector="allowFloatingPointCarbohydratesSwitchValueChanged:" destination="nI0-G3-rgs" eventType="valueChanged" id="aIY-9C-ASA"/>
-                                                                    </connections>
-                                                                </switch>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                             <animations/>
                                                         </stackView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="1000" text="Enables use of decimals when entering carbohydrates" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djo-9x-RZK" userLabel="Carbohydrate Accuracy Description">
-                                                            <rect key="frame" x="0.0" y="12" width="576" height="15"/>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iym-sJ-w9x">
+                                                            <rect key="frame" x="527" y="0.0" width="51" height="27"/>
                                                             <animations/>
-                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                            <color key="onTintColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <connections>
+                                                                <action selector="allowFloatingPointCarbohydratesSwitchValueChanged:" destination="nI0-G3-rgs" eventType="valueChanged" id="SDx-4C-9na"/>
+                                                                <action selector="updateAllowFloatingPointCarbohydratePreference:" destination="UiE-YM-D8I" eventType="valueChanged" id="sBI-ZH-NhD"/>
+                                                            </connections>
+                                                        </switch>
                                                     </subviews>
                                                     <animations/>
                                                 </stackView>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="sDA-4U-IFr" secondAttribute="bottom" id="Imb-d5-YoT"/>
-                                                <constraint firstItem="sDA-4U-IFr" firstAttribute="top" secondItem="yga-hI-9eQ" secondAttribute="topMargin" id="Meg-Xk-4h0"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="sDA-4U-IFr" secondAttribute="trailing" id="hCn-c8-KIw"/>
-                                                <constraint firstItem="sDA-4U-IFr" firstAttribute="leading" secondItem="yga-hI-9eQ" secondAttribute="leadingMargin" constant="8" id="t6C-F1-9tM"/>
+                                                <constraint firstAttribute="topMargin" secondItem="grH-Sv-O29" secondAttribute="top" id="JqV-mj-ZoL"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="grH-Sv-O29" secondAttribute="bottom" id="es4-Qy-hkZ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="grH-Sv-O29" secondAttribute="trailing" id="vAx-rO-Z5j"/>
+                                                <constraint firstItem="grH-Sv-O29" firstAttribute="leading" secondItem="yga-hI-9eQ" secondAttribute="leadingMargin" constant="8" id="xsh-Qt-ITK"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -310,7 +313,7 @@
                             <tableViewSection headerTitle="Constants" id="cK8-Ke-VrF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Ytd-Rx-mLf">
-                                        <rect key="frame" x="0.0" y="189" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="241" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ytd-Rx-mLf" id="lN9-KE-gde">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -364,7 +367,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ODK-OZ-9l5">
-                                        <rect key="frame" x="0.0" y="233" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="285" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ODK-OZ-9l5" id="J00-uO-GXs">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -421,7 +424,7 @@
                                         <animations/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="GDa-tI-gr6">
-                                        <rect key="frame" x="0.0" y="277" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="329" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GDa-tI-gr6" id="WHA-cL-Cwv">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -494,6 +497,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bloodGlucoseUnitLabel" destination="wv1-Rb-jbE" id="sxx-08-JRg"/>
+                        <outlet property="carbohydrateAccuracySwitch" destination="iym-sJ-w9x" id="PWg-KF-RzG"/>
                         <outlet property="carbohydrateFactorTextField" destination="Z61-LV-YFi" id="gUi-Ku-IYb"/>
                         <outlet property="correctiveFactorTextField" destination="i9R-Rn-9cQ" id="v5E-mp-UDB"/>
                         <outlet property="desiredBloodGlucoseTextField" destination="Sdf-K8-ygH" id="ryT-14-MXS"/>
@@ -576,7 +581,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDp-Va-bjB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3049" y="53"/>
+            <point key="canvasLocation" x="3381" y="53"/>
         </scene>
         <!--Variables-->
         <scene sceneID="zWO-QL-KiX">
@@ -1720,5 +1725,8 @@
         <image name="RoundedIcon" width="100" height="100"/>
         <image name="Tick" width="100" height="100"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="bH5-gd-fut"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.2666666667" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
 </document>

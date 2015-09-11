@@ -169,7 +169,6 @@ class SettingsTableViewController: UITableViewController, SKProductsRequestDeleg
     func updateUi() {
         bloodGlucoseUnitLabel.text = preferencesManager.bloodGlucoseUnit.rawValue
         allowFloatingPointCarbohydratesSwitch.on = preferencesManager.allowFloatingPointCarbohydrates
-
     }
 }
 
